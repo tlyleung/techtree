@@ -1,6 +1,6 @@
 # technologytree.org: Plan
 
-This plan turns a 2017–18 D3 prototype into a public site on **technologytree.org**. The prototype drew a Civ V–style tree with elbow links and a force-directed layout. Its code isn't in this repo. The repo keeps the game trees in [`data/civs/`](data/civs/), plus the prototype's rough years and icon ideas for the Brave New World nodes in [`data/history-seed.json`](data/history-seed.json) (see [README.md](README.md)).
+This plan turns a 2017–18 D3 prototype into a public site on **technologytree.org**. The prototype drew a Civ V–style tree with elbow links and a force-directed layout. Its code isn't in this repo. The repo keeps the game trees in [`data/civs/`](data/civs/), plus the prototype's rough years and icon ideas for the Brave New World nodes in [`data/history-seed.json`](data/history-seed.json) (see [README.md](README.md)). Phase 0 merges these into one history tree of our own.
 
 ## Vision
 
@@ -12,7 +12,7 @@ This plan turns a 2017–18 D3 prototype into a public site on **technologytree.
 | --- | --- |
 | Audience | Futurists and forecasters. Credibility and sourcing come first. |
 | Role of history | History is context and the on-ramp, with lighter rigour than the future section. |
-| History tree | Start from the ~80-node Civ V: Brave New World tree (`data/civs/civ5-brave-new-world.json`), minus the game's placeholder Future Tech, and fix the dependencies that are most wrong. Don't rebuild it from scratch. Technology names such as Agriculture are generic; the games' writing and art aren't used. |
+| History tree | **Merge** the Civ V: Brave New World tree, the Civ VI technology tree and the tech-like Civ VI civics into one tree of about 110 nodes (`data/history-tree.json`), dropping game-only nodes and fixing the dependencies that are most wrong. See [Phase 0](#phase-0-merged-history-tree). Technology names such as Agriculture are generic; the games' writing and art aren't used. |
 | Progress measure | **TRL 1–9** as the headline, backed by **dated, sourced milestones**. |
 | History vs future | A technology counts as **history once it has been demonstrated for the first time**. Until then it is future. |
 | Lineage | Every future technology must **lead back through its prerequisites to a history node**. |
@@ -25,7 +25,7 @@ This plan turns a 2017–18 D3 prototype into a public site on **technologytree.
 | Editing | The maintainer writes the content. The public proposes changes through **GitHub pull requests**. Content is Markdown in git. |
 | Upkeep | A scheduled **AI watcher** opens PRs proposing milestone and TRL updates. A human approves every change. |
 | Icons | A circle with the technology's initial for now. Consistent **painted medallions** come in a later phase. |
-| Launch scope | The existing history tree with short pages, plus **20–30 deeply researched future technologies**. |
+| Launch scope | The merged history tree with short pages, plus **20–30 deeply researched future technologies**. |
 | Cost | As close to $0 as possible on top of the domain. |
 
 ## Architecture
@@ -81,7 +81,9 @@ src/content/tech/
   ...
 src/content/eras.yaml
 data/civs/               # reference game trees (exists)
-data/history-seed.json   # prototype's rough years and icon ideas for the history nodes (exists)
+data/history-seed.json   # prototype's rough years and icon ideas (exists; replaced in Phase 0)
+data/merge-synonyms.yaml # matches the same technology across game trees
+data/history-tree.json   # merged history tree, the Phase 1 import source
 data/candidates.yaml     # future-technology candidates
 data/forecasts/          # dated forecast snapshots, written by script
 docs/trl-rubric.md       # public scoring rubric
@@ -158,17 +160,32 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 
 ## Phases
 
+### Phase 0: Merged history tree
+
+Merge the game trees into one history tree of our own before any site code, so Phase 1 launches the tree we want instead of a game's.
+
+- [ ] Take the history trees as input: Civ V: Brave New World, the Civ VI technology tree, and the **tech-like Civ VI civics**. Gods & Kings and base Civ V are mostly subsets of Brave New World. Alpha Centauri and Beyond Earth are science fiction and feed the future candidates in Phase 2 instead.
+- [ ] Keep a civic only if it passes the same test as a technology: a method, device or practice with a datable first demonstration (e.g. Civil Engineering, Mass Media, Social Media). Leave out institutions, ideologies and policies (e.g. Code of Laws, Feudalism, Totalitarianism). Space Race and Nuclear Program are candidates if renamed as the technologies behind them (spaceflight, nuclear fission).
+- [ ] Match technologies across games: the same name is the same technology, and a small synonym table in `data/merge-synonyms.yaml` handles near-matches.
+- [ ] Combine prerequisites from all sources, remove redundant links, and break cycles. Where the games disagree, real history decides, not either game.
+- [ ] Fix dependencies that exist only for game balance, and drop game-only nodes (Future Tech, and e.g. Mobile Tactics and Combined Arms unless they map to a real technology).
+- [ ] Give every node an era, a rough year and an icon idea, starting from `data/history-seed.json` for the Brave New World nodes. Years stay rough here; Phase 3 sources them.
+- [ ] Write the result to `data/history-tree.json` (about 110 nodes), replacing `data/history-seed.json`.
+- [ ] Write a script that checks the merged tree against the Phase 1 lint rules (≤ 8 per column, links skip ≤ 1 column, links point rightward, no cycles, no redundant links), using a first version of the layering step.
+
+**Done when** `data/history-tree.json` passes the lint rules and the maintainer has signed off on every node and link.
+
 ### Phase 1: Base site
 
 - [ ] Set up the Astro project and the content collection schema.
-- [ ] Write a one-off script that turns `data/civs/civ5-brave-new-world.json` into one Markdown file per node (name, era, prerequisites), taking each node's rough year and icon idea from `data/history-seed.json`. Drop Future Tech and its 6 links. Flag game-only nodes (e.g. Mobile Tactics, Combined Arms) for review in Phase 3.
+- [ ] Write a one-off script that turns `data/history-tree.json` into one Markdown file per node (name, era, prerequisites, rough year, icon idea).
 - [ ] Calculate the layout at build time (layering, column balancing, crossing reduction, routing) and add the lint rules to CI.
 - [ ] Render the tree (era columns, elbow links, initial-in-circle icons) with pan and zoom, flowing left to right on desktop and top to bottom on mobile.
 - [ ] Build the mobile focus view.
 - [ ] Generate a page per node with the name, era, year, prerequisites and what it leads to.
 - [ ] Deploy to GitHub Pages through the Actions workflow. Set technologytree.org in Settings → Pages and enforce HTTPS before pointing DNS at GitHub.
 
-**Done when** the existing tree is live on the domain and every node opens its own page.
+**Done when** the merged tree is live on the domain and every node opens its own page.
 
 ### Phase 2: Future schema and rubric
 
@@ -187,8 +204,7 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 
 - [ ] Choose the 20–30 launch technologies from the shortlist and research them as a batch (draft, then independent verification).
 - [ ] Publish Kurzweil's graded track record on the methodology page.
-- [ ] Fix the worst history mistakes: dependencies that exist only for game balance, and the game-only nodes flagged in Phase 1.
-- [ ] Research and source the **year of first demonstration** for each history node. The years in `data/history-seed.json` are unsourced rough guesses and only a starting point.
+- [ ] Research and source the **year of first demonstration** for each history node. The years in `data/history-tree.json` are unsourced rough guesses and only a starting point.
 - [ ] Add a short page to each history node.
 - [ ] Write the forecast-snapshot script and give each snapshot its retrieval date.
 - [ ] Add the "Edit on GitHub" links, CONTRIBUTING.md (sourcing rules, schema, TRL rubric), and the About and methodology pages.
@@ -207,7 +223,7 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 
 ### Phase 5: Painted medallion icons
 
-- [ ] Write an `icon.prompt` for every node: one short scene that sums up the technology (e.g. "Person plowing a field"). The history nodes start from the ideas in `data/history-seed.json`.
+- [ ] Write an `icon.prompt` for every node: one short scene that sums up the technology (e.g. "Person plowing a field"). The history nodes start from the ideas in `data/history-tree.json`.
 - [ ] Make or commission about 10 **anchor icons** that define the style.
 - [ ] Build a generation pipeline: a locked style prompt, a fixed model, and the anchor icons as style references, using each node's `icon.prompt`.
 - [ ] Post-process every icon the same way: circle crop, a standard rim and frame, a lighting overlay, and a palette normalised to the era.
@@ -228,7 +244,7 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 | The full tree is unusable on phones | Use a top-to-bottom layout and default to the focus view on mobile. |
 | The AI watcher reports hype as a milestone | Require sources and human approval for every PR. Never merge automatically. |
 | Content workload stalls the project | Keep launch to 20–30 future nodes. History pages stay short. |
-| Civ IP | The history tree reuses Brave New World's generic technology names and tree shape, and diverges as Phase 3 fixes it. The `data/civs/` files themselves aren't published, and the games' writing, icons and art are never used. |
+| Civ IP | The history tree reuses generic technology names from the games and a merged shape of our own (Phase 0). The `data/civs/` files themselves aren't published, and the games' writing, icons and art are never used. |
 | AI research invents sources or dates | A second agent independently checks every citation, a CI link checker runs, and a human reviews before merging. |
 | Copyright on Kurzweil's books and the Paperclips game | Record the ideas, dates and citations only; never reproduce text. Credit the original concepts. |
 | Forecast reuse terms and access | Metaculus's API needs a token, most community forecasts need an access grant, and commercial use needs a written agreement. Ask for access early, follow their attribution rules, and keep the manual-entry fallback. |
@@ -245,11 +261,11 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 ## Open questions
 
 - Which 20–30 future technologies make the launch list?
-- Should the history tree stay as Civ V: Brave New World, or merge in technologies from the other game trees (e.g. Civ VI's Astrology, Irrigation and Buttress)? That needs rules for matching the same technology across games.
 - What are the exact date-band boundaries? When a band has more than 8 nodes, does it split, or do nodes move to a neighbouring band within their forecast range?
 
 ### Resolved
 
+- The history tree is a **merge** of Brave New World, the Civ VI technology tree and the tech-like Civ VI civics (Phase 0).
 - Date bands get wider further into the future.
 - The mobile focus view shows one level of prerequisites and one level of unlocks.
 - Future ideas come from Kurzweil, Universal Paperclips, Metaculus, the IEA and late-game Civ-style trees, through the curation process above. Deep research runs one agent per node plus a verification agent; no swarm is needed for coming up with ideas.
