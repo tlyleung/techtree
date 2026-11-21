@@ -888,7 +888,27 @@
     },
     {
       "source": "Dynamite",
-      "target": "Combustion"
+      "target": "Railroad"
+    },
+    {
+      "source": "Construction",
+      "target": "Metal Casting"
+    },
+    {
+      "source": "Chivalry",
+      "target": "Acoustics"
+    },
+    {
+      "source": "Military Science",
+      "target": "Dynamite"
+    },
+    {
+      "source": "Combustion",
+      "target": "Radar"
+    },
+    {
+      "source": "Radar",
+      "target": "Computers"
     }
   ]
 }

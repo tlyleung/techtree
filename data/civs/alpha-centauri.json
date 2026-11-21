@@ -324,7 +324,7 @@
       "group": "Explore",
       "level": 5,
       "unlocks": [
-        "Chassis Type: Needlejet",
+        "Chassis Type: Needlejet (M8)",
         "Abilities: Air Superiority Ability",
         "Base Facilities: Aerospace Complex",
         "Formers May Construct Airbase"
@@ -431,7 +431,7 @@
       "group": "Build",
       "level": 7,
       "unlocks": [
-        "Defenses: Probability Sheath (D8)",
+        "Defenses: Probability Sheath (D6)",
         "Base Facilities: Tachyon Field"
       ]
     },

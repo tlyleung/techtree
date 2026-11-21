@@ -1,0 +1,409 @@
+{
+  "nodes": [
+    {
+      "name": "Agriculture",
+      "year": -10000,
+      "icon": "Person plowing field"
+    },
+    {
+      "name": "Pottery",
+      "year": -18000,
+      "icon": "Terracotta amphora jar"
+    },
+    {
+      "name": "Animal Husbandry",
+      "year": -10000,
+      "icon": "Grazing sheep"
+    },
+    {
+      "name": "Archery",
+      "year": -10000,
+      "icon": "Archery target with two arrows"
+    },
+    {
+      "name": "Mining",
+      "year": -43000,
+      "icon": "Mining pickaxe"
+    },
+    {
+      "name": "Sailing",
+      "year": -5500,
+      "icon": "Ancient Greek sailing boat"
+    },
+    {
+      "name": "Calendar",
+      "year": -2500,
+      "icon": "Vintage clocktower"
+    },
+    {
+      "name": "Writing",
+      "year": -3200,
+      "icon": "Quill and inkwell"
+    },
+    {
+      "name": "Trapping",
+      "year": -5500,
+      "icon": "Fox trapped in a cage"
+    },
+    {
+      "name": "The Wheel",
+      "year": -4500,
+      "icon": "Prehistoric stone wheel"
+    },
+    {
+      "name": "Masonry",
+      "year": -10000,
+      "icon": "Brick trowel"
+    },
+    {
+      "name": "Bronze Working",
+      "year": -3300,
+      "icon": "Bronze breastplate"
+    },
+    {
+      "name": "Optics",
+      "year": -750,
+      "icon": "Vintage monocle"
+    },
+    {
+      "name": "Horseback Riding",
+      "year": -3500,
+      "icon": "Person riding a horse"
+    },
+    {
+      "name": "Mathematics",
+      "year": -2000,
+      "icon": "Vintage abacus"
+    },
+    {
+      "name": "Construction",
+      "year": -2500,
+      "icon": "Hammer hitting nail into wood"
+    },
+    {
+      "name": "Philosophy",
+      "year": -600,
+      "icon": "Statue of the thinker"
+    },
+    {
+      "name": "Drama and Poetry",
+      "year": -800,
+      "icon": "Comedy and tragedy masks"
+    },
+    {
+      "name": "Currency",
+      "year": 600,
+      "icon": "Vintage gold and silver Roman coins"
+    },
+    {
+      "name": "Engineering",
+      "year": -1300,
+      "icon": "Vintage metal cogs"
+    },
+    {
+      "name": "Iron Working",
+      "year": -1200,
+      "icon": "Vintage iron sword"
+    },
+    {
+      "name": "Theology",
+      "year": -700,
+      "icon": "Monk transcribing books"
+    },
+    {
+      "name": "Civil Service",
+      "year": -210,
+      "icon": "Person sweeping old city streets"
+    },
+    {
+      "name": "Guilds",
+      "year": -300,
+      "icon": "Pouch of coins"
+    },
+    {
+      "name": "Metal Casting",
+      "year": -700,
+      "icon": "Pouring molten metal into mold"
+    },
+    {
+      "name": "Compass",
+      "year": 1100,
+      "icon": "Vintage compass"
+    },
+    {
+      "name": "Education",
+      "year": 860,
+      "icon": "Square academic cap"
+    },
+    {
+      "name": "Chivalry",
+      "year": 1170,
+      "icon": "Knights Templar"
+    },
+    {
+      "name": "Machinery",
+      "year": 725,
+      "icon": "Vintage printing press"
+    },
+    {
+      "name": "Physics",
+      "year": 692,
+      "icon": "Newton's Cradle"
+    },
+    {
+      "name": "Steel",
+      "year": -100,
+      "icon": "Metal I-Beam"
+    },
+    {
+      "name": "Astronomy",
+      "year": -8000,
+      "icon": "Vintage telescope"
+    },
+    {
+      "name": "Acoustics",
+      "year": 1637,
+      "icon": "Grand church organ"
+    },
+    {
+      "name": "Banking",
+      "year": 1407,
+      "icon": "Gold coin stacks"
+    },
+    {
+      "name": "Printing Press",
+      "year": 1440,
+      "icon": "Movable type"
+    },
+    {
+      "name": "Gunpowder",
+      "year": 800,
+      "icon": "Gunpowder and mortar shell"
+    },
+    {
+      "name": "Navigation",
+      "year": 1480,
+      "icon": "Dividing compass resting on vintage sea map"
+    },
+    {
+      "name": "Architecture",
+      "year": 1450,
+      "icon": "Vintage building blueprint"
+    },
+    {
+      "name": "Economics",
+      "year": 1350,
+      "icon": "Rising bar chart"
+    },
+    {
+      "name": "Metallurgy",
+      "year": 1556,
+      "icon": "Pouring molten metal into mold"
+    },
+    {
+      "name": "Chemistry",
+      "year": 1789,
+      "icon": "Test tubes in a rack"
+    },
+    {
+      "name": "Archaeology",
+      "year": 1800,
+      "icon": "Unearthed fossil in archaeological dig site"
+    },
+    {
+      "name": "Scientific Theory",
+      "year": 1687,
+      "icon": "Microscope"
+    },
+    {
+      "name": "Industrialization",
+      "year": 1760,
+      "icon": "Factory with billowing smoke"
+    },
+    {
+      "name": "Rifling",
+      "year": 1850,
+      "icon": "Hunting rifle"
+    },
+    {
+      "name": "Military Science",
+      "year": 1760,
+      "icon": "Sabre"
+    },
+    {
+      "name": "Fertilizer",
+      "year": 1842,
+      "icon": "Wheelbarrow of manure"
+    },
+    {
+      "name": "Biology",
+      "year": 1859,
+      "icon": "Nautilus shell"
+    },
+    {
+      "name": "Electricity",
+      "year": 1821,
+      "icon": "Lighting striking a key tied to a kite"
+    },
+    {
+      "name": "Steam Power",
+      "year": 1712,
+      "icon": "Steam locomotive"
+    },
+    {
+      "name": "Dynamite",
+      "year": 1867,
+      "icon": "Stick of dynamite"
+    },
+    {
+      "name": "Refrigeration",
+      "year": 1860,
+      "icon": "Refrigerator"
+    },
+    {
+      "name": "Radio",
+      "year": 1896,
+      "icon": "Radio condenser microphone"
+    },
+    {
+      "name": "Replaceable Parts",
+      "year": 1803,
+      "icon": "Assorted metal screws and cogs"
+    },
+    {
+      "name": "Flight",
+      "year": 1903,
+      "icon": "Biplane"
+    },
+    {
+      "name": "Railroad",
+      "year": 1811,
+      "icon": "Steam locomotive tracks"
+    },
+    {
+      "name": "Plastics",
+      "year": 1856,
+      "icon": "Plastic bottle"
+    },
+    {
+      "name": "Electronics",
+      "year": 1929,
+      "icon": "Vintage vacuum tube"
+    },
+    {
+      "name": "Ballistics",
+      "year": 1917,
+      "icon": "Cannonballs"
+    },
+    {
+      "name": "Combustion",
+      "year": 1886,
+      "icon": "Pistons of an internal combustion engine"
+    },
+    {
+      "name": "Penicillin",
+      "year": 1928,
+      "icon": "Petri dish with bacteria"
+    },
+    {
+      "name": "Atomic Theory",
+      "year": 1927,
+      "icon": "Atomic diagram"
+    },
+    {
+      "name": "Radar",
+      "year": 1934,
+      "icon": "Radar dish"
+    },
+    {
+      "name": "Combined Arms",
+      "year": 1914,
+      "icon": "Airplane taking off from aircraft carrier"
+    },
+    {
+      "name": "Ecology",
+      "year": 1866,
+      "icon": "Scuba diving among fish"
+    },
+    {
+      "name": "Nuclear Fission",
+      "year": 1945,
+      "icon": "Splitting atoms"
+    },
+    {
+      "name": "Rocketry",
+      "year": 1926,
+      "icon": "Rocket on launchpad"
+    },
+    {
+      "name": "Computers",
+      "year": 1946,
+      "icon": "Vintage desktop computer"
+    },
+    {
+      "name": "Telecommunications",
+      "year": 1958,
+      "icon": "Vintage mobile phone"
+    },
+    {
+      "name": "Mobile Tactics",
+      "year": 1966,
+      "icon": "Armored personnel carrier"
+    },
+    {
+      "name": "Advanced Ballistics",
+      "year": 1957,
+      "icon": "Several bullets"
+    },
+    {
+      "name": "Satellites",
+      "year": 1957,
+      "icon": "Satellite"
+    },
+    {
+      "name": "Robotics",
+      "year": 1961,
+      "icon": "Robotic arm"
+    },
+    {
+      "name": "Lasers",
+      "year": 1960,
+      "icon": "Laser experiment"
+    },
+    {
+      "name": "The Internet",
+      "year": 1990,
+      "icon": "World wide web"
+    },
+    {
+      "name": "Globalization",
+      "year": 1983,
+      "icon": "Earth"
+    },
+    {
+      "name": "Particle Physics",
+      "year": 1974,
+      "icon": "Sub-atomic particle collisions"
+    },
+    {
+      "name": "Nuclear Fusion",
+      "year": 1991,
+      "icon": "Nuclear fusion tokamak"
+    },
+    {
+      "name": "Nanotechnology",
+      "year": 1981,
+      "icon": "Nanobots"
+    },
+    {
+      "name": "Stealth",
+      "year": 1958,
+      "icon": "Stealth fighter"
+    },
+    {
+      "name": "Future Tech",
+      "year": 2018,
+      "icon": "Glowing blue liquid swirling in round-bottom flask"
+    }
+  ]
+}

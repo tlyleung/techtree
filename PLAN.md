@@ -1,6 +1,6 @@
 # technologytree.org: Plan
 
-This plan turns a 2017–18 D3 prototype into a public site on **technologytree.org**. The prototype drew a Civ V–style tree with elbow links and a force-directed layout. Its code and data are gone; the repo keeps the game trees in [`data/civs/`](data/civs/) as reference (see [README.md](README.md)).
+This plan turns a 2017–18 D3 prototype into a public site on **technologytree.org**. The prototype drew a Civ V–style tree with elbow links and a force-directed layout. Its code isn't in this repo. The repo keeps the game trees in [`data/civs/`](data/civs/), plus the prototype's rough years and icon ideas for the Brave New World nodes in [`data/history-seed.json`](data/history-seed.json) (see [README.md](README.md)).
 
 ## Vision
 
@@ -12,7 +12,7 @@ This plan turns a 2017–18 D3 prototype into a public site on **technologytree.
 | --- | --- |
 | Audience | Futurists and forecasters. Credibility and sourcing come first. |
 | Role of history | History is context and the on-ramp, with lighter rigour than the future section. |
-| History tree | Start from the ~80-node Civ V: Brave New World tree (`data/civs/civ5-brave-new-world.json`) and fix the dependencies that are most wrong. Don't rebuild it from scratch. |
+| History tree | Start from the ~80-node Civ V: Brave New World tree (`data/civs/civ5-brave-new-world.json`), minus the game's placeholder Future Tech, and fix the dependencies that are most wrong. Don't rebuild it from scratch. Technology names such as Agriculture are generic; the games' writing and art aren't used. |
 | Progress measure | **TRL 1–9** as the headline, backed by **dated, sourced milestones**. |
 | History vs future | A technology counts as **history once it has been demonstrated for the first time**. Until then it is future. |
 | Lineage | Every future technology must **lead back through its prerequisites to a history node**. |
@@ -32,10 +32,10 @@ This plan turns a 2017–18 D3 prototype into a public site on **technologytree.
 
 - **Static site:** [Astro](https://astro.build) with content collections. Each technology is one Markdown file whose frontmatter is checked against a schema when the site builds.
 - **Tree rendering:** the graph is built from all content files at build time, laid out once (see [Layout](#layout)), and drawn as SVG with pan and zoom in the browser. Links are drawn as horizontal elbows with rounded corners, from the right edge of the prerequisite to the left edge of the technology it unlocks. Every node links to its page.
-- **Hosting:** **GitHub Pages**, deployed by the official Astro GitHub Actions workflow (`withastro/action`) on every push to `main`. A `CNAME` file sets technologytree.org, with HTTPS enforced. Jekyll isn't needed: GitHub Pages serves any static output. There are no preview deploys for PRs; contributors build locally, and previews can be added later if needed.
+- **Hosting:** **GitHub Pages**, deployed by the official Astro GitHub Actions workflow (`withastro/action`) on every push to `main`. Actions deploys ignore a `CNAME` file, so the custom domain is set in the repo's **Settings → Pages** (with Enforce HTTPS) *before* DNS points at GitHub, which prevents a domain takeover. Astro's `site` is set to `https://technologytree.org`. Jekyll isn't needed: GitHub Pages serves any static output. There are no preview deploys for PRs; contributors build locally, and previews can be added later if needed.
 - **Repo:** public on GitHub. Each page has an "Edit this page on GitHub" link.
-- **Forecast snapshots:** forecasts are fetched by a script and committed as data, with the date they were retrieved. Pages never fetch forecasts live.
-- **AI watcher:** a scheduled GitHub Actions job calls Claude (with web search) for each future technology, compares what it finds against the current milestones, and opens one PR per proposed change, with sources.
+- **Forecast snapshots:** forecasts are fetched by a script and committed as data, with the date they were retrieved. Pages never fetch forecasts live. The Metaculus API needs an account token (stored as a repo secret), and with a default token most community forecasts come back empty, so the plan needs an access grant from Metaculus or a manual-entry fallback where the maintainer copies the numbers by hand with the retrieval date.
+- **AI watcher:** a scheduled GitHub Actions job calls Claude (with web search) for each future technology, compares what it finds against the current milestones, and opens one PR per proposed change, with sources. It authenticates with a GitHub App installation token or a fine-grained personal token, not the default `GITHUB_TOKEN`: by default that token can't open PRs, and PRs it opens don't trigger CI without manual approval.
 
 ## Layout
 
@@ -45,8 +45,8 @@ The Civ V trees are clean because they were **designed by hand**. `civ5-brave-ne
 
 The layout is calculated **at build time** with a layered-graph method (Sugiyama-style). It replaces the prototype's force simulation, which positioned nodes differently on every load, so the layout is now the same every time.
 
-1. **Layering.** History nodes go in columns by prerequisite depth, grouped into era bands. Future nodes go in **date-band columns** (e.g. 2030s, 2040s) based on the forecast median. A **"today" line** separates the two halves.
-2. **Balancing columns.** A node can sit anywhere between its latest prerequisite and its earliest dependent. The layout uses that slack to keep every column within the width limit, as in Coffman–Graham layering.
+1. **Layering.** History nodes go in columns by prerequisite depth, grouped into era bands. Future nodes go in **date bands** (e.g. 2030s, 2040s) based on the forecast median. Each date band is treated like an era band: it holds as many columns as it needs, with nodes depth-layered inside it, so two future nodes in the same band can still depend on each other. A **"today" line** separates the two halves.
+2. **Balancing columns.** A node can sit anywhere between its latest prerequisite and its earliest dependent. The layout uses that slack to keep every column within the width limit, as in Coffman–Graham layering, and to **shorten long links** (for example, moving Optics right so Optics → Compass skips one column instead of two). This is easiest as a small constraint problem: each link spans 1 or 2 columns, era and date bands stay contiguous, and each column holds at most 8 nodes.
 3. **Reducing crossings.** Nodes within each column are ordered by the barycenter or median heuristic over several sweeps. Candidate libraries: `d3-dag`, `elkjs` or `dagre`.
 4. **Routing.** Links that skip columns go through invisible "dummy" points so they route around nodes instead of through them. Links are drawn as rounded elbows.
 
@@ -55,7 +55,8 @@ The layout is calculated **at build time** with a layered-graph method (Sugiyama
 | Rule | Limit |
 | --- | --- |
 | Nodes per column | ≤ **8** |
-| Columns a link may skip | ≤ **1** |
+| Columns a link may skip | ≤ **1** within history or within the future. Links that cross the "today" line are exempt, because a far-future node necessarily skips the nearer date bands; they're routed through dummy points. |
+| Link direction | Every link points **strictly rightward** (to a later column), except flagged date conflicts. |
 | Redundant links (A→C when A→B→C exists) | none |
 | Future nodes trace back to history | required |
 | Projected date earlier than a prerequisite's | warning, shown on the tree as a conflict |
@@ -80,6 +81,7 @@ src/content/tech/
   ...
 src/content/eras.yaml
 data/civs/               # reference game trees (exists)
+data/history-seed.json   # prototype's rough years and icon ideas for the history nodes (exists)
 data/candidates.yaml     # future-technology candidates
 data/forecasts/          # dated forecast snapshots, written by script
 docs/trl-rubric.md       # public scoring rubric
@@ -147,7 +149,7 @@ Coming up with ideas is cheap; curating them is the work. This doesn't need an a
 
    Then merge synonyms, drop anything too vague to test, and connect each node back to a history node.
 3. **Shortlist** in a sortable table with columns for branch, has forecast, Kurzweil date, sources and lineage. The maintainer chooses 20–30 for launch.
-4. **Research in depth**, one agent per chosen node. Each agent drafts the Markdown page (milestones with sources, TRL rationale, forecasts). A **second, independent agent checks** every citation and date. A link checker in CI confirms that every source URL loads. Run this as a batch only when the maintainer asks.
+4. **Research in depth**, one agent per chosen node. Each agent drafts the Markdown page (milestones with sources, TRL rationale, forecasts). A **second, independent agent checks** every citation and date. A link checker in CI confirms that every source URL loads. Hosts that block scripted clients (Metaculus, which serves a Cloudflare challenge, and many publishers that return 403) are excluded and checked by hand or through their APIs. The checker also runs on a schedule, so links that rot later get caught. Run this as a batch only when the maintainer asks.
 5. **Later ideas** arrive through a "Propose a technology" GitHub issue template and the AI watcher.
 
 ### Grading Kurzweil
@@ -159,12 +161,12 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 ### Phase 1: Base site
 
 - [ ] Set up the Astro project and the content collection schema.
-- [ ] Write a one-off script that turns `data/civs/civ5-brave-new-world.json` into one Markdown file per node (name, era, prerequisites). It has no years or icon prompts; those come in Phases 3 and 5.
+- [ ] Write a one-off script that turns `data/civs/civ5-brave-new-world.json` into one Markdown file per node (name, era, prerequisites), taking each node's rough year and icon idea from `data/history-seed.json`. Drop Future Tech and its 6 links. Flag game-only nodes (e.g. Mobile Tactics, Combined Arms) for review in Phase 3.
 - [ ] Calculate the layout at build time (layering, column balancing, crossing reduction, routing) and add the lint rules to CI.
 - [ ] Render the tree (era columns, elbow links, initial-in-circle icons) with pan and zoom, flowing left to right on desktop and top to bottom on mobile.
 - [ ] Build the mobile focus view.
 - [ ] Generate a page per node with the name, era, year, prerequisites and what it leads to.
-- [ ] Deploy to GitHub Pages through the Actions workflow, with a `CNAME` for technologytree.org.
+- [ ] Deploy to GitHub Pages through the Actions workflow. Set technologytree.org in Settings → Pages and enforce HTTPS before pointing DNS at GitHub.
 
 **Done when** the existing tree is live on the domain and every node opens its own page.
 
@@ -174,7 +176,7 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 - [ ] Finalise the milestone and forecast schema.
 - [ ] Design the **"today" line** where era columns (history) meet the date bands (future), and how a forecast range is drawn on a node.
 - [ ] Add a **conflict flag** for when a node's projected date is earlier than one of its prerequisites'.
-- [ ] Store **past TRLs and forecasts** in `trl_history` and `forecast_history`, ready for "over time" charts.
+- [ ] Store **past TRLs and forecasts** in `trl_history` and `forecasts[].history`, ready for "over time" charts. Make the collection schema strict, so unknown keys fail the build.
 - [ ] Define the rule for moving a node to history: once its first demonstration is a sourced milestone with `status: done`, the node moves from `future` to `history`.
 - [ ] Gather and normalise future candidates into `data/candidates.yaml` (steps 1–2 of [Generating future candidates](#generating-future-candidates)), then build the shortlist table.
 - [ ] Research **5 future technologies end to end** to test the format, including the second-agent citation check.
@@ -185,8 +187,8 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 
 - [ ] Choose the 20–30 launch technologies from the shortlist and research them as a batch (draft, then independent verification).
 - [ ] Publish Kurzweil's graded track record on the methodology page.
-- [ ] Fix the worst history mistakes: dependencies that exist only for game balance.
-- [ ] Research and source the **year of first demonstration** for each history node. The repo has no dates yet.
+- [ ] Fix the worst history mistakes: dependencies that exist only for game balance, and the game-only nodes flagged in Phase 1.
+- [ ] Research and source the **year of first demonstration** for each history node. The years in `data/history-seed.json` are unsourced rough guesses and only a starting point.
 - [ ] Add a short page to each history node.
 - [ ] Write the forecast-snapshot script and give each snapshot its retrieval date.
 - [ ] Add the "Edit on GitHub" links, CONTRIBUTING.md (sourcing rules, schema, TRL rubric), and the About and methodology pages.
@@ -196,7 +198,7 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 
 ### Phase 4: AI watcher
 
-- [ ] Add a weekly GitHub Actions job that checks each future technology for new milestones or TRL changes.
+- [ ] Add a weekly GitHub Actions job that checks each future technology for new milestones or TRL changes. Give it a GitHub App or fine-grained token, and require the lint and link-check checks to pass before merging.
 - [ ] Have it open a PR for each proposed change, with sources and the reasoning.
 - [ ] Have it refresh the forecast snapshots.
 - [ ] Set a cost cap and a dry-run mode.
@@ -205,7 +207,7 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 
 ### Phase 5: Painted medallion icons
 
-- [ ] Write an `icon.prompt` for every node: one short scene that sums up the technology (e.g. "Person plowing a field").
+- [ ] Write an `icon.prompt` for every node: one short scene that sums up the technology (e.g. "Person plowing a field"). The history nodes start from the ideas in `data/history-seed.json`.
 - [ ] Make or commission about 10 **anchor icons** that define the style.
 - [ ] Build a generation pipeline: a locked style prompt, a fixed model, and the anchor icons as style references, using each node's `icon.prompt`.
 - [ ] Post-process every icon the same way: circle crop, a standard rim and frame, a lighting overlay, and a palette normalised to the era.
@@ -222,14 +224,14 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 | A forecast question's definition differs from the node's | Record `definition_notes` and link the question. Fall back to the maintainer's estimate when the mismatch is too large. |
 | A forecast date comes before a prerequisite's | Flag it on the tree rather than hiding it. |
 | Two x-axes (era columns and dates) look disjointed | Design the "today" line in Phase 2, before adding content. |
-| The tree gets too wide or tangled as it grows | Calculate the layout at build time and enforce the lint rules (≤ 8 per column, links skip ≤ 1 column, no redundant links) in CI. |
+| The tree gets too wide or tangled as it grows | Calculate the layout at build time and enforce the lint rules (≤ 8 per column, links skip ≤ 1 column outside the "today" crossing, links point rightward, no redundant links) in CI. |
 | The full tree is unusable on phones | Use a top-to-bottom layout and default to the focus view on mobile. |
 | The AI watcher reports hype as a milestone | Require sources and human approval for every PR. Never merge automatically. |
 | Content workload stalls the project | Keep launch to 20–30 future nodes. History pages stay short. |
-| Civ IP | Use only generic technology names and tree shape; treat `data/civs/` as reference, not content to publish. Use original icon art and writing. |
+| Civ IP | The history tree reuses Brave New World's generic technology names and tree shape, and diverges as Phase 3 fixes it. The `data/civs/` files themselves aren't published, and the games' writing, icons and art are never used. |
 | AI research invents sources or dates | A second agent independently checks every citation, a CI link checker runs, and a human reviews before merging. |
 | Copyright on Kurzweil's books and the Paperclips game | Record the ideas, dates and citations only; never reproduce text. Credit the original concepts. |
-| Forecast reuse terms | Check Metaculus's terms and attribution requirements before publishing their numbers. |
+| Forecast reuse terms and access | Metaculus's API needs a token, most community forecasts need an access grant, and commercial use needs a written agreement. Ask for access early, follow their attribution rules, and keep the manual-entry fallback. |
 
 ## Cost estimate
 

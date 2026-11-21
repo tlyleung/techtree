@@ -632,6 +632,10 @@
     {
       "source": "Urbanization",
       "target": "Mobilization"
+    },
+    {
+      "source": "Guilds",
+      "target": "Reformed Church"
     }
   ]
 }

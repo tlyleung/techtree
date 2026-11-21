@@ -309,14 +309,14 @@
       "tier": 4
     },
     {
-      "name": "Mobile Lev",
+      "name": "Mobile LEV",
       "group": "Ring 1",
       "kind": "leaf",
       "parent": "Mechatronics",
       "tier": 4
     },
     {
-      "name": "Ballistic Lev",
+      "name": "Ballistic LEV",
       "group": "Ring 1",
       "kind": "leaf",
       "parent": "Mechatronics",
@@ -586,7 +586,7 @@
       "tier": 5
     },
     {
-      "name": "Tactical Lev",
+      "name": "Tactical LEV",
       "group": "Ring 2",
       "kind": "leaf",
       "parent": "Nanotechnology",
@@ -913,11 +913,11 @@
     },
     {
       "source": "Mechatronics",
-      "target": "Mobile Lev"
+      "target": "Mobile LEV"
     },
     {
       "source": "Mechatronics",
-      "target": "Ballistic Lev"
+      "target": "Ballistic LEV"
     },
     {
       "source": "Robotics",
@@ -1009,7 +1009,7 @@
     },
     {
       "source": "Nanotechnology",
-      "target": "Tactical Lev"
+      "target": "Tactical LEV"
     },
     {
       "source": "Nanotechnology",
