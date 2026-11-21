@@ -1,0 +1,637 @@
+{
+  "game": "Civilization VI",
+  "tree": "civics",
+  "groups": [
+    {
+      "name": "Ancient"
+    },
+    {
+      "name": "Classical"
+    },
+    {
+      "name": "Medieval"
+    },
+    {
+      "name": "Renaissance"
+    },
+    {
+      "name": "Industrial"
+    },
+    {
+      "name": "Modern"
+    },
+    {
+      "name": "Atomic"
+    },
+    {
+      "name": "Information"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Code of Laws",
+      "group": "Ancient",
+      "column": 0
+    },
+    {
+      "name": "Craftsmanship",
+      "group": "Ancient",
+      "column": 1,
+      "cost": "16 turn",
+      "boost": "To Boost: Improve 3 tiles."
+    },
+    {
+      "name": "Foreign Trade",
+      "group": "Ancient",
+      "column": 1,
+      "cost": "16 turn",
+      "boost": "To Boost: Discover a second continent."
+    },
+    {
+      "name": "Military Tradition",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "20 turn",
+      "boost": "To Boost: Clear a Barbarian Outpost."
+    },
+    {
+      "name": "State Workforce",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "28 turn",
+      "boost": "To Boost: Build any district."
+    },
+    {
+      "name": "Early Empire",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "28 turn",
+      "boost": "To Boost: Grow your civilization to at least 6 population."
+    },
+    {
+      "name": "Mysticism",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "11 turn",
+      "boost": "BOOSTED: Found a pantheon."
+    },
+    {
+      "name": "Games and Recreation",
+      "group": "Classical",
+      "column": 3,
+      "cost": "8 turn",
+      "boost": "To Boost: Research the Construction technology."
+    },
+    {
+      "name": "Political Philosophy",
+      "group": "Classical",
+      "column": 3
+    },
+    {
+      "name": "Drama and Poetry",
+      "group": "Classical",
+      "column": 3,
+      "cost": "8 turn",
+      "boost": "To Boost: Build a wonder."
+    },
+    {
+      "name": "Military Training",
+      "group": "Classical",
+      "column": 4,
+      "cost": "9 turn",
+      "boost": "To Boost: Build an Encampment."
+    },
+    {
+      "name": "Defensive Tactics",
+      "group": "Classical",
+      "column": 4,
+      "cost": "6 turn",
+      "boost": "BOOSTED: Be the target of a Declaration of War."
+    },
+    {
+      "name": "Recorded History",
+      "group": "Classical",
+      "column": 4,
+      "cost": "11 turn",
+      "boost": "To Boost: Build 2 Campus districts."
+    },
+    {
+      "name": "Theology",
+      "group": "Classical",
+      "column": 4,
+      "cost": "9 turn",
+      "boost": "To Boost: Found a Religion."
+    },
+    {
+      "name": "Naval Tradition",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "8 turn",
+      "boost": "To Boost: Kill a unit with a Quadrireme."
+    },
+    {
+      "name": "Feudalism",
+      "group": "Medieval",
+      "column": 5
+    },
+    {
+      "name": "Civil Service",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "11 turn",
+      "boost": "To Boost: Grow a city to 10 population."
+    },
+    {
+      "name": "Mercenaries",
+      "group": "Medieval",
+      "column": 6,
+      "cost": "5 turn",
+      "boost": "BOOSTED: Have 8 land combat units in your army."
+    },
+    {
+      "name": "Medieval Faires",
+      "group": "Medieval",
+      "column": 6,
+      "cost": "16 turn",
+      "boost": "To Boost: Maintain 4 Trade Routes."
+    },
+    {
+      "name": "Guilds",
+      "group": "Medieval",
+      "column": 6,
+      "cost": "16 turn",
+      "boost": "To Boost: Build 2 Markets."
+    },
+    {
+      "name": "Divine Right",
+      "group": "Medieval",
+      "column": 6,
+      "cost": "12 turn",
+      "boost": "To Boost: Build 2 Temples."
+    },
+    {
+      "name": "Exploration",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "16 turn",
+      "boost": "To Boost: Build 2 Caravels."
+    },
+    {
+      "name": "Humanism",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "21 turn",
+      "boost": "To Boost: Earn a Great Artist."
+    },
+    {
+      "name": "Diplomatic Service",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "21 turn",
+      "boost": "To Boost: Have an alliance with another civilization."
+    },
+    {
+      "name": "Reformed Church",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "16 turn",
+      "boost": "To Boost: Have 6 cities Following your Religion."
+    },
+    {
+      "name": "Mercantilism",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "28 turn",
+      "boost": "To Boost: Earn a Great Merchant."
+    },
+    {
+      "name": "The Enlightenment",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "28 turn",
+      "boost": "To Boost: Earn 3 Great People."
+    },
+    {
+      "name": "Colonialism",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "27 turn",
+      "boost": "To Boost: Research the Astronomy technology."
+    },
+    {
+      "name": "Civil Engineering",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "36 turn",
+      "boost": "To Boost: Build 7 different specialty districts."
+    },
+    {
+      "name": "Nationalism",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "36 turn",
+      "boost": "To Boost: Declare war using a casus belli."
+    },
+    {
+      "name": "Opera and Ballet",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "27 turn",
+      "boost": "To Boost: Have a themed Museum."
+    },
+    {
+      "name": "Natural History",
+      "group": "Industrial",
+      "column": 10,
+      "cost": "34 turn",
+      "boost": "To Boost: Build an Archaeological Museum."
+    },
+    {
+      "name": "Urbanization",
+      "group": "Industrial",
+      "column": 10,
+      "cost": "46 turn",
+      "boost": "To Boost: Grow a city to 15 population."
+    },
+    {
+      "name": "Scorched Earth",
+      "group": "Industrial",
+      "column": 10,
+      "cost": "46 turn",
+      "boost": "To Boost: Build 2 Field Cannons."
+    },
+    {
+      "name": "Conservation",
+      "group": "Modern",
+      "column": 11,
+      "cost": "42 turn",
+      "boost": "To Boost: Have a Neighborhood district with Breathtaking Appeal."
+    },
+    {
+      "name": "Mass Media",
+      "group": "Modern",
+      "column": 11,
+      "cost": "57 turn",
+      "boost": "To Boost: Research Radio."
+    },
+    {
+      "name": "Mobilization",
+      "group": "Modern",
+      "column": 11,
+      "cost": "57 turn",
+      "boost": "To Boost: Have 3 Corps in your army."
+    },
+    {
+      "name": "Capitalism",
+      "group": "Modern",
+      "column": 12,
+      "cost": "64 turn",
+      "boost": "To Boost: Build 3 Stock Exchanges."
+    },
+    {
+      "name": "Ideology",
+      "group": "Modern",
+      "column": 12,
+      "cost": "20 turn"
+    },
+    {
+      "name": "Nuclear Program",
+      "group": "Modern",
+      "column": 13,
+      "cost": "69 turn",
+      "boost": "To Boost: Build a Research Lab."
+    },
+    {
+      "name": "Suffrage",
+      "group": "Modern",
+      "column": 13,
+      "cost": "69 turn",
+      "boost": "To Boost: Build 4 Sewers."
+    },
+    {
+      "name": "Totalitarianism",
+      "group": "Modern",
+      "column": 13,
+      "cost": "69 turn",
+      "boost": "To Boost: Build 3 Military Academies."
+    },
+    {
+      "name": "Class Struggle",
+      "group": "Modern",
+      "column": 13,
+      "cost": "69 turn",
+      "boost": "To Boost: Build 3 Factories."
+    },
+    {
+      "name": "Cultural Heritage",
+      "group": "Atomic",
+      "column": 14,
+      "cost": "74 turn",
+      "boost": "To Boost: Have 3 Themed Museums."
+    },
+    {
+      "name": "Cold War",
+      "group": "Atomic",
+      "column": 14,
+      "cost": "83 turn",
+      "boost": "To Boost: Research the Nuclear Fission technology."
+    },
+    {
+      "name": "Professional Sports",
+      "group": "Atomic",
+      "column": 14,
+      "cost": "83 turn",
+      "boost": "To Boost: Build 4 Entertainment Complex districts."
+    },
+    {
+      "name": "Rapid Deployment",
+      "group": "Atomic",
+      "column": 15,
+      "cost": "99 turn",
+      "boost": "To Boost: Build an Aerodrome or Airstrip on a foreign continent."
+    },
+    {
+      "name": "Space Race",
+      "group": "Atomic",
+      "column": 15,
+      "cost": "99 turn",
+      "boost": "To Boost: Build a Spaceport district."
+    },
+    {
+      "name": "Globalization",
+      "group": "Information",
+      "column": 16,
+      "cost": "117 turn",
+      "boost": "To Boost: Build 3 Airports."
+    },
+    {
+      "name": "Social Media",
+      "group": "Information",
+      "column": 16,
+      "cost": "117 turn",
+      "boost": "To Boost: Research the Telecommunications technology."
+    }
+  ],
+  "links": [
+    {
+      "source": "Code of Laws",
+      "target": "Craftsmanship"
+    },
+    {
+      "source": "Code of Laws",
+      "target": "Foreign Trade"
+    },
+    {
+      "source": "Craftsmanship",
+      "target": "Military Tradition"
+    },
+    {
+      "source": "Craftsmanship",
+      "target": "State Workforce"
+    },
+    {
+      "source": "Foreign Trade",
+      "target": "Early Empire"
+    },
+    {
+      "source": "Foreign Trade",
+      "target": "Mysticism"
+    },
+    {
+      "source": "State Workforce",
+      "target": "Political Philosophy"
+    },
+    {
+      "source": "Early Empire",
+      "target": "Political Philosophy"
+    },
+    {
+      "source": "State Workforce",
+      "target": "Games and Recreation"
+    },
+    {
+      "source": "Early Empire",
+      "target": "Drama and Poetry"
+    },
+    {
+      "source": "Military Tradition",
+      "target": "Military Training"
+    },
+    {
+      "source": "Games and Recreation",
+      "target": "Military Training"
+    },
+    {
+      "source": "Games and Recreation",
+      "target": "Defensive Tactics"
+    },
+    {
+      "source": "Political Philosophy",
+      "target": "Defensive Tactics"
+    },
+    {
+      "source": "Political Philosophy",
+      "target": "Recorded History"
+    },
+    {
+      "source": "Drama and Poetry",
+      "target": "Recorded History"
+    },
+    {
+      "source": "Drama and Poetry",
+      "target": "Theology"
+    },
+    {
+      "source": "Mysticism",
+      "target": "Theology"
+    },
+    {
+      "source": "Defensive Tactics",
+      "target": "Naval Tradition"
+    },
+    {
+      "source": "Defensive Tactics",
+      "target": "Feudalism"
+    },
+    {
+      "source": "Defensive Tactics",
+      "target": "Civil Service"
+    },
+    {
+      "source": "Recorded History",
+      "target": "Civil Service"
+    },
+    {
+      "source": "Military Training",
+      "target": "Mercenaries"
+    },
+    {
+      "source": "Feudalism",
+      "target": "Mercenaries"
+    },
+    {
+      "source": "Feudalism",
+      "target": "Medieval Faires"
+    },
+    {
+      "source": "Feudalism",
+      "target": "Guilds"
+    },
+    {
+      "source": "Civil Service",
+      "target": "Guilds"
+    },
+    {
+      "source": "Civil Service",
+      "target": "Divine Right"
+    },
+    {
+      "source": "Theology",
+      "target": "Divine Right"
+    },
+    {
+      "source": "Mercenaries",
+      "target": "Exploration"
+    },
+    {
+      "source": "Medieval Faires",
+      "target": "Exploration"
+    },
+    {
+      "source": "Medieval Faires",
+      "target": "Humanism"
+    },
+    {
+      "source": "Guilds",
+      "target": "Diplomatic Service"
+    },
+    {
+      "source": "Divine Right",
+      "target": "Reformed Church"
+    },
+    {
+      "source": "Humanism",
+      "target": "Mercantilism"
+    },
+    {
+      "source": "Humanism",
+      "target": "The Enlightenment"
+    },
+    {
+      "source": "Diplomatic Service",
+      "target": "The Enlightenment"
+    },
+    {
+      "source": "Mercantilism",
+      "target": "Colonialism"
+    },
+    {
+      "source": "Mercantilism",
+      "target": "Civil Engineering"
+    },
+    {
+      "source": "The Enlightenment",
+      "target": "Nationalism"
+    },
+    {
+      "source": "The Enlightenment",
+      "target": "Opera and Ballet"
+    },
+    {
+      "source": "Colonialism",
+      "target": "Natural History"
+    },
+    {
+      "source": "Civil Engineering",
+      "target": "Urbanization"
+    },
+    {
+      "source": "Nationalism",
+      "target": "Urbanization"
+    },
+    {
+      "source": "Nationalism",
+      "target": "Scorched Earth"
+    },
+    {
+      "source": "Natural History",
+      "target": "Conservation"
+    },
+    {
+      "source": "Urbanization",
+      "target": "Mass Media"
+    },
+    {
+      "source": "Mass Media",
+      "target": "Capitalism"
+    },
+    {
+      "source": "Mass Media",
+      "target": "Ideology"
+    },
+    {
+      "source": "Mobilization",
+      "target": "Ideology"
+    },
+    {
+      "source": "Conservation",
+      "target": "Cultural Heritage"
+    },
+    {
+      "source": "Ideology",
+      "target": "Nuclear Program"
+    },
+    {
+      "source": "Ideology",
+      "target": "Suffrage"
+    },
+    {
+      "source": "Ideology",
+      "target": "Totalitarianism"
+    },
+    {
+      "source": "Ideology",
+      "target": "Class Struggle"
+    },
+    {
+      "source": "Ideology",
+      "target": "Cold War"
+    },
+    {
+      "source": "Ideology",
+      "target": "Professional Sports"
+    },
+    {
+      "source": "Cold War",
+      "target": "Rapid Deployment"
+    },
+    {
+      "source": "Cold War",
+      "target": "Space Race"
+    },
+    {
+      "source": "Rapid Deployment",
+      "target": "Globalization"
+    },
+    {
+      "source": "Space Race",
+      "target": "Globalization"
+    },
+    {
+      "source": "Space Race",
+      "target": "Social Media"
+    },
+    {
+      "source": "Professional Sports",
+      "target": "Social Media"
+    },
+    {
+      "source": "Urbanization",
+      "target": "Conservation"
+    },
+    {
+      "source": "Urbanization",
+      "target": "Mobilization"
+    }
+  ]
+}

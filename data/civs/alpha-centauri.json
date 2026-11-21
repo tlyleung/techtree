@@ -1,0 +1,1244 @@
+{
+  "game": "Sid Meier's Alpha Centauri",
+  "tree": "technology",
+  "groups": [
+    {
+      "name": "Explore"
+    },
+    {
+      "name": "Build"
+    },
+    {
+      "name": "Conquer"
+    },
+    {
+      "name": "Discover"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Centauri Ecology",
+      "group": "Explore",
+      "level": 1,
+      "unlocks": [
+        "Weapons: Terraforming Unit",
+        "Unit Types: Former",
+        "Base Facilities: The Weather Paradigm"
+      ]
+    },
+    {
+      "name": "Doctrine: Mobility",
+      "group": "Explore",
+      "level": 1,
+      "unlocks": [
+        "Chassis Types: Speeder (M2)",
+        "Base Facilities: Command Center"
+      ]
+    },
+    {
+      "name": "Social Psych",
+      "group": "Build",
+      "level": 1,
+      "unlocks": [
+        "Base Facilities: Recreation Commons"
+      ]
+    },
+    {
+      "name": "Applied Physics",
+      "group": "Conquer",
+      "level": 1,
+      "unlocks": [
+        "Weapons: Laser (A2)"
+      ]
+    },
+    {
+      "name": "Industrial Base",
+      "group": "Build",
+      "level": 1,
+      "unlocks": [
+        "Defenses: Synthmetal Armor (D2)",
+        "Base Facilities: The Merchant Exchange"
+      ]
+    },
+    {
+      "name": "Biogenetics",
+      "group": "Discover",
+      "level": 1,
+      "unlocks": [
+        "Base Facilities: Recycling Tanks, The Human Genome Project"
+      ]
+    },
+    {
+      "name": "Information Networks",
+      "group": "Discover",
+      "level": 1,
+      "unlocks": [
+        "Base Facilities: Network Node"
+      ]
+    },
+    {
+      "name": "Nonlinear Mathematics",
+      "group": "Conquer",
+      "level": 2,
+      "unlocks": [
+        "Weapons: Particle Impactor (A4)"
+      ]
+    },
+    {
+      "name": "High Energy Chemistry",
+      "group": "Conquer",
+      "level": 2,
+      "unlocks": [
+        "Defenses: Plasma Steel Armor (D3)",
+        "Abilities: Nerve Gas Pods"
+      ]
+    },
+    {
+      "name": "Secrets of the Human Brain",
+      "group": "Discover",
+      "level": 2,
+      "unlocks": [
+        "Abilities: Hypnotic Trance",
+        "Socio/Economic Model: Fundamentalist"
+      ]
+    },
+    {
+      "name": "Polymorphic Software",
+      "group": "Discover",
+      "level": 2,
+      "unlocks": [
+        "Abilities: Heavy Artillery"
+      ]
+    },
+    {
+      "name": "Planetary Networks",
+      "group": "Discover",
+      "level": 2,
+      "unlocks": [
+        "Weapons: Probe Team",
+        "Unit Types: Probe Team",
+        "Base Facilities: Hologram Theater, The Virtual World",
+        "Socio/Economic Model: Planned",
+        "Citizens: Librarian"
+      ]
+    },
+    {
+      "name": "Industrial Economics",
+      "group": "Build",
+      "level": 2,
+      "unlocks": [
+        "Base Facilities: Energy Bank",
+        "Socio/Economic Model: Free Market"
+      ]
+    },
+    {
+      "name": "Ethical Calculus",
+      "group": "Explore",
+      "level": 2,
+      "unlocks": [
+        "Base Facilities: Children's Creche",
+        "Socio/Economic Model: Democratic"
+      ]
+    },
+    {
+      "name": "Doctrine: Loyalty",
+      "group": "Conquer",
+      "level": 2,
+      "unlocks": [
+        "Base Facilities: Perimeter Defense, The Command Nexus",
+        "Socio/Economic Model: Police State"
+      ]
+    },
+    {
+      "name": "Doctrine: Flexibility",
+      "group": "Explore",
+      "level": 2,
+      "unlocks": [
+        "Chassis Types: Foil (M4)",
+        "Weapons: Troop Transport",
+        "Unit Types: Transport Foil",
+        "Base Facilities: Pressure Dome"
+      ]
+    },
+    {
+      "name": "Optical Computers",
+      "group": "Discover",
+      "level": 3
+    },
+    {
+      "name": "Advanced Subatomic Theory",
+      "group": "Discover",
+      "level": 3,
+      "unlocks": [
+        "Abilities: Comm Jammer",
+        "Base Facilities: Skunkworks"
+      ]
+    },
+    {
+      "name": "Gene Splicing",
+      "group": "Build",
+      "level": 3,
+      "unlocks": [
+        "Base Facilities: Research Hospital",
+        "Nutrient Restrictions Lifted"
+      ]
+    },
+    {
+      "name": "Industrial Automation",
+      "group": "Build",
+      "level": 3,
+      "unlocks": [
+        "Weapons: Supply Transport",
+        "Base Facilities: Hab Complex, The Planetary Transit System",
+        "Socio/Economic Model: Wealth"
+      ]
+    },
+    {
+      "name": "Intellectual Integrity",
+      "group": "Explore",
+      "level": 3,
+      "unlocks": [
+        "Abilities: High Morale, Non-Lethal Methods",
+        "Base Facilities: The Citizen's Defense Force"
+      ]
+    },
+    {
+      "name": "Centauri Empathy",
+      "group": "Explore",
+      "level": 3,
+      "unlocks": [
+        "Abilities: Empath Song",
+        "Unit Types: Mind Worms",
+        "Base Facilities: Biology Lab, The Empath Guild",
+        "Socio/Economic Model: Green"
+      ]
+    },
+    {
+      "name": "Superconductor",
+      "group": "Conquer",
+      "level": 4,
+      "unlocks": [
+        "Weapons: Gatling Laser (A5)"
+      ]
+    },
+    {
+      "name": "Silksteel Alloys",
+      "group": "Build",
+      "level": 4,
+      "unlocks": [
+        "Defenses: Silksteel Armor (D4)"
+      ]
+    },
+    {
+      "name": "Synthetic Fossil Fuels",
+      "group": "Explore",
+      "level": 4,
+      "unlocks": [
+        "Weapons: Missile Launcher (A6)",
+        "Abilities: Fungicide Tanks"
+      ]
+    },
+    {
+      "name": "Neural Grafting",
+      "group": "Conquer",
+      "level": 4,
+      "unlocks": [
+        "Base Facilities: Bioenhancement Center, The Neural Amplifier"
+      ]
+    },
+    {
+      "name": "Advanced Military Algorithms",
+      "group": "Conquer",
+      "level": 4,
+      "unlocks": [
+        "Base Facilities: Punishment Sphere",
+        "Abilities: Deep Radar, AAA Tracking",
+        "Socio/Economic Model: Power",
+        "Formers May Construct Bunkers"
+      ]
+    },
+    {
+      "name": "Cyberethics",
+      "group": "Build",
+      "level": 4,
+      "unlocks": [
+        "Base Facilities: The Planetary Datalinks",
+        "Socio/Economic Model: Knowledge"
+      ]
+    },
+    {
+      "name": "Doctrine: Initiative",
+      "group": "Explore",
+      "level": 4,
+      "unlocks": [
+        "Chassis Type: Cruiser (M6)",
+        "Abilities: Amphibious Pods",
+        "Base Facilities: Naval Yard, The Maritime Control Center"
+      ]
+    },
+    {
+      "name": "Ecological Engineering",
+      "group": "Explore",
+      "level": 4,
+      "unlocks": [
+        "Mineral Restrictions Lifted",
+        "Formers Can Execute Advanced Functions"
+      ]
+    },
+    {
+      "name": "Superstring Theory",
+      "group": "Conquer",
+      "level": 5,
+      "unlocks": [
+        "Weapons: Chaos Gun (A8)"
+      ]
+    },
+    {
+      "name": "Applied Relativity",
+      "group": "Discover",
+      "level": 5,
+      "unlocks": [
+        "Base Facilities: The Supercollider"
+      ]
+    },
+    {
+      "name": "Pre-Sentient Algorithms",
+      "group": "Discover",
+      "level": 5,
+      "unlocks": [
+        "Abilities: Polymorphic Encryption",
+        "Base Facilities: The Hunter-Seeker Algorithm"
+      ]
+    },
+    {
+      "name": "Bio-Engineering",
+      "group": "Build",
+      "level": 5,
+      "unlocks": [
+        "Base Facilities: The Longevity Vaccine",
+        "Abilities: Clean Reactor"
+      ]
+    },
+    {
+      "name": "Doctrine: Air Power",
+      "group": "Explore",
+      "level": 5,
+      "unlocks": [
+        "Chassis Type: Needlejet",
+        "Abilities: Air Superiority Ability",
+        "Base Facilities: Aerospace Complex",
+        "Formers May Construct Airbase"
+      ]
+    },
+    {
+      "name": "Environmental Economics",
+      "group": "Build",
+      "level": 5,
+      "unlocks": [
+        "Base Facilities: Tree Farm",
+        "Energy Restrictions Lifted",
+        "Formers Can Raise/Lower Terrain"
+      ]
+    },
+    {
+      "name": "Centauri Meditation",
+      "group": "Explore",
+      "level": 5,
+      "unlocks": [
+        "Unit Types: Isle of the Deep",
+        "Base Facilities: Centauri Preserve, The Xenoempathy Dome",
+        "Citizens: Empath"
+      ]
+    },
+    {
+      "name": "Monopole Magnets",
+      "group": "Build",
+      "level": 6,
+      "unlocks": [
+        "Formers Can Construct Mag Tubes"
+      ]
+    },
+    {
+      "name": "Photon/Wave Mechanics",
+      "group": "Conquer",
+      "level": 6,
+      "unlocks": [
+        "Defenses: Photon Wall (D5)"
+      ]
+    },
+    {
+      "name": "Fusion Power",
+      "group": "Discover",
+      "level": 6,
+      "unlocks": [
+        "Reactors: Fusion Reactor (x2)",
+        "Base Facilities: Fusion Lab",
+        "Citizens: Engineer"
+      ]
+    },
+    {
+      "name": "Orbital Spaceflight",
+      "group": "Discover",
+      "level": 6,
+      "unlocks": [
+        "Base Facilities: Sky Hydroponics Lab",
+        "Chassis Types: Missile Vehicle (M12)",
+        "Weapons: Planet Buster Missile Payload (A99), Conventional Missile Payload (A12)",
+        "Launch Satellite to Reveal Map"
+      ]
+    },
+    {
+      "name": "Retroviral Engineering",
+      "group": "Conquer",
+      "level": 6,
+      "unlocks": [
+        "Base Facilities: Genejack Factory",
+        "Gene Warfare Atrocity"
+      ]
+    },
+    {
+      "name": "Mind/Machine Interface",
+      "group": "Conquer",
+      "level": 6,
+      "unlocks": [
+        "Chassis Type: Copter (M8)",
+        "Abilities: Drop Pods",
+        "Base Facilities: The Cyborg Factory",
+        "Citizens: Thinker",
+        "Diplomatic Victory Enabled"
+      ]
+    },
+    {
+      "name": "Planetary Economics",
+      "group": "Build",
+      "level": 6,
+      "unlocks": [
+        "Base Facilities: Hybrid Forest, The Ascetic Virtues",
+        "Economic Victory Enabled"
+      ]
+    },
+    {
+      "name": "Unified Field Theory",
+      "group": "Conquer",
+      "level": 7,
+      "unlocks": [
+        "Weapons: Tachyon Bolt (A12)",
+        "Base Facilities: The Theory of Everything"
+      ]
+    },
+    {
+      "name": "Probability Mechanics",
+      "group": "Build",
+      "level": 7,
+      "unlocks": [
+        "Defenses: Probability Sheath (D8)",
+        "Base Facilities: Tachyon Field"
+      ]
+    },
+    {
+      "name": "Organic Superlubricant",
+      "group": "Conquer",
+      "level": 7,
+      "unlocks": [
+        "Weapons: Fusion Laser (A10)"
+      ]
+    },
+    {
+      "name": "Biomachinery",
+      "group": "Build",
+      "level": 7,
+      "unlocks": [
+        "Base Facilities: The Cloning Vats"
+      ]
+    },
+    {
+      "name": "Advanced Ecological Engineering",
+      "group": "Build",
+      "level": 7,
+      "unlocks": [
+        "Abilities: Super Former Ability",
+        "Formers Can Construct Soil Enrichers"
+      ]
+    },
+    {
+      "name": "Centauri Genetics",
+      "group": "Explore",
+      "level": 7,
+      "unlocks": [
+        "Base Facilities: The Pholus Mutagen",
+        "Unit Types: Locusts of Chiron"
+      ]
+    },
+    {
+      "name": "Nanometallurgy",
+      "group": "Explore",
+      "level": 8,
+      "unlocks": [
+        "Abilities: Deep Pressure Hull, Carrier Deck, Repair Bay"
+      ]
+    },
+    {
+      "name": "Nanominiaturization",
+      "group": "Build",
+      "level": 8,
+      "unlocks": [
+        "Chassis Types: Hovertank (M3)"
+      ]
+    },
+    {
+      "name": "Advanced Spaceflight",
+      "group": "Discover",
+      "level": 8,
+      "unlocks": [
+        "Weapons: Plasma Shard (A13)",
+        "Base Facilities: Orbital Power Transmitter, The Living Refinery"
+      ]
+    },
+    {
+      "name": "Homo Superior",
+      "group": "Explore",
+      "level": 8,
+      "unlocks": [
+        "Base Facilities: Nanohospital, The Universal Translator"
+      ]
+    },
+    {
+      "name": "Centauri Psi",
+      "group": "Explore",
+      "level": 8,
+      "unlocks": [
+        "Weapons: Psi Attack (A-Psi)",
+        "Various Fungus Restrictions Eased"
+      ]
+    },
+    {
+      "name": "Matter Compression",
+      "group": "Conquer",
+      "level": 9,
+      "unlocks": [
+        "Defenses: Neutronium Armor (D8)"
+      ]
+    },
+    {
+      "name": "Industrial Nanorobotics",
+      "group": "Build",
+      "level": 9,
+      "unlocks": [
+        "Base Facilities: Robotic Assembly Plant, The Nano Factory"
+      ]
+    },
+    {
+      "name": "The Will to Power",
+      "group": "Explore",
+      "level": 9,
+      "unlocks": [
+        "Base Facilities: The Dream Twister",
+        "Socio/Economic Model: Thought Control"
+      ]
+    },
+    {
+      "name": "Super Tensile Solids",
+      "group": "Build",
+      "level": 10,
+      "unlocks": [
+        "Base Facilities: Habitation Dome, The Space Elevator"
+      ]
+    },
+    {
+      "name": "Frictionless Surfaces",
+      "group": "Discover",
+      "level": 10,
+      "unlocks": [
+        "Abilities: Cloaking Device"
+      ]
+    },
+    {
+      "name": "Digital Sentience",
+      "group": "Discover",
+      "level": 10,
+      "unlocks": [
+        "Base Facilities: The Network Backbone",
+        "Socio/Economic Model: Cybernetic"
+      ]
+    },
+    {
+      "name": "The Secrets of Creation",
+      "group": "Discover",
+      "level": 10
+    },
+    {
+      "name": "Quantum Power",
+      "group": "Discover",
+      "level": 11,
+      "unlocks": [
+        "Reactors: Quantum Chamber (Rx3)",
+        "Base Facilities: Quantum Lab"
+      ]
+    },
+    {
+      "name": "Self-Aware Machines",
+      "group": "Discover",
+      "level": 11,
+      "unlocks": [
+        "Base Facilities: Nessus Mining Station, Orbital Defense Pod, The Self Aware Colony"
+      ]
+    },
+    {
+      "name": "Sentient Econometrics",
+      "group": "Explore",
+      "level": 11,
+      "unlocks": [
+        "Base Facilities: Paradise Garden"
+      ]
+    },
+    {
+      "name": "Quantum Machinery",
+      "group": "Build",
+      "level": 12,
+      "unlocks": [
+        "Weapons: Quantum Laser (A16)",
+        "Base Facilities: Quantum Converter"
+      ]
+    },
+    {
+      "name": "Singularity Mechanics",
+      "group": "Discover",
+      "level": 12,
+      "unlocks": [
+        "Reactors: Singularity Engine (Rx4)"
+      ]
+    },
+    {
+      "name": "Matter Editation",
+      "group": "Build",
+      "level": 12,
+      "unlocks": [
+        "Defenses: Antimatter Plate (D10)",
+        "Base Facilities: Nanoreplicator, Clinical Immortality"
+      ]
+    },
+    {
+      "name": "Eudaimonia",
+      "group": "Explore",
+      "level": 12,
+      "unlocks": [
+        "Defenses: Psi Defense (D-Psi)",
+        "Base Facilities: The Telepathic Matrix",
+        "Socio/Economic Model: Eudaimonic"
+      ]
+    },
+    {
+      "name": "Secrets of Alpha Centauri",
+      "group": "Discover",
+      "level": 12,
+      "unlocks": [
+        "Base Facilities: Temple of Planet",
+        "Citizens: Transcend",
+        "Reveals Map"
+      ]
+    },
+    {
+      "name": "Graviton Theory",
+      "group": "Explore",
+      "level": 13,
+      "unlocks": [
+        "Chassis Types: Gravship (M8)",
+        "Abilities: Antigrav Struts Ability",
+        "Orbital Insertions (w/Drop Pods)"
+      ]
+    },
+    {
+      "name": "Matter Transmission",
+      "group": "Build",
+      "level": 13,
+      "unlocks": [
+        "Base Facilities: The Bulk Matter Transmitter, Psi Gate",
+        "Abilities: Blink Displacer Ability"
+      ]
+    },
+    {
+      "name": "Applied Gravitonics",
+      "group": "Explore",
+      "level": 14,
+      "unlocks": [
+        "Weapons: Graviton Gun (A20)"
+      ]
+    },
+    {
+      "name": "Temporal Mechanics",
+      "group": "Build",
+      "level": 14,
+      "unlocks": [
+        "Defenses: Stasis Generator (D12)"
+      ]
+    },
+    {
+      "name": "Controlled Singularity",
+      "group": "Conquer",
+      "level": 15,
+      "unlocks": [
+        "Weapons: Singularity Laser (A24)",
+        "Base Facilities: The Singularity Inductor"
+      ]
+    },
+    {
+      "name": "Threshold of Transcendence",
+      "group": "Explore",
+      "level": 15,
+      "unlocks": [
+        "Base Facilities: The Voice of Planet, The Ascent to Transcendence"
+      ]
+    },
+    {
+      "name": "Transcendent Thought",
+      "group": "Discover",
+      "level": 16
+    }
+  ],
+  "links": [
+    {
+      "source": "Centauri Ecology",
+      "target": "Centauri Empathy"
+    },
+    {
+      "source": "Centauri Ecology",
+      "target": "Ecological Engineering"
+    },
+    {
+      "source": "Doctrine: Mobility",
+      "target": "Doctrine: Flexibility"
+    },
+    {
+      "source": "Doctrine: Mobility",
+      "target": "Doctrine: Loyalty"
+    },
+    {
+      "source": "Social Psych",
+      "target": "Ethical Calculus"
+    },
+    {
+      "source": "Social Psych",
+      "target": "Doctrine: Loyalty"
+    },
+    {
+      "source": "Social Psych",
+      "target": "Secrets of the Human Brain"
+    },
+    {
+      "source": "Applied Physics",
+      "target": "Nonlinear Mathematics"
+    },
+    {
+      "source": "Applied Physics",
+      "target": "High Energy Chemistry"
+    },
+    {
+      "source": "Applied Physics",
+      "target": "Optical Computers"
+    },
+    {
+      "source": "Industrial Base",
+      "target": "Superconductor"
+    },
+    {
+      "source": "Industrial Base",
+      "target": "High Energy Chemistry"
+    },
+    {
+      "source": "Industrial Base",
+      "target": "Polymorphic Software"
+    },
+    {
+      "source": "Industrial Base",
+      "target": "Industrial Economics"
+    },
+    {
+      "source": "Biogenetics",
+      "target": "Secrets of the Human Brain"
+    },
+    {
+      "source": "Biogenetics",
+      "target": "Gene Splicing"
+    },
+    {
+      "source": "Information Networks",
+      "target": "Nonlinear Mathematics"
+    },
+    {
+      "source": "Information Networks",
+      "target": "Polymorphic Software"
+    },
+    {
+      "source": "Information Networks",
+      "target": "Planetary Networks"
+    },
+    {
+      "source": "Nonlinear Mathematics",
+      "target": "Superstring Theory"
+    },
+    {
+      "source": "High Energy Chemistry",
+      "target": "Advanced Subatomic Theory"
+    },
+    {
+      "source": "High Energy Chemistry",
+      "target": "Synthetic Fossil Fuels"
+    },
+    {
+      "source": "Secrets of the Human Brain",
+      "target": "Neural Grafting"
+    },
+    {
+      "source": "Secrets of the Human Brain",
+      "target": "Centauri Empathy"
+    },
+    {
+      "source": "Polymorphic Software",
+      "target": "Advanced Subatomic Theory"
+    },
+    {
+      "source": "Polymorphic Software",
+      "target": "Optical Computers"
+    },
+    {
+      "source": "Planetary Networks",
+      "target": "Industrial Automation"
+    },
+    {
+      "source": "Planetary Networks",
+      "target": "Cyberethics"
+    },
+    {
+      "source": "Industrial Economics",
+      "target": "Industrial Automation"
+    },
+    {
+      "source": "Industrial Economics",
+      "target": "Environmental Economics"
+    },
+    {
+      "source": "Ethical Calculus",
+      "target": "Intellectual Integrity"
+    },
+    {
+      "source": "Ethical Calculus",
+      "target": "Gene Splicing"
+    },
+    {
+      "source": "Doctrine: Loyalty",
+      "target": "Intellectual Integrity"
+    },
+    {
+      "source": "Doctrine: Flexibility",
+      "target": "Advanced Military Algorithms"
+    },
+    {
+      "source": "Doctrine: Flexibility",
+      "target": "Doctrine: Initiative"
+    },
+    {
+      "source": "Doctrine: Flexibility",
+      "target": "Doctrine: Air Power"
+    },
+    {
+      "source": "Optical Computers",
+      "target": "Superconductor"
+    },
+    {
+      "source": "Optical Computers",
+      "target": "Advanced Military Algorithms"
+    },
+    {
+      "source": "Advanced Subatomic Theory",
+      "target": "Applied Relativity"
+    },
+    {
+      "source": "Advanced Subatomic Theory",
+      "target": "Silksteel Alloys"
+    },
+    {
+      "source": "Gene Splicing",
+      "target": "Synthetic Fossil Fuels"
+    },
+    {
+      "source": "Gene Splicing",
+      "target": "Bio-Engineering"
+    },
+    {
+      "source": "Gene Splicing",
+      "target": "Ecological Engineering"
+    },
+    {
+      "source": "Industrial Automation",
+      "target": "Silksteel Alloys"
+    },
+    {
+      "source": "Industrial Automation",
+      "target": "Doctrine: Initiative"
+    },
+    {
+      "source": "Industrial Automation",
+      "target": "Neural Grafting"
+    },
+    {
+      "source": "Industrial Automation",
+      "target": "Industrial Nanorobotics"
+    },
+    {
+      "source": "Intellectual Integrity",
+      "target": "Cyberethics"
+    },
+    {
+      "source": "Intellectual Integrity",
+      "target": "Planetary Economics"
+    },
+    {
+      "source": "Centauri Empathy",
+      "target": "Centauri Meditation"
+    },
+    {
+      "source": "Superconductor",
+      "target": "Applied Relativity"
+    },
+    {
+      "source": "Superconductor",
+      "target": "Fusion Power"
+    },
+    {
+      "source": "Silksteel Alloys",
+      "target": "Monopole Magnets"
+    },
+    {
+      "source": "Silksteel Alloys",
+      "target": "Photon/Wave Mechanics"
+    },
+    {
+      "source": "Synthetic Fossil Fuels",
+      "target": "Doctrine: Air Power"
+    },
+    {
+      "source": "Synthetic Fossil Fuels",
+      "target": "Organic Superlubricant"
+    },
+    {
+      "source": "Neural Grafting",
+      "target": "Mind/Machine Interface"
+    },
+    {
+      "source": "Neural Grafting",
+      "target": "Bio-Engineering"
+    },
+    {
+      "source": "Advanced Military Algorithms",
+      "target": "Pre-Sentient Algorithms"
+    },
+    {
+      "source": "Advanced Military Algorithms",
+      "target": "Retroviral Engineering"
+    },
+    {
+      "source": "Cyberethics",
+      "target": "Superstring Theory"
+    },
+    {
+      "source": "Cyberethics",
+      "target": "Pre-Sentient Algorithms"
+    },
+    {
+      "source": "Doctrine: Initiative",
+      "target": "Nanometallurgy"
+    },
+    {
+      "source": "Doctrine: Initiative",
+      "target": "Homo Superior"
+    },
+    {
+      "source": "Ecological Engineering",
+      "target": "Centauri Meditation"
+    },
+    {
+      "source": "Ecological Engineering",
+      "target": "Environmental Economics"
+    },
+    {
+      "source": "Superstring Theory",
+      "target": "Monopole Magnets"
+    },
+    {
+      "source": "Applied Relativity",
+      "target": "Unified Field Theory"
+    },
+    {
+      "source": "Applied Relativity",
+      "target": "Photon/Wave Mechanics"
+    },
+    {
+      "source": "Pre-Sentient Algorithms",
+      "target": "Fusion Power"
+    },
+    {
+      "source": "Pre-Sentient Algorithms",
+      "target": "Probability Mechanics"
+    },
+    {
+      "source": "Pre-Sentient Algorithms",
+      "target": "Orbital Spaceflight"
+    },
+    {
+      "source": "Bio-Engineering",
+      "target": "Retroviral Engineering"
+    },
+    {
+      "source": "Doctrine: Air Power",
+      "target": "Mind/Machine Interface"
+    },
+    {
+      "source": "Doctrine: Air Power",
+      "target": "Orbital Spaceflight"
+    },
+    {
+      "source": "Environmental Economics",
+      "target": "Planetary Economics"
+    },
+    {
+      "source": "Environmental Economics",
+      "target": "Advanced Ecological Engineering"
+    },
+    {
+      "source": "Centauri Meditation",
+      "target": "Centauri Genetics"
+    },
+    {
+      "source": "Monopole Magnets",
+      "target": "Unified Field Theory"
+    },
+    {
+      "source": "Monopole Magnets",
+      "target": "Nanominiaturization"
+    },
+    {
+      "source": "Photon/Wave Mechanics",
+      "target": "Probability Mechanics"
+    },
+    {
+      "source": "Fusion Power",
+      "target": "Advanced Ecological Engineering"
+    },
+    {
+      "source": "Fusion Power",
+      "target": "Organic Superlubricant"
+    },
+    {
+      "source": "Orbital Spaceflight",
+      "target": "Advanced Spaceflight"
+    },
+    {
+      "source": "Retroviral Engineering",
+      "target": "Biomachinery"
+    },
+    {
+      "source": "Retroviral Engineering",
+      "target": "Centauri Genetics"
+    },
+    {
+      "source": "Mind/Machine Interface",
+      "target": "Graviton Theory"
+    },
+    {
+      "source": "Mind/Machine Interface",
+      "target": "Digital Sentience"
+    },
+    {
+      "source": "Mind/Machine Interface",
+      "target": "Biomachinery"
+    },
+    {
+      "source": "Planetary Economics",
+      "target": "Quantum Power"
+    },
+    {
+      "source": "Planetary Economics",
+      "target": "Sentient Econometrics"
+    },
+    {
+      "source": "Unified Field Theory",
+      "target": "Frictionless Surfaces"
+    },
+    {
+      "source": "Unified Field Theory",
+      "target": "The Secrets of Creation"
+    },
+    {
+      "source": "Probability Mechanics",
+      "target": "Nanometallurgy"
+    },
+    {
+      "source": "Organic Superlubricant",
+      "target": "Nanominiaturization"
+    },
+    {
+      "source": "Organic Superlubricant",
+      "target": "Advanced Spaceflight"
+    },
+    {
+      "source": "Biomachinery",
+      "target": "Homo Superior"
+    },
+    {
+      "source": "Advanced Ecological Engineering",
+      "target": "Centauri Psi"
+    },
+    {
+      "source": "Centauri Genetics",
+      "target": "Centauri Psi"
+    },
+    {
+      "source": "Nanometallurgy",
+      "target": "Matter Compression"
+    },
+    {
+      "source": "Nanometallurgy",
+      "target": "Quantum Machinery"
+    },
+    {
+      "source": "Nanominiaturization",
+      "target": "Matter Compression"
+    },
+    {
+      "source": "Nanominiaturization",
+      "target": "Industrial Nanorobotics"
+    },
+    {
+      "source": "Advanced Spaceflight",
+      "target": "Super Tensile Solids"
+    },
+    {
+      "source": "Advanced Spaceflight",
+      "target": "Self-Aware Machines"
+    },
+    {
+      "source": "Homo Superior",
+      "target": "The Will to Power"
+    },
+    {
+      "source": "Centauri Psi",
+      "target": "The Will to Power"
+    },
+    {
+      "source": "Centauri Psi",
+      "target": "Secrets of Alpha Centauri"
+    },
+    {
+      "source": "Matter Compression",
+      "target": "Super Tensile Solids"
+    },
+    {
+      "source": "Industrial Nanorobotics",
+      "target": "Frictionless Surfaces"
+    },
+    {
+      "source": "Industrial Nanorobotics",
+      "target": "Digital Sentience"
+    },
+    {
+      "source": "The Will to Power",
+      "target": "Eudaimonia"
+    },
+    {
+      "source": "The Will to Power",
+      "target": "The Secrets of Creation"
+    },
+    {
+      "source": "Super Tensile Solids",
+      "target": "Matter Editation"
+    },
+    {
+      "source": "Frictionless Surfaces",
+      "target": "Quantum Power"
+    },
+    {
+      "source": "Digital Sentience",
+      "target": "Applied Gravitonics"
+    },
+    {
+      "source": "Digital Sentience",
+      "target": "Self-Aware Machines"
+    },
+    {
+      "source": "Digital Sentience",
+      "target": "Sentient Econometrics"
+    },
+    {
+      "source": "The Secrets of Creation",
+      "target": "Singularity Mechanics"
+    },
+    {
+      "source": "The Secrets of Creation",
+      "target": "Threshold of Transcendence"
+    },
+    {
+      "source": "Quantum Power",
+      "target": "Quantum Machinery"
+    },
+    {
+      "source": "Self-Aware Machines",
+      "target": "Singularity Mechanics"
+    },
+    {
+      "source": "Self-Aware Machines",
+      "target": "Matter Editation"
+    },
+    {
+      "source": "Sentient Econometrics",
+      "target": "Eudaimonia"
+    },
+    {
+      "source": "Sentient Econometrics",
+      "target": "Secrets of Alpha Centauri"
+    },
+    {
+      "source": "Quantum Machinery",
+      "target": "Graviton Theory"
+    },
+    {
+      "source": "Singularity Mechanics",
+      "target": "Controlled Singularity"
+    },
+    {
+      "source": "Matter Editation",
+      "target": "Matter Transmission"
+    },
+    {
+      "source": "Eudaimonia",
+      "target": "Temporal Mechanics"
+    },
+    {
+      "source": "Secrets of Alpha Centauri",
+      "target": "Matter Transmission"
+    },
+    {
+      "source": "Graviton Theory",
+      "target": "Applied Gravitonics"
+    },
+    {
+      "source": "Matter Transmission",
+      "target": "Temporal Mechanics"
+    },
+    {
+      "source": "Applied Gravitonics",
+      "target": "Controlled Singularity"
+    },
+    {
+      "source": "Temporal Mechanics",
+      "target": "Threshold of Transcendence"
+    },
+    {
+      "source": "Controlled Singularity",
+      "target": "Transcendent Thought"
+    },
+    {
+      "source": "Threshold of Transcendence",
+      "target": "Transcendent Thought"
+    }
+  ]
+}

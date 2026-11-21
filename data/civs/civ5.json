@@ -1,0 +1,894 @@
+{
+  "game": "Civilization V",
+  "tree": "technology",
+  "groups": [
+    {
+      "name": "Ancient"
+    },
+    {
+      "name": "Classical"
+    },
+    {
+      "name": "Medieval"
+    },
+    {
+      "name": "Renaissance"
+    },
+    {
+      "name": "Industrial"
+    },
+    {
+      "name": "Modern"
+    },
+    {
+      "name": "Future"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Agriculture",
+      "group": "Ancient",
+      "column": 0
+    },
+    {
+      "name": "Pottery",
+      "group": "Ancient",
+      "column": 1,
+      "cost": "4 Turns"
+    },
+    {
+      "name": "Animal Husbandry",
+      "group": "Ancient",
+      "column": 1,
+      "cost": "4 Turns"
+    },
+    {
+      "name": "Archery",
+      "group": "Ancient",
+      "column": 1,
+      "cost": "4 Turns"
+    },
+    {
+      "name": "Mining",
+      "group": "Ancient",
+      "column": 1,
+      "cost": "4 Turns"
+    },
+    {
+      "name": "Sailing",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "6 Turns"
+    },
+    {
+      "name": "Calendar",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "6 Turns"
+    },
+    {
+      "name": "Writing",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "6 Turns"
+    },
+    {
+      "name": "Trapping",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "6 Turns"
+    },
+    {
+      "name": "The Wheel",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "6 Turns"
+    },
+    {
+      "name": "Masonry",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "6 Turns"
+    },
+    {
+      "name": "Bronze Working",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "6 Turns"
+    },
+    {
+      "name": "Optics",
+      "group": "Classical",
+      "column": 3,
+      "cost": "10 Turns"
+    },
+    {
+      "name": "Philosophy",
+      "group": "Classical",
+      "column": 3,
+      "cost": "12 Turns"
+    },
+    {
+      "name": "Horseback Riding",
+      "group": "Classical",
+      "column": 3,
+      "cost": "12 Turns"
+    },
+    {
+      "name": "Mathematics",
+      "group": "Classical",
+      "column": 3,
+      "cost": "12 Turns"
+    },
+    {
+      "name": "Construction",
+      "group": "Classical",
+      "column": 3,
+      "cost": "12 Turns"
+    },
+    {
+      "name": "Iron Working",
+      "group": "Classical",
+      "column": 3,
+      "cost": "12 Turns"
+    },
+    {
+      "name": "Theology",
+      "group": "Medieval",
+      "column": 4,
+      "cost": "31 Turns"
+    },
+    {
+      "name": "Civil Service",
+      "group": "Medieval",
+      "column": 4,
+      "cost": "31 Turns"
+    },
+    {
+      "name": "Currency",
+      "group": "Medieval",
+      "column": 4,
+      "cost": "31 Turns"
+    },
+    {
+      "name": "Engineering",
+      "group": "Medieval",
+      "column": 4,
+      "cost": "31 Turns"
+    },
+    {
+      "name": "Metal Casting",
+      "group": "Medieval",
+      "column": 4,
+      "cost": "31 Turns"
+    },
+    {
+      "name": "Compass",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "42 Turns"
+    },
+    {
+      "name": "Education",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "54 Turns"
+    },
+    {
+      "name": "Chivalry",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "54 Turns"
+    },
+    {
+      "name": "Machinery",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "54 Turns"
+    },
+    {
+      "name": "Physics",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "54 Turns"
+    },
+    {
+      "name": "Steel",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "54 Turns"
+    },
+    {
+      "name": "Astronomy",
+      "group": "Renaissance",
+      "column": 6,
+      "cost": "86 Turns"
+    },
+    {
+      "name": "Acoustics",
+      "group": "Renaissance",
+      "column": 6,
+      "cost": "86 Turns"
+    },
+    {
+      "name": "Banking",
+      "group": "Renaissance",
+      "column": 6,
+      "cost": "86 Turns"
+    },
+    {
+      "name": "Printing Press",
+      "group": "Renaissance",
+      "column": 6,
+      "cost": "86 Turns"
+    },
+    {
+      "name": "Gunpowder",
+      "group": "Renaissance",
+      "column": 6,
+      "cost": "86 Turns"
+    },
+    {
+      "name": "Navigation",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "127 Turns"
+    },
+    {
+      "name": "Economics",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "127 Turns"
+    },
+    {
+      "name": "Chemistry",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "127 Turns"
+    },
+    {
+      "name": "Metallurgy",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "127 Turns"
+    },
+    {
+      "name": "Archaeology",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "176 Turns"
+    },
+    {
+      "name": "Scientific Theory",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "176 Turns"
+    },
+    {
+      "name": "Military Science",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "176 Turns"
+    },
+    {
+      "name": "Fertilizer",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "176 Turns"
+    },
+    {
+      "name": "Rifling",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "176 Turns"
+    },
+    {
+      "name": "Biology",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "259 Turns"
+    },
+    {
+      "name": "Steam Power",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "259 Turns"
+    },
+    {
+      "name": "Dynamite",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "259 Turns"
+    },
+    {
+      "name": "Electricity",
+      "group": "Industrial",
+      "column": 10,
+      "cost": "341 Turns"
+    },
+    {
+      "name": "Replaceable Parts",
+      "group": "Industrial",
+      "column": 10,
+      "cost": "341 Turns"
+    },
+    {
+      "name": "Railroad",
+      "group": "Industrial",
+      "column": 10,
+      "cost": "341 Turns"
+    },
+    {
+      "name": "Refrigeration",
+      "group": "Industrial",
+      "column": 11,
+      "cost": "451 Turns"
+    },
+    {
+      "name": "Telegraph",
+      "group": "Industrial",
+      "column": 11,
+      "cost": "451 Turns"
+    },
+    {
+      "name": "Radio",
+      "group": "Industrial",
+      "column": 11,
+      "cost": "451 Turns"
+    },
+    {
+      "name": "Flight",
+      "group": "Industrial",
+      "column": 11,
+      "cost": "451 Turns"
+    },
+    {
+      "name": "Combustion",
+      "group": "Industrial",
+      "column": 11,
+      "cost": "451 Turns"
+    },
+    {
+      "name": "Penicillin",
+      "group": "Modern",
+      "column": 12,
+      "cost": "561 Turns"
+    },
+    {
+      "name": "Plastics",
+      "group": "Modern",
+      "column": 12,
+      "cost": "561 Turns"
+    },
+    {
+      "name": "Electronics",
+      "group": "Modern",
+      "column": 12,
+      "cost": "561 Turns"
+    },
+    {
+      "name": "Mass Media",
+      "group": "Modern",
+      "column": 12,
+      "cost": "561 Turns"
+    },
+    {
+      "name": "Radar",
+      "group": "Modern",
+      "column": 12,
+      "cost": "561 Turns"
+    },
+    {
+      "name": "Atomic Theory",
+      "group": "Modern",
+      "column": 12,
+      "cost": "561 Turns"
+    },
+    {
+      "name": "Ecology",
+      "group": "Modern",
+      "column": 13,
+      "cost": "704 Turns"
+    },
+    {
+      "name": "Computers",
+      "group": "Modern",
+      "column": 13,
+      "cost": "704 Turns"
+    },
+    {
+      "name": "Rocketry",
+      "group": "Modern",
+      "column": 13,
+      "cost": "704 Turns"
+    },
+    {
+      "name": "Lasers",
+      "group": "Modern",
+      "column": 13,
+      "cost": "704 Turns"
+    },
+    {
+      "name": "Nuclear Fission",
+      "group": "Modern",
+      "column": 13,
+      "cost": "704 Turns"
+    },
+    {
+      "name": "Globalization",
+      "group": "Modern",
+      "column": 14,
+      "cost": "1045 Turns"
+    },
+    {
+      "name": "Robotics",
+      "group": "Modern",
+      "column": 14,
+      "cost": "847 Turns"
+    },
+    {
+      "name": "Satellites",
+      "group": "Modern",
+      "column": 14,
+      "cost": "847 Turns"
+    },
+    {
+      "name": "Stealth",
+      "group": "Modern",
+      "column": 14,
+      "cost": "847 Turns"
+    },
+    {
+      "name": "Advanced Ballistics",
+      "group": "Modern",
+      "column": 14,
+      "cost": "847 Turns"
+    },
+    {
+      "name": "Particle Physics",
+      "group": "Future",
+      "column": 15,
+      "cost": "968 Turns"
+    },
+    {
+      "name": "Nuclear Fusion",
+      "group": "Future",
+      "column": 15,
+      "cost": "968 Turns"
+    },
+    {
+      "name": "Nanotechnology",
+      "group": "Future",
+      "column": 16,
+      "cost": "1045 Turns"
+    },
+    {
+      "name": "Future Tech",
+      "group": "Future",
+      "column": 17,
+      "cost": "1045 Turns"
+    }
+  ],
+  "links": [
+    {
+      "source": "Agriculture",
+      "target": "Pottery"
+    },
+    {
+      "source": "Agriculture",
+      "target": "Animal Husbandry"
+    },
+    {
+      "source": "Agriculture",
+      "target": "Archery"
+    },
+    {
+      "source": "Agriculture",
+      "target": "Mining"
+    },
+    {
+      "source": "Pottery",
+      "target": "Sailing"
+    },
+    {
+      "source": "Pottery",
+      "target": "Calendar"
+    },
+    {
+      "source": "Pottery",
+      "target": "Writing"
+    },
+    {
+      "source": "Animal Husbandry",
+      "target": "Trapping"
+    },
+    {
+      "source": "Animal Husbandry",
+      "target": "The Wheel"
+    },
+    {
+      "source": "Archery",
+      "target": "Mathematics"
+    },
+    {
+      "source": "Mining",
+      "target": "Masonry"
+    },
+    {
+      "source": "Mining",
+      "target": "Bronze Working"
+    },
+    {
+      "source": "Sailing",
+      "target": "Optics"
+    },
+    {
+      "source": "Calendar",
+      "target": "Theology"
+    },
+    {
+      "source": "Writing",
+      "target": "Philosophy"
+    },
+    {
+      "source": "Trapping",
+      "target": "Civil Service"
+    },
+    {
+      "source": "The Wheel",
+      "target": "Horseback Riding"
+    },
+    {
+      "source": "The Wheel",
+      "target": "Mathematics"
+    },
+    {
+      "source": "Masonry",
+      "target": "Construction"
+    },
+    {
+      "source": "Bronze Working",
+      "target": "Iron Working"
+    },
+    {
+      "source": "Optics",
+      "target": "Compass"
+    },
+    {
+      "source": "Philosophy",
+      "target": "Theology"
+    },
+    {
+      "source": "Philosophy",
+      "target": "Civil Service"
+    },
+    {
+      "source": "Horseback Riding",
+      "target": "Chivalry"
+    },
+    {
+      "source": "Mathematics",
+      "target": "Currency"
+    },
+    {
+      "source": "Mathematics",
+      "target": "Engineering"
+    },
+    {
+      "source": "Construction",
+      "target": "Engineering"
+    },
+    {
+      "source": "Iron Working",
+      "target": "Metal Casting"
+    },
+    {
+      "source": "Theology",
+      "target": "Education"
+    },
+    {
+      "source": "Civil Service",
+      "target": "Education"
+    },
+    {
+      "source": "Civil Service",
+      "target": "Chivalry"
+    },
+    {
+      "source": "Currency",
+      "target": "Chivalry"
+    },
+    {
+      "source": "Engineering",
+      "target": "Machinery"
+    },
+    {
+      "source": "Engineering",
+      "target": "Physics"
+    },
+    {
+      "source": "Metal Casting",
+      "target": "Physics"
+    },
+    {
+      "source": "Metal Casting",
+      "target": "Steel"
+    },
+    {
+      "source": "Compass",
+      "target": "Astronomy"
+    },
+    {
+      "source": "Education",
+      "target": "Astronomy"
+    },
+    {
+      "source": "Education",
+      "target": "Acoustics"
+    },
+    {
+      "source": "Chivalry",
+      "target": "Banking"
+    },
+    {
+      "source": "Machinery",
+      "target": "Printing Press"
+    },
+    {
+      "source": "Physics",
+      "target": "Printing Press"
+    },
+    {
+      "source": "Physics",
+      "target": "Gunpowder"
+    },
+    {
+      "source": "Steel",
+      "target": "Gunpowder"
+    },
+    {
+      "source": "Astronomy",
+      "target": "Navigation"
+    },
+    {
+      "source": "Acoustics",
+      "target": "Scientific Theory"
+    },
+    {
+      "source": "Banking",
+      "target": "Economics"
+    },
+    {
+      "source": "Printing Press",
+      "target": "Economics"
+    },
+    {
+      "source": "Gunpowder",
+      "target": "Chemistry"
+    },
+    {
+      "source": "Gunpowder",
+      "target": "Metallurgy"
+    },
+    {
+      "source": "Navigation",
+      "target": "Archaeology"
+    },
+    {
+      "source": "Navigation",
+      "target": "Scientific Theory"
+    },
+    {
+      "source": "Economics",
+      "target": "Scientific Theory"
+    },
+    {
+      "source": "Economics",
+      "target": "Military Science"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Military Science"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Fertilizer"
+    },
+    {
+      "source": "Metallurgy",
+      "target": "Rifling"
+    },
+    {
+      "source": "Archaeology",
+      "target": "Biology"
+    },
+    {
+      "source": "Scientific Theory",
+      "target": "Biology"
+    },
+    {
+      "source": "Scientific Theory",
+      "target": "Steam Power"
+    },
+    {
+      "source": "Military Science",
+      "target": "Steam Power"
+    },
+    {
+      "source": "Fertilizer",
+      "target": "Dynamite"
+    },
+    {
+      "source": "Rifling",
+      "target": "Dynamite"
+    },
+    {
+      "source": "Biology",
+      "target": "Electricity"
+    },
+    {
+      "source": "Steam Power",
+      "target": "Electricity"
+    },
+    {
+      "source": "Steam Power",
+      "target": "Replaceable Parts"
+    },
+    {
+      "source": "Steam Power",
+      "target": "Railroad"
+    },
+    {
+      "source": "Electricity",
+      "target": "Refrigeration"
+    },
+    {
+      "source": "Electricity",
+      "target": "Telegraph"
+    },
+    {
+      "source": "Electricity",
+      "target": "Radio"
+    },
+    {
+      "source": "Replaceable Parts",
+      "target": "Flight"
+    },
+    {
+      "source": "Replaceable Parts",
+      "target": "Combustion"
+    },
+    {
+      "source": "Railroad",
+      "target": "Combustion"
+    },
+    {
+      "source": "Refrigeration",
+      "target": "Penicillin"
+    },
+    {
+      "source": "Refrigeration",
+      "target": "Plastics"
+    },
+    {
+      "source": "Telegraph",
+      "target": "Electronics"
+    },
+    {
+      "source": "Radio",
+      "target": "Mass Media"
+    },
+    {
+      "source": "Radio",
+      "target": "Radar"
+    },
+    {
+      "source": "Flight",
+      "target": "Radar"
+    },
+    {
+      "source": "Combustion",
+      "target": "Atomic Theory"
+    },
+    {
+      "source": "Penicillin",
+      "target": "Ecology"
+    },
+    {
+      "source": "Plastics",
+      "target": "Ecology"
+    },
+    {
+      "source": "Electronics",
+      "target": "Computers"
+    },
+    {
+      "source": "Mass Media",
+      "target": "Computers"
+    },
+    {
+      "source": "Radar",
+      "target": "Rocketry"
+    },
+    {
+      "source": "Radar",
+      "target": "Lasers"
+    },
+    {
+      "source": "Atomic Theory",
+      "target": "Nuclear Fission"
+    },
+    {
+      "source": "Ecology",
+      "target": "Globalization"
+    },
+    {
+      "source": "Computers",
+      "target": "Globalization"
+    },
+    {
+      "source": "Computers",
+      "target": "Robotics"
+    },
+    {
+      "source": "Rocketry",
+      "target": "Satellites"
+    },
+    {
+      "source": "Lasers",
+      "target": "Stealth"
+    },
+    {
+      "source": "Lasers",
+      "target": "Advanced Ballistics"
+    },
+    {
+      "source": "Nuclear Fission",
+      "target": "Advanced Ballistics"
+    },
+    {
+      "source": "Robotics",
+      "target": "Particle Physics"
+    },
+    {
+      "source": "Satellites",
+      "target": "Particle Physics"
+    },
+    {
+      "source": "Satellites",
+      "target": "Nuclear Fusion"
+    },
+    {
+      "source": "Stealth",
+      "target": "Nuclear Fusion"
+    },
+    {
+      "source": "Advanced Ballistics",
+      "target": "Nuclear Fusion"
+    },
+    {
+      "source": "Particle Physics",
+      "target": "Nanotechnology"
+    },
+    {
+      "source": "Globalization",
+      "target": "Future Tech"
+    },
+    {
+      "source": "Nanotechnology",
+      "target": "Future Tech"
+    },
+    {
+      "source": "Nuclear Fusion",
+      "target": "Future Tech"
+    },
+    {
+      "source": "Education",
+      "target": "Banking"
+    },
+    {
+      "source": "Dynamite",
+      "target": "Combustion"
+    }
+  ]
+}

@@ -1,0 +1,854 @@
+{
+  "game": "Civilization VI",
+  "tree": "technology",
+  "groups": [
+    {
+      "name": "Ancient"
+    },
+    {
+      "name": "Classical"
+    },
+    {
+      "name": "Medieval"
+    },
+    {
+      "name": "Renaissance"
+    },
+    {
+      "name": "Industrial"
+    },
+    {
+      "name": "Modern"
+    },
+    {
+      "name": "Atomic"
+    },
+    {
+      "name": "Information"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Pottery",
+      "group": "Ancient",
+      "column": 0
+    },
+    {
+      "name": "Animal Husbandry",
+      "group": "Ancient",
+      "column": 0
+    },
+    {
+      "name": "Mining",
+      "group": "Ancient",
+      "column": 0,
+      "cost": "4 turn"
+    },
+    {
+      "name": "Sailing",
+      "group": "Ancient",
+      "column": 1,
+      "boost": "To Boost: Found a city on the Coast."
+    },
+    {
+      "name": "Astrology",
+      "group": "Ancient",
+      "column": 1,
+      "boost": "BOOSTED: Find a natural wonder."
+    },
+    {
+      "name": "Irrigation",
+      "group": "Ancient",
+      "column": 1,
+      "cost": "8 turn",
+      "boost": "To Boost: Farm a resource."
+    },
+    {
+      "name": "Writing",
+      "group": "Ancient",
+      "column": 1,
+      "cost": "4 turn",
+      "boost": "BOOSTED: Meet another civilization."
+    },
+    {
+      "name": "Archery",
+      "group": "Ancient",
+      "column": 1,
+      "cost": "8 turn",
+      "boost": "To Boost: Kill a unit with a Slinger."
+    },
+    {
+      "name": "Masonry",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "12 turn",
+      "boost": "To Boost: Build a Quarry."
+    },
+    {
+      "name": "Bronze Working",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "12 turn",
+      "boost": "To Boost: Kill 3 Barbarians."
+    },
+    {
+      "name": "Wheel",
+      "group": "Ancient",
+      "column": 2,
+      "cost": "12 turn",
+      "boost": "To Boost: Mine a resource."
+    },
+    {
+      "name": "Celestial Navigation",
+      "group": "Classical",
+      "column": 3,
+      "cost": "12 turn",
+      "boost": "To Boost: Improve 2 sea resources."
+    },
+    {
+      "name": "Currency",
+      "group": "Classical",
+      "column": 3,
+      "cost": "6 turn",
+      "boost": "BOOSTED: Make a Trade Route."
+    },
+    {
+      "name": "Horseback Riding",
+      "group": "Classical",
+      "column": 3,
+      "cost": "6 turn",
+      "boost": "BOOSTED: Build a Pasture."
+    },
+    {
+      "name": "Iron Working",
+      "group": "Classical",
+      "column": 3,
+      "cost": "12 turn",
+      "boost": "To Boost: Build an Iron Mine."
+    },
+    {
+      "name": "Shipbuilding",
+      "group": "Classical",
+      "column": 4,
+      "cost": "9 turn",
+      "boost": "To Boost: Own 2 Galleys."
+    },
+    {
+      "name": "Mathematics",
+      "group": "Classical",
+      "column": 4,
+      "cost": "9 turn",
+      "boost": "To Boost: Build 3 different specialty districts."
+    },
+    {
+      "name": "Construction",
+      "group": "Classical",
+      "column": 4,
+      "cost": "9 turn",
+      "boost": "To Boost: Build a Water Mill."
+    },
+    {
+      "name": "Engineering",
+      "group": "Classical",
+      "column": 4,
+      "cost": "5 turn",
+      "boost": "BOOSTED: Build Ancient Walls."
+    },
+    {
+      "name": "Military Tactics",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "13 turn",
+      "boost": "To Boost: Kill a unit with a Spearman."
+    },
+    {
+      "name": "Apprenticeship",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "13 turn",
+      "boost": "To Boost: Build 3 Mines."
+    },
+    {
+      "name": "Stirrups",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "13 turn",
+      "boost": "To Boost: Have the Feudalism civic."
+    },
+    {
+      "name": "Machinery",
+      "group": "Medieval",
+      "column": 5,
+      "cost": "13 turn",
+      "boost": "To Boost: Own 3 Archers."
+    },
+    {
+      "name": "Education",
+      "group": "Medieval",
+      "column": 6,
+      "cost": "35 turn",
+      "boost": "To Boost: Earn a Great Scientist."
+    },
+    {
+      "name": "Military Engineering",
+      "group": "Medieval",
+      "column": 6,
+      "cost": "35 turn",
+      "boost": "To Boost: Build an Aqueduct."
+    },
+    {
+      "name": "Castles",
+      "group": "Medieval",
+      "column": 6,
+      "cost": "35 turn",
+      "boost": "To Boost: Have a government with 6 policy slots."
+    },
+    {
+      "name": "Cartography",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "9 turn",
+      "boost": "To Boost: Build 2 Harbors."
+    },
+    {
+      "name": "Mass Production",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "9 turn",
+      "boost": "To Boost: Build a Lumber Mill."
+    },
+    {
+      "name": "Banking",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "9 turn",
+      "boost": "To Boost: Have the Guilds civic."
+    },
+    {
+      "name": "Gunpowder",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "9 turn",
+      "boost": "To Boost: Build an Armory."
+    },
+    {
+      "name": "Printing",
+      "group": "Renaissance",
+      "column": 7,
+      "cost": "9 turn",
+      "boost": "To Boost: Build 2 Universities."
+    },
+    {
+      "name": "Square Rigging",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "25 turn",
+      "boost": "To Boost: Kill a unit with a Musketman."
+    },
+    {
+      "name": "Astronomy",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "25 turn",
+      "boost": "To Boost: Build a University adjacent to a Mountain."
+    },
+    {
+      "name": "Metal Casting",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "25 turn",
+      "boost": "To Boost: Own 2 Crossbowman."
+    },
+    {
+      "name": "Siege Tactics",
+      "group": "Renaissance",
+      "column": 8,
+      "cost": "25 turn",
+      "boost": "To Boost: Own 2 Bombards."
+    },
+    {
+      "name": "Industrialization",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "30 turn",
+      "boost": "To Boost: Build 3 Workshops."
+    },
+    {
+      "name": "Scientific Theory",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "30 turn",
+      "boost": "To Boost: Have The Enlightenment civic."
+    },
+    {
+      "name": "Ballistics",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "30 turn",
+      "boost": "To Boost: Have 2 Forts in your territory."
+    },
+    {
+      "name": "Military Science",
+      "group": "Industrial",
+      "column": 9,
+      "cost": "30 turn",
+      "boost": "To Boost: Kill a unit with a Knight."
+    },
+    {
+      "name": "Steam Power",
+      "group": "Industrial",
+      "column": 10,
+      "cost": "36 turn",
+      "boost": "To Boost: Build 2 Shipyards."
+    },
+    {
+      "name": "Sanitation",
+      "group": "Industrial",
+      "column": 10,
+      "cost": "36 turn",
+      "boost": "To Boost: Build 2 Neighborhoods."
+    },
+    {
+      "name": "Economics",
+      "group": "Industrial",
+      "column": 10,
+      "cost": "36 turn",
+      "boost": "To Boost: Build 2 Banks."
+    },
+    {
+      "name": "Rifling",
+      "group": "Industrial",
+      "column": 10,
+      "cost": "36 turn",
+      "boost": "To Boost: Build a Niter Mine."
+    },
+    {
+      "name": "Flight",
+      "group": "Modern",
+      "column": 11,
+      "cost": "35 turn",
+      "boost": "To Boost: Build an Industrial era or later wonder."
+    },
+    {
+      "name": "Replaceable Parts",
+      "group": "Modern",
+      "column": 11,
+      "cost": "35 turn",
+      "boost": "To Boost: Own 3 Musketman."
+    },
+    {
+      "name": "Steel",
+      "group": "Modern",
+      "column": 11,
+      "cost": "35 turn",
+      "boost": "To Boost: Build a Coal Mine."
+    },
+    {
+      "name": "Electricity",
+      "group": "Modern",
+      "column": 12,
+      "cost": "42 turn",
+      "boost": "To Boost: Own 3 Privateers."
+    },
+    {
+      "name": "Radio",
+      "group": "Modern",
+      "column": 12,
+      "cost": "42 turn",
+      "boost": "To Boost: Build a National Park."
+    },
+    {
+      "name": "Chemistry",
+      "group": "Modern",
+      "column": 12,
+      "cost": "42 turn",
+      "boost": "To Boost: Complete a Research Agreement."
+    },
+    {
+      "name": "Combustion",
+      "group": "Modern",
+      "column": 12,
+      "cost": "42 turn",
+      "boost": "To Boost: Extract an Artifact."
+    },
+    {
+      "name": "Advanced Flight",
+      "group": "Atomic",
+      "column": 13,
+      "cost": "50 turn",
+      "boost": "To Boost: Build 3 Biplanes."
+    },
+    {
+      "name": "Rocketry",
+      "group": "Atomic",
+      "column": 13,
+      "cost": "50 turn",
+      "boost": "To Boost: Boost only through Great Scientist or Spy."
+    },
+    {
+      "name": "Advanced Ballistics",
+      "group": "Atomic",
+      "column": 13,
+      "cost": "50 turn",
+      "boost": "To Boost: Build 2 Power Plants."
+    },
+    {
+      "name": "Combined Arms",
+      "group": "Atomic",
+      "column": 13,
+      "cost": "50 turn",
+      "boost": "To Boost: Build an Airstrip."
+    },
+    {
+      "name": "Plastics",
+      "group": "Atomic",
+      "column": 13,
+      "cost": "50 turn",
+      "boost": "To Boost: Build an Oil Well."
+    },
+    {
+      "name": "Computers",
+      "group": "Atomic",
+      "column": 14,
+      "cost": "58 turn",
+      "boost": "To Boost: Have a government with 8 policy slots."
+    },
+    {
+      "name": "Nuclear Fission",
+      "group": "Atomic",
+      "column": 14,
+      "cost": "58 turn",
+      "boost": "To Boost: Boost only through Great Scientist or Spy."
+    },
+    {
+      "name": "Synthetic Materials",
+      "group": "Atomic",
+      "column": 14,
+      "cost": "58 turn",
+      "boost": "To Boost: Build 2 Aerodromes."
+    },
+    {
+      "name": "Telecommunications",
+      "group": "Information",
+      "column": 15,
+      "cost": "68 turn",
+      "boost": "To Boost: Build 2 Broadcast Centers."
+    },
+    {
+      "name": "Satellites",
+      "group": "Information",
+      "column": 15,
+      "cost": "68 turn",
+      "boost": "To Boost: Boost only through Great Scientist or Spy."
+    },
+    {
+      "name": "Guidance Systems",
+      "group": "Information",
+      "column": 15,
+      "cost": "68 turn",
+      "boost": "To Boost: Kill a Fighter."
+    },
+    {
+      "name": "Lasers",
+      "group": "Information",
+      "column": 15,
+      "cost": "68 turn",
+      "boost": "To Boost: Boost only through Great Scientist or Spy."
+    },
+    {
+      "name": "Composites",
+      "group": "Information",
+      "column": 15,
+      "cost": "68 turn",
+      "boost": "To Boost: Own 3 Tanks."
+    },
+    {
+      "name": "Stealth Technology",
+      "group": "Information",
+      "column": 15,
+      "cost": "68 turn",
+      "boost": "To Boost: Boost only through Great Scientist or Spy."
+    },
+    {
+      "name": "Robotics",
+      "group": "Information",
+      "column": 16,
+      "cost": "80 turn",
+      "boost": "To Boost: Have the Globalization civic."
+    },
+    {
+      "name": "Nuclear Fusion",
+      "group": "Information",
+      "column": 16,
+      "cost": "80 turn",
+      "boost": "To Boost: Boost only through Great Scientist or Spy."
+    },
+    {
+      "name": "Nanotechnology",
+      "group": "Information",
+      "column": 16,
+      "cost": "80 turn",
+      "boost": "To Boost: Build an Aluminium Mine."
+    },
+    {
+      "name": "Future Tech",
+      "group": "Information",
+      "column": 17,
+      "cost": "91 turn"
+    }
+  ],
+  "links": [
+    {
+      "source": "Pottery",
+      "target": "Irrigation"
+    },
+    {
+      "source": "Pottery",
+      "target": "Writing"
+    },
+    {
+      "source": "Animal Husbandry",
+      "target": "Archery"
+    },
+    {
+      "source": "Animal Husbandry",
+      "target": "Horseback Riding"
+    },
+    {
+      "source": "Mining",
+      "target": "Masonry"
+    },
+    {
+      "source": "Mining",
+      "target": "Bronze Working"
+    },
+    {
+      "source": "Mining",
+      "target": "Wheel"
+    },
+    {
+      "source": "Sailing",
+      "target": "Shipbuilding"
+    },
+    {
+      "source": "Sailing",
+      "target": "Celestial Navigation"
+    },
+    {
+      "source": "Astrology",
+      "target": "Celestial Navigation"
+    },
+    {
+      "source": "Writing",
+      "target": "Currency"
+    },
+    {
+      "source": "Bronze Working",
+      "target": "Iron Working"
+    },
+    {
+      "source": "Currency",
+      "target": "Mathematics"
+    },
+    {
+      "source": "Currency",
+      "target": "Apprenticeship"
+    },
+    {
+      "source": "Horseback Riding",
+      "target": "Apprenticeship"
+    },
+    {
+      "source": "Horseback Riding",
+      "target": "Stirrups"
+    },
+    {
+      "source": "Horseback Riding",
+      "target": "Construction"
+    },
+    {
+      "source": "Masonry",
+      "target": "Construction"
+    },
+    {
+      "source": "Wheel",
+      "target": "Engineering"
+    },
+    {
+      "source": "Mathematics",
+      "target": "Military Tactics"
+    },
+    {
+      "source": "Mathematics",
+      "target": "Education"
+    },
+    {
+      "source": "Apprenticeship",
+      "target": "Education"
+    },
+    {
+      "source": "Construction",
+      "target": "Military Engineering"
+    },
+    {
+      "source": "Construction",
+      "target": "Castles"
+    },
+    {
+      "source": "Iron Working",
+      "target": "Machinery"
+    },
+    {
+      "source": "Engineering",
+      "target": "Machinery"
+    },
+    {
+      "source": "Shipbuilding",
+      "target": "Cartography"
+    },
+    {
+      "source": "Shipbuilding",
+      "target": "Mass Production"
+    },
+    {
+      "source": "Education",
+      "target": "Mass Production"
+    },
+    {
+      "source": "Education",
+      "target": "Banking"
+    },
+    {
+      "source": "Apprenticeship",
+      "target": "Banking"
+    },
+    {
+      "source": "Stirrups",
+      "target": "Banking"
+    },
+    {
+      "source": "Apprenticeship",
+      "target": "Gunpowder"
+    },
+    {
+      "source": "Stirrups",
+      "target": "Gunpowder"
+    },
+    {
+      "source": "Military Engineering",
+      "target": "Gunpowder"
+    },
+    {
+      "source": "Machinery",
+      "target": "Printing"
+    },
+    {
+      "source": "Cartography",
+      "target": "Square Rigging"
+    },
+    {
+      "source": "Education",
+      "target": "Astronomy"
+    },
+    {
+      "source": "Gunpowder",
+      "target": "Metal Casting"
+    },
+    {
+      "source": "Castles",
+      "target": "Siege Tactics"
+    },
+    {
+      "source": "Mass Production",
+      "target": "Industrialization"
+    },
+    {
+      "source": "Astronomy",
+      "target": "Scientific Theory"
+    },
+    {
+      "source": "Metal Casting",
+      "target": "Ballistics"
+    },
+    {
+      "source": "Siege Tactics",
+      "target": "Military Science"
+    },
+    {
+      "source": "Printing",
+      "target": "Military Science"
+    },
+    {
+      "source": "Square Rigging",
+      "target": "Steam Power"
+    },
+    {
+      "source": "Industrialization",
+      "target": "Steam Power"
+    },
+    {
+      "source": "Scientific Theory",
+      "target": "Sanitation"
+    },
+    {
+      "source": "Scientific Theory",
+      "target": "Economics"
+    },
+    {
+      "source": "Banking",
+      "target": "Economics"
+    },
+    {
+      "source": "Ballistics",
+      "target": "Rifling"
+    },
+    {
+      "source": "Military Science",
+      "target": "Rifling"
+    },
+    {
+      "source": "Industrialization",
+      "target": "Flight"
+    },
+    {
+      "source": "Scientific Theory",
+      "target": "Flight"
+    },
+    {
+      "source": "Economics",
+      "target": "Replaceable Parts"
+    },
+    {
+      "source": "Ballistics",
+      "target": "Steel"
+    },
+    {
+      "source": "Steam Power",
+      "target": "Electricity"
+    },
+    {
+      "source": "Steam Power",
+      "target": "Radio"
+    },
+    {
+      "source": "Flight",
+      "target": "Radio"
+    },
+    {
+      "source": "Sanitation",
+      "target": "Chemistry"
+    },
+    {
+      "source": "Rifling",
+      "target": "Combustion"
+    },
+    {
+      "source": "Steel",
+      "target": "Combustion"
+    },
+    {
+      "source": "Radio",
+      "target": "Advanced Flight"
+    },
+    {
+      "source": "Radio",
+      "target": "Rocketry"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Rocketry"
+    },
+    {
+      "source": "Replaceable Parts",
+      "target": "Advanced Ballistics"
+    },
+    {
+      "source": "Steel",
+      "target": "Advanced Ballistics"
+    },
+    {
+      "source": "Steel",
+      "target": "Combined Arms"
+    },
+    {
+      "source": "Combustion",
+      "target": "Plastics"
+    },
+    {
+      "source": "Electricity",
+      "target": "Computers"
+    },
+    {
+      "source": "Combined Arms",
+      "target": "Nuclear Fission"
+    },
+    {
+      "source": "Advanced Ballistics",
+      "target": "Nuclear Fission"
+    },
+    {
+      "source": "Plastics",
+      "target": "Synthetic Materials"
+    },
+    {
+      "source": "Computers",
+      "target": "Telecommunications"
+    },
+    {
+      "source": "Computers",
+      "target": "Robotics"
+    },
+    {
+      "source": "Advanced Flight",
+      "target": "Satellites"
+    },
+    {
+      "source": "Rocketry",
+      "target": "Satellites"
+    },
+    {
+      "source": "Rocketry",
+      "target": "Guidance Systems"
+    },
+    {
+      "source": "Advanced Ballistics",
+      "target": "Guidance Systems"
+    },
+    {
+      "source": "Nuclear Fission",
+      "target": "Lasers"
+    },
+    {
+      "source": "Synthetic Materials",
+      "target": "Composites"
+    },
+    {
+      "source": "Synthetic Materials",
+      "target": "Stealth Technology"
+    },
+    {
+      "source": "Lasers",
+      "target": "Nuclear Fusion"
+    },
+    {
+      "source": "Composites",
+      "target": "Nanotechnology"
+    },
+    {
+      "source": "Robotics",
+      "target": "Future Tech"
+    },
+    {
+      "source": "Nuclear Fusion",
+      "target": "Future Tech"
+    },
+    {
+      "source": "Nanotechnology",
+      "target": "Future Tech"
+    },
+    {
+      "source": "Satellites",
+      "target": "Future Tech"
+    }
+  ]
+}

@@ -1,0 +1,1031 @@
+{
+  "game": "Civilization: Beyond Earth",
+  "tree": "technology",
+  "layout": "web",
+  "groups": [
+    {
+      "name": "Ring 0"
+    },
+    {
+      "name": "Ring 1"
+    },
+    {
+      "name": "Ring 2"
+    },
+    {
+      "name": "Ring 3"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Habitation",
+      "group": "Ring 0",
+      "kind": "branch",
+      "tier": 0
+    },
+    {
+      "name": "Pioneering",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Habitation",
+      "tier": 0
+    },
+    {
+      "name": "Planetary Survey",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Habitation",
+      "tier": 0
+    },
+    {
+      "name": "Chemistry",
+      "group": "Ring 0",
+      "kind": "branch",
+      "badge": 1,
+      "tier": 1
+    },
+    {
+      "name": "Biochemistry",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Chemistry",
+      "badge": 2,
+      "tier": 1
+    },
+    {
+      "name": "Physics",
+      "group": "Ring 0",
+      "kind": "branch",
+      "tier": 1
+    },
+    {
+      "name": "Ballistics",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Physics",
+      "tier": 1
+    },
+    {
+      "name": "Engineering",
+      "group": "Ring 0",
+      "kind": "branch",
+      "tier": 1
+    },
+    {
+      "name": "Power Systems",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Engineering",
+      "tier": 1
+    },
+    {
+      "name": "Defense Grid",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Engineering",
+      "badge": 2,
+      "tier": 1
+    },
+    {
+      "name": "Computing",
+      "group": "Ring 0",
+      "kind": "branch",
+      "tier": 2
+    },
+    {
+      "name": "Autonomous Systems",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Computing",
+      "tier": 2
+    },
+    {
+      "name": "Transcendental Math",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Computing",
+      "badge": 4,
+      "tier": 2
+    },
+    {
+      "name": "Genetics",
+      "group": "Ring 0",
+      "kind": "branch",
+      "tier": 1
+    },
+    {
+      "name": "Alien Lifeforms",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Genetics",
+      "badge": 2,
+      "tier": 1
+    },
+    {
+      "name": "Genetic Mapping",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Genetics",
+      "tier": 1
+    },
+    {
+      "name": "Ecology",
+      "group": "Ring 0",
+      "kind": "branch",
+      "tier": 1
+    },
+    {
+      "name": "Geophysics",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Ecology",
+      "badge": 2,
+      "tier": 1
+    },
+    {
+      "name": "Alien Biology",
+      "group": "Ring 0",
+      "kind": "leaf",
+      "parent": "Ecology",
+      "tier": 1
+    },
+    {
+      "name": "Biology",
+      "group": "Ring 1",
+      "kind": "branch",
+      "tier": 3
+    },
+    {
+      "name": "Vertical Farming",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Biology",
+      "badge": 6,
+      "tier": 3
+    },
+    {
+      "name": "Organics",
+      "group": "Ring 1",
+      "kind": "branch",
+      "badge": 5,
+      "tier": 3
+    },
+    {
+      "name": "Photosystems",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Organics",
+      "badge": 6,
+      "tier": 3
+    },
+    {
+      "name": "Cognition",
+      "group": "Ring 1",
+      "kind": "branch",
+      "badge": 5,
+      "tier": 3
+    },
+    {
+      "name": "Collaborative Thought",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Cognition",
+      "badge": 6,
+      "tier": 3
+    },
+    {
+      "name": "Genetic Design",
+      "group": "Ring 1",
+      "kind": "branch",
+      "tier": 2
+    },
+    {
+      "name": "Alien Genetics",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Genetic Design",
+      "tier": 2
+    },
+    {
+      "name": "Alien Sciences",
+      "group": "Ring 1",
+      "kind": "branch",
+      "tier": 2
+    },
+    {
+      "name": "Alien Adaptation",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Alien Sciences",
+      "badge": 4,
+      "tier": 2
+    },
+    {
+      "name": "Alien Ecology",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Alien Sciences",
+      "badge": 4,
+      "tier": 2
+    },
+    {
+      "name": "Terraforming",
+      "group": "Ring 1",
+      "kind": "branch",
+      "tier": 3
+    },
+    {
+      "name": "Biospheres",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Terraforming",
+      "tier": 3
+    },
+    {
+      "name": "Climate Control",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Terraforming",
+      "badge": 6,
+      "tier": 3
+    },
+    {
+      "name": "Communications",
+      "group": "Ring 1",
+      "kind": "branch",
+      "badge": 5,
+      "tier": 3
+    },
+    {
+      "name": "Orbital Networks",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Communications",
+      "badge": 6,
+      "tier": 3
+    },
+    {
+      "name": "Artificial Intelligence",
+      "group": "Ring 1",
+      "kind": "branch",
+      "badge": 5,
+      "tier": 3
+    },
+    {
+      "name": "Synthetic Thought",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Artificial Intelligence",
+      "badge": 6,
+      "tier": 3
+    },
+    {
+      "name": "Swarm Intelligence",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Artificial Intelligence",
+      "badge": 6,
+      "tier": 3
+    },
+    {
+      "name": "Fabrication",
+      "group": "Ring 1",
+      "kind": "branch",
+      "badge": 5,
+      "tier": 3
+    },
+    {
+      "name": "Civil Support",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Fabrication",
+      "badge": 6,
+      "tier": 3
+    },
+    {
+      "name": "Mechatronics",
+      "group": "Ring 1",
+      "kind": "branch",
+      "tier": 4
+    },
+    {
+      "name": "Mobile Lev",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Mechatronics",
+      "tier": 4
+    },
+    {
+      "name": "Ballistic Lev",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Mechatronics",
+      "badge": 9,
+      "tier": 4
+    },
+    {
+      "name": "Robotics",
+      "group": "Ring 1",
+      "kind": "branch",
+      "tier": 2
+    },
+    {
+      "name": "Tactical Robotics",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Robotics",
+      "badge": 4,
+      "tier": 2
+    },
+    {
+      "name": "Swarm Robotics",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Robotics",
+      "badge": 4,
+      "tier": 2
+    },
+    {
+      "name": "Bionics",
+      "group": "Ring 1",
+      "kind": "branch",
+      "tier": 3
+    },
+    {
+      "name": "Servomachinery",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Bionics",
+      "tier": 3
+    },
+    {
+      "name": "Tissue Engineering",
+      "group": "Ring 1",
+      "kind": "leaf",
+      "parent": "Bionics",
+      "tier": 3
+    },
+    {
+      "name": "Bioengineering",
+      "group": "Ring 2",
+      "kind": "branch",
+      "badge": 14,
+      "tier": 5
+    },
+    {
+      "name": "Industrial Ecology",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Bioengineering",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Biometallurgy",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Bioengineering",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Synergetics",
+      "group": "Ring 2",
+      "kind": "branch",
+      "badge": 14,
+      "tier": 5
+    },
+    {
+      "name": "Designer Lifeforms",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Synergetics",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Social Dynamics",
+      "group": "Ring 2",
+      "kind": "branch",
+      "badge": 14,
+      "tier": 5
+    },
+    {
+      "name": "Human Idealism",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Social Dynamics",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Human Conservation",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Social Dynamics",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Euthenics",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Social Dynamics",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Transgenics",
+      "group": "Ring 2",
+      "kind": "branch",
+      "badge": 7,
+      "tier": 4
+    },
+    {
+      "name": "Protogenetics",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Transgenics",
+      "badge": 9,
+      "tier": 4
+    },
+    {
+      "name": "Alien Hybridization",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Transgenics",
+      "badge": 9,
+      "tier": 4
+    },
+    {
+      "name": "Alien Ethics",
+      "group": "Ring 2",
+      "kind": "branch",
+      "badge": 7,
+      "tier": 4
+    },
+    {
+      "name": "Alien Domestication",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Alien Ethics",
+      "badge": 9,
+      "tier": 4
+    },
+    {
+      "name": "Planetary Engineering",
+      "group": "Ring 2",
+      "kind": "branch",
+      "badge": 14,
+      "tier": 5
+    },
+    {
+      "name": "Geoscaping",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Planetary Engineering",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Seismic Induction",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Planetary Engineering",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Field Theory",
+      "group": "Ring 2",
+      "kind": "branch",
+      "badge": 14,
+      "tier": 5
+    },
+    {
+      "name": "Exotic Matter",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Field Theory",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Hypercomputing",
+      "group": "Ring 2",
+      "kind": "branch",
+      "badge": 14,
+      "tier": 5
+    },
+    {
+      "name": "Hyperconductors",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Hypercomputing",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Neural Uploading",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Hypercomputing",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Cybernetics",
+      "group": "Ring 2",
+      "kind": "branch",
+      "badge": 14,
+      "tier": 5
+    },
+    {
+      "name": "Autogyros",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Cybernetics",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Metamaterials",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Cybernetics",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Astrodynamics",
+      "group": "Ring 2",
+      "kind": "branch",
+      "tier": 5
+    },
+    {
+      "name": "Orbital Automation",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Astrodynamics",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Dark Networks",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Astrodynamics",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Nanotechnology",
+      "group": "Ring 2",
+      "kind": "branch",
+      "badge": 14,
+      "tier": 5
+    },
+    {
+      "name": "Tactical Lev",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Nanotechnology",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Nanorobotics",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Nanotechnology",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Augmentation",
+      "group": "Ring 2",
+      "kind": "branch",
+      "tier": 5
+    },
+    {
+      "name": "Surrogacy",
+      "group": "Ring 2",
+      "kind": "leaf",
+      "parent": "Augmentation",
+      "tier": 5
+    },
+    {
+      "name": "Artificial Evolution",
+      "group": "Ring 3",
+      "kind": "branch",
+      "badge": 14,
+      "tier": 5
+    },
+    {
+      "name": "Alien Evolution",
+      "group": "Ring 3",
+      "kind": "leaf",
+      "parent": "Artificial Evolution",
+      "badge": 15,
+      "tier": 5
+    },
+    {
+      "name": "Alien Materials",
+      "group": "Ring 3",
+      "kind": "leaf",
+      "parent": "Artificial Evolution",
+      "badge": 15,
+      "tier": 5
+    }
+  ],
+  "links": [
+    {
+      "source": "Habitation",
+      "target": "Chemistry"
+    },
+    {
+      "source": "Habitation",
+      "target": "Physics"
+    },
+    {
+      "source": "Habitation",
+      "target": "Engineering"
+    },
+    {
+      "source": "Habitation",
+      "target": "Genetics"
+    },
+    {
+      "source": "Habitation",
+      "target": "Ecology"
+    },
+    {
+      "source": "Engineering",
+      "target": "Computing"
+    },
+    {
+      "source": "Ecology",
+      "target": "Computing"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Organics"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Biology"
+    },
+    {
+      "source": "Physics",
+      "target": "Bionics"
+    },
+    {
+      "source": "Physics",
+      "target": "Robotics"
+    },
+    {
+      "source": "Engineering",
+      "target": "Robotics"
+    },
+    {
+      "source": "Engineering",
+      "target": "Fabrication"
+    },
+    {
+      "source": "Computing",
+      "target": "Artificial Intelligence"
+    },
+    {
+      "source": "Computing",
+      "target": "Communications"
+    },
+    {
+      "source": "Ecology",
+      "target": "Terraforming"
+    },
+    {
+      "source": "Ecology",
+      "target": "Alien Sciences"
+    },
+    {
+      "source": "Genetics",
+      "target": "Alien Sciences"
+    },
+    {
+      "source": "Genetics",
+      "target": "Genetic Design"
+    },
+    {
+      "source": "Genetics",
+      "target": "Cognition"
+    },
+    {
+      "source": "Biology",
+      "target": "Organics"
+    },
+    {
+      "source": "Biology",
+      "target": "Bionics"
+    },
+    {
+      "source": "Organics",
+      "target": "Cognition"
+    },
+    {
+      "source": "Robotics",
+      "target": "Bionics"
+    },
+    {
+      "source": "Robotics",
+      "target": "Mechatronics"
+    },
+    {
+      "source": "Fabrication",
+      "target": "Mechatronics"
+    },
+    {
+      "source": "Fabrication",
+      "target": "Artificial Intelligence"
+    },
+    {
+      "source": "Biology",
+      "target": "Bioengineering"
+    },
+    {
+      "source": "Organics",
+      "target": "Bioengineering"
+    },
+    {
+      "source": "Organics",
+      "target": "Synergetics"
+    },
+    {
+      "source": "Cognition",
+      "target": "Social Dynamics"
+    },
+    {
+      "source": "Genetic Design",
+      "target": "Social Dynamics"
+    },
+    {
+      "source": "Genetic Design",
+      "target": "Transgenics"
+    },
+    {
+      "source": "Alien Sciences",
+      "target": "Alien Ethics"
+    },
+    {
+      "source": "Terraforming",
+      "target": "Planetary Engineering"
+    },
+    {
+      "source": "Communications",
+      "target": "Field Theory"
+    },
+    {
+      "source": "Artificial Intelligence",
+      "target": "Hypercomputing"
+    },
+    {
+      "source": "Fabrication",
+      "target": "Cybernetics"
+    },
+    {
+      "source": "Mechatronics",
+      "target": "Astrodynamics"
+    },
+    {
+      "source": "Robotics",
+      "target": "Nanotechnology"
+    },
+    {
+      "source": "Bionics",
+      "target": "Augmentation"
+    },
+    {
+      "source": "Alien Ethics",
+      "target": "Planetary Engineering"
+    },
+    {
+      "source": "Transgenics",
+      "target": "Artificial Evolution"
+    },
+    {
+      "source": "Alien Ethics",
+      "target": "Artificial Evolution"
+    },
+    {
+      "source": "Habitation",
+      "target": "Pioneering"
+    },
+    {
+      "source": "Habitation",
+      "target": "Planetary Survey"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Biochemistry"
+    },
+    {
+      "source": "Physics",
+      "target": "Ballistics"
+    },
+    {
+      "source": "Engineering",
+      "target": "Power Systems"
+    },
+    {
+      "source": "Engineering",
+      "target": "Defense Grid"
+    },
+    {
+      "source": "Computing",
+      "target": "Autonomous Systems"
+    },
+    {
+      "source": "Computing",
+      "target": "Transcendental Math"
+    },
+    {
+      "source": "Genetics",
+      "target": "Alien Lifeforms"
+    },
+    {
+      "source": "Genetics",
+      "target": "Genetic Mapping"
+    },
+    {
+      "source": "Ecology",
+      "target": "Geophysics"
+    },
+    {
+      "source": "Ecology",
+      "target": "Alien Biology"
+    },
+    {
+      "source": "Biology",
+      "target": "Vertical Farming"
+    },
+    {
+      "source": "Organics",
+      "target": "Photosystems"
+    },
+    {
+      "source": "Cognition",
+      "target": "Collaborative Thought"
+    },
+    {
+      "source": "Genetic Design",
+      "target": "Alien Genetics"
+    },
+    {
+      "source": "Alien Sciences",
+      "target": "Alien Adaptation"
+    },
+    {
+      "source": "Alien Sciences",
+      "target": "Alien Ecology"
+    },
+    {
+      "source": "Terraforming",
+      "target": "Biospheres"
+    },
+    {
+      "source": "Terraforming",
+      "target": "Climate Control"
+    },
+    {
+      "source": "Communications",
+      "target": "Orbital Networks"
+    },
+    {
+      "source": "Artificial Intelligence",
+      "target": "Synthetic Thought"
+    },
+    {
+      "source": "Artificial Intelligence",
+      "target": "Swarm Intelligence"
+    },
+    {
+      "source": "Fabrication",
+      "target": "Civil Support"
+    },
+    {
+      "source": "Mechatronics",
+      "target": "Mobile Lev"
+    },
+    {
+      "source": "Mechatronics",
+      "target": "Ballistic Lev"
+    },
+    {
+      "source": "Robotics",
+      "target": "Tactical Robotics"
+    },
+    {
+      "source": "Robotics",
+      "target": "Swarm Robotics"
+    },
+    {
+      "source": "Bionics",
+      "target": "Servomachinery"
+    },
+    {
+      "source": "Bionics",
+      "target": "Tissue Engineering"
+    },
+    {
+      "source": "Bioengineering",
+      "target": "Industrial Ecology"
+    },
+    {
+      "source": "Bioengineering",
+      "target": "Biometallurgy"
+    },
+    {
+      "source": "Synergetics",
+      "target": "Designer Lifeforms"
+    },
+    {
+      "source": "Social Dynamics",
+      "target": "Human Idealism"
+    },
+    {
+      "source": "Social Dynamics",
+      "target": "Human Conservation"
+    },
+    {
+      "source": "Social Dynamics",
+      "target": "Euthenics"
+    },
+    {
+      "source": "Transgenics",
+      "target": "Protogenetics"
+    },
+    {
+      "source": "Transgenics",
+      "target": "Alien Hybridization"
+    },
+    {
+      "source": "Alien Ethics",
+      "target": "Alien Domestication"
+    },
+    {
+      "source": "Planetary Engineering",
+      "target": "Geoscaping"
+    },
+    {
+      "source": "Planetary Engineering",
+      "target": "Seismic Induction"
+    },
+    {
+      "source": "Field Theory",
+      "target": "Exotic Matter"
+    },
+    {
+      "source": "Hypercomputing",
+      "target": "Hyperconductors"
+    },
+    {
+      "source": "Hypercomputing",
+      "target": "Neural Uploading"
+    },
+    {
+      "source": "Cybernetics",
+      "target": "Autogyros"
+    },
+    {
+      "source": "Cybernetics",
+      "target": "Metamaterials"
+    },
+    {
+      "source": "Astrodynamics",
+      "target": "Orbital Automation"
+    },
+    {
+      "source": "Astrodynamics",
+      "target": "Dark Networks"
+    },
+    {
+      "source": "Nanotechnology",
+      "target": "Tactical Lev"
+    },
+    {
+      "source": "Nanotechnology",
+      "target": "Nanorobotics"
+    },
+    {
+      "source": "Augmentation",
+      "target": "Surrogacy"
+    },
+    {
+      "source": "Artificial Evolution",
+      "target": "Alien Evolution"
+    },
+    {
+      "source": "Artificial Evolution",
+      "target": "Alien Materials"
+    }
+  ]
+}
