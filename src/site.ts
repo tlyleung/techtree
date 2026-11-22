@@ -9,6 +9,17 @@ export const url = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, 
 
 export const editUrl = (id: string) => `${SITE.repo}/edit/main/src/content/tech/${id}.md`;
 
+/**
+ * Split a name into at most two lines that fit `maxChars` each, breaking at
+ * the space nearest the middle. SVG text doesn't wrap, so cards do it here.
+ */
+export function wrapName(name: string, maxChars: number): string[] {
+  if (name.length <= maxChars || !name.includes(" ")) return [name];
+  const spaces = [...name.matchAll(/ /g)].map((m) => m.index!);
+  const at = spaces.reduce((a, b) => (Math.abs(b - name.length / 2) < Math.abs(a - name.length / 2) ? b : a));
+  return [name.slice(0, at), name.slice(at + 1)];
+}
+
 /** SVG path for an orthogonal route with rounded corners. */
 export function roundedPath(points: { x: number; y: number }[], radius = 8): string {
   if (points.length < 2) return "";

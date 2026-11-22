@@ -16,8 +16,8 @@ export interface Drawing {
 }
 
 export const CARD = {
-  RIGHT: { w: 200, h: 44 },
-  DOWN: { w: 112, h: 64 },
+  RIGHT: { w: 200, h: 52 },
+  DOWN: { w: 124, h: 72 },
 };
 
 async function draw(nodes: TechNode[], links: Link[], columns: Map<string, number>, eras: Era[], dir: Direction): Promise<Drawing> {

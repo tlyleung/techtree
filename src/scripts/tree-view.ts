@@ -37,7 +37,8 @@ export function setupTreeView(root: HTMLElement) {
       const len = right ? el.offsetWidth : el.offsetHeight;
       // Sticky: stay at the start of the view while the band is on screen.
       const at = Math.min(Math.max(lo + 8, 8), hi - len - 8);
-      const visible = hi > 0 && lo < (right ? w : h);
+      // Hide a label once too little of its band is on screen to hold it.
+      const visible = hi - len - 16 > 0 && lo < (right ? w : h);
       el.style.display = visible ? "" : "none";
       if (right) { el.style.left = `${at}px`; el.style.top = "8px"; }
       else { el.style.top = `${at}px`; el.style.left = "8px"; }

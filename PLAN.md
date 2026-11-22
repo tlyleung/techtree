@@ -211,7 +211,7 @@ Merge the game trees into one history tree of our own before any site code, so P
 - [x] Store **past TRLs and forecasts** in `trl_history` and `forecasts[].history`, ready for "over time" charts. The collection schema is strict, so unknown keys fail the build.
 - [x] Define the rule for moving a node to history: once its first demonstration (the milestone with `demonstrates: true`) is done and sourced, the lint fails until the node becomes `kind: history` with an era and year.
 - [ ] Gather and normalise future candidates into `data/candidates.yaml` (steps 1–2 of [Generating future candidates](#generating-future-candidates)), then build the shortlist table.
-- [ ] Research **5 future technologies end to end** to test the format, including the second-agent citation check.
+- [x] Research **5 future technologies end to end** to test the format, including the second-agent citation check: fusion power, AGI, a fault-tolerant quantum computer, lab-grown transplant organs and a crewed Mars landing. Every draft needed fixes after the check.
 
 **Done when** 5 future pages exist that a sceptical forecaster would accept as fairly sourced.
 

@@ -1,7 +1,7 @@
 ---
 // One laid-out tree (desktop RIGHT or mobile DOWN) as SVG with pan and zoom.
 import { dateLabel, type Direction, type Tree } from "../lib/tree";
-import { roundedPath, url } from "../site";
+import { roundedPath, url, wrapName } from "../site";
 
 interface Props { tree: Tree; dir: Direction }
 const { tree, dir } = Astro.props;
@@ -43,6 +43,9 @@ const initial = (name: string) => name.replace(/^The /, "")[0];
           const label = future ? `forecast ${dateLabel(t.data)}, TRL ${t.data.trl!.level}` : dateLabel(t.data);
           const cx = right ? b.x + 22 : b.x + b.w / 2;
           const cy = right ? b.y + b.h / 2 : b.y + 18;
+          // About 20 characters fit on one line of a desktop card, 17 on a phone card.
+          const lines = wrapName(t.data.name, right ? 20 : 17);
+          const two = lines.length > 1;
           return (
             <a href={url(`tech/${b.id}/`)} class:list={["node", future ? "future" : `era-${t.data.era}`, { conflict: conflict.length }]} data-id={b.id}
                data-up={[...tree.ancestors.get(b.id)!].join(" ")} data-down={[...tree.descendants.get(b.id)!].join(" ")}>
@@ -52,12 +55,16 @@ const initial = (name: string) => name.replace(/^The /, "")[0];
               <text class="initial" x={cx} y={cy + 5} text-anchor="middle">{initial(t.data.name)}</text>
               {right ? (
                 <>
-                  <text class="name" x={b.x + 44} y={b.y + 19}>{t.data.name}</text>
-                  <text class="year" x={b.x + 44} y={b.y + 34}>{dateLabel(t.data)}{conflict.length ? " ⚠" : ""}</text>
-                  {future && <text class="trl-badge" x={b.x + b.w - 10} y={b.y + 34} text-anchor="end">TRL {t.data.trl!.level}</text>}
+                  <text class:list={["name", { two }]} x={b.x + 44} y={b.y + (two ? 18 : 23)}>
+                    {lines.map((l, i) => <tspan x={b.x + 44} dy={i ? 13 : 0}>{l}</tspan>)}
+                  </text>
+                  <text class="year" x={b.x + 44} y={b.y + (two ? 45 : 39)}>{dateLabel(t.data)}{conflict.length ? " ⚠" : ""}</text>
+                  {future && <text class="trl-badge" x={b.x + b.w - 10} y={b.y + (two ? 45 : 39)} text-anchor="end">TRL {t.data.trl!.level}</text>}
                 </>
               ) : (
-                <text class="name small" x={b.x + b.w / 2} y={b.y + 48} text-anchor="middle">{t.data.name}</text>
+                <text class="name small" x={b.x + b.w / 2} y={b.y + (two ? 47 : 53)} text-anchor="middle">
+                  {lines.map((l, i) => <tspan x={b.x + b.w / 2} dy={i ? 12 : 0}>{l}</tspan>)}
+                </text>
               )}
             </a>
           );
@@ -95,6 +102,7 @@ const initial = (name: string) => name.replace(/^The /, "")[0];
   .node circle { fill: hsl(var(--hue) 38% var(--icon-l)); }
   .node .initial { fill: #fff; font: 700 14px var(--sans); pointer-events: none; }
   .node .name { fill: var(--ink); font: 600 13px var(--sans); }
+  .node .name.two { font-size: 12px; }
   .node .name.small { font-size: 11px; }
   .node .year { fill: var(--muted); font: 11px var(--sans); }
   .node { transition: opacity 0.15s; outline: none; }

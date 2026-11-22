@@ -165,7 +165,7 @@ const description = future
   table { width: 100%; border-collapse: collapse; font-size: 15px; }
   th, td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
   th { color: var(--muted); font-weight: 600; font-size: 13px; }
-  td:nth-child(2), td:nth-child(3) { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td:nth-child(n+2) { font-variant-numeric: tabular-nums; white-space: nowrap; }
   .page-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 28px; font-size: 15px; }
   @media (max-width: 640px) {
     .hero h1 { font-size: 30px; }
