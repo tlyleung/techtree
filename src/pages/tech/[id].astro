@@ -1,10 +1,11 @@
 ---
 // A technology's page, which doubles as the mobile focus view: one level of
-// prerequisites above and one level of what it unlocks below.
+// prerequisites above and one level of what it unlocks below. Future
+// technologies also show their definition, TRL, milestones and forecasts.
 import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import TechCard from "../../components/TechCard.astro";
-import { formatYear, getTree } from "../../lib/tree";
+import { dateLabel, getTree } from "../../lib/tree";
 import { editUrl, url } from "../../site";
 
 export async function getStaticPaths() {
@@ -14,23 +15,47 @@ export async function getStaticPaths() {
 
 const tree = await getTree();
 const tech = tree.byId.get(Astro.params.id!)!;
-const era = tree.eras.find((e) => e.id === tech.data.era.id)!;
+const d = tech.data;
+const future = d.kind === "future";
+const era = tree.eras.find((e) => e.id === tree.node.get(tech.id)!.era)!;
 const requires = tree.requires.get(tech.id)!.map((id) => tree.byId.get(id)!);
 const unlocks = tree.unlocks.get(tech.id)!.map((id) => tree.byId.get(id)!);
+const conflicts = requires.filter((r) => tree.conflicts.has(`${r.id}>${tech.id}`));
 const { Content } = await render(tech);
 const hasBody = Boolean(tech.body?.trim());
-const initial = tech.data.name.replace(/^The /, "")[0];
+const initial = d.name.replace(/^The /, "")[0];
+
+const iso = (x: Date) => x.toISOString().slice(0, 10);
+const host = (u: string) => new URL(u).hostname.replace(/^www\./, "");
+const SOURCE_NAMES: Record<string, string> = {
+  metaculus: "Metaculus", manifold: "Manifold", survey: "Survey", kurzweil: "Ray Kurzweil", maintainer: "Maintainer's estimate", other: "Other",
+};
+const range = (f: { low?: number; median: number; high?: number }) =>
+  f.low !== undefined && f.high !== undefined ? `${f.low}–${f.high}` : `${f.median}`;
+const forecasts = [...d.forecasts].sort((a, b) => Number(b.primary) - Number(a.primary));
+const milestones = [...d.milestones].sort((a, b) =>
+  (a.status === b.status ? 0 : a.status === "done" ? -1 : 1) || (a.date?.getTime() ?? Infinity) - (b.date?.getTime() ?? Infinity));
+const description = future
+  ? `${d.name}: forecast ${dateLabel(d)}, TRL ${d.trl!.level} of 9. Milestones, sources and forecasts.`
+  : `${d.name}: ${era.name} era, ${dateLabel(d)}. What it needs and what it leads to.`;
 ---
-<Base title={tech.data.name} description={`${tech.data.name}: ${era.data.name} era, ${formatYear(tech.data.year)}. What it needs and what it leads to.`}>
+<Base title={d.name} description={description}>
   <article>
-    <header class:list={["hero", `era-${era.id}`]}>
+    <header class:list={["hero", future ? "future" : `era-${era.id}`]}>
       <span class="icon large" aria-hidden="true">{initial}</span>
       <div>
-        <p class="eyebrow">{era.data.name} era</p>
-        <h1>{tech.data.name}</h1>
-        <p class="meta">{formatYear(tech.data.year)}</p>
+        <p class="eyebrow">{future ? `Future · ${era.name}` : `${era.name} era`}</p>
+        <h1>{d.name}</h1>
+        <p class="meta">
+          {future ? <>Forecast <strong>{dateLabel(d)}</strong> · <a href={url("methodology/")}>TRL</a> <strong>{d.trl!.level}</strong> of 9</> : dateLabel(d)}
+        </p>
       </div>
     </header>
+
+    {future && <p class="definition"><strong>Counts as demonstrated when:</strong> {d.definition}</p>}
+    {conflicts.length > 0 && (
+      <p class="conflict">Date conflict: this forecast is earlier than the forecast for {conflicts.map((c) => c.data.name).join(", ")}, which it requires.</p>
+    )}
 
     <div class="focus">
       <section>
@@ -47,7 +72,62 @@ const initial = tech.data.name.replace(/^The /, "")[0];
       </section>
     </div>
 
-    <section class="body">
+    {d.trl && (
+      <section class="block">
+        <h2>Readiness</h2>
+        <p><strong>TRL {d.trl.level}</strong> as of {iso(d.trl.as_of)}. {d.trl.rationale}</p>
+        {d.trl_history.length > 0 && (
+          <p class="muted">Earlier: {[...d.trl_history].sort((a, b) => a.as_of.getTime() - b.as_of.getTime()).map((h) => `TRL ${h.level} (${iso(h.as_of)})`).join(", ")}.</p>
+        )}
+        <p class="muted">Scored against the <a href={url("methodology/")}>TRL rubric</a>.</p>
+      </section>
+    )}
+
+    {milestones.length > 0 && (
+      <section class="block">
+        <h2>Milestones</h2>
+        <ol class="milestones">
+          {milestones.map((m) => (
+            <li class:list={[m.status, { demo: m.demonstrates }]}>
+              <span class="when">{m.date ? iso(m.date) : "Not yet"}</span>
+              <span>
+                {m.text}{m.demonstrates && <em class="tag">first demonstration</em>}
+                {m.sources.length > 0 && <span class="sources">{m.sources.map((s) => <a href={s}>{host(s)}</a>)}</span>}
+              </span>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+
+    {forecasts.length > 0 && (
+      <section class="block">
+        <h2>Forecasts</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Source</th><th>Range</th><th>Median</th><th>Retrieved</th></tr></thead>
+            <tbody>
+              {forecasts.map((f) => (
+                <tr>
+                  <td>
+                    {f.url ? <a href={f.url}>{f.name ?? SOURCE_NAMES[f.source]}</a> : (f.name ?? SOURCE_NAMES[f.source])}
+                    {f.primary && <em class="tag">primary</em>}
+                    {f.citation && <div class="muted small">{f.citation}</div>}
+                    {f.definition_notes && <div class="muted small">{f.definition_notes}</div>}
+                  </td>
+                  <td>{range(f)}</td>
+                  <td>{f.median}</td>
+                  <td>{f.retrieved ? iso(f.retrieved) : "—"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">The primary forecast sets where this technology sits on the tree. Ranges are the 25th to 75th percentile where the source gives them.</p>
+      </section>
+    )}
+
+    <section class="block body">
       {hasBody ? <Content /> : <p class="none">There's no write-up yet. You can <a href={editUrl(tech.id)}>add one on GitHub</a>.</p>}
     </section>
 
@@ -61,17 +141,35 @@ const initial = tech.data.name.replace(/^The /, "")[0];
 <style>
   article { padding: 28px 0 8px; }
   .hero { display: flex; align-items: center; gap: 18px; }
+  .hero.future .icon { outline: 2px dashed hsl(var(--hue) 38% var(--icon-l)); outline-offset: 3px; }
   .hero h1 { font-size: 40px; margin: 0; }
   .eyebrow { margin: 0; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
   .meta { margin: 4px 0 0; color: var(--muted); }
+  .meta strong { color: var(--ink); }
+  .definition { margin: 22px 0 0; padding: 12px 14px; border-left: 3px solid var(--accent); background: var(--surface); }
+  .conflict { margin: 12px 0 0; padding: 10px 14px; border-left: 3px solid var(--warn); background: var(--surface); }
   .focus { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
   .focus .card-grid { grid-template-columns: 1fr; }
-  .focus h2, .body :global(h2) { font-size: 19px; margin: 0 0 10px; }
-  .none { color: var(--muted); }
-  .body { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .focus h2, .block h2, .body :global(h2) { font-size: 19px; margin: 0 0 10px; }
+  .none, .muted { color: var(--muted); }
+  .small { font-size: 13px; }
+  .block { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .block p { margin: 0 0 8px; }
+  .milestones { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .milestones li { display: grid; grid-template-columns: 100px 1fr; gap: 12px; }
+  .milestones .when { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 14px; padding-top: 1px; }
+  .milestones li.pending { color: var(--muted); }
+  .sources { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 13px; margin-top: 2px; }
+  .tag { margin-left: 8px; font-style: normal; font-size: 12px; padding: 1px 6px; border-radius: 6px; border: 1px solid var(--line); color: var(--muted); }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; }
+  td:nth-child(2), td:nth-child(3) { font-variant-numeric: tabular-nums; white-space: nowrap; }
   .page-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 28px; font-size: 15px; }
   @media (max-width: 640px) {
     .hero h1 { font-size: 30px; }
     .focus { grid-template-columns: 1fr; gap: 18px; }
+    .milestones li { grid-template-columns: 1fr; gap: 0; }
   }
 </style>

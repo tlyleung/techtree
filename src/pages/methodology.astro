@@ -1,0 +1,24 @@
+---
+// Renders docs/trl-rubric.md, so the rubric lives in one file in the repo.
+import Base from "../layouts/Base.astro";
+import { Content, frontmatter } from "../../docs/trl-rubric.md";
+import { SITE } from "../site";
+---
+<Base title={frontmatter.title} description={frontmatter.description}>
+  <article class="prose">
+    <h1>{frontmatter.title}</h1>
+    <Content />
+    <p class="edit"><a href={`${SITE.repo}/edit/main/docs/trl-rubric.md`}>Edit this page on GitHub</a></p>
+  </article>
+</Base>
+
+<style>
+  .prose { padding: 28px 0 8px; max-width: 760px; }
+  .prose h1 { font-size: 36px; margin: 0 0 16px; }
+  .prose :global(h2) { font-size: 22px; margin: 32px 0 10px; }
+  .prose :global(li) { margin-bottom: 6px; }
+  .prose :global(table) { width: 100%; border-collapse: collapse; font-size: 14px; display: block; overflow-x: auto; }
+  .prose :global(th), .prose :global(td) { text-align: left; vertical-align: top; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); }
+  .prose :global(th) { color: var(--muted); font-size: 13px; }
+  .edit { margin-top: 28px; font-size: 15px; }
+</style>

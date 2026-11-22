@@ -1,6 +1,6 @@
 ---
 // One laid-out tree (desktop RIGHT or mobile DOWN) as SVG with pan and zoom.
-import { formatYear, type Direction, type Tree } from "../lib/tree";
+import { dateLabel, type Direction, type Tree } from "../lib/tree";
 import { roundedPath, url } from "../site";
 
 interface Props { tree: Tree; dir: Direction }
@@ -20,30 +20,41 @@ const initial = (name: string) => name.replace(/^The /, "")[0];
       </marker>
     </defs>
     <g class="viewport">
-      {d.bands.map((b, i) => right
-        ? <rect class:list={["band", i % 2 ? "b" : "a"]} x={b.lo} y={-4000} width={b.hi - b.lo} height={d.height + 8000} />
-        : <rect class:list={["band", i % 2 ? "b" : "a"]} x={-4000} y={b.lo} width={d.width + 8000} height={b.hi - b.lo} />)}
+      {d.bands.map((b, i) => {
+        const cls = ["band", b.future ? (i % 2 ? "future-b" : "future-a") : i % 2 ? "b" : "a"];
+        return right
+          ? <rect class:list={cls} x={b.lo} y={-4000} width={b.hi - b.lo} height={d.height + 8000} />
+          : <rect class:list={cls} x={-4000} y={b.lo} width={d.width + 8000} height={b.hi - b.lo} />;
+      })}
+      {d.today !== null && (right
+        ? <line class="today" x1={d.today} x2={d.today} y1={-4000} y2={d.height + 4000} />
+        : <line class="today" y1={d.today} y2={d.today} x1={-4000} x2={d.width + 4000} />)}
       <g class="edges">
         {d.routes.map((r) => (
-          <path d={roundedPath(r.points)} data-s={r.source} data-t={r.target} marker-end={`url(#arrow-${dir})`} />
+          <path d={roundedPath(r.points)} data-s={r.source} data-t={r.target} marker-end={`url(#arrow-${dir})`}
+                class:list={{ conflict: tree.conflicts.has(`${r.source}>${r.target}`) }} />
         ))}
       </g>
       <g class="nodes">
         {d.boxes.map((b) => {
           const t = tree.byId.get(b.id)!;
+          const future = t.data.kind === "future";
+          const conflict = tree.requires.get(b.id)!.filter((s) => tree.conflicts.has(`${s}>${b.id}`)).map((s) => tree.byId.get(s)!.data.name);
+          const label = future ? `forecast ${dateLabel(t.data)}, TRL ${t.data.trl!.level}` : dateLabel(t.data);
           const cx = right ? b.x + 22 : b.x + b.w / 2;
           const cy = right ? b.y + b.h / 2 : b.y + 18;
           return (
-            <a href={url(`tech/${b.id}/`)} class:list={["node", `era-${t.data.era.id}`]} data-id={b.id}
+            <a href={url(`tech/${b.id}/`)} class:list={["node", future ? "future" : `era-${t.data.era}`, { conflict: conflict.length }]} data-id={b.id}
                data-up={[...tree.ancestors.get(b.id)!].join(" ")} data-down={[...tree.descendants.get(b.id)!].join(" ")}>
-              <title>{`${t.data.name}, ${formatYear(t.data.year)}`}</title>
+              <title>{`${t.data.name}, ${label}${conflict.length ? `. Date conflict: forecast earlier than ${conflict.join(", ")}` : ""}`}</title>
               <rect x={b.x} y={b.y} width={b.w} height={b.h} rx={12} />
               <circle cx={cx} cy={cy} r={right ? 15 : 14} />
               <text class="initial" x={cx} y={cy + 5} text-anchor="middle">{initial(t.data.name)}</text>
               {right ? (
                 <>
                   <text class="name" x={b.x + 44} y={b.y + 19}>{t.data.name}</text>
-                  <text class="year" x={b.x + 44} y={b.y + 34}>{formatYear(t.data.year)}</text>
+                  <text class="year" x={b.x + 44} y={b.y + 34}>{dateLabel(t.data)}{conflict.length ? " ⚠" : ""}</text>
+                  {future && <text class="trl-badge" x={b.x + b.w - 10} y={b.y + 34} text-anchor="end">TRL {t.data.trl!.level}</text>}
                 </>
               ) : (
                 <text class="name small" x={b.x + b.w / 2} y={b.y + 48} text-anchor="middle">{t.data.name}</text>
@@ -56,6 +67,7 @@ const initial = (name: string) => name.replace(/^The /, "")[0];
   </svg>
   <div class="bands-header" aria-hidden="true">
     {d.bands.map((b) => <span data-lo={b.lo} data-hi={b.hi}>{b.name}</span>)}
+    {d.today !== null && <span class="today-label" data-at={d.today}>Today</span>}
   </div>
   <div class="zoom">
     <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
@@ -70,6 +82,12 @@ const initial = (name: string) => name.replace(/^The /, "")[0];
   .tree.dragging { cursor: grabbing; }
   .band.a { fill: var(--band-a); }
   .band.b { fill: var(--band-b); }
+  .band.future-a { fill: var(--band-future); }
+  .band.future-b { fill: var(--band-future-b); }
+  .today { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 5; }
+  .edges path.conflict { stroke: var(--warn); stroke-dasharray: 5 4; }
+  .node.future rect { stroke-dasharray: 5 3; }
+  .node .trl-badge { fill: var(--muted); font: 600 10px var(--sans); }
   .edges path { fill: none; stroke: var(--edge); stroke-width: 1.4; transition: opacity 0.15s; }
   .arrow { fill: var(--edge); }
   .arrow.on { fill: var(--accent); }
@@ -93,6 +111,7 @@ const initial = (name: string) => name.replace(/^The /, "")[0];
     background: color-mix(in srgb, var(--surface) 88%, transparent); border: 1px solid var(--line);
     font: 600 12px var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted);
   }
+  .bands-header .today-label { color: var(--surface); background: var(--accent); border-color: var(--accent); }
   .zoom { position: absolute; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 6px; }
   .zoom button {
     width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line);

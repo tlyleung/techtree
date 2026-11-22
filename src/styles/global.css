@@ -9,6 +9,9 @@
   --accent: #a8481f;
   --band-a: #efe8da;
   --band-b: #f6f2ea;
+  --band-future: #e8eef0;
+  --band-future-b: #eff3f4;
+  --warn: #b7791f;
   --shadow: 0 1px 2px rgb(60 45 20 / 0.08);
   --icon-l: 36%;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
@@ -27,6 +30,9 @@
     --accent: #e3895a;
     --band-a: #1a1914;
     --band-b: #14130f;
+    --band-future: #141a1c;
+    --band-future-b: #181f21;
+    --warn: #e0a84a;
     --shadow: none;
     --icon-l: 46%;
   }
@@ -43,6 +49,9 @@
   --accent: #e3895a;
   --band-a: #1a1914;
   --band-b: #14130f;
+  --band-future: #141a1c;
+  --band-future-b: #181f21;
+  --warn: #e0a84a;
   --shadow: none;
   --icon-l: 46%;
 }
@@ -56,6 +65,7 @@
 .era-modern { --hue: 185; }
 .era-atomic { --hue: 140; }
 .era-information { --hue: 85; }
+.future { --hue: 195; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -118,5 +128,10 @@ body.wide .site-footer { border-top: 1px solid var(--line); }
 .card .label { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
 .card .name { font-weight: 600; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .card .year { color: var(--muted); font-size: 13px; }
+.card.future { border-style: dashed; }
+.card .trl, .trl {
+  margin-left: auto; flex: none; padding: 2px 7px; border-radius: 6px;
+  border: 1px solid var(--line); color: var(--muted); font: 600 12px/1.4 var(--sans);
+}
 
 .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; padding: 0; margin: 0; list-style: none; }

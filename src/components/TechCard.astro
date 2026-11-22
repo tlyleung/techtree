@@ -1,15 +1,18 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { formatYear } from "../lib/tree";
+import { dateLabel } from "../lib/tree";
 import { url } from "../site";
 
 interface Props { tech: CollectionEntry<"tech"> }
 const { tech } = Astro.props;
+const d = tech.data;
+const future = d.kind === "future";
 ---
-<a class:list={["card", `era-${tech.data.era.id}`]} href={url(`tech/${tech.id}/`)}>
-  <span class="icon" aria-hidden="true">{tech.data.name.replace(/^The /, "")[0]}</span>
+<a class:list={["card", future ? "future" : `era-${d.era}`]} href={url(`tech/${tech.id}/`)}>
+  <span class="icon" aria-hidden="true">{d.name.replace(/^The /, "")[0]}</span>
   <span class="label">
-    <span class="name">{tech.data.name}</span>
-    <span class="year">{formatYear(tech.data.year)}</span>
+    <span class="name">{d.name}</span>
+    <span class="year">{future ? `Forecast ${dateLabel(d)}` : dateLabel(d)}</span>
   </span>
+  {future && d.trl && <span class="trl" title={`Technology readiness level ${d.trl.level} of 9`}>TRL {d.trl.level}</span>}
 </a>

@@ -99,15 +99,17 @@ data/forecasts/          # dated forecast snapshots, written by script
 docs/trl-rubric.md       # public scoring rubric
 ```
 
-### Technology schema (draft)
+### Technology schema
+
+Defined in `src/lib/schema.ts`, which the build and the lint share. It is strict: an unknown or misspelt key fails the build. The file name (e.g. `fusion-power.md`) is the id.
 
 ```yaml
 ---
 name: Fusion Power
-slug: fusion-power
 kind: future            # history | future
-era: Information        # history nodes only
-year: null              # history: year it first appeared (negative = BCE)
+# era: industrial       # history only: an era id
+# year: 1837            # history only: year of first demonstration (negative = BCE)
+definition: "A power plant delivers net electricity to a grid from fusion for at least an hour."  # future: the first-demonstration test, roughly TRL 7
 requires: [nuclear-fusion, superconductors]
 icon:
   prompt: "Glowing plasma torus inside a tokamak ring"   # for the later medallion phase
@@ -122,12 +124,13 @@ trl_history:            # every past TRL is kept, for "over time" charts
 milestones:
   - date: 2022-12-05
     text: "NIF achieves fusion ignition (target gain > 1)"
-    status: done          # done | pending
+    status: done          # done | pending; done needs a date and a source
     sources: ["https://..."]
   - text: "Sustained net electricity to a grid"
     status: pending
+    demonstrates: true    # the first demonstration; once done and sourced, the node must move to history
 forecasts:               # one or more; `primary` sets the node's position
-  - source: metaculus     # metaculus | kurzweil | maintainer
+  - source: metaculus     # metaculus | manifold | survey | kurzweil | maintainer | other
     primary: true
     url: "https://..."
     retrieved: 2026-11-01
@@ -201,12 +204,12 @@ Merge the game trees into one history tree of our own before any site code, so P
 
 ### Phase 2: Future schema and rubric
 
-- [ ] Write `docs/trl-rubric.md`: what each TRL means for hardware, software, biology, and broad goals such as "AGI".
-- [ ] Finalise the milestone and forecast schema.
-- [ ] Design the **"today" line** where era columns (history) meet the date bands (future), and how a forecast range is drawn on a node.
-- [ ] Add a **conflict flag** for when a node's projected date is earlier than one of its prerequisites'.
-- [ ] Store **past TRLs and forecasts** in `trl_history` and `forecasts[].history`, ready for "over time" charts. Make the collection schema strict, so unknown keys fail the build.
-- [ ] Define the rule for moving a node to history: once its first demonstration is a sourced milestone with `status: done`, the node moves from `future` to `history`.
+- [x] Write `docs/trl-rubric.md`: what each TRL means for hardware, software, biology, and broad goals such as "AGI". It's published at `/methodology/`. Future technologies score TRL 1–6, because each one's definition marks roughly TRL 7 and meeting it moves the node to history; the schema enforces this.
+- [x] Finalise the milestone and forecast schema (`src/lib/schema.ts`, shared by the build and the lint). Done milestones need a date and a source; a maintainer's estimate and every primary forecast must be a range; each future node has exactly one primary forecast.
+- [x] Design the **"today" line** where era columns (history) meet the date bands (future): a dashed accent line with a "Today" label, with the future bands shaded cooler. A node shows its primary forecast's range (e.g. 2032–2042) and a TRL badge, and its card is dashed.
+- [x] Add a **conflict flag** for when a node's projected date is earlier than one of its prerequisites'. The node is placed in the prerequisite's band, and the link is drawn dashed amber with ⚠ on the card and a note on the page. The lint reports it as a warning.
+- [x] Store **past TRLs and forecasts** in `trl_history` and `forecasts[].history`, ready for "over time" charts. The collection schema is strict, so unknown keys fail the build.
+- [x] Define the rule for moving a node to history: once its first demonstration (the milestone with `demonstrates: true`) is done and sourced, the lint fails until the node becomes `kind: history` with an era and year.
 - [ ] Gather and normalise future candidates into `data/candidates.yaml` (steps 1–2 of [Generating future candidates](#generating-future-candidates)), then build the shortlist table.
 - [ ] Research **5 future technologies end to end** to test the format, including the second-agent citation check.
 
@@ -273,9 +276,10 @@ Merge the game trees into one history tree of our own before any site code, so P
 ## Open questions
 
 - Which 20–30 future technologies make the launch list?
-- What are the exact date-band boundaries? When a band has more than 8 nodes, does it split, or do nodes move to a neighbouring band within their forecast range?
 
 ### Resolved
+
+- **Date bands:** Late 2020s, 2030s, 2040s, 2050–2075, 2075–2100 and beyond 2100, in `src/content/eras.yaml`. A band holds as many columns as it needs (the 8-node limit is per column), so bands never split. Empty bands take no columns, so a link never has to skip an empty band. Links from history into the future cross the today line and may skip bands.
 
 - The history tree is a **merge** of Brave New World, the Civ VI technology tree and the tech-like Civ VI civics (Phase 0).
 - Date bands get wider further into the future.

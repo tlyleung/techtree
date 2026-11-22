@@ -28,10 +28,11 @@ const range = (from: number | null, to: number | null) => {
     <h1 id="list-heading">All {tree.techs.length} technologies</h1>
     <p class="intro">Real history laid out in eras, from the first farms to social media. Each technology opens its own page with what it needs and what it leads to.</p>
     {tree.eras.map((era) => {
-      const techs = tree.techs.filter((t) => t.data.era.id === era.id);
+      const techs = tree.techs.filter((t) => tree.node.get(t.id)!.era === era.id);
+      if (!techs.length) return null;
       return (
         <section class="era">
-          <h2>{era.data.name} <span class="range">{range(era.data.from, era.data.to)}</span></h2>
+          <h2>{era.name} <span class="range">{era.future ? "forecast" : range(era.from, era.to)}</span></h2>
           <ul class="card-grid">
             {techs.map((t) => <li><TechCard tech={t} /></li>)}
           </ul>

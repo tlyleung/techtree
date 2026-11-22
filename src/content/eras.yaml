@@ -6,3 +6,11 @@
 - {id: modern, name: Modern, from: 1900, to: 1945}
 - {id: atomic, name: Atomic, from: 1945, to: 1970}
 - {id: information, name: Information, from: 1970, to: null}
+# Future date bands, after the "today" line. A future technology sits in the
+# band of its primary forecast's median. Bands widen further out.
+- {id: late-2020s, name: Late 2020s, from: 2026, to: 2030, future: true}
+- {id: 2030s, name: 2030s, from: 2030, to: 2040, future: true}
+- {id: 2040s, name: 2040s, from: 2040, to: 2050, future: true}
+- {id: 2050-2075, name: 2050–2075, from: 2050, to: 2075, future: true}
+- {id: 2075-2100, name: 2075–2100, from: 2075, to: 2100, future: true}
+- {id: beyond-2100, name: Beyond 2100, from: 2100, to: null, future: true}

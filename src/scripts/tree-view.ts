@@ -7,7 +7,8 @@ const MIN_K = 0.25, MAX_K = 2.5, MARGIN = 24, HEADER = 40;
 export function setupTreeView(root: HTMLElement) {
   const svg = root.querySelector<SVGSVGElement>("svg.tree")!;
   const viewport = svg.querySelector<SVGGElement>(".viewport")!;
-  const labels = [...root.querySelectorAll<HTMLElement>(".bands-header span")];
+  const labels = [...root.querySelectorAll<HTMLElement>(".bands-header span[data-lo]")];
+  const todayLabel = root.querySelector<HTMLElement>(".bands-header .today-label");
   const right = root.dataset.dir === "RIGHT";
   const W = Number(root.dataset.w), H = Number(root.dataset.h);
   let k = 1, tx = 0, ty = 0;
@@ -40,6 +41,12 @@ export function setupTreeView(root: HTMLElement) {
       el.style.display = visible ? "" : "none";
       if (right) { el.style.left = `${at}px`; el.style.top = "8px"; }
       else { el.style.top = `${at}px`; el.style.left = "8px"; }
+    }
+    if (todayLabel) {
+      // Centred on the line, below the band labels.
+      const at = Number(todayLabel.dataset.at) * k + (right ? tx : ty);
+      if (right) { todayLabel.style.left = `${at - todayLabel.offsetWidth / 2}px`; todayLabel.style.top = "36px"; }
+      else { todayLabel.style.top = `${at - todayLabel.offsetHeight / 2}px`; todayLabel.style.left = "auto"; todayLabel.style.right = "60px"; }
     }
   }
 

@@ -8,9 +8,10 @@ export const MAX_SPAN = 2; // a link may skip at most one column
 export interface TechNode {
   id: string;
   name: string;
-  era: string;
-  year: number;
+  era: string; // history: its era; future: its date band
+  year: number; // history: first demonstration; future: primary forecast median
   requires: string[];
+  future?: boolean;
 }
 
 export type Link = [source: string, target: string];
@@ -19,6 +20,7 @@ export interface Checked {
   columns: Map<string, number>;
   links: Link[];
   broken: Link[];
+  conflicts: Link[]; // prerequisite dated after the technology it leads to
   errors: string[];
   warnings: string[];
 }
@@ -28,13 +30,13 @@ interface Edge { u: Vertex; v: Vertex; w: number; why: Link | null }
 
 /**
  * Assign columns with difference constraints (Bellman-Ford). Each link spans
- * 1..MAX_SPAN columns, each era is a contiguous block of columns, and `fixed`
- * pins nodes to columns. Returns the columns, or the links on a
- * contradictory cycle.
+ * 1..MAX_SPAN columns (links in `unbounded` only need to point rightward),
+ * each era is a contiguous block of columns, and `fixed` pins nodes to
+ * columns. Returns the columns, or the links on a contradictory cycle.
  */
 export function solve(
   ids: string[], eras: string[], eraOf: Map<string, string>, links: Link[],
-  fixed: [string, number][] = [],
+  fixed: [string, number][] = [], unbounded: Set<string> = new Set(),
 ): { columns: Map<string, number> } | { cycle: Link[] } {
   // Node ids are prefixed so they can't collide with the helper vertices.
   const Z = "#Z";
@@ -52,7 +54,7 @@ export function solve(
     le(node(id), S[i + 1], -1);
   }
   for (const [s, t] of links) {
-    le(node(t), node(s), MAX_SPAN, [s, t]);
+    if (!unbounded.has(`${s}>${t}`)) le(node(t), node(s), MAX_SPAN, [s, t]);
     le(node(s), node(t), -1, [s, t]);
   }
   for (const [id, c] of fixed) {
@@ -93,22 +95,31 @@ export function solve(
 
 const sameLink = (a: Link, b: Link) => a[0] === b[0] && a[1] === b[1];
 
+/** Links from history to the future cross the "today" line and may skip date bands. */
+export function crossesToday(nodes: TechNode[]): Set<string> {
+  const future = new Map(nodes.map((n) => [n.id, !!n.future]));
+  const out = new Set<string>();
+  for (const n of nodes) for (const s of n.requires) if (n.future && !future.get(s)) out.add(`${s}>${n.id}`);
+  return out;
+}
+
 /** Return the columns and the links that can't meet the span limit. */
 export function layout(nodes: TechNode[], eras: string[]): { columns: Map<string, number>; broken: Link[] } {
   const ids = nodes.map((n) => n.id);
   const eraOf = new Map(nodes.map((n) => [n.id, n.era]));
   const year = new Map(nodes.map((n) => [n.id, n.year]));
   const links: Link[] = nodes.flatMap((n) => n.requires.map((s) => [s, n.id] as Link));
+  const unbounded = crossesToday(nodes);
   const broken: Link[] = [];
   const without = (drop: Link[]) => links.filter((l) => !drop.some((d) => sameLink(d, l)));
 
   let columns: Map<string, number>;
   for (;;) {
-    const r = solve(ids, eras, eraOf, without(broken));
+    const r = solve(ids, eras, eraOf, without(broken), [], unbounded);
     if ("columns" in r) { columns = r.columns; break; }
     // Prefer a link whose removal resolves everything; otherwise drop the
     // link on the contradiction that spans the most years.
-    const fixes = r.cycle.filter((l) => "columns" in solve(ids, eras, eraOf, without([...broken, l])));
+    const fixes = r.cycle.filter((l) => "columns" in solve(ids, eras, eraOf, without([...broken, l]), [], unbounded));
     const pool = fixes.length ? fixes : r.cycle;
     const span = (l: Link) => year.get(l[1])! - year.get(l[0])!;
     broken.push(pool.reduce((a, b) => (span(b) > span(a) ? b : a)));
@@ -140,7 +151,7 @@ export function layout(nodes: TechNode[], eras: string[]): { columns: Map<string
       if (count.get(columns.get(id)!)! < MAX_PER_COLUMN) continue;
       for (const d of [1, -1, 2, -2, 3, -3]) {
         const pin: [string, number] = [id, columns.get(id)! + d];
-        const r = solve(ids, eras, eraOf, ok, [...fixed, pin]);
+        const r = solve(ids, eras, eraOf, ok, [...fixed, pin], unbounded);
         if ("columns" in r && less(overflow(r.columns), cur)) {
           best = { columns: r.columns, pin };
           break outer;
@@ -208,42 +219,68 @@ export function check(nodes: TechNode[], eras: string[]): Checked {
       else links.push([s, n.id]);
     }
   }
-  if (errors.length) return { columns: new Map(), links, broken: [], errors, warnings };
+  const empty = { columns: new Map<string, number>(), links, broken: [], conflicts: [], errors, warnings };
+  if (errors.length) return empty;
   const cycle = findCycle(nodes);
   if (cycle) {
     errors.push(`prerequisite cycle: ${cycle.join(" -> ")}`);
-    return { columns: new Map(), links, broken: [], errors, warnings };
+    return empty;
   }
 
   const name = (id: string) => byId.get(id)!.name;
+  const conflicts: Link[] = [];
   for (const [s, t] of links) {
     const a = byId.get(s)!, b = byId.get(t)!;
-    if (eras.indexOf(a.era) > eras.indexOf(b.era))
+    if (a.future && !b.future) errors.push(`a history technology can't require a future one: ${a.name} -> ${b.name}`);
+    else if (eras.indexOf(a.era) > eras.indexOf(b.era))
       errors.push(`era goes backwards: ${a.name} (${a.era}) -> ${b.name} (${b.era})`);
-    if (a.year > b.year) warnings.push(`date conflict: ${a.name} (${a.year}) -> ${b.name} (${b.year})`);
+    if (a.year > b.year) {
+      conflicts.push([s, t]);
+      warnings.push(`date conflict: ${a.name} (${a.year}) -> ${b.name} (${b.year})`);
+    }
   }
+  // Every future technology must lead back to history.
+  const rooted = new Map<string, boolean>();
+  const toHistory = (id: string): boolean => {
+    if (!rooted.has(id)) {
+      const n = byId.get(id)!;
+      rooted.set(id, !n.future || n.requires.some(toHistory));
+    }
+    return rooted.get(id)!;
+  };
+  for (const n of nodes) if (n.future && !toHistory(n.id)) errors.push(`${n.name} doesn't lead back to a history technology`);
   for (const [s, t] of redundant(nodes)) errors.push(`redundant link: ${name(s)} -> ${name(t)}`);
 
-  const { columns, broken } = layout(nodes, eras);
+  // Eras and date bands with no technologies take no columns, so a link
+  // doesn't have to skip an empty band.
+  const { columns, broken } = layout(nodes, eras.filter((e) => nodes.some((n) => n.era === e)));
   const per = new Map<number, string[]>();
   for (const n of nodes) per.set(columns.get(n.id)!, [...(per.get(columns.get(n.id)!) ?? []), n.name]);
   for (const [c, ns] of [...per].sort((a, b) => a[0] - b[0]))
     if (ns.length > MAX_PER_COLUMN)
       errors.push(`column ${c} has ${ns.length} technologies (max ${MAX_PER_COLUMN}): ${ns.join(", ")}`);
+  const unbounded = crossesToday(nodes);
   for (const [s, t] of links) {
     const span = columns.get(t)! - columns.get(s)!;
     if (span < 1) errors.push(`link not rightward: ${name(s)} -> ${name(t)}`);
-    else if (span > MAX_SPAN) errors.push(`link can't fit (skips ${span - 1} columns): ${name(s)} -> ${name(t)}`);
+    else if (span > MAX_SPAN && !unbounded.has(`${s}>${t}`))
+      errors.push(`link can't fit (skips ${span - 1} columns): ${name(s)} -> ${name(t)}`);
   }
-  return { columns, links, broken, errors, warnings };
+  return { columns, links, broken, conflicts, errors, warnings };
 }
 
-/** Era ids in display order: by start year, an open start first, ties by file order. */
-export function eraOrder(eras: { id: string; from: number | null }[]): string[] {
-  const key = (from: number | null) => from ?? -Infinity;
+/**
+ * Era ids in display order: history eras, then future date bands; within
+ * each, by start year, an open start first, ties by file order.
+ */
+export function eraOrder(eras: { id: string; from: number | null; future?: boolean }[]): string[] {
+  const key = (e: { from: number | null; future?: boolean }): [number, number] => [e.future ? 1 : 0, e.from ?? -Infinity];
   return eras
     .map((e, i) => ({ e, i }))
-    .sort((a, b) => (key(a.e.from) === key(b.e.from) ? a.i - b.i : key(a.e.from) < key(b.e.from) ? -1 : 1))
+    .sort((a, b) => {
+      const [fa, ya] = key(a.e), [fb, yb] = key(b.e);
+      return fa - fb || (ya === yb ? a.i - b.i : ya < yb ? -1 : 1);
+    })
     .map(({ e }) => e.id);
 }
 
