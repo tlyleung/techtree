@@ -1,0 +1,122 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f2ea;
+  --surface: #fffdf8;
+  --ink: #1f1c16;
+  --muted: #6c6556;
+  --line: #d8d0bf;
+  --edge: #b0a794;
+  --accent: #a8481f;
+  --band-a: #efe8da;
+  --band-b: #f6f2ea;
+  --shadow: 0 1px 2px rgb(60 45 20 / 0.08);
+  --icon-l: 36%;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #14130f;
+    --surface: #1e1c17;
+    --ink: #ece6d8;
+    --muted: #a39b89;
+    --line: #3a362c;
+    --edge: #5e584a;
+    --accent: #e3895a;
+    --band-a: #1a1914;
+    --band-b: #14130f;
+    --shadow: none;
+    --icon-l: 46%;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #14130f;
+  --surface: #1e1c17;
+  --ink: #ece6d8;
+  --muted: #a39b89;
+  --line: #3a362c;
+  --edge: #5e584a;
+  --accent: #e3895a;
+  --band-a: #1a1914;
+  --band-b: #14130f;
+  --shadow: none;
+  --icon-l: 46%;
+}
+
+/* One hue per era, used for icon circles. */
+.era-ancient { --hue: 28; }
+.era-classical { --hue: 4; }
+.era-medieval { --hue: 330; }
+.era-renaissance { --hue: 270; }
+.era-industrial { --hue: 215; }
+.era-modern { --hue: 185; }
+.era-atomic { --hue: 140; }
+.era-information { --hue: 85; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 var(--sans);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; width: 100%; max-width: 960px; margin: 0 auto; padding: 0 16px; }
+body.wide main { max-width: none; padding: 0; }
+
+a { color: var(--accent); }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; }
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.site-header nav { display: flex; gap: 18px; }
+.site-header nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+.site-header nav a:hover { color: var(--ink); }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font: 650 18px/1 var(--sans); letter-spacing: -0.01em; }
+.brand-mark {
+  display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--accent); color: var(--surface); font: 700 15px/1 var(--sans);
+}
+
+.site-footer { padding: 20px 16px 28px; color: var(--muted); font-size: 14px; text-align: center; }
+body.wide .site-footer { border-top: 1px solid var(--line); }
+
+/* Initial-in-circle icon (painted medallions come later). */
+.icon {
+  display: inline-grid; place-items: center; flex: none;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: hsl(var(--hue, 30) 38% var(--icon-l));
+  color: #fff; font: 700 15px/1 var(--sans);
+}
+.icon.large { width: 72px; height: 72px; font-size: 32px; }
+
+/* Technology card, used in lists and on pages. */
+.card {
+  display: flex; align-items: center; gap: 10px; min-width: 0;
+  padding: 8px 12px 8px 8px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); color: var(--ink); text-decoration: none; box-shadow: var(--shadow);
+}
+.card:hover { border-color: var(--accent); }
+.card .label { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
+.card .name { font-weight: 600; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card .year { color: var(--muted); font-size: 13px; }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; padding: 0; margin: 0; list-style: none; }

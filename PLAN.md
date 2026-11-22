@@ -1,6 +1,6 @@
 # technologytree.org: Plan
 
-This plan turns a 2017–18 D3 prototype into a public site on **technologytree.org**. The prototype drew a Civ V–style tree with elbow links and a force-directed layout. Its code isn't in this repo. The repo keeps the game trees in [`data/civs/`](data/civs/), and our own merged history tree in [`data/history-tree.json`](data/history-tree.json) (see [README.md](README.md)).
+This plan turns a 2017–18 D3 prototype into a public site on **technologytree.org**. The prototype drew a Civ V–style tree with elbow links and a force-directed layout. Its code isn't in this repo. The repo keeps the game trees in [`data/civs/`](data/civs/), and our own merged history tree as one Markdown file per technology in [`src/content/tech/`](src/content/tech/), imported from [`data/history-tree.json`](data/history-tree.json) (see [README.md](README.md)).
 
 ## Vision
 
@@ -46,7 +46,7 @@ The Civ V trees are clean because they were **designed by hand**. `civ5-brave-ne
 The layout is calculated **at build time** with a layered-graph method (Sugiyama-style). It replaces the prototype's force simulation, which positioned nodes differently on every load, so the layout is now the same every time.
 
 1. **Layering.** History nodes go in columns by prerequisite depth, grouped into era bands. Future nodes go in **date bands** (e.g. 2030s, 2040s) based on the forecast median. Each date band is treated like an era band: it holds as many columns as it needs, with nodes depth-layered inside it, so two future nodes in the same band can still depend on each other. A **"today" line** separates the two halves.
-2. **Balancing columns (our code).** A node can sit anywhere between its latest prerequisite and its earliest dependent. The layout uses that slack to keep every column within the width limit, as in Coffman–Graham layering, and to **shorten long links** (for example, moving Optics right so Optics → Compass skips one column instead of two). This is a small constraint problem, solved with difference constraints (Bellman–Ford) in `scripts/lint_history.py`: each link spans 1 or 2 columns, era and date bands stay contiguous, and each column holds at most 8 nodes. No layout library enforces these as hard rules, and sharing one solver means the lint and the site always agree.
+2. **Balancing columns (our code).** A node can sit anywhere between its latest prerequisite and its earliest dependent. The layout uses that slack to keep every column within the width limit, as in Coffman–Graham layering, and to **shorten long links** (for example, moving Optics right so Optics → Compass skips one column instead of two). This is a small constraint problem, solved with difference constraints (Bellman–Ford) in `src/lib/columns.ts`: each link spans 1 or 2 columns, era and date bands stay contiguous, and each column holds at most 8 nodes. No layout library enforces these as hard rules, and sharing one solver means the lint and the site always agree.
 3. **Reducing crossings, placing and routing ([elkjs](https://github.com/kieler/elkjs), ELK Layered).** The columns from step 2 are passed to ELK as **partitions** (`elk.partitioning.activate`, with each node's `elk.partitioning.partition` set to its column). No two nodes in a column are linked, so each partition becomes exactly one ELK layer. ELK then orders nodes within columns, places them vertically and routes links orthogonally, going around nodes for links that skip a column. It runs with a fixed `elk.randomSeed`, so the output is the same on every build. The same graph is laid out with `elk.direction` `RIGHT` for desktop and `DOWN` for mobile.
 4. **Drawing.** Our code draws ELK's link routes as rounded elbows with arrowheads.
 
@@ -80,16 +80,20 @@ When a rule fails, the fix is editorial: merge nodes, split a date band, or reth
 ### Content layout
 
 ```
-src/content/tech/
+src/content/tech/          # one Markdown file per technology; the file name is its id (exists)
   agriculture.md
   fusion-power.md
   ...
-src/content/eras.yaml
-data/civs/               # reference game trees (exists)
-data/history-tree.json   # merged history tree, the Phase 1 import source (exists)
-data/merge-synonyms.yaml # matches the same technology across game trees (exists)
-scripts/lint_history.py  # layout rules for the history tree (exists)
-scripts/merge_report.py  # what each game technology became, for sign-off (exists)
+src/content/eras.yaml      # eras with their year ranges (exists)
+src/content.config.ts      # content schema (exists)
+src/lib/columns.ts         # column solver and lint rules, shared by the lint and the build (exists)
+src/lib/tree.ts            # build-time layout: columns, then elkjs (exists)
+scripts/lint.ts            # `npm run lint`; `npm run build` runs it first (exists)
+scripts/import-history.mjs # one-off import from data/history-tree.json (exists, already run)
+data/civs/                 # reference game trees (exists)
+data/history-tree.json     # Phase 0 merged tree, frozen after the Phase 1 import (exists)
+data/merge-synonyms.yaml   # matches the same technology across game trees (exists)
+scripts/merge_report.py    # what each game technology became, for sign-off (exists)
 data/candidates.yaml     # future-technology candidates
 data/forecasts/          # dated forecast snapshots, written by script
 docs/trl-rubric.md       # public scoring rubric
@@ -177,20 +181,21 @@ Merge the game trees into one history tree of our own before any site code, so P
 - [x] Fix dependencies that exist only for game balance, and drop game-only nodes (Future Tech, and e.g. Mobile Tactics and Combined Arms unless they map to a real technology).
 - [x] Give every node an era, a rough year and an icon idea, starting from the prototype's years and icon ideas for the Brave New World nodes. Eras follow from the year: Ancient before 1000 BCE, Classical to 500, Medieval to 1450, Renaissance to 1750, Industrial to 1900, Modern to 1945, Atomic to 1970, then Information. Years stay rough here; Phase 3 sources them.
 - [x] Write the result to `data/history-tree.json` (93 nodes, 112 links).
-- [x] Write `scripts/lint_history.py`, which checks the merged tree against the Phase 1 lint rules (≤ 8 per column, links skip ≤ 1 column, links point rightward, no cycles, no redundant links). It assigns columns by solving the span and era-band limits as difference constraints, so a failure means no layout can satisfy the rules, not just that the first attempt missed.
+- [x] Write a lint script (first `scripts/lint_history.py`, ported to `scripts/lint.ts` in Phase 1), which checks the merged tree against the Phase 1 lint rules (≤ 8 per column, links skip ≤ 1 column, links point rightward, no cycles, no redundant links). It assigns columns by solving the span and era-band limits as difference constraints, so a failure means no layout can satisfy the rules, not just that the first attempt missed.
 - [x] Maintainer sign-off, using `scripts/merge_report.py`.
 
 **Done when** `data/history-tree.json` passes the lint rules and the maintainer has signed off on every node and link.
 
 ### Phase 1: Base site
 
-- [ ] Set up the Astro project and the content collection schema.
-- [ ] Write a one-off script that turns `data/history-tree.json` into one Markdown file per node (name, era, prerequisites, rough year, icon idea).
-- [ ] Calculate the layout at build time: our solver assigns columns, then elkjs (pinned by partitioning) reduces crossings, places nodes and routes links. Add the lint rules to CI.
-- [ ] Render the tree (era columns, elbow links, initial-in-circle icons) with pan and zoom, flowing left to right on desktop and top to bottom on mobile.
-- [ ] Build the mobile focus view.
-- [ ] Generate a page per node with the name, era, year, prerequisites and what it leads to.
-- [ ] Deploy to GitHub Pages through the Actions workflow. Set technologytree.org in Settings → Pages and enforce HTTPS before pointing DNS at GitHub.
+- [x] Set up the Astro project (Astro 7, Node 24) and the content collection schema.
+- [x] Write a one-off script that turns `data/history-tree.json` into one Markdown file per node (name, era, prerequisites, rough year, icon idea).
+- [x] Calculate the layout at build time: our solver assigns columns, then elkjs (pinned by partitioning) reduces crossings, places nodes and routes links. Add the lint rules to CI (`npm run build` runs the lint first; `.github/workflows/check.yml` runs it on PRs).
+- [x] Render the tree (era columns, elbow links, initial-in-circle icons) with pan and zoom, flowing left to right on desktop and top to bottom on mobile. Era labels stay visible while panning, and hovering or focusing a node highlights its full chain.
+- [x] Build the mobile focus view: phones in portrait open on a list by era, and each technology page shows one level of prerequisites and one level of what it leads to. The full tree is one tab away.
+- [x] Generate a page per node with the name, era, year, prerequisites and what it leads to.
+- [ ] Deploy to GitHub Pages through the Actions workflow (`.github/workflows/deploy.yml`). Set Pages' source to GitHub Actions, set technologytree.org in Settings → Pages and enforce HTTPS before pointing DNS at GitHub.
+- [ ] Tune the layout: links leaving one node share a line before they split, and short columns are centred vertically.
 
 **Done when** the merged tree is live on the domain and every node opens its own page.
 
@@ -211,7 +216,7 @@ Merge the game trees into one history tree of our own before any site code, so P
 
 - [ ] Choose the 20–30 launch technologies from the shortlist and research them as a batch (draft, then independent verification).
 - [ ] Publish Kurzweil's graded track record on the methodology page.
-- [ ] Research and source the **year of first demonstration** for each history node. The years in `data/history-tree.json` are unsourced rough guesses and only a starting point.
+- [ ] Research and source the **year of first demonstration** for each history node. The years imported from `data/history-tree.json` are unsourced rough guesses and only a starting point.
 - [ ] Add a short page to each history node.
 - [ ] Write the forecast-snapshot script and give each snapshot its retrieval date.
 - [ ] Add the "Edit on GitHub" links, CONTRIBUTING.md (sourcing rules, schema, TRL rubric), and the About and methodology pages.
@@ -230,7 +235,7 @@ Merge the game trees into one history tree of our own before any site code, so P
 
 ### Phase 5: Painted medallion icons
 
-- [ ] Write an `icon.prompt` for every node: one short scene that sums up the technology (e.g. "Person plowing a field"). The history nodes start from the ideas in `data/history-tree.json`.
+- [ ] Write an `icon.prompt` for every node: one short scene that sums up the technology (e.g. "Person plowing a field"). The history nodes start from the imported `icon.prompt` ideas.
 - [ ] Make or commission about 10 **anchor icons** that define the style.
 - [ ] Build a generation pipeline: a locked style prompt, a fixed model, and the anchor icons as style references, using each node's `icon.prompt`.
 - [ ] Post-process every icon the same way: circle crop, a standard rim and frame, a lighting overlay, and a palette normalised to the era.

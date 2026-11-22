@@ -1,0 +1,8 @@
+- {id: ancient, name: Ancient, from: null, to: -1000}
+- {id: classical, name: Classical, from: -1000, to: 500}
+- {id: medieval, name: Medieval, from: 500, to: 1450}
+- {id: renaissance, name: Renaissance, from: 1450, to: 1750}
+- {id: industrial, name: Industrial, from: 1750, to: 1900}
+- {id: modern, name: Modern, from: 1900, to: 1945}
+- {id: atomic, name: Atomic, from: 1945, to: 1970}
+- {id: information, name: Information, from: 1970, to: null}

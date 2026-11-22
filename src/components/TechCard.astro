@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatYear } from "../lib/tree";
+import { url } from "../site";
+
+interface Props { tech: CollectionEntry<"tech"> }
+const { tech } = Astro.props;
+---
+<a class:list={["card", `era-${tech.data.era.id}`]} href={url(`tech/${tech.id}/`)}>
+  <span class="icon" aria-hidden="true">{tech.data.name.replace(/^The /, "")[0]}</span>
+  <span class="label">
+    <span class="name">{tech.data.name}</span>
+    <span class="year">{formatYear(tech.data.year)}</span>
+  </span>
+</a>

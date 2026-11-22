@@ -1,0 +1,82 @@
+---
+import Base from "../layouts/Base.astro";
+import TechCard from "../components/TechCard.astro";
+import TreeView from "../components/TreeView.astro";
+import { getTree } from "../lib/tree";
+
+const tree = await getTree();
+const range = (from: number | null, to: number | null) => {
+  const y = (n: number) => (n < 0 ? `${-n} BCE` : `${n}`);
+  if (from === null && to === null) return "";
+  if (from === null && to !== null) return `before ${y(to)}`;
+  if (to === null && from !== null) return `${y(from)} onwards`;
+  return `${y(from!)}–${y(to!)}`;
+};
+---
+<Base wide>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="list" aria-selected="true">By era</button>
+    <button type="button" role="tab" data-tab="tree" aria-selected="false">Full tree</button>
+  </div>
+
+  <section class="tree-section" aria-label="Technology tree">
+    <div class="desktop-tree"><TreeView tree={tree} dir="RIGHT" /></div>
+    <div class="mobile-tree"><TreeView tree={tree} dir="DOWN" /></div>
+  </section>
+
+  <section class="list-section" aria-labelledby="list-heading">
+    <h1 id="list-heading">All {tree.techs.length} technologies</h1>
+    <p class="intro">Real history laid out in eras, from the first farms to social media. Each technology opens its own page with what it needs and what it leads to.</p>
+    {tree.eras.map((era) => {
+      const techs = tree.techs.filter((t) => t.data.era.id === era.id);
+      return (
+        <section class="era">
+          <h2>{era.data.name} <span class="range">{range(era.data.from, era.data.to)}</span></h2>
+          <ul class="card-grid">
+            {techs.map((t) => <li><TechCard tech={t} /></li>)}
+          </ul>
+        </section>
+      );
+    })}
+  </section>
+</Base>
+
+<style>
+  .tree-section { height: calc(100vh - 57px); height: calc(100dvh - 57px); border-bottom: 1px solid var(--line); }
+  .tree-section > div { height: 100%; }
+  .mobile-tree, .tabs { display: none; }
+  .list-section { max-width: 960px; margin: 0 auto; padding: 8px 16px 24px; }
+  .list-section h1 { font-size: 28px; margin: 24px 0 4px; }
+  .intro { color: var(--muted); margin: 0 0 8px; }
+  .era h2 { font-size: 21px; margin: 28px 0 12px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .range { font: 14px var(--sans); color: var(--muted); }
+
+  /* Phones in portrait: a list by era by default, and a top-to-bottom tree. */
+  @media (orientation: portrait) and (max-width: 820px) {
+    .tabs { display: flex; gap: 4px; padding: 8px 16px; position: sticky; top: 0; z-index: 2; background: var(--bg); border-bottom: 1px solid var(--line); }
+    .tabs button {
+      flex: 1; padding: 8px; border-radius: 8px; border: 1px solid var(--line);
+      background: var(--surface); color: var(--muted); font: 600 14px var(--sans); cursor: pointer;
+    }
+    .tabs button[aria-selected="true"] { color: var(--surface); background: var(--ink); border-color: var(--ink); }
+    .desktop-tree { display: none; }
+    .mobile-tree { display: block; }
+    .tree-section { height: calc(100dvh - 57px - 55px); display: none; }
+    body[data-tab="tree"] .tree-section { display: block; }
+    body[data-tab="tree"] .list-section, body[data-tab="tree"] .site-footer { display: none; }
+    .list-section h1 { margin-top: 12px; font-size: 24px; }
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".tabs [data-tab]");
+  const show = (tab: string) => {
+    document.body.dataset.tab = tab;
+    buttons.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tab === tab)));
+  };
+  buttons.forEach((b) => b.addEventListener("click", () => show(b.dataset.tab!)));
+  // A link to /#id opens the tree on that technology.
+  const fromHash = () => { if (location.hash.length > 1) show("tree"); };
+  fromHash();
+  addEventListener("hashchange", fromHash);
+</script>

@@ -1,0 +1,77 @@
+---
+// A technology's page, which doubles as the mobile focus view: one level of
+// prerequisites above and one level of what it unlocks below.
+import { render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import TechCard from "../../components/TechCard.astro";
+import { formatYear, getTree } from "../../lib/tree";
+import { editUrl, url } from "../../site";
+
+export async function getStaticPaths() {
+  const tree = await getTree();
+  return tree.techs.map((t) => ({ params: { id: t.id } }));
+}
+
+const tree = await getTree();
+const tech = tree.byId.get(Astro.params.id!)!;
+const era = tree.eras.find((e) => e.id === tech.data.era.id)!;
+const requires = tree.requires.get(tech.id)!.map((id) => tree.byId.get(id)!);
+const unlocks = tree.unlocks.get(tech.id)!.map((id) => tree.byId.get(id)!);
+const { Content } = await render(tech);
+const hasBody = Boolean(tech.body?.trim());
+const initial = tech.data.name.replace(/^The /, "")[0];
+---
+<Base title={tech.data.name} description={`${tech.data.name}: ${era.data.name} era, ${formatYear(tech.data.year)}. What it needs and what it leads to.`}>
+  <article>
+    <header class:list={["hero", `era-${era.id}`]}>
+      <span class="icon large" aria-hidden="true">{initial}</span>
+      <div>
+        <p class="eyebrow">{era.data.name} era</p>
+        <h1>{tech.data.name}</h1>
+        <p class="meta">{formatYear(tech.data.year)}</p>
+      </div>
+    </header>
+
+    <div class="focus">
+      <section>
+        <h2>Requires</h2>
+        {requires.length
+          ? <ul class="card-grid">{requires.map((t) => <li><TechCard tech={t} /></li>)}</ul>
+          : <p class="none">Nothing. This is where the tree starts.</p>}
+      </section>
+      <section>
+        <h2>Leads to</h2>
+        {unlocks.length
+          ? <ul class="card-grid">{unlocks.map((t) => <li><TechCard tech={t} /></li>)}</ul>
+          : <p class="none">Nothing yet in the tree.</p>}
+      </section>
+    </div>
+
+    <section class="body">
+      {hasBody ? <Content /> : <p class="none">There's no write-up yet. You can <a href={editUrl(tech.id)}>add one on GitHub</a>.</p>}
+    </section>
+
+    <footer class="page-links">
+      <a href={url(`/#${tech.id}`)}>Show on the tree</a>
+      <a href={editUrl(tech.id)}>Edit this page on GitHub</a>
+    </footer>
+  </article>
+</Base>
+
+<style>
+  article { padding: 28px 0 8px; }
+  .hero { display: flex; align-items: center; gap: 18px; }
+  .hero h1 { font-size: 40px; margin: 0; }
+  .eyebrow { margin: 0; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+  .meta { margin: 4px 0 0; color: var(--muted); }
+  .focus { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+  .focus .card-grid { grid-template-columns: 1fr; }
+  .focus h2, .body :global(h2) { font-size: 19px; margin: 0 0 10px; }
+  .none { color: var(--muted); }
+  .body { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .page-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 28px; font-size: 15px; }
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 30px; }
+    .focus { grid-template-columns: 1fr; gap: 18px; }
+  }
+</style>

@@ -4,7 +4,20 @@ A technology tree of real human history in the style of the Civilization games, 
 
 The history half is the familiar way in: Agriculture, the Wheel, Writing and so on, laid out in eras. The main point is the future half. Each emerging technology gets its own page with a readiness level (TRL 1–9), dated and sourced milestones, and a projected arrival date from public forecasts.
 
-**Status:** planning. There's no site code yet. See [PLAN.md](PLAN.md) for the vision, decisions, architecture and phased roadmap.
+**Status:** Phase 1. The history tree is built as an Astro site; deployment to the domain is next. See [PLAN.md](PLAN.md) for the vision, decisions, architecture and phased roadmap.
+
+## Running it
+
+Needs Node 24 (see `.nvmrc`).
+
+```sh
+npm install
+npm run dev     # local site at http://localhost:4321
+npm run lint    # check the tree against the layout rules; add --grid to see the columns
+npm run build   # lint, then build the static site into dist/
+```
+
+Each technology is a Markdown file in `src/content/tech/`. To change the tree, edit a file's `requires` list (ids are file names) and run `npm run lint`.
 
 ## Repository
 
@@ -12,9 +25,12 @@ The history half is the familiar way in: Agriculture, the Wheel, Writing and so 
 | --- | --- |
 | [`PLAN.md`](PLAN.md) | The project plan: decisions, architecture, layout rules, content schema, phases, risks and costs. |
 | [`data/civs/`](data/civs/) | Seven tech trees from four strategy games, transcribed as JSON, for reference when building our own tree. |
-| [`data/history-tree.json`](data/history-tree.json) | Our merged history tree: 93 technologies and 112 links, each with an era, a rough year and an icon idea. The years are unsourced guesses. |
+| [`src/content/tech/`](src/content/tech/) | The history tree: one Markdown file per technology (93 technologies, 112 links), each with an era, a rough year, its prerequisites and an icon idea. The years are unsourced guesses. |
+| [`src/content/eras.yaml`](src/content/eras.yaml) | The eras and their year ranges. |
+| [`src/lib/columns.ts`](src/lib/columns.ts) | The column solver and layout rules, shared by the lint and the site build. |
+| [`scripts/lint.ts`](scripts/lint.ts) | Checks the tree against the layout rules in PLAN.md (`npm run lint`). |
+| [`data/history-tree.json`](data/history-tree.json) | The Phase 0 merged tree that the Markdown files were imported from (by `scripts/import-history.mjs`). Frozen; edit the Markdown files instead. |
 | [`data/merge-synonyms.yaml`](data/merge-synonyms.yaml) | Maps game technology names to the merged tree's names. |
-| [`scripts/lint_history.py`](scripts/lint_history.py) | Checks the merged tree against the layout rules in PLAN.md. Run `python3 scripts/lint_history.py --grid` to see the columns. |
 | [`scripts/merge_report.py`](scripts/merge_report.py) | Lists what each game technology became and which links differ from the games. Needs PyYAML. |
 
 ## Game trees (`data/civs/`)

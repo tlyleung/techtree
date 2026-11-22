@@ -1,0 +1,22 @@
+{
+  "name": "techtree",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "import-history": "node scripts/import-history.mjs",
+    "lint": "node scripts/lint.ts",
+    "dev": "astro dev",
+    "build": "node scripts/lint.ts && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "7.4.7",
+    "elkjs": "0.12.1",
+    "js-yaml": "5.5.0"
+  }
+}
