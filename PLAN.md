@@ -46,9 +46,14 @@ The Civ V trees are clean because they were **designed by hand**. `civ5-brave-ne
 The layout is calculated **at build time** with a layered-graph method (Sugiyama-style). It replaces the prototype's force simulation, which positioned nodes differently on every load, so the layout is now the same every time.
 
 1. **Layering.** History nodes go in columns by prerequisite depth, grouped into era bands. Future nodes go in **date bands** (e.g. 2030s, 2040s) based on the forecast median. Each date band is treated like an era band: it holds as many columns as it needs, with nodes depth-layered inside it, so two future nodes in the same band can still depend on each other. A **"today" line** separates the two halves.
-2. **Balancing columns.** A node can sit anywhere between its latest prerequisite and its earliest dependent. The layout uses that slack to keep every column within the width limit, as in Coffman–Graham layering, and to **shorten long links** (for example, moving Optics right so Optics → Compass skips one column instead of two). This is easiest as a small constraint problem: each link spans 1 or 2 columns, era and date bands stay contiguous, and each column holds at most 8 nodes.
-3. **Reducing crossings.** Nodes within each column are ordered by the barycenter or median heuristic over several sweeps. Candidate libraries: `d3-dag`, `elkjs` or `dagre`.
-4. **Routing.** Links that skip columns go through invisible "dummy" points so they route around nodes instead of through them. Links are drawn as rounded elbows.
+2. **Balancing columns (our code).** A node can sit anywhere between its latest prerequisite and its earliest dependent. The layout uses that slack to keep every column within the width limit, as in Coffman–Graham layering, and to **shorten long links** (for example, moving Optics right so Optics → Compass skips one column instead of two). This is a small constraint problem, solved with difference constraints (Bellman–Ford) in `scripts/lint_history.py`: each link spans 1 or 2 columns, era and date bands stay contiguous, and each column holds at most 8 nodes. No layout library enforces these as hard rules, and sharing one solver means the lint and the site always agree.
+3. **Reducing crossings, placing and routing ([elkjs](https://github.com/kieler/elkjs), ELK Layered).** The columns from step 2 are passed to ELK as **partitions** (`elk.partitioning.activate`, with each node's `elk.partitioning.partition` set to its column). No two nodes in a column are linked, so each partition becomes exactly one ELK layer. ELK then orders nodes within columns, places them vertically and routes links orthogonally, going around nodes for links that skip a column. It runs with a fixed `elk.randomSeed`, so the output is the same on every build. The same graph is laid out with `elk.direction` `RIGHT` for desktop and `DOWN` for mobile.
+4. **Drawing.** Our code draws ELK's link routes as rounded elbows with arrowheads.
+
+A test on the 93-node merged tree (November 2026, elkjs 0.9.3) kept every node in its column in both directions, produced 34 crossings, took about 0.4 s and gave identical output across runs. Two findings from it:
+
+- `elk.layered.layering.layerChoiceConstraint` is ignored outside ELK's Eclipse integration, so it can't pin columns. Interactive layering from given x positions also works, and is the fallback if partitioning ever breaks.
+- To tune: links leaving one node share a single line before they split, which makes them hard to trace (try ELK's port and edge spacing options, or offset links when drawing), and short columns are centred vertically rather than top-aligned.
 
 ### Lint rules (CI fails if broken)
 
@@ -181,7 +186,7 @@ Merge the game trees into one history tree of our own before any site code, so P
 
 - [ ] Set up the Astro project and the content collection schema.
 - [ ] Write a one-off script that turns `data/history-tree.json` into one Markdown file per node (name, era, prerequisites, rough year, icon idea).
-- [ ] Calculate the layout at build time (layering, column balancing, crossing reduction, routing) and add the lint rules to CI.
+- [ ] Calculate the layout at build time: our solver assigns columns, then elkjs (pinned by partitioning) reduces crossings, places nodes and routes links. Add the lint rules to CI.
 - [ ] Render the tree (era columns, elbow links, initial-in-circle icons) with pan and zoom, flowing left to right on desktop and top to bottom on mobile.
 - [ ] Build the mobile focus view.
 - [ ] Generate a page per node with the name, era, year, prerequisites and what it leads to.
