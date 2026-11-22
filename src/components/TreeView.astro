@@ -37,7 +37,7 @@ const initial = (name: string) => name.replace(/^The /, "")[0];
             <a href={url(`tech/${b.id}/`)} class:list={["node", `era-${t.data.era.id}`]} data-id={b.id}
                data-up={[...tree.ancestors.get(b.id)!].join(" ")} data-down={[...tree.descendants.get(b.id)!].join(" ")}>
               <title>{`${t.data.name}, ${formatYear(t.data.year)}`}</title>
-              <rect x={b.x} y={b.y} width={b.w} height={b.h} rx={right ? b.h / 2 : 12} />
+              <rect x={b.x} y={b.y} width={b.w} height={b.h} rx={12} />
               <circle cx={cx} cy={cy} r={right ? 15 : 14} />
               <text class="initial" x={cx} y={cy + 5} text-anchor="middle">{initial(t.data.name)}</text>
               {right ? (

@@ -25,10 +25,11 @@ async function draw(nodes: TechNode[], links: Link[], columns: Map<string, numbe
       "elk.edgeRouting": "ORTHOGONAL",
       "elk.randomSeed": "1",
       "elk.partitioning.activate": "true",
-      "elk.layered.spacing.nodeNodeBetweenLayers": dir === "RIGHT" ? "64" : "40",
+      "elk.layered.spacing.nodeNodeBetweenLayers": dir === "RIGHT" ? "88" : "48",
       "elk.spacing.nodeNode": dir === "RIGHT" ? "14" : "10",
       "elk.layered.spacing.edgeNodeBetweenLayers": "16",
-      "elk.layered.spacing.edgeEdgeBetweenLayers": "8",
+      "elk.layered.spacing.edgeEdgeBetweenLayers": "12",
+      "elk.spacing.edgeEdge": "12",
       "elk.layered.nodePlacement.strategy": "NETWORK_SIMPLEX",
     },
     children: nodes.map((n) => ({
@@ -42,7 +43,10 @@ async function draw(nodes: TechNode[], links: Link[], columns: Map<string, numbe
   const byId = new Map(boxes.map((b) => [b.id, b]));
   const routes: Route[] = res.edges!.map((e, i) => {
     const s = e.sections![0];
-    return { source: links[i][0], target: links[i][1], points: [s.startPoint, ...(s.bendPoints ?? []), s.endPoint] };
+    // Start each link a little inside its card (cards are drawn on top), so
+    // links that leave near a rounded corner don't start with a gap.
+    const inset = dir === "RIGHT" ? { x: s.startPoint.x - 12, y: s.startPoint.y } : { x: s.startPoint.x, y: s.startPoint.y - 12 };
+    return { source: links[i][0], target: links[i][1], points: [inset, s.startPoint, ...(s.bendPoints ?? []), s.endPoint] };
   });
 
   // Era bands span their nodes along the flow axis, meeting halfway between eras.

@@ -53,7 +53,7 @@ The layout is calculated **at build time** with a layered-graph method (Sugiyama
 A test on the 93-node merged tree (November 2026, elkjs 0.9.3) kept every node in its column in both directions, produced 34 crossings, took about 0.4 s and gave identical output across runs. Two findings from it:
 
 - `elk.layered.layering.layerChoiceConstraint` is ignored outside ELK's Eclipse integration, so it can't pin columns. Interactive layering from given x positions also works, and is the fallback if partitioning ever breaks.
-- To tune: links leaving one node share a single line before they split, which makes them hard to trace (try ELK's port and edge spacing options, or offset links when drawing), and short columns are centred vertically rather than top-aligned.
+- Links that looked shared were parallel lines 8px apart. Phase 1 tuning spread them to 12px and starts each link inside its card, so none starts at a rounded corner.
 
 ### Lint rules (CI fails if broken)
 
@@ -195,7 +195,7 @@ Merge the game trees into one history tree of our own before any site code, so P
 - [x] Build the mobile focus view: phones in portrait open on a list by era, and each technology page shows one level of prerequisites and one level of what it leads to. The full tree is one tab away.
 - [x] Generate a page per node with the name, era, year, prerequisites and what it leads to.
 - [ ] Deploy to GitHub Pages through the Actions workflow (`.github/workflows/deploy.yml`). Set Pages' source to GitHub Actions, set technologytree.org in Settings → Pages and enforce HTTPS before pointing DNS at GitHub.
-- [ ] Tune the layout: links leaving one node share a line before they split, and short columns are centred vertically.
+- [x] Tune the layout: links are spread 12px apart and start inside their cards, and columns are further apart. Merging links (Civ-style trunks) was tried and rejected: 9 more crossings, and junctions where links from different technologies share a line. Top-aligning short columns (Brandes–Köpf `LEFTUP`) made the tree about 55% taller, so short columns stay centred.
 
 **Done when** the merged tree is live on the domain and every node opens its own page.
 
