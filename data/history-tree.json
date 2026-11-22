@@ -1,0 +1,1054 @@
+{
+  "groups": [
+    {
+      "name": "Ancient",
+      "from": null,
+      "to": -1000
+    },
+    {
+      "name": "Classical",
+      "from": -1000,
+      "to": 500
+    },
+    {
+      "name": "Medieval",
+      "from": 500,
+      "to": 1450
+    },
+    {
+      "name": "Renaissance",
+      "from": 1450,
+      "to": 1750
+    },
+    {
+      "name": "Industrial",
+      "from": 1750,
+      "to": 1900
+    },
+    {
+      "name": "Modern",
+      "from": 1900,
+      "to": 1945
+    },
+    {
+      "name": "Atomic",
+      "from": 1945,
+      "to": 1970
+    },
+    {
+      "name": "Information",
+      "from": 1970,
+      "to": null
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Mining",
+      "era": "Ancient",
+      "year": -43000,
+      "icon": "Mining pickaxe"
+    },
+    {
+      "name": "Pottery",
+      "era": "Ancient",
+      "year": -18000,
+      "icon": "Terracotta amphora jar"
+    },
+    {
+      "name": "Archery",
+      "era": "Ancient",
+      "year": -10000,
+      "icon": "Archery target with two arrows"
+    },
+    {
+      "name": "Agriculture",
+      "era": "Ancient",
+      "year": -10000,
+      "icon": "Person plowing field"
+    },
+    {
+      "name": "Masonry",
+      "era": "Ancient",
+      "year": -9500,
+      "icon": "Brick trowel"
+    },
+    {
+      "name": "Animal Husbandry",
+      "era": "Ancient",
+      "year": -9000,
+      "icon": "Grazing sheep"
+    },
+    {
+      "name": "Irrigation",
+      "era": "Ancient",
+      "year": -6000,
+      "icon": "Green shoots sprouting from ground"
+    },
+    {
+      "name": "Sailing",
+      "era": "Ancient",
+      "year": -5500,
+      "icon": "Ancient Greek sailing boat"
+    },
+    {
+      "name": "The Wheel",
+      "era": "Ancient",
+      "year": -4500,
+      "icon": "Prehistoric stone wheel"
+    },
+    {
+      "name": "Horseback Riding",
+      "era": "Ancient",
+      "year": -3500,
+      "icon": "Person riding a horse"
+    },
+    {
+      "name": "Bronze Working",
+      "era": "Ancient",
+      "year": -3300,
+      "icon": "Bronze breastplate"
+    },
+    {
+      "name": "Writing",
+      "era": "Ancient",
+      "year": -3200,
+      "icon": "Quill and inkwell"
+    },
+    {
+      "name": "Astrology",
+      "era": "Ancient",
+      "year": -3000,
+      "icon": "Astrology sun illustration"
+    },
+    {
+      "name": "Shipbuilding",
+      "era": "Ancient",
+      "year": -3000,
+      "icon": "Wood ship frame"
+    },
+    {
+      "name": "Construction",
+      "era": "Ancient",
+      "year": -2600,
+      "icon": "Hammer hitting nail into wood"
+    },
+    {
+      "name": "Calendar",
+      "era": "Ancient",
+      "year": -2500,
+      "icon": "Vintage clocktower"
+    },
+    {
+      "name": "Mathematics",
+      "era": "Ancient",
+      "year": -2000,
+      "icon": "Vintage abacus"
+    },
+    {
+      "name": "Celestial Navigation",
+      "era": "Ancient",
+      "year": -1500,
+      "icon": "Sextant"
+    },
+    {
+      "name": "Engineering",
+      "era": "Ancient",
+      "year": -1300,
+      "icon": "Vintage metal cogs"
+    },
+    {
+      "name": "Iron Working",
+      "era": "Ancient",
+      "year": -1200,
+      "icon": "Vintage iron sword"
+    },
+    {
+      "name": "Metal Casting",
+      "era": "Classical",
+      "year": -700,
+      "icon": "Pouring molten metal into mold"
+    },
+    {
+      "name": "Currency",
+      "era": "Classical",
+      "year": -600,
+      "icon": "Vintage gold and silver Roman coins"
+    },
+    {
+      "name": "Philosophy",
+      "era": "Classical",
+      "year": -600,
+      "icon": "Statue of the thinker"
+    },
+    {
+      "name": "Machinery",
+      "era": "Classical",
+      "year": -250,
+      "icon": "Wooden water wheel with gears"
+    },
+    {
+      "name": "Astronomy",
+      "era": "Classical",
+      "year": -150,
+      "icon": "Brass astrolabe"
+    },
+    {
+      "name": "Glass",
+      "era": "Classical",
+      "year": -50,
+      "icon": "Hand-blown glass vessel"
+    },
+    {
+      "name": "Paper",
+      "era": "Classical",
+      "year": 105,
+      "icon": "Stack of handmade paper sheets"
+    },
+    {
+      "name": "Stirrups",
+      "era": "Classical",
+      "year": 300,
+      "icon": "Metal stirrups"
+    },
+    {
+      "name": "Gunpowder",
+      "era": "Medieval",
+      "year": 850,
+      "icon": "Gunpowder and mortar shell"
+    },
+    {
+      "name": "Castles",
+      "era": "Medieval",
+      "year": 900,
+      "icon": "Stone castle keep"
+    },
+    {
+      "name": "Guilds",
+      "era": "Medieval",
+      "year": 1000,
+      "icon": "Pouch of coins"
+    },
+    {
+      "name": "Compass",
+      "era": "Medieval",
+      "year": 1040,
+      "icon": "Vintage compass"
+    },
+    {
+      "name": "Education",
+      "era": "Medieval",
+      "year": 1088,
+      "icon": "Square academic cap"
+    },
+    {
+      "name": "Cartography",
+      "era": "Medieval",
+      "year": 1270,
+      "icon": "Portolan chart"
+    },
+    {
+      "name": "Optics",
+      "era": "Medieval",
+      "year": 1286,
+      "icon": "Pair of early eyeglasses"
+    },
+    {
+      "name": "Banking",
+      "era": "Medieval",
+      "year": 1407,
+      "icon": "Gold coin stacks"
+    },
+    {
+      "name": "Printing Press",
+      "era": "Medieval",
+      "year": 1440,
+      "icon": "Movable type"
+    },
+    {
+      "name": "Architecture",
+      "era": "Renaissance",
+      "year": 1450,
+      "icon": "Vintage building blueprint"
+    },
+    {
+      "name": "Navigation",
+      "era": "Renaissance",
+      "year": 1480,
+      "icon": "Dividing compass resting on vintage sea map"
+    },
+    {
+      "name": "Metallurgy",
+      "era": "Renaissance",
+      "year": 1556,
+      "icon": "Pouring molten metal into mold"
+    },
+    {
+      "name": "Economics",
+      "era": "Renaissance",
+      "year": 1602,
+      "icon": "Rising bar chart"
+    },
+    {
+      "name": "Scientific Method",
+      "era": "Renaissance",
+      "year": 1620,
+      "icon": "Microscope"
+    },
+    {
+      "name": "Acoustics",
+      "era": "Renaissance",
+      "year": 1636,
+      "icon": "Grand church organ"
+    },
+    {
+      "name": "Physics",
+      "era": "Renaissance",
+      "year": 1687,
+      "icon": "Newton's Cradle"
+    },
+    {
+      "name": "Steam Power",
+      "era": "Renaissance",
+      "year": 1712,
+      "icon": "Steam locomotive"
+    },
+    {
+      "name": "Archaeology",
+      "era": "Renaissance",
+      "year": 1738,
+      "icon": "Unearthed fossil in archaeological dig site"
+    },
+    {
+      "name": "Industrialization",
+      "era": "Industrial",
+      "year": 1760,
+      "icon": "Factory with billowing smoke"
+    },
+    {
+      "name": "Civil Engineering",
+      "era": "Industrial",
+      "year": 1771,
+      "icon": "Stone arch bridge"
+    },
+    {
+      "name": "Chemistry",
+      "era": "Industrial",
+      "year": 1789,
+      "icon": "Test tubes in a rack"
+    },
+    {
+      "name": "Vaccination",
+      "era": "Industrial",
+      "year": 1796,
+      "icon": "Vintage glass syringe"
+    },
+    {
+      "name": "Electricity",
+      "era": "Industrial",
+      "year": 1800,
+      "icon": "Lighting striking a key tied to a kite"
+    },
+    {
+      "name": "Replaceable Parts",
+      "era": "Industrial",
+      "year": 1803,
+      "icon": "Assorted metal screws and cogs"
+    },
+    {
+      "name": "Railroad",
+      "era": "Industrial",
+      "year": 1825,
+      "icon": "Steam locomotive tracks"
+    },
+    {
+      "name": "Mass Media",
+      "era": "Industrial",
+      "year": 1833,
+      "icon": "Stack of newspapers"
+    },
+    {
+      "name": "Telegraph",
+      "era": "Industrial",
+      "year": 1837,
+      "icon": "Morse telegraph key"
+    },
+    {
+      "name": "Photography",
+      "era": "Industrial",
+      "year": 1839,
+      "icon": "Wooden bellows camera"
+    },
+    {
+      "name": "Fertilizer",
+      "era": "Industrial",
+      "year": 1842,
+      "icon": "Wheelbarrow of manure"
+    },
+    {
+      "name": "Rifling",
+      "era": "Industrial",
+      "year": 1850,
+      "icon": "Hunting rifle"
+    },
+    {
+      "name": "Steel",
+      "era": "Industrial",
+      "year": 1856,
+      "icon": "Metal I-Beam"
+    },
+    {
+      "name": "Refrigeration",
+      "era": "Industrial",
+      "year": 1856,
+      "icon": "Refrigerator"
+    },
+    {
+      "name": "Sanitation",
+      "era": "Industrial",
+      "year": 1858,
+      "icon": "Brick sewer tunnel"
+    },
+    {
+      "name": "Biology",
+      "era": "Industrial",
+      "year": 1859,
+      "icon": "Nautilus shell"
+    },
+    {
+      "name": "Genetics",
+      "era": "Industrial",
+      "year": 1865,
+      "icon": "DNA double helix"
+    },
+    {
+      "name": "Ecology",
+      "era": "Industrial",
+      "year": 1866,
+      "icon": "Scuba diving among fish"
+    },
+    {
+      "name": "Dynamite",
+      "era": "Industrial",
+      "year": 1867,
+      "icon": "Stick of dynamite"
+    },
+    {
+      "name": "Telephone",
+      "era": "Industrial",
+      "year": 1876,
+      "icon": "Candlestick telephone"
+    },
+    {
+      "name": "Combustion",
+      "era": "Industrial",
+      "year": 1876,
+      "icon": "Pistons of an internal combustion engine"
+    },
+    {
+      "name": "Radio",
+      "era": "Industrial",
+      "year": 1896,
+      "icon": "Radio condenser microphone"
+    },
+    {
+      "name": "Flight",
+      "era": "Modern",
+      "year": 1903,
+      "icon": "Biplane"
+    },
+    {
+      "name": "Electronics",
+      "era": "Modern",
+      "year": 1906,
+      "icon": "Vintage vacuum tube"
+    },
+    {
+      "name": "Plastics",
+      "era": "Modern",
+      "year": 1907,
+      "icon": "Plastic bottle"
+    },
+    {
+      "name": "Atomic Theory",
+      "era": "Modern",
+      "year": 1911,
+      "icon": "Atomic diagram"
+    },
+    {
+      "name": "Mass Production",
+      "era": "Modern",
+      "year": 1913,
+      "icon": "Car assembly line"
+    },
+    {
+      "name": "Rocketry",
+      "era": "Modern",
+      "year": 1926,
+      "icon": "Rocket on launchpad"
+    },
+    {
+      "name": "Penicillin",
+      "era": "Modern",
+      "year": 1928,
+      "icon": "Petri dish with bacteria"
+    },
+    {
+      "name": "Particle Physics",
+      "era": "Modern",
+      "year": 1932,
+      "icon": "Sub-atomic particle collisions"
+    },
+    {
+      "name": "Radar",
+      "era": "Modern",
+      "year": 1935,
+      "icon": "Radar dish"
+    },
+    {
+      "name": "Jet Engine",
+      "era": "Modern",
+      "year": 1939,
+      "icon": "Jet engine turbine"
+    },
+    {
+      "name": "Nuclear Fission",
+      "era": "Modern",
+      "year": 1942,
+      "icon": "Splitting atoms"
+    },
+    {
+      "name": "Guidance Systems",
+      "era": "Modern",
+      "year": 1944,
+      "icon": "Gyroscope"
+    },
+    {
+      "name": "Computers",
+      "era": "Atomic",
+      "year": 1946,
+      "icon": "Vintage desktop computer"
+    },
+    {
+      "name": "Transistor",
+      "era": "Atomic",
+      "year": 1947,
+      "icon": "Point-contact transistor"
+    },
+    {
+      "name": "Nuclear Fusion",
+      "era": "Atomic",
+      "year": 1952,
+      "icon": "Nuclear fusion tokamak"
+    },
+    {
+      "name": "Satellites",
+      "era": "Atomic",
+      "year": 1957,
+      "icon": "Satellite"
+    },
+    {
+      "name": "Lasers",
+      "era": "Atomic",
+      "year": 1960,
+      "icon": "Laser experiment"
+    },
+    {
+      "name": "Spaceflight",
+      "era": "Atomic",
+      "year": 1961,
+      "icon": "Astronaut in orbit"
+    },
+    {
+      "name": "Robotics",
+      "era": "Atomic",
+      "year": 1961,
+      "icon": "Robotic arm"
+    },
+    {
+      "name": "Composites",
+      "era": "Atomic",
+      "year": 1963,
+      "icon": "Woven carbon fibre"
+    },
+    {
+      "name": "The Internet",
+      "era": "Atomic",
+      "year": 1969,
+      "icon": "World wide web"
+    },
+    {
+      "name": "Telecommunications",
+      "era": "Information",
+      "year": 1973,
+      "icon": "Vintage mobile phone"
+    },
+    {
+      "name": "Stealth",
+      "era": "Information",
+      "year": 1977,
+      "icon": "Stealth fighter"
+    },
+    {
+      "name": "Nanotechnology",
+      "era": "Information",
+      "year": 1981,
+      "icon": "Nanobots"
+    },
+    {
+      "name": "Social Media",
+      "era": "Information",
+      "year": 1997,
+      "icon": "Speech bubbles around a profile picture"
+    }
+  ],
+  "links": [
+    {
+      "source": "Mining",
+      "target": "Masonry"
+    },
+    {
+      "source": "Agriculture",
+      "target": "Animal Husbandry"
+    },
+    {
+      "source": "Agriculture",
+      "target": "Irrigation"
+    },
+    {
+      "source": "Pottery",
+      "target": "The Wheel"
+    },
+    {
+      "source": "Animal Husbandry",
+      "target": "The Wheel"
+    },
+    {
+      "source": "Archery",
+      "target": "The Wheel"
+    },
+    {
+      "source": "Animal Husbandry",
+      "target": "Horseback Riding"
+    },
+    {
+      "source": "Mining",
+      "target": "Bronze Working"
+    },
+    {
+      "source": "Pottery",
+      "target": "Writing"
+    },
+    {
+      "source": "Sailing",
+      "target": "Shipbuilding"
+    },
+    {
+      "source": "Bronze Working",
+      "target": "Shipbuilding"
+    },
+    {
+      "source": "Masonry",
+      "target": "Construction"
+    },
+    {
+      "source": "The Wheel",
+      "target": "Construction"
+    },
+    {
+      "source": "Astrology",
+      "target": "Calendar"
+    },
+    {
+      "source": "Writing",
+      "target": "Mathematics"
+    },
+    {
+      "source": "Sailing",
+      "target": "Celestial Navigation"
+    },
+    {
+      "source": "Astrology",
+      "target": "Celestial Navigation"
+    },
+    {
+      "source": "Construction",
+      "target": "Engineering"
+    },
+    {
+      "source": "Bronze Working",
+      "target": "Iron Working"
+    },
+    {
+      "source": "Iron Working",
+      "target": "Metal Casting"
+    },
+    {
+      "source": "Mathematics",
+      "target": "Currency"
+    },
+    {
+      "source": "Mathematics",
+      "target": "Philosophy"
+    },
+    {
+      "source": "Engineering",
+      "target": "Machinery"
+    },
+    {
+      "source": "Iron Working",
+      "target": "Machinery"
+    },
+    {
+      "source": "Mathematics",
+      "target": "Astronomy"
+    },
+    {
+      "source": "Celestial Navigation",
+      "target": "Astronomy"
+    },
+    {
+      "source": "Bronze Working",
+      "target": "Glass"
+    },
+    {
+      "source": "Writing",
+      "target": "Paper"
+    },
+    {
+      "source": "Horseback Riding",
+      "target": "Stirrups"
+    },
+    {
+      "source": "Metal Casting",
+      "target": "Gunpowder"
+    },
+    {
+      "source": "Stirrups",
+      "target": "Castles"
+    },
+    {
+      "source": "Machinery",
+      "target": "Castles"
+    },
+    {
+      "source": "Currency",
+      "target": "Guilds"
+    },
+    {
+      "source": "Metal Casting",
+      "target": "Compass"
+    },
+    {
+      "source": "Philosophy",
+      "target": "Education"
+    },
+    {
+      "source": "Guilds",
+      "target": "Education"
+    },
+    {
+      "source": "Compass",
+      "target": "Cartography"
+    },
+    {
+      "source": "Astronomy",
+      "target": "Cartography"
+    },
+    {
+      "source": "Glass",
+      "target": "Optics"
+    },
+    {
+      "source": "Guilds",
+      "target": "Optics"
+    },
+    {
+      "source": "Guilds",
+      "target": "Banking"
+    },
+    {
+      "source": "Machinery",
+      "target": "Printing Press"
+    },
+    {
+      "source": "Metal Casting",
+      "target": "Printing Press"
+    },
+    {
+      "source": "Paper",
+      "target": "Printing Press"
+    },
+    {
+      "source": "Castles",
+      "target": "Architecture"
+    },
+    {
+      "source": "Banking",
+      "target": "Architecture"
+    },
+    {
+      "source": "Cartography",
+      "target": "Navigation"
+    },
+    {
+      "source": "Printing Press",
+      "target": "Metallurgy"
+    },
+    {
+      "source": "Gunpowder",
+      "target": "Metallurgy"
+    },
+    {
+      "source": "Banking",
+      "target": "Economics"
+    },
+    {
+      "source": "Printing Press",
+      "target": "Economics"
+    },
+    {
+      "source": "Printing Press",
+      "target": "Scientific Method"
+    },
+    {
+      "source": "Optics",
+      "target": "Scientific Method"
+    },
+    {
+      "source": "Scientific Method",
+      "target": "Acoustics"
+    },
+    {
+      "source": "Scientific Method",
+      "target": "Physics"
+    },
+    {
+      "source": "Metallurgy",
+      "target": "Steam Power"
+    },
+    {
+      "source": "Scientific Method",
+      "target": "Archaeology"
+    },
+    {
+      "source": "Steam Power",
+      "target": "Industrialization"
+    },
+    {
+      "source": "Physics",
+      "target": "Civil Engineering"
+    },
+    {
+      "source": "Physics",
+      "target": "Chemistry"
+    },
+    {
+      "source": "Scientific Method",
+      "target": "Vaccination"
+    },
+    {
+      "source": "Physics",
+      "target": "Electricity"
+    },
+    {
+      "source": "Industrialization",
+      "target": "Replaceable Parts"
+    },
+    {
+      "source": "Steam Power",
+      "target": "Railroad"
+    },
+    {
+      "source": "Steam Power",
+      "target": "Mass Media"
+    },
+    {
+      "source": "Electricity",
+      "target": "Telegraph"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Photography"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Fertilizer"
+    },
+    {
+      "source": "Industrialization",
+      "target": "Rifling"
+    },
+    {
+      "source": "Industrialization",
+      "target": "Steel"
+    },
+    {
+      "source": "Steam Power",
+      "target": "Refrigeration"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Refrigeration"
+    },
+    {
+      "source": "Civil Engineering",
+      "target": "Sanitation"
+    },
+    {
+      "source": "Archaeology",
+      "target": "Biology"
+    },
+    {
+      "source": "Biology",
+      "target": "Genetics"
+    },
+    {
+      "source": "Biology",
+      "target": "Ecology"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Dynamite"
+    },
+    {
+      "source": "Telegraph",
+      "target": "Telephone"
+    },
+    {
+      "source": "Steam Power",
+      "target": "Combustion"
+    },
+    {
+      "source": "Chemistry",
+      "target": "Combustion"
+    },
+    {
+      "source": "Telegraph",
+      "target": "Radio"
+    },
+    {
+      "source": "Combustion",
+      "target": "Flight"
+    },
+    {
+      "source": "Radio",
+      "target": "Electronics"
+    },
+    {
+      "source": "Combustion",
+      "target": "Plastics"
+    },
+    {
+      "source": "Photography",
+      "target": "Atomic Theory"
+    },
+    {
+      "source": "Replaceable Parts",
+      "target": "Mass Production"
+    },
+    {
+      "source": "Steel",
+      "target": "Mass Production"
+    },
+    {
+      "source": "Combustion",
+      "target": "Rocketry"
+    },
+    {
+      "source": "Biology",
+      "target": "Penicillin"
+    },
+    {
+      "source": "Atomic Theory",
+      "target": "Particle Physics"
+    },
+    {
+      "source": "Electronics",
+      "target": "Particle Physics"
+    },
+    {
+      "source": "Electronics",
+      "target": "Radar"
+    },
+    {
+      "source": "Flight",
+      "target": "Jet Engine"
+    },
+    {
+      "source": "Atomic Theory",
+      "target": "Nuclear Fission"
+    },
+    {
+      "source": "Rocketry",
+      "target": "Guidance Systems"
+    },
+    {
+      "source": "Electronics",
+      "target": "Guidance Systems"
+    },
+    {
+      "source": "Radar",
+      "target": "Computers"
+    },
+    {
+      "source": "Electronics",
+      "target": "Transistor"
+    },
+    {
+      "source": "Nuclear Fission",
+      "target": "Nuclear Fusion"
+    },
+    {
+      "source": "Guidance Systems",
+      "target": "Satellites"
+    },
+    {
+      "source": "Radar",
+      "target": "Lasers"
+    },
+    {
+      "source": "Satellites",
+      "target": "Spaceflight"
+    },
+    {
+      "source": "Computers",
+      "target": "Robotics"
+    },
+    {
+      "source": "Plastics",
+      "target": "Composites"
+    },
+    {
+      "source": "Computers",
+      "target": "The Internet"
+    },
+    {
+      "source": "Computers",
+      "target": "Telecommunications"
+    },
+    {
+      "source": "Transistor",
+      "target": "Telecommunications"
+    },
+    {
+      "source": "Composites",
+      "target": "Stealth"
+    },
+    {
+      "source": "Computers",
+      "target": "Stealth"
+    },
+    {
+      "source": "Computers",
+      "target": "Nanotechnology"
+    },
+    {
+      "source": "Composites",
+      "target": "Nanotechnology"
+    },
+    {
+      "source": "The Internet",
+      "target": "Social Media"
+    }
+  ]
+}

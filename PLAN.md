@@ -1,6 +1,6 @@
 # technologytree.org: Plan
 
-This plan turns a 2017–18 D3 prototype into a public site on **technologytree.org**. The prototype drew a Civ V–style tree with elbow links and a force-directed layout. Its code isn't in this repo. The repo keeps the game trees in [`data/civs/`](data/civs/), plus the prototype's rough years and icon ideas for the Brave New World nodes in [`data/history-seed.json`](data/history-seed.json) (see [README.md](README.md)). Phase 0 merges these into one history tree of our own.
+This plan turns a 2017–18 D3 prototype into a public site on **technologytree.org**. The prototype drew a Civ V–style tree with elbow links and a force-directed layout. Its code isn't in this repo. The repo keeps the game trees in [`data/civs/`](data/civs/), and our own merged history tree in [`data/history-tree.json`](data/history-tree.json) (see [README.md](README.md)).
 
 ## Vision
 
@@ -12,7 +12,7 @@ This plan turns a 2017–18 D3 prototype into a public site on **technologytree.
 | --- | --- |
 | Audience | Futurists and forecasters. Credibility and sourcing come first. |
 | Role of history | History is context and the on-ramp, with lighter rigour than the future section. |
-| History tree | **Merge** the Civ V: Brave New World tree, the Civ VI technology tree and the tech-like Civ VI civics into one tree of about 110 nodes (`data/history-tree.json`), dropping game-only nodes and fixing the dependencies that are most wrong. See [Phase 0](#phase-0-merged-history-tree). Technology names such as Agriculture are generic; the games' writing and art aren't used. |
+| History tree | **Merge** the Civ V: Brave New World tree, the Civ VI technology tree and the tech-like Civ VI civics into one tree of 93 nodes (`data/history-tree.json`), dropping game-only nodes and fixing the dependencies that are most wrong. See [Phase 0](#phase-0-merged-history-tree). Technology names such as Agriculture are generic; the games' writing and art aren't used. |
 | Progress measure | **TRL 1–9** as the headline, backed by **dated, sourced milestones**. |
 | History vs future | A technology counts as **history once it has been demonstrated for the first time**. Until then it is future. |
 | Lineage | Every future technology must **lead back through its prerequisites to a history node**. |
@@ -81,9 +81,10 @@ src/content/tech/
   ...
 src/content/eras.yaml
 data/civs/               # reference game trees (exists)
-data/history-seed.json   # prototype's rough years and icon ideas (exists; replaced in Phase 0)
-data/merge-synonyms.yaml # matches the same technology across game trees
-data/history-tree.json   # merged history tree, the Phase 1 import source
+data/history-tree.json   # merged history tree, the Phase 1 import source (exists)
+data/merge-synonyms.yaml # matches the same technology across game trees (exists)
+scripts/lint_history.py  # layout rules for the history tree (exists)
+scripts/merge_report.py  # what each game technology became, for sign-off (exists)
 data/candidates.yaml     # future-technology candidates
 data/forecasts/          # dated forecast snapshots, written by script
 docs/trl-rubric.md       # public scoring rubric
@@ -164,14 +165,15 @@ Kurzweil's 1999 predictions for 2009 and 2019 have been graded already: by him i
 
 Merge the game trees into one history tree of our own before any site code, so Phase 1 launches the tree we want instead of a game's.
 
-- [ ] Take the history trees as input: Civ V: Brave New World, the Civ VI technology tree, and the **tech-like Civ VI civics**. Gods & Kings and base Civ V are mostly subsets of Brave New World. Alpha Centauri and Beyond Earth are science fiction and feed the future candidates in Phase 2 instead.
-- [ ] Keep a civic only if it passes the same test as a technology: a method, device or practice with a datable first demonstration (e.g. Civil Engineering, Mass Media, Social Media). Leave out institutions, ideologies and policies (e.g. Code of Laws, Feudalism, Totalitarianism). Space Race and Nuclear Program are candidates if renamed as the technologies behind them (spaceflight, nuclear fission).
-- [ ] Match technologies across games: the same name is the same technology, and a small synonym table in `data/merge-synonyms.yaml` handles near-matches.
-- [ ] Combine prerequisites from all sources, remove redundant links, and break cycles. Where the games disagree, real history decides, not either game.
-- [ ] Fix dependencies that exist only for game balance, and drop game-only nodes (Future Tech, and e.g. Mobile Tactics and Combined Arms unless they map to a real technology).
-- [ ] Give every node an era, a rough year and an icon idea, starting from `data/history-seed.json` for the Brave New World nodes. Years stay rough here; Phase 3 sources them.
-- [ ] Write the result to `data/history-tree.json` (about 110 nodes), replacing `data/history-seed.json`.
-- [ ] Write a script that checks the merged tree against the Phase 1 lint rules (≤ 8 per column, links skip ≤ 1 column, links point rightward, no cycles, no redundant links), using a first version of the layering step.
+- [x] Take the history trees as input: Civ V: Brave New World, the Civ VI technology tree, and the **tech-like Civ VI civics**. Gods & Kings and base Civ V are mostly subsets of Brave New World. Alpha Centauri and Beyond Earth are science fiction and feed the future candidates in Phase 2 instead.
+- [x] Keep a civic only if it passes the same test as a technology: a method, device or practice with a datable first demonstration (e.g. Civil Engineering, Mass Media, Social Media). Leave out institutions, ideologies and policies (e.g. Code of Laws, Feudalism, Totalitarianism). Space Race and Nuclear Program are candidates if renamed as the technologies behind them (spaceflight, nuclear fission).
+- [x] Match technologies across games: the same name is the same technology, and a small synonym table in `data/merge-synonyms.yaml` handles near-matches.
+- [x] Combine prerequisites from all sources, remove redundant links, and break cycles. Where the games disagree, real history decides, not either game.
+- [x] Fix dependencies that exist only for game balance, and drop game-only nodes (Future Tech, and e.g. Mobile Tactics and Combined Arms unless they map to a real technology).
+- [x] Give every node an era, a rough year and an icon idea, starting from the prototype's years and icon ideas for the Brave New World nodes. Eras follow from the year: Ancient before 1000 BCE, Classical to 500, Medieval to 1450, Renaissance to 1750, Industrial to 1900, Modern to 1945, Atomic to 1970, then Information. Years stay rough here; Phase 3 sources them.
+- [x] Write the result to `data/history-tree.json` (93 nodes, 112 links).
+- [x] Write `scripts/lint_history.py`, which checks the merged tree against the Phase 1 lint rules (≤ 8 per column, links skip ≤ 1 column, links point rightward, no cycles, no redundant links). It assigns columns by solving the span and era-band limits as difference constraints, so a failure means no layout can satisfy the rules, not just that the first attempt missed.
+- [x] Maintainer sign-off, using `scripts/merge_report.py`.
 
 **Done when** `data/history-tree.json` passes the lint rules and the maintainer has signed off on every node and link.
 

@@ -1,0 +1,14 @@
+# Maps a game's technology name to the merged tree's name.
+# Names not listed keep their game name.
+Wheel: The Wheel
+Printing: Printing Press
+Scientific Theory: Scientific Method
+Stealth Technology: Stealth
+Apprenticeship: Guilds
+Square Rigging: Navigation
+Synthetic Materials: Plastics
+Advanced Ballistics: Guidance Systems
+Advanced Flight: Jet Engine
+Natural History: Biology
+Nuclear Program: Nuclear Fission
+Space Race: Spaceflight

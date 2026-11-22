@@ -12,7 +12,10 @@ The history half is the familiar way in: Agriculture, the Wheel, Writing and so 
 | --- | --- |
 | [`PLAN.md`](PLAN.md) | The project plan: decisions, architecture, layout rules, content schema, phases, risks and costs. |
 | [`data/civs/`](data/civs/) | Seven tech trees from four strategy games, transcribed as JSON, for reference when building our own tree. |
-| [`data/history-seed.json`](data/history-seed.json) | Rough years and icon ideas for the 81 Brave New World technologies, recovered from the 2017–18 prototype. The years are unsourced guesses. Phase 0 folds it into the merged history tree. |
+| [`data/history-tree.json`](data/history-tree.json) | Our merged history tree: 93 technologies and 112 links, each with an era, a rough year and an icon idea. The years are unsourced guesses. |
+| [`data/merge-synonyms.yaml`](data/merge-synonyms.yaml) | Maps game technology names to the merged tree's names. |
+| [`scripts/lint_history.py`](scripts/lint_history.py) | Checks the merged tree against the layout rules in PLAN.md. Run `python3 scripts/lint_history.py --grid` to see the columns. |
+| [`scripts/merge_report.py`](scripts/merge_report.py) | Lists what each game technology became and which links differ from the games. Needs PyYAML. |
 
 ## Game trees (`data/civs/`)
 
