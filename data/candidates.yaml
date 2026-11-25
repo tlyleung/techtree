@@ -10,6 +10,7 @@
   name: AI Scientists
   definition: An AI system autonomously proposes and validates a discovery that the relevant field treats as a major result (e.g. one cited in a Nobel-level prize citation or a top-journal headline result), with humans only running instruments.
   type: node
+  pick: short
   branch: ai
   band_guess: late-2020s
   requires:
@@ -28,6 +29,7 @@
   name: Robot Surgeons
   definition: A robot performs a complete surgical procedure on a living human patient with no human control of the instruments (surgeons only supervise).
   type: node
+  pick: short
   branch: medicine
   band_guess: late-2020s
   requires:
@@ -56,6 +58,7 @@
   name: Brain Implants
   definition: A regulator approves an implanted brain-computer interface that lets a paralysed person speak or type in real time.
   type: node
+  pick: short
   branch: medicine
   band_guess: late-2020s
   requires:
@@ -87,6 +90,7 @@
   name: Modular Reactors
   definition: A factory-standardised light-water SMR (under 300 MWe) enters commercial operation on a land-based grid.
   type: node
+  pick: short
   branch: energy
   band_guess: late-2020s
   requires:
@@ -120,6 +124,7 @@
   name: Private Space Stations
   definition: A privately owned, free-flying space station hosts a visiting crew.
   type: node
+  pick: drop
   branch: space
   band_guess: late-2020s
   requires:
@@ -148,6 +153,7 @@
   name: Air Taxis
   definition: An electric vertical-takeoff aircraft carries paying passengers point-to-point between vertiports in a city on a regular commercial service.
   type: node
+  pick: drop
   branch: transport
   band_guess: late-2020s
   requires:
@@ -187,6 +193,7 @@
   name: Fully Reusable Rockets
   definition: Both stages of an orbital rocket are recovered intact and the same upper stage flies to orbit again.
   type: node
+  pick: short
   branch: space
   band_guess: late-2020s
   requires:
@@ -206,6 +213,7 @@
   name: Green Steel
   definition: A steel plant produces at least 1 million tonnes per year of steel from iron reduced with electrolytic hydrogen.
   type: node
+  pick: short
   branch: manufacturing
   band_guess: late-2020s
   requires:
@@ -229,6 +237,7 @@
   name: Gene Editing Cures
   definition: A regulator approves a gene-editing therapy delivered directly into the body (not edited cells reinfused), e.g. a CRISPR or base editor delivered by lipid nanoparticles to the liver.
   type: node
+  pick: short
   branch: medicine
   band_guess: late-2020s
   requires:
@@ -258,6 +267,7 @@
   name: Humanoid Robots
   definition: Cumulative manufacture of one million general-purpose humanoid robots worldwide.
   type: node
+  pick: short
   branch: manufacturing
   band_guess: late-2020s
   requires:
@@ -289,6 +299,7 @@
   name: Self-Driving Cars
   definition: A consumer can buy a car that drives itself on public roads with nobody in the driver's seat, across at least a whole metro area.
   type: node
+  pick: short
   branch: transport
   band_guess: late-2020s
   requires:
@@ -328,6 +339,7 @@
   name: Cancer Vaccines
   definition: A regulator approves an individualized neoantigen cancer vaccine made from each patient's own tumour sequence.
   type: node
+  pick: short
   branch: medicine
   band_guess: late-2020s
   requires:
@@ -361,6 +373,7 @@
   name: Xenotransplants
   definition: A living patient keeps a functioning gene-edited pig kidney (or heart) for at least one year without returning to dialysis or other support.
   type: node
+  pick: short
   branch: medicine
   band_guess: late-2020s
   requires:
@@ -388,6 +401,7 @@
   name: Solid-State Batteries
   definition: A production car with an all-solid-state lithium battery goes on sale to the public.
   type: node
+  pick: short
   branch: energy
   band_guess: late-2020s
   requires:
@@ -410,6 +424,7 @@
   name: Anti-Ageing Drugs
   definition: A regulator approves a drug whose labelled indication is slowing biological aging (or an age-related multimorbidity endpoint), or an RCT shows it extends human lifespan.
   type: node
+  pick: short
   branch: medicine
   band_guess: 2030s
   requires:
@@ -435,6 +450,7 @@
   name: Cultured Meat
   definition: Meat grown from animal cells sells in shops in a major market at price parity with the same conventional cut.
   type: node
+  pick: short
   branch: biology
   band_guess: 2030s
   requires:
@@ -449,6 +465,7 @@
   name: Gene Drives
   definition: A gene-drive organism (e.g. malaria mosquitoes) is deliberately released into the wild under regulatory approval.
   type: node
+  pick: later
   branch: environment
   band_guess: 2030s
   requires:
@@ -470,6 +487,7 @@
   name: Medical Microbots
   definition: Untethered micro-robots (smaller than 1 mm) are steered through a living patient's blood vessels to deliver therapy in a registered clinical trial.
   type: node
+  pick: short
   branch: medicine
   band_guess: 2030s
   requires:
@@ -494,6 +512,7 @@
   name: Nuclear Rockets
   definition: A spacecraft is propelled in space by a nuclear thermal rocket engine (fission-heated propellant).
   type: node
+  pick: short
   branch: space
   band_guess: 2030s
   requires:
@@ -515,6 +534,7 @@
   name: Quantum Internet
   definition: Entanglement is distributed between quantum memories more than 100 km apart through a chain of quantum repeaters, beating direct-transmission rates.
   type: node
+  pick: short
   branch: communication
   band_guess: 2030s
   requires:
@@ -537,6 +557,7 @@
   name: Regenerative Medicine
   definition: A regulator approves a therapy that makes patients regrow a lost body structure, such as a tooth, hair follicles or insulin-producing islets.
   type: node
+  pick: short
   branch: medicine
   band_guess: 2030s
   requires:
@@ -551,6 +572,7 @@
   name: Space Solar Power
   definition: A satellite collects sunlight and beams usable power (at least kilowatts) to a ground receiver that feeds a load or grid.
   type: node
+  pick: short
   branch: energy
   band_guess: 2030s
   requires:
@@ -587,6 +609,7 @@
   name: Supersonic Travel
   definition: A supersonic airliner carries fare-paying passengers on a scheduled commercial route, for the first time since Concorde (2003).
   type: node
+  pick: short
   branch: transport
   band_guess: 2030s
   requires:
@@ -609,6 +632,7 @@
   name: De-Extinction
   definition: An elephant calf engineered to carry woolly mammoth traits (cold-adapted hair, fat, small ears) is born alive.
   type: node
+  pick: short
   branch: biology
   band_guess: 2030s
   requires:
@@ -630,6 +654,7 @@
   name: Zettascale Computing
   definition: A supercomputer sustains 10^21 floating-point operations per second on a standard benchmark (FP64 HPL, or state the precision).
   type: node
+  pick: short
   branch: computing
   band_guess: 2030s
   requires:
@@ -645,6 +670,7 @@
   name: Artificial Wombs
   definition: A human baby is carried for at least the last third of pregnancy in an artificial womb and is born healthy.
   type: node
+  pick: short
   branch: medicine
   band_guess: 2040s
   requires:
@@ -682,6 +708,7 @@
   name: Asteroid Mining
   definition: Material mined from an asteroid is sold or used commercially, in space or on Earth.
   type: node
+  pick: short
   branch: space
   band_guess: 2040s
   requires:
@@ -729,6 +756,7 @@
   name: Swarm Robotics
   definition: At least 10,000 physical robots with no central controller jointly complete a real-world task such as building a structure.
   type: node
+  pick: short
   branch: manufacturing
   band_guess: 2040s
   requires:
@@ -748,6 +776,7 @@
   name: Energy Abundance
   definition: Low-carbon sources (renewables, nuclear and others) generate at least 90% of the world's electricity over a calendar year.
   type: node
+  pick: short
   branch: energy
   band_guess: 2040s
   requires:
@@ -762,6 +791,7 @@
   name: Carbon Drawdown
   definition: Engineered carbon removal (DAC, BECCS, enhanced weathering) permanently stores 1 billion tonnes of CO2 in a single year worldwide.
   type: node
+  pick: short
   branch: environment
   band_guess: 2040s
   requires:
@@ -782,6 +812,7 @@
   name: HIV Vaccine
   definition: A preventive HIV vaccine shows at least 50% efficacy against infection in a Phase 2b or 3 trial.
   type: node
+  pick: short
   branch: medicine
   band_guess: 2040s
   requires:
@@ -810,6 +841,7 @@
   name: Germline Editing
   definition: A child is born after embryo gene editing to prevent a serious inherited disease, in an approved clinical programme with independent follow-up.
   type: node
+  pick: short
   branch: medicine
   band_guess: 2040s
   requires:
@@ -828,6 +860,7 @@
   name: Zero-Carbon Flight
   definition: A hydrogen-fuelled (combustion or fuel-cell) aircraft with at least 100 seats enters commercial passenger service.
   type: node
+  pick: short
   branch: transport
   band_guess: 2040s
   requires:
@@ -847,6 +880,7 @@
   name: Moon Base
   definition: A lunar surface outpost is continuously occupied by crew for at least one year.
   type: node
+  pick: short
   branch: space
   band_guess: 2040s
   requires:
@@ -876,6 +910,7 @@
   name: Superlubricity
   definition: A bearing or sliding contact at engineering scale runs in normal air for a year with a friction coefficient below 0.001.
   type: node
+  pick: short
   branch: materials
   band_guess: 2040s
   requires:
@@ -892,6 +927,7 @@
   name: Supercharged Crops
   definition: A staple crop with re-engineered photosynthesis is grown commercially and yields at least 20% more than its conventional variety.
   type: node
+  pick: short
   branch: biology
   band_guess: 2040s
   requires:
@@ -906,6 +942,7 @@
   name: Superintelligence
   definition: An AI system outperforms the best human experts at nearly every economically and scientifically important cognitive task, as shown by independent evaluations.
   type: node
+  pick: short
   branch: ai
   band_guess: 2040s
   requires:
@@ -921,6 +958,7 @@
   name: Synthetic Life
   definition: A living cell assembled entirely from non-living chemical components grows and divides on its own.
   type: node
+  pick: short
   branch: biology
   band_guess: 2040s
   requires:
@@ -940,6 +978,7 @@
   name: The Singularity
   definition: Machine intelligence created in one year totals a billion times the computing capacity of all human brains (Kurzweil's 2045 criterion).
   type: node
+  pick: short
   branch: ai
   band_guess: 2040s
   requires:
@@ -960,6 +999,7 @@
   name: Synthetic Telepathy
   definition: Two people exchange arbitrary sentences directly between implanted or wearable neural interfaces, with no speech, typing or other movement, faster than they could by typing.
   type: node
+  pick: short
   branch: communication
   band_guess: 2050-2075
   requires:
@@ -985,6 +1025,7 @@
   name: Cognitive Enhancement
   definition: A drug, gene therapy or implant is shown in a large randomised trial to give healthy adults a lasting gain in general cognitive ability of at least 10 IQ points or equivalent.
   type: node
+  pick: short
   branch: medicine
   band_guess: 2050-2075
   requires:
@@ -1000,6 +1041,7 @@
   name: Friendly AI
   definition: An AI system is deployed whose objective is formally derived from the extrapolated, reconciled preferences of a large human population, by a published procedure.
   type: node
+  pick: short
   branch: ai
   band_guess: 2050-2075
   requires:
@@ -1019,6 +1061,7 @@
   name: Full-Immersion VR
   definition: A person experiences a virtual environment through direct neural stimulation of sight, hearing and touch, and cannot tell it from reality in blinded trials.
   type: node
+  pick: short
   branch: computing
   band_guess: 2050-2075
   requires:
@@ -1042,6 +1085,7 @@
   name: Fusion Rockets
   definition: A spacecraft is propelled in space by thrust from nuclear fusion reactions.
   type: node
+  pick: short
   branch: space
   band_guess: 2050-2075
   requires:
@@ -1057,6 +1101,7 @@
   name: Hyperloop
   definition: Passengers ride a pod through a low-pressure tube at over 500 km/h on a commercial route.
   type: node
+  pick: short
   branch: transport
   band_guess: 2050-2075
   requires:
@@ -1074,6 +1119,7 @@
   name: Light Sails
   definition: A spacecraft is launched with a planned trajectory and speed to reach another star system (e.g. Alpha Centauri) within 100 years.
   type: node
+  pick: short
   branch: space
   band_guess: 2050-2075
   requires:
@@ -1099,6 +1145,7 @@
   name: Longevity Escape Velocity
   definition: In some national population, period remaining life expectancy at age 60 rises by more than one year per calendar year, sustained over five years.
   type: node
+  pick: short
   branch: medicine
   band_guess: 2050-2075
   requires:
@@ -1135,6 +1182,7 @@
   name: Brain Emulation
   definition: A whole brain of a mammal is scanned and emulated in a computer, and the emulation reproduces the animal's learned behaviour.
   type: node
+  pick: short
   branch: biology
   band_guess: 2050-2075
   requires:
@@ -1163,6 +1211,7 @@
   name: Molecular Assemblers
   definition: A programmable machine builds a macroscopic object, or a copy of its own key parts, by placing individual atoms or molecules with atomic precision.
   type: node
+  pick: short
   branch: manufacturing
   band_guess: 2050-2075
   requires:
@@ -1191,6 +1240,7 @@
   name: Neural Lace
   definition: A minimally invasive interface (e.g. nanobots delivered via capillaries) gives a person two-way, high-bandwidth access to cloud computation directly from the brain.
   type: node
+  pick: short
   branch: computing
   band_guess: 2050-2075
   requires:
@@ -1212,6 +1262,7 @@
   name: Optical Computing
   definition: A general-purpose computer whose logic runs mainly on light rather than electrons outperforms the best electronic chips on a standard benchmark.
   type: node
+  pick: short
   branch: computing
   band_guess: 2050-2075
   requires:
@@ -1229,6 +1280,7 @@
   name: Mars Colony
   definition: Humans live continuously on Mars for at least five years, with crews rotating or settled, and the settlement producing its own air, water and propellant.
   type: node
+  pick: short
   branch: space
   band_guess: 2050-2075
   requires:
@@ -1250,6 +1302,7 @@
   name: Superconductors
   definition: A material is independently replicated to superconduct at 0 °C or above and at ambient pressure.
   type: node
+  pick: short
   branch: materials
   band_guess: 2050-2075
   requires:
@@ -1288,6 +1341,7 @@
   name: Seasteads
   definition: A permanent floating settlement with at least 1,000 residents lives at sea, away from any port, for a full year.
   type: node
+  pick: short
   branch: environment
   band_guess: 2050-2075
   requires:
@@ -1303,6 +1357,7 @@
   name: Solar Geoengineering
   definition: A sustained programme of stratospheric aerosol injection or another sunlight-reflection method measurably lowers global mean temperature.
   type: node
+  pick: short
   branch: environment
   band_guess: 2050-2075
   requires:
@@ -1327,6 +1382,7 @@
   name: Solar Age
   definition: Solar energy supplies more than half of global primary energy consumption in a calendar year.
   type: node
+  pick: short
   branch: energy
   band_guess: 2050-2075
   requires:
@@ -1347,10 +1403,10 @@
   name: Spin Gravity
   definition: A rotating habitat in space gives at least 0.3 g of artificial gravity to a crew living in it for a month.
   type: node
+  pick: short
   branch: space
   band_guess: 2050-2075
   requires:
-    - commercial-space-station
     - fully-reusable-rocket
   aspiration: 3
   evidence: 1
@@ -1366,6 +1422,7 @@
   name: Ending Ageing
   definition: A therapy or set of therapies halts or reverses biological aging, so that a treated person's mortality risk stops rising with age.
   type: node
+  pick: short
   branch: medicine
   band_guess: 2075-2100
   requires:
@@ -1382,6 +1439,7 @@
   name: Cryonic Revival
   definition: A human legally dead and cryopreserved with current-era techniques is revived with memories and identity intact.
   type: node
+  pick: short
   branch: medicine
   band_guess: 2075-2100
   requires:
@@ -1407,6 +1465,7 @@
   name: Mind Uploading
   definition: A scan of a specific human brain is run as a simulation that reproduces that person's memories and behaviour well enough to pass tests set by people who knew them.
   type: node
+  pick: short
   branch: biology
   band_guess: 2075-2100
   requires:
@@ -1445,6 +1504,7 @@
   name: Picotechnology
   definition: Engineers deliberately build a functional device whose working features are controlled at the picometre (sub-atomic) scale.
   type: node
+  pick: short
   branch: materials
   band_guess: 2075-2100
   requires:
@@ -1463,6 +1523,7 @@
   name: Self-Replication
   definition: A robotic factory builds a working copy of itself, including its own robots, from raw or simple bulk materials, with little human help.
   type: node
+  pick: short
   branch: manufacturing
   band_guess: 2075-2100
   requires:
@@ -1485,6 +1546,7 @@
   name: Utility Fog
   definition: A cloud of at least 10^9 cooperating micro-robots reshapes itself on command into a solid object that can bear a load.
   type: node
+  pick: short
   branch: materials
   band_guess: 2075-2100
   requires:
@@ -1504,6 +1566,7 @@
   name: Ancestor Simulations
   definition: A computer simulation runs a whole society of at least a million agents, each meeting an agreed test for human-level minds, for a simulated lifetime.
   type: node
+  pick: short
   branch: computing
   band_guess: beyond-2100
   requires:
@@ -1521,6 +1584,7 @@
   name: Computronium
   definition: Bulk matter (≥1 tonne) is converted into a substrate that computes at within a factor of 1,000 of physical limits (e.g. Bremermann/Landauer bounds).
   type: node
+  pick: short
   branch: computing
   band_guess: beyond-2100
   requires:
@@ -1540,6 +1604,7 @@
   name: Generation Ships
   definition: A crewed (or generation) spacecraft departs on a trajectory to another star system.
   type: node
+  pick: short
   branch: space
   band_guess: beyond-2100
   requires:
@@ -1558,6 +1623,7 @@
   name: Dyson Swarm
   definition: Solar collectors in orbit around the Sun capture at least 1% of its output.
   type: node
+  pick: short
   branch: energy
   band_guess: beyond-2100
   requires:
@@ -1585,6 +1651,7 @@
   name: Invisibility
   definition: A passive cloak hides a person-sized object from view across the full visible spectrum and from all viewing angles.
   type: node
+  pick: short
   branch: materials
   band_guess: beyond-2100
   requires:
@@ -1601,6 +1668,7 @@
   name: Space Elevator
   definition: A tether anchored to Earth's surface and reaching beyond geostationary orbit carries a climber with a payload to orbit.
   type: node
+  pick: short
   branch: space
   band_guess: beyond-2100
   requires:
@@ -1635,6 +1703,7 @@
   name: Star Colony
   definition: Humans establish a permanent, self-sustaining settlement on a world in another star system.
   type: node
+  pick: short
   branch: space
   band_guess: beyond-2100
   requires:
@@ -1650,6 +1719,7 @@
   name: Terraforming
   definition: Human intervention raises Mars's surface pressure or temperature enough that liquid water is stable on part of the surface.
   type: node
+  pick: short
   branch: space
   band_guess: beyond-2100
   requires:
@@ -1676,6 +1746,7 @@
   name: Von Neumann Probes
   definition: A spacecraft reaches another body, builds at least one working copy of itself from local materials, and the copy launches onward.
   type: node
+  pick: short
   branch: space
   band_guess: beyond-2100
   requires:

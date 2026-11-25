@@ -221,7 +221,7 @@ Merge the game trees into one history tree of our own before any site code, so P
 
 ### Phase 3: Launch
 
-- [ ] Choose the ~60 launch technologies from the shortlist and research them in batches (draft, then independent verification): ~30 deep pages and ~30 short pages.
+- [x] Choose the ~60 launch technologies from the shortlist and research them in batches (draft, then independent verification). 68 short pages were researched in November 2026, each drafted by one agent and checked by a second; Synthetic Life is still to do.
 - [ ] Publish Kurzweil's graded track record on the methodology page.
 - [ ] Research and source the **year of first demonstration** for each history node. The years imported from `data/history-tree.json` are unsourced rough guesses and only a starting point.
 - [ ] Add a short page to each history node.
