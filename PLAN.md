@@ -25,7 +25,11 @@ This plan turns a 2017–18 D3 prototype into a public site on **technologytree.
 | Editing | The maintainer writes the content. The public proposes changes through **GitHub pull requests**. Content is Markdown in git. |
 | Upkeep | A scheduled **AI watcher** opens PRs proposing milestone and TRL updates. A human approves every change. |
 | Icons | A circle with the technology's initial for now. Consistent **painted medallions** come in a later phase. |
-| Launch scope | The merged history tree with short pages, plus **20–30 deeply researched future technologies**. |
+| Tone | **Aspirational but accurate.** The site should rekindle excitement about technology. That comes from which technologies are chosen and how far ahead the tree reaches, never from looser evidence. |
+| Launch scope | The merged history tree with short pages, plus **about 60 future technologies**, so the future reads as a frontier and not an epilogue, growing towards about 100 (as big as history). About 30 get **deep pages** (sourced milestones, independent check, a market or survey forecast where one exists), mostly in the bands up to the 2040s. About 30 get **short pages** for the far bands: a tight definition, an honest low TRL, a few sourced milestones and a labelled maintainer estimate with a wide range, still independently checked. |
+| Future eras | Each date band has an **opinionated era name** that claims what defines it, shown with its dates: **Intelligence** (2026–2030), **Robotic** (2030s), **Abundance** (2040s), **Planetary** (2050–2075), **Post-Scarcity** (2075–2100) and **Interstellar** (after 2100). |
+| Band targets | Roughly 8 Intelligence, 14 Robotic, 14 Abundance, 12 Planetary, 7 Post-Scarcity and 5 Interstellar. The Intelligence band matters most: near-term technologies show momentum. |
+| Names | **Snappy, in the style of the Civ games**: one to three words naming the capability, not the event (Air Taxis, Spin Gravity, Neural Lace, not "First Commercial eVTOL Passenger Service"). Long enough to recognise, short enough for a card (about 22 characters at most). The definition carries the precise test. Nodes are **field-level**, as in Civ (Brain Implants, Energy Abundance); narrow wins such as Artificial Sight or Tandem Solar are milestones on them, which keeps the tree clean and makes each page richer. |
 | Cost | As close to $0 as possible on top of the domain. |
 
 ## Architecture
@@ -46,7 +50,7 @@ The Civ V trees are clean because they were **designed by hand**. `civ5-brave-ne
 The layout is calculated **at build time** with a layered-graph method (Sugiyama-style). It replaces the prototype's force simulation, which positioned nodes differently on every load, so the layout is now the same every time.
 
 1. **Layering.** History nodes go in columns by prerequisite depth, grouped into era bands. Future nodes go in **date bands** (e.g. 2030s, 2040s) based on the forecast median. Each date band is treated like an era band: it holds as many columns as it needs, with nodes depth-layered inside it, so two future nodes in the same band can still depend on each other. A **"today" line** separates the two halves.
-2. **Balancing columns (our code).** A node can sit anywhere between its latest prerequisite and its earliest dependent. The layout uses that slack to keep every column within the width limit, as in Coffman–Graham layering, and to **shorten long links** (for example, moving Optics right so Optics → Compass skips one column instead of two). This is a small constraint problem, solved with difference constraints (Bellman–Ford) in `src/lib/columns.ts`: each link spans 1 or 2 columns, era and date bands stay contiguous, and each column holds at most 8 nodes. No layout library enforces these as hard rules, and sharing one solver means the lint and the site always agree.
+2. **Balancing columns (our code).** A node can sit anywhere between its latest prerequisite and its earliest dependent. The layout uses that slack to keep every column within the width limit, as in Coffman–Graham layering, and to **shorten long links** (for example, moving Optics right so Optics → Compass skips one column instead of two). For history this is a small constraint problem, solved with difference constraints (Bellman–Ford) in `src/lib/columns.ts`: each link spans 1 or 2 columns, era bands stay contiguous, and each column holds at most 8 nodes. Date bands follow history and are each packed greedily into as few columns as possible (prerequisites first, then the longest chain, then the earliest forecast), since links into a later band only have to point rightward. No layout library enforces these as hard rules, and sharing one solver means the lint and the site always agree.
 3. **Reducing crossings, placing and routing ([elkjs](https://github.com/kieler/elkjs), ELK Layered).** The columns from step 2 are passed to ELK as **partitions** (`elk.partitioning.activate`, with each node's `elk.partitioning.partition` set to its column). No two nodes in a column are linked, so each partition becomes exactly one ELK layer. ELK then orders nodes within columns, places them vertically and routes links orthogonally, going around nodes for links that skip a column. It runs with a fixed `elk.randomSeed`, so the output is the same on every build. The same graph is laid out with `elk.direction` `RIGHT` for desktop and `DOWN` for mobile.
 4. **Drawing.** Our code draws ELK's link routes as rounded elbows with arrowheads.
 
@@ -60,7 +64,7 @@ A test on the 93-node merged tree (November 2026, elkjs 0.9.3) kept every node i
 | Rule | Limit |
 | --- | --- |
 | Nodes per column | ≤ **8** |
-| Columns a link may skip | ≤ **1** within history or within the future. Links that cross the "today" line are exempt, because a far-future node necessarily skips the nearer date bands; they're routed through dummy points. |
+| Columns a link may skip | ≤ **1** within history or within one date band. Links into the future from history or from an earlier date band are exempt, because a far-future node necessarily skips the nearer bands; they're routed around the nodes in between. |
 | Link direction | Every link points **strictly rightward** (to a later column), except flagged date conflicts. |
 | Redundant links (A→C when A→B→C exists) | none |
 | Future nodes trace back to history | required |
@@ -163,7 +167,7 @@ Coming up with ideas is cheap; curating them is the work. This doesn't need an a
    - a **forecast** for a node (any dated prediction).
 
    Then merge synonyms, drop anything too vague to test, and connect each node back to a history node.
-3. **Shortlist** in a sortable table with columns for branch, has forecast, Kurzweil date, sources and lineage. The maintainer chooses 20–30 for launch.
+3. **Shortlist** in a sortable table with columns for branch, has forecast, Kurzweil date, sources and lineage. The maintainer chooses about 60 for launch, against the band targets.
 4. **Research in depth**, one agent per chosen node. Each agent drafts the Markdown page (milestones with sources, TRL rationale, forecasts). A **second, independent agent checks** every citation and date. A link checker in CI confirms that every source URL loads. Hosts that block scripted clients (Metaculus, which serves a Cloudflare challenge, and many publishers that return 403) are excluded and checked by hand or through their APIs. The checker also runs on a schedule, so links that rot later get caught. Run this as a batch only when the maintainer asks.
 5. **Later ideas** arrive through a "Propose a technology" GitHub issue template and the AI watcher.
 
@@ -217,7 +221,7 @@ Merge the game trees into one history tree of our own before any site code, so P
 
 ### Phase 3: Launch
 
-- [ ] Choose the 20–30 launch technologies from the shortlist and research them as a batch (draft, then independent verification).
+- [ ] Choose the ~60 launch technologies from the shortlist and research them in batches (draft, then independent verification): ~30 deep pages and ~30 short pages.
 - [ ] Publish Kurzweil's graded track record on the methodology page.
 - [ ] Research and source the **year of first demonstration** for each history node. The years imported from `data/history-tree.json` are unsourced rough guesses and only a starting point.
 - [ ] Add a short page to each history node.
@@ -255,10 +259,10 @@ Merge the game trees into one history tree of our own before any site code, so P
 | A forecast question's definition differs from the node's | Record `definition_notes` and link the question. Fall back to the maintainer's estimate when the mismatch is too large. |
 | A forecast date comes before a prerequisite's | Flag it on the tree rather than hiding it. |
 | Two x-axes (era columns and dates) look disjointed | Design the "today" line in Phase 2, before adding content. |
-| The tree gets too wide or tangled as it grows | Calculate the layout at build time and enforce the lint rules (≤ 8 per column, links skip ≤ 1 column outside the "today" crossing, links point rightward, no redundant links) in CI. |
+| The tree gets too wide or tangled as it grows | Calculate the layout at build time and enforce the lint rules (≤ 8 per column, links skip ≤ 1 column except into a later date band, links point rightward, no redundant links) in CI. |
 | The full tree is unusable on phones | Use a top-to-bottom layout and default to the focus view on mobile. |
 | The AI watcher reports hype as a milestone | Require sources and human approval for every PR. Never merge automatically. |
-| Content workload stalls the project | Keep launch to 20–30 future nodes. History pages stay short. |
+| Content workload stalls the project | Split launch into ~30 deep and ~30 short future pages, and research in batches. History pages stay short. |
 | Civ IP | The history tree reuses generic technology names from the games and a merged shape of our own (Phase 0). The `data/civs/` files themselves aren't published, and the games' writing, icons and art are never used. |
 | AI research invents sources or dates | A second agent independently checks every citation, a CI link checker runs, and a human reviews before merging. |
 | Copyright on Kurzweil's books and the Paperclips game | Record the ideas, dates and citations only; never reproduce text. Credit the original concepts. |
@@ -270,16 +274,16 @@ Merge the game trees into one history tree of our own before any site code, so P
 | --- | --- |
 | Domain | Already owned |
 | GitHub Pages hosting, public repo and Actions | $0 |
-| AI watcher (Claude API, ~30 technologies a week) | About $5–15 |
+| AI watcher (Claude API, ~60 technologies a week) | About $10–30 |
 | Icon generation (one-off, ~300 icons with rerolls) | About $20–60 in total |
 
 ## Open questions
 
-- Which 20–30 future technologies make the launch list?
+- Which ~60 future technologies make the launch list?
 
 ### Resolved
 
-- **Date bands:** Late 2020s, 2030s, 2040s, 2050–2075, 2075–2100 and beyond 2100, in `src/content/eras.yaml`. A band holds as many columns as it needs (the 8-node limit is per column), so bands never split. Empty bands take no columns, so a link never has to skip an empty band. Links from history into the future cross the today line and may skip bands.
+- **Date bands:** 2026–2030, 2030s, 2040s, 2050–2075, 2075–2100 and after 2100, in `src/content/eras.yaml`, named Intelligence, Robotic, Abundance, Planetary, Post-Scarcity and Interstellar. A band holds as many columns as it needs (the 8-node limit is per column), so bands never split. Empty bands take no columns, so a link never has to skip an empty band. Links from history or an earlier band into a later band may skip columns, and each band is packed into as few columns as it can.
 
 - The history tree is a **merge** of Brave New World, the Civ VI technology tree and the tech-like Civ VI civics (Phase 0).
 - Date bands get wider further into the future.

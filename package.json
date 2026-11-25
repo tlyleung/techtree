@@ -9,6 +9,7 @@
   "scripts": {
     "import-history": "node scripts/import-history.mjs",
     "lint": "node scripts/lint.ts",
+    "candidates": "node scripts/candidates.ts",
     "dev": "astro dev",
     "build": "node scripts/lint.ts && astro build",
     "preview": "astro preview",

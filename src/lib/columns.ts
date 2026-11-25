@@ -30,13 +30,12 @@ interface Edge { u: Vertex; v: Vertex; w: number; why: Link | null }
 
 /**
  * Assign columns with difference constraints (Bellman-Ford). Each link spans
- * 1..MAX_SPAN columns (links in `unbounded` only need to point rightward),
- * each era is a contiguous block of columns, and `fixed` pins nodes to
- * columns. Returns the columns, or the links on a contradictory cycle.
+ * 1..MAX_SPAN columns, each era is a contiguous block of columns, and `fixed`
+ * pins nodes to columns. Returns the columns, or the links on a contradictory cycle.
  */
 export function solve(
   ids: string[], eras: string[], eraOf: Map<string, string>, links: Link[],
-  fixed: [string, number][] = [], unbounded: Set<string> = new Set(),
+  fixed: [string, number][] = [],
 ): { columns: Map<string, number> } | { cycle: Link[] } {
   // Node ids are prefixed so they can't collide with the helper vertices.
   const Z = "#Z";
@@ -54,7 +53,7 @@ export function solve(
     le(node(id), S[i + 1], -1);
   }
   for (const [s, t] of links) {
-    if (!unbounded.has(`${s}>${t}`)) le(node(t), node(s), MAX_SPAN, [s, t]);
+    le(node(t), node(s), MAX_SPAN, [s, t]);
     le(node(s), node(t), -1, [s, t]);
   }
   for (const [id, c] of fixed) {
@@ -95,31 +94,90 @@ export function solve(
 
 const sameLink = (a: Link, b: Link) => a[0] === b[0] && a[1] === b[1];
 
-/** Links from history to the future cross the "today" line and may skip date bands. */
-export function crossesToday(nodes: TechNode[]): Set<string> {
-  const future = new Map(nodes.map((n) => [n.id, !!n.future]));
+/**
+ * Links into a future technology from history or from an earlier date band
+ * may skip columns: a far-future node necessarily skips the nearer bands.
+ * ELK routes them around the nodes in between.
+ */
+export function crossesBand(nodes: TechNode[]): Set<string> {
+  const by = new Map(nodes.map((n) => [n.id, n]));
   const out = new Set<string>();
-  for (const n of nodes) for (const s of n.requires) if (n.future && !future.get(s)) out.add(`${s}>${n.id}`);
+  for (const n of nodes)
+    for (const s of n.requires) {
+      const p = by.get(s);
+      if (n.future && p && (!p.future || p.era !== n.era)) out.add(`${s}>${n.id}`);
+    }
   return out;
 }
 
-/** Return the columns and the links that can't meet the span limit. */
+/**
+ * Pack one date band into as few columns as possible, starting at `start`.
+ * Links inside the band span 1..MAX_SPAN columns. Column by column, a node
+ * goes in once its prerequisites in the band are placed: first those whose
+ * prerequisite would otherwise be too far back, then those on the longest
+ * remaining chain, then the earliest forecast. A column overflows only when
+ * the span limit leaves no choice, and the lint then reports it.
+ */
+function packBand(band: TechNode[], start: number): Map<string, number> {
+  const inBand = new Set(band.map((n) => n.id));
+  const pre = new Map(band.map((n) => [n.id, n.requires.filter((s) => inBand.has(s))]));
+  const next = new Map<string, string[]>(band.map((n) => [n.id, []]));
+  for (const [t, ss] of pre) for (const s of ss) next.get(s)!.push(t);
+  const height = new Map<string, number>();
+  const h = (id: string): number => {
+    if (!height.has(id)) height.set(id, 1 + Math.max(0, ...next.get(id)!.map(h)));
+    return height.get(id)!;
+  };
+  const col = new Map<string, number>();
+  let left = band.map((n) => n.id); // already in forecast order
+  for (let c = start; left.length; c++) {
+    const ready = left.filter((id) => pre.get(id)!.every((s) => col.has(s)));
+    // How soon the node must go in: c + MAX_SPAN - 1 at the latest.
+    const due = (id: string) => Math.min(Infinity, ...pre.get(id)!.map((s) => col.get(s)! + MAX_SPAN));
+    const order = ready
+      .map((id, i) => ({ id, i, due: due(id), h: h(id) }))
+      .sort((a, b) => a.due - b.due || b.h - a.h || a.i - b.i);
+    const forced = order.filter((x) => x.due <= c).length;
+    for (const x of order.slice(0, Math.max(forced, MAX_PER_COLUMN))) col.set(x.id, c);
+    left = left.filter((id) => !col.has(id));
+  }
+  return col;
+}
+
+/**
+ * Return the columns and the links that can't meet the span limit. History
+ * is solved with difference constraints; each date band is then packed after
+ * it (links into the future only have to point rightward, so the bands don't
+ * constrain history or each other).
+ */
 export function layout(nodes: TechNode[], eras: string[]): { columns: Map<string, number>; broken: Link[] } {
+  const past = nodes.filter((n) => !n.future);
+  const r = layoutHistory(past, eras.filter((e) => past.some((n) => n.era === e)));
+  let start = Math.max(-1, ...r.columns.values()) + 1;
+  for (const e of eras) {
+    const band = nodes.filter((n) => n.future && n.era === e);
+    if (!band.length) continue;
+    for (const [id, c] of packBand(band, start)) r.columns.set(id, c);
+    start = Math.max(...r.columns.values()) + 1;
+  }
+  return r;
+}
+
+function layoutHistory(nodes: TechNode[], eras: string[]): { columns: Map<string, number>; broken: Link[] } {
   const ids = nodes.map((n) => n.id);
   const eraOf = new Map(nodes.map((n) => [n.id, n.era]));
   const year = new Map(nodes.map((n) => [n.id, n.year]));
   const links: Link[] = nodes.flatMap((n) => n.requires.map((s) => [s, n.id] as Link));
-  const unbounded = crossesToday(nodes);
   const broken: Link[] = [];
   const without = (drop: Link[]) => links.filter((l) => !drop.some((d) => sameLink(d, l)));
 
   let columns: Map<string, number>;
   for (;;) {
-    const r = solve(ids, eras, eraOf, without(broken), [], unbounded);
+    const r = solve(ids, eras, eraOf, without(broken));
     if ("columns" in r) { columns = r.columns; break; }
     // Prefer a link whose removal resolves everything; otherwise drop the
     // link on the contradiction that spans the most years.
-    const fixes = r.cycle.filter((l) => "columns" in solve(ids, eras, eraOf, without([...broken, l]), [], unbounded));
+    const fixes = r.cycle.filter((l) => "columns" in solve(ids, eras, eraOf, without([...broken, l])));
     const pool = fixes.length ? fixes : r.cycle;
     const span = (l: Link) => year.get(l[1])! - year.get(l[0])!;
     broken.push(pool.reduce((a, b) => (span(b) > span(a) ? b : a)));
@@ -151,7 +209,7 @@ export function layout(nodes: TechNode[], eras: string[]): { columns: Map<string
       if (count.get(columns.get(id)!)! < MAX_PER_COLUMN) continue;
       for (const d of [1, -1, 2, -2, 3, -3]) {
         const pin: [string, number] = [id, columns.get(id)! + d];
-        const r = solve(ids, eras, eraOf, ok, [...fixed, pin], unbounded);
+        const r = solve(ids, eras, eraOf, ok, [...fixed, pin]);
         if ("columns" in r && less(overflow(r.columns), cur)) {
           best = { columns: r.columns, pin };
           break outer;
@@ -259,7 +317,7 @@ export function check(nodes: TechNode[], eras: string[]): Checked {
   for (const [c, ns] of [...per].sort((a, b) => a[0] - b[0]))
     if (ns.length > MAX_PER_COLUMN)
       errors.push(`column ${c} has ${ns.length} technologies (max ${MAX_PER_COLUMN}): ${ns.join(", ")}`);
-  const unbounded = crossesToday(nodes);
+  const unbounded = crossesBand(nodes);
   for (const [s, t] of links) {
     const span = columns.get(t)! - columns.get(s)!;
     if (span < 1) errors.push(`link not rightward: ${name(s)} -> ${name(t)}`);

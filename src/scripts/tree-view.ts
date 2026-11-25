@@ -34,11 +34,24 @@ export function setupTreeView(root: HTMLElement) {
     for (const el of labels) {
       const lo = Number(el.dataset.lo) * k + (right ? tx : ty);
       const hi = Number(el.dataset.hi) * k + (right ? tx : ty);
-      const len = right ? el.offsetWidth : el.offsetHeight;
+      // Measure the label with and without its dates once (a hidden label
+      // measures 0), then drop the dates when the band is too narrow for them.
+      const measure = () => right ? el.offsetWidth : el.offsetHeight;
+      if (!el.dataset.len) {
+        el.style.display = "";
+        el.classList.remove("short");
+        const len = measure();
+        el.classList.add("short");
+        if (len) { el.dataset.len = String(len); el.dataset.short = String(measure()); }
+      }
+      const full = Number(el.dataset.len) + 16 <= hi - lo;
+      el.classList.toggle("short", !full);
+      const len = Number(full ? el.dataset.len : el.dataset.short);
       // Sticky: stay at the start of the view while the band is on screen.
       const at = Math.min(Math.max(lo + 8, 8), hi - len - 8);
-      // Hide a label once too little of its band is on screen to hold it.
-      const visible = hi - len - 16 > 0 && lo < (right ? w : h);
+      // Hide a label when its band is too narrow to hold it at this zoom (so
+      // neighbours never overlap), or too little of the band is on screen.
+      const visible = hi - lo >= len + 16 && hi - len - 16 > 0 && lo < (right ? w : h);
       el.style.display = visible ? "" : "none";
       if (right) { el.style.left = `${at}px`; el.style.top = "8px"; }
       else { el.style.top = `${at}px`; el.style.left = "8px"; }

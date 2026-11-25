@@ -1,0 +1,3181 @@
+# Future-technology candidates for technologytree.org: steps 1-2 of
+# "Generating future candidates" in PLAN.md. Gathered from Alpha Centauri and
+# Beyond Earth, the IEA Clean Energy Technology Guide and recent news,
+# Kurzweil's books and Universal Paperclips, and Manifold and Metaculus.
+# Nodes are field-level, named in the style of the Civ games; narrow wins are
+# milestones filed under them. Nodes first (by band), then milestones and forecasts.
+# Unverified: every entry still needs the research and check of step 4.
+# 'pick' records the maintainer's choice. Check with: npm run candidates
+- id: ai-scientific-discovery
+  name: AI Scientists
+  definition: An AI system autonomously proposes and validates a discovery that the relevant field treats as a major result (e.g. one cited in a Nobel-level prize citation or a top-journal headline result), with humans only running instruments.
+  type: node
+  branch: ai
+  band_guess: late-2020s
+  requires:
+    - computers
+  missing_history:
+    - machine learning
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/Gigacasting/ai-major-scientific-discovery-by-20
+    - source: manifold
+      ref: https://manifold.markets/level2/will-ai-make-an-unambiguously-novel
+  notes: 'Manifold: ''AI: major scientific discovery by 2030'' 90% (n=51); ''unambiguously novel discovery in 2026'' 79% (n=25). Overlaps with ai-millennium-prize-proof and ai-nobel-prize; it may be better as their parent. The definition is soft and needs a concrete resolution rule.'
+- id: autonomous-robotic-surgery
+  name: Robot Surgeons
+  definition: A robot performs a complete surgical procedure on a living human patient with no human control of the instruments (surgeons only supervise).
+  type: node
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - robotics
+  missing_history:
+    - machine learning
+    - surgical robots
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/JamesF/will-a-robot-complete-a-surgery-wit
+    - source: manifold
+      ref: https://manifold.markets/Favilar/will-hospitals-have-surgical-robots
+    - source: manifold
+      ref: https://manifold.markets/brp/will-the-fda-approve-a-fully-autono
+    - source: other
+      ref: https://hub.jhu.edu/2025/07/09/robot-performs-first-realistic-surgery-without-human-help
+    - source: kurzweil
+      ref: The Singularity Is Nearer (2024), ch.6 (robotic surgeons replacing human surgeons 'over the next decade or two')
+  notes: |-
+    [forecast markets] Manifold: full surgery with no human intervention before 2030 45% (n=46); >75% autonomous before 2030 30% (n=35); FDA approves a fully autonomous device before 2030 21% (n=10). JHU's SRT-H did an autonomous cholecystectomy phase on ex-vivo tissue (2025), and STAR operated on a live pig (2022). No autonomous human case found as of 2026-11.
+    [Kurzweil and Paperclips, as autonomous-surgery-human] Alternative definition: A robot performs a complete standard operation (e.g. cholecystectomy) on a living human patient with no human control of the instruments.
+    [Kurzweil and Paperclips, as autonomous-surgery-human] Johns Hopkins SRT-H (Science Robotics, July 2025) did all 17 tasks of a gallbladder removal phase on ex-vivo pig tissue with 100% success, still accepting voice corrections. STAR did a soft-tissue anastomosis in live pigs (2022). Kurzweil's date is vague (2034-2044 at face value).
+- id: bci-speech-restoration
+  name: Brain Implants
+  definition: A regulator approves an implanted brain-computer interface that lets a paralysed person speak or type in real time.
+  type: node
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - computers
+    - biology
+  missing_history:
+    - brain-computer interface (BrainGate 2004)
+    - machine learning
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://www.uofmhealth.org/news-release/university-michigan-implants-first-human-paradromics-wireless-brain-computer-interface-designed
+    - source: other
+      ref: https://www.bloomberg.com/news/articles/2025-11-20/neuralink-rival-paradromics-cleared-to-start-brain-implant-trial
+    - source: other
+      ref: https://www.nih.gov/news-events/nih-research-matters/brain-computer-device-helps-man-speak
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Mind/Machine Interface' and 'Neural Grafting'
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Cybernetics'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface
+  notes: |-
+    [IEA and near-term] Research demos of BCI speech restoration already exist (UC Davis 2024, ~97% accuracy; home use reported in Nature Medicine June 2026), so the 'first demonstration' must be regulatory approval or a commercial product. Paradromics Connexus first implant June 2026 (U. Michigan), first participant conversing via synthetic voice by Sep 2026; 10-patient trial. Neuralink speech claims are unverified secondary reports. Approval ~2029-2031: borderline band.
+    [game trees, as brain-computer-interface] Alternative definition: An implanted interface lets a paralysed person communicate at a natural speaking rate (over 100 words a minute) with under 5% word errors, used at home for a year.
+    [game trees, as brain-computer-interface] Speech neuroprostheses reached ~60-80 words a minute in 2023 papers; check 2025-26 results, as this may already be met. A later, larger node could be a BCI for healthy users.
+- id: commercial-smr
+  name: Modular Reactors
+  definition: A factory-standardised light-water SMR (under 300 MWe) enters commercial operation on a land-based grid.
+  type: node
+  branch: energy
+  band_guess: late-2020s
+  requires:
+    - nuclear-fission
+    - electricity
+  missing_history:
+    - nuclear power plant
+    - floating SMR (Akademik Lomonosov
+    - 2020)
+    - HTR-PM pebble-bed SMR (commercial Dec 2023)
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Nuclear/Fission: ''Water-cooled SMR'')'
+    - source: other
+      ref: https://wnn.world-nuclear.org/articles/chinese-smr-completes-non-nuclear-steam-start-up-test
+    - source: other
+      ref: https://www.powermag.com/canada-approves-first-grid-scale-smr-construction-at-darlington
+    - source: manifold
+      ref: https://manifold.markets/SanghyeonSeo/will-microsoft-power-its-data-cente
+    - source: manifold
+      ref: https://manifold.markets/NoitUK/rolls-royce-smr-nuclear-power-by-20
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/8677/smr-nuclear-1-of-any-nations-energy-2030/
+  notes: |-
+    [IEA and near-term] IEA TRL 2025: water-cooled SMR 7; HTGR SMR 8; sodium-fast 5; molten-salt 4; lead-fast 4; heat-pipe 5. BORDERLINE: 'SMR in commercial operation' arguably already happened (Russia's floating Akademik Lomonosov 2020; China's HTR-PM 2023), so I narrowed to land-based light-water. China's Linglong One (ACP100, 125 MWe) planned H1 2026 but still pre-commissioning per Sep 2026 reports (PRIS: under construction May 2026). OPG BWRX-300 at Darlington: construction licence Apr 2025, completion end-2029, grid 2030.
+    [forecast markets, as first-commercial-smr] Alternative definition: A land-based small modular reactor (<300 MWe, factory-built modules) is connected to the grid and enters commercial operation.
+    [forecast markets, as first-commercial-smr] China's Linglong One (ACP100, 125 MWe, Hainan) targeted commercial operation in H1 2026; IAEA PRIS still showed 'under construction' in May 2026, so check its status. Manifold: Microsoft powers a datacentre with an SMR by 2030 35% (n=39); Rolls-Royce SMR power by 2030 12% (n=23); mirror of the Metaculus question 'SMRs supply 1% of any nation's electricity by 2030' 15% (n=16). Russia's floating Akademik Lomonosov (2020) is a prior SMR-like plant; the definition says land-based to exclude it.
+- id: commercial-space-station
+  name: Private Space Stations
+  definition: A privately owned, free-flying space station hosts a visiting crew.
+  type: node
+  branch: space
+  band_guess: late-2020s
+  requires:
+    - spaceflight
+  missing_history:
+    - space station (Salyut 1971 / ISS)
+    - reusable rockets
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://payloadspace.com/vast-delays-haven-1-launch-to-2027/
+    - source: other
+      ref: https://aviationweek.com/space/space-exploration/vast-maintains-early-2027-haven-1-launch
+    - source: manifold
+      ref: https://manifold.markets/Wombat3/what-company-will-be-the-first-to-p-21wyiudsgm
+    - source: manifold
+      ref: https://manifold.markets/jonny/will-the-vast-haven1-successfully-r-425137f13e9f
+    - source: manifold
+      ref: https://manifold.markets/Mqrius/will-haven1-launch-in-2027-or-earli
+  notes: |-
+    [IEA and near-term] Vast Haven-1 slipped from May 2026 to Q1 2027 on Falcon 9, with crewed Dragon visits to follow. Axiom, Starlab, Orbital Reef later.
+    [forecast markets] Alternative definition: A privately built and operated free-flying space station reaches orbit and hosts a visiting crew.
+    [forecast markets] Manifold: first company Vast 68%, Axiom 30% (n=15); Haven-1 reaches orbit by 2030 75% (n=15); launches in 2027 or earlier 29% (n=10). Vast moved the Haven-1 launch to NET Q1 2027 (January 2026 update).
+- id: evtol-air-taxi
+  name: Air Taxis
+  definition: An electric vertical-takeoff aircraft carries paying passengers point-to-point between vertiports in a city on a regular commercial service.
+  type: node
+  branch: transport
+  band_guess: late-2020s
+  requires:
+    - flight
+    - electricity
+  missing_history:
+    - lithium-ion battery
+    - helicopter
+    - lithium-ion batteries
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://aviationweek.com/air-transport/aircraft-propulsion/archer-joby-advance-uae-commercial-launches-2026
+    - source: other
+      ref: https://electrek.co/2025/03/31/chinese-evtol-operator-ehang-nabs-approval-paid-commercial-operations/
+    - source: other
+      ref: https://aviationweek.com/aerospace/advanced-air-mobility/ehang-withdraws-2026-guidance-china-slows-flight-approvals
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Mobile LEV'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/EVTOL
+    - source: manifold
+      ref: https://manifold.markets/TobiasSowaaed/will-we-have-flying-cars-by-the-yea
+    - source: manifold
+      ref: https://manifold.markets/strutheo/will-boeing-have-a-flying-car-in-us
+    - source: other
+      ref: https://spectrum.ieee.org/joby-air-taxi
+      date_claimed: 2026
+  notes: |-
+    [IEA and near-term] BORDERLINE: EHang got operating certificates (Mar 2025) for paid pilotless EH216-S sightseeing flights in Guangzhou and Hefei - these are loop tourism flights, not transport. Joby (Dubai, with RTA) and Archer (Abu Dhabi) targeted 2026 launches; no confirmed paid point-to-point service found by Nov 2026.
+    [game trees, as electric-air-taxi] Alternative definition: A certified electric vertical-take-off aircraft carries paying passengers on a scheduled or on-demand city service.
+    [game trees, as electric-air-taxi] Check 2026 status (Joby in Dubai, EHang in China): EHang's EH216-S got Chinese certification in 2023 and may already carry fare-paying passengers, which could make this history. Beyond Earth's LEVs hover; this is the nearest real thing.
+    [forecast markets, as evtol-air-taxi-service] Alternative definition: Paying passengers ride a battery-electric VTOL aircraft on a scheduled or on-demand commercial air-taxi route.
+    [forecast markets, as evtol-air-taxi-service] Manifold: flying cars commercially available by 2035 33% (n=65), though 'flying car' is broader than an air taxi. Joby targeted first Dubai passengers in 2026; I couldn't confirm whether service has started, so check it, since this may already be demonstrated. China's EHang got OC approval in 2025 for autonomous sightseeing flights; check whether that counts.
+- id: fully-reusable-rocket
+  name: Fully Reusable Rockets
+  definition: Both stages of an orbital rocket are recovered intact and the same upper stage flies to orbit again.
+  type: node
+  branch: space
+  band_guess: late-2020s
+  requires:
+    - spaceflight
+  missing_history:
+    - reusable orbital-class rocket booster (Falcon 9
+    - 2015)
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://www.aljazeera.com/news/2026/11/15/spacexs-starship-captured-by-launchpad-arms-in-dramatic-first
+    - source: other
+      ref: https://www.space.com/space-exploration/launches-spacecraft/relive-starships-historic-flight-15-with-our-best-photos-from-launch-and-mechazilla-tower-catch
+  notes: 'Starship Flight 15 (13-14 Nov 2026): Ship 42 completed ~14 orbits and was caught by the tower - first upper-stage catch - but Booster 22 was lost. Super Heavy boosters have been caught and reflown before. Reflight of a caught ship would satisfy the definition; very close. Space Shuttle orbiter was reused but external tank was not and SRBs were refurbished - say so on the page.'
+- id: hydrogen-green-steel
+  name: Green Steel
+  definition: A steel plant produces at least 1 million tonnes per year of steel from iron reduced with electrolytic hydrogen.
+  type: node
+  branch: manufacturing
+  band_guess: late-2020s
+  requires:
+    - steel
+    - chemistry
+    - electricity
+  missing_history:
+    - water electrolysis
+    - HYBRIT pilot fossil-free sponge iron (2021)
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Industry/Iron and steel: ''DRI production based on 100% electrolytic hydrogen'')'
+    - source: other
+      ref: https://www.canarymedia.com/articles/green-steel/stegra-funding-complete-mill
+    - source: other
+      ref: https://lkab.com/en/what-we-do/our-transformation/carbon-free-processes/pioneering-facility-for-sponge-iron-in-gallivare/
+  notes: 'IEA TRL 2025: 100% electrolytic-H2 DRI 6; H2 plasma reduction 4. Stegra Boden (~2.5 Mt/yr first phase) slipped from 2026 after financing trouble; rescued 2026, no start date (Boden municipality: turn of 2026/27). HYBRIT Gällivare demo plant now ~2027. Pilot-scale fossil-free steel was delivered in 2021, hence the scale threshold.'
+- id: in-vivo-gene-editing
+  name: Gene Editing Cures
+  definition: A regulator approves a gene-editing therapy delivered directly into the body (not edited cells reinfused), e.g. a CRISPR or base editor delivered by lipid nanoparticles to the liver.
+  type: node
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - genetics
+  missing_history:
+    - CRISPR
+    - CRISPR gene editing
+    - ex vivo CRISPR therapy (Casgevy
+    - approved 2023)
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/DaftPunkRock/acx-2026-will-the-us-uk-or-eu-appro
+    - source: other
+      ref: https://www.rttnews.com/3689223/intellia-s-lonvo-z-bla-gets-fda-priority-review-for-hereditary-angioedema-pdufa-set-for-march-2027.aspx
+      date_claimed: 2027
+    - source: other
+      ref: https://www.hcplive.com/view/lonvo-z-bla-accepted-fda-priority-review-hae
+    - source: other
+      ref: https://chop.edu/news/worlds-first-patient-treated-personalized-crispr-gene-editing-therapy-childrens-hospital
+  notes: |-
+    [forecast markets] Manifold: US/UK/EU approves a gene-editing therapy for a new condition during 2026 10% (n=30). The candidate (Intellia NTLA-2001 for ATTR, among others) wasn't researched here; check 2026 trial status. Parent node for multiplex-crispr-therapy.
+    [IEA and near-term, as in-vivo-crispr-therapy] Alternative definition: A regulator (FDA, EMA or equivalent) approves a CRISPR therapy that edits genes inside the patient's body (not ex vivo cells).
+    [IEA and near-term, as in-vivo-crispr-therapy] Intellia's lonvo-z (NTLA-2002, hereditary angioedema): Phase 3 HAELO cut attacks 87% vs placebo; BLA accepted with priority review, PDUFA date 10 March 2027. Very likely to resolve in early 2027. Baby KJ (2025) got a bespoke in vivo base edit under expanded access - a treatment, not an approval; could be its own milestone ('personalised in vivo gene editing platform trial').
+- id: mass-produced-humanoid-robots
+  name: Humanoid Robots
+  definition: Cumulative manufacture of one million general-purpose humanoid robots worldwide.
+  type: node
+  branch: manufacturing
+  band_guess: late-2020s
+  requires:
+    - robotics
+    - mass-production
+  missing_history:
+    - machine learning
+    - lithium-ion batteries
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/RemNi/will-1m-humanoid-robots-be-manufact-a408a64f3756
+    - source: manifold
+      ref: https://manifold.markets/RemNi/will-1-million-humanoid-robots-be-m
+    - source: manifold
+      ref: https://manifold.markets/RemNi/will-100k-humanoid-robots-be-manufa
+    - source: manifold
+      ref: https://manifold.markets/lesaun/will-100-million-humanoid-robots-be
+    - source: other
+      ref: https://counterpointresearch.com/en/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026
+  forecast:
+    url: https://manifold.markets/RemNi/will-1-million-humanoid-robots-be-m
+    retrieved: '2026-11-23'
+    low: 2028
+    median: 2029
+  notes: 'The forecast comes from a same-creator ladder: 1M before 2028 19% (n=50), before 2030 60% (n=79). Also: 100k before 2029 95% (n=27); 100M by 2035 32% (n=59). Counterpoint counted >22,000 shipped in H1 2026 and projects >50,000 for 2026, mostly from Chinese vendors (AgiBot, Unitree). The ''humanoid'' threshold is the thing to define precisely.'
+- id: personal-driverless-car
+  name: Self-Driving Cars
+  definition: A consumer can buy a car that drives itself on public roads with nobody in the driver's seat, across at least a whole metro area.
+  type: node
+  branch: transport
+  band_guess: late-2020s
+  requires:
+    - lasers
+    - robotics
+  missing_history:
+    - driverless robotaxi service (Waymo
+    - Phoenix 2020)
+    - driverless trucking (Aurora
+    - Texas 2025)
+    - machine learning
+    - autonomous vehicles
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://electrek.co/2026/01/22/tesla-starts-robotaxi-rides-without-safety-monitor-in-austin-what-you-need-to-know/
+    - source: other
+      ref: https://gcn.com/waymo-expands-driverless-service-five-cities/22846/
+    - source: manifold
+      ref: https://manifold.markets/dreev/when-will-visiononly-level-4-selfdr
+    - source: manifold
+      ref: https://manifold.markets/IsaacKing/will-level-4-selfdriving-cars-be-ge
+    - source: manifold
+      ref: https://manifold.markets/DanielDugas/i-can-buy-a-level-4-selfdriving-car
+  forecast:
+    url: https://manifold.markets/dreev/when-will-visiononly-level-4-selfdr
+    retrieved: '2026-11-23'
+    low: 2027
+    median: 2028
+    high: 2031
+  notes: |-
+    [IEA and near-term] Driverless robotaxis in many cities is ALREADY demonstrated: Waymo driverless in 10+ US metros by mid-2026, >1,400 sq mi; Tesla unsupervised rides in Austin from Jan 2026, Miami Jul 2026; Baidu/Pony in China. Propose robotaxi for history. The personally owned Level-4 car remains undone (Mercedes Drive Pilot is Level 3).
+    [forecast markets, as vision-only-level-4-driving] Alternative definition: Vehicles driving with cameras only (no lidar or radar) run Level-4 driverless service with no safety driver across a large region.
+    [forecast markets, as vision-only-level-4-driving] Market: 5% before 2027, 50% before 2028, 76% before 2032 (n=14). Also: L4 generally available in the US before 2030 51% (n=18); can buy a personal L4 car 2026-2030 49%, 2031+/never 37% (n=17). Lidar-based robotaxis (Waymo) already exist, so the node is either 'camera-only' or 'consumer-owned L4'; the curator should pick one.
+- id: personalized-cancer-vaccine
+  name: Cancer Vaccines
+  definition: A regulator approves an individualized neoantigen cancer vaccine made from each patient's own tumour sequence.
+  type: node
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - vaccination
+    - genetics
+  missing_history:
+    - mRNA vaccines
+    - DNA sequencing
+    - immune checkpoint inhibitors
+    - checkpoint immunotherapy
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://ascopost.com/news/august-2026/interpath-001-trial-of-mrna-based-individualized-neoantigen-therapy-meets-primary-and-key-secondary-endpoints-in-patients-with-high-risk-resected-melanoma/
+    - source: other
+      ref: https://www.healio.com/news/hematology-oncology/20261023/personalized-mrna-vaccine-reduced-melanoma-recurrence-risk-42-after-surgery
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'Cure for Cancer' ('tricking cancer into curing itself'); https://www.decisionproblem.com/paperclips/projects.js
+    - source: other
+      ref: https://www.cancernetwork.com/view/intismeran-plus-pembrolizumab-reduces-recurrence-risk-in-resected-melanoma
+    - source: manifold
+      ref: https://manifold.markets/yaboi69/will-fda-approve-any-type-of-person
+  notes: |-
+    [IEA and near-term] Moderna/Merck intismeran + Keytruda: Phase 3 INTerpath-001 (1,137 pts, resected melanoma) met primary endpoint Aug 2026; 42% lower risk of recurrence or death; OS immature. Filing expected; approval plausibly 2027-28. Strong near-term candidate.
+    [Kurzweil and Paperclips, as personalized-cancer-vaccine-approval] Alternative definition: A regulator (FDA or EMA) approves an individualised neoantigen mRNA cancer vaccine for routine use.
+    [Kurzweil and Paperclips, as personalized-cancer-vaccine-approval] Strong late-2020s candidate. Moderna/Merck intismeran autogene (V940/mRNA-4157) phase 3 INTerpath-001 hit RFS and DMFS endpoints (topline Aug 2026; ESMO Oct 2026: 42% lower risk of recurrence or death vs pembrolizumab alone). No filing confirmed as of Nov 2026. Paperclips' 'cure for cancer' is too vague to test; this is the concrete stand-in.
+    [forecast markets] Alternative definition: A regulator (FDA or EMA) approves an individualized neoantigen mRNA cancer vaccine for routine use.
+    [forecast markets] Manifold: FDA approves any personalized cancer mRNA vaccine before 2028 47% (n=28). The leading candidate is Moderna/Merck intismeran (melanoma, Phase 3); I did not verify its 2026 status.
+- id: pig-organ-xenotransplant
+  name: Xenotransplants
+  definition: A living patient keeps a functioning gene-edited pig kidney (or heart) for at least one year without returning to dialysis or other support.
+  type: node
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - genetics
+  missing_history:
+    - CRISPR
+    - organ transplantation
+    - CRISPR gene editing
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/3052/when-will-the-first-organ-from-a-non-primate-be-successfully-transplanted-into-a-human
+    - source: other
+      ref: https://nyulangone.org/news/first-gene-edited-pig-kidney-transplant-clinical-trial-begins-nyu-langone-health
+    - source: other
+      ref: https://www.fox9.com/news/pig-kidney-functions-record-271-days-inside-man-awaiting-human-transplant
+    - source: other
+      ref: https://www.bostonglobe.com/2025/09/09/nation/pig-kidney-transplant-massachusetts-general/
+  notes: |-
+    [forecast markets] No Manifold market with real volume. The record is 271 days (Tim Andrews, pig kidney Jan 2025, removed before a human transplant Jan 2026). United Therapeutics (EXPAND) and eGenesis trials are running in 2026. A separate Metaculus question asks when xenotransplantation becomes routine (snippet: Sep 2043, unverified; its URL was not captured). Distinct from lab-grown-organs, which is already on the site.
+    [IEA and near-term, as pig-kidney-xenotransplant] Alternative definition: A gene-edited pig kidney keeps a living human patient dialysis-free for at least 12 months.
+    [IEA and near-term, as pig-kidney-xenotransplant] Record so far: Tim Andrews, eGenesis kidney at MGH, 271 days dialysis-free (Jan-Oct 2025; Lancet 2026). FDA-cleared trials running: United Therapeutics EXPAND (UKidney, 10 edits, 6 then up to 50 pts) and eGenesis (69 edits, 30 pts). Alternative definition: FDA approval (BLA) of a xenokidney, which would be 2030s.
+- id: solid-state-battery-car
+  name: Solid-State Batteries
+  definition: A production car with an all-solid-state lithium battery goes on sale to the public.
+  type: node
+  branch: energy
+  band_guess: late-2020s
+  requires:
+    - chemistry
+    - electricity
+  missing_history:
+    - lithium-ion battery
+    - electric car (mass-market)
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Transport/Road: ''All solid-state battery'')'
+    - source: other
+      ref: https://group.mercedes-benz.com/technology/e-mobility/electric-drive/solid-state-battery-test-car.html
+    - source: other
+      ref: https://www.batterydesign.net/solid-state-production-timelines/
+  notes: 'IEA TRL 2025: all solid-state 6; ''almost solid-state'' 6; semi-solid-state 9 (already in Chinese cars, e.g. NIO 150 kWh pack). Definition must exclude semi-solid. Mercedes/Factorial EQS test car drove 1,205 km (2025); BMW/Solid Power i7 test car; Samsung SDI targets 2027 mass production; Toyota/Idemitsu repeatedly delayed. No production all-solid-state car found as of Nov 2026.'
+- id: approved-aging-therapy
+  name: Anti-Ageing Drugs
+  definition: A regulator approves a drug whose labelled indication is slowing biological aging (or an age-related multimorbidity endpoint), or an RCT shows it extends human lifespan.
+  type: node
+  branch: medicine
+  band_guess: 2030s
+  requires:
+    - biology
+    - chemistry
+  missing_history:
+    - modern pharmacology
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/NLeseul/will-a-senolytic-drug-be-used-clini-61a883c8303c
+    - source: manifold
+      ref: https://manifold.markets/AlyssaVance/by-2030-will-any-treatment-be-shown
+    - source: manifold
+      ref: https://manifold.markets/MatthewBarnett/will-a-therapy-that-substantially-s
+    - source: manifold
+      ref: https://manifold.markets/RedderThanEver/will-antiaging-treatments-developed
+    - source: manifold
+      ref: https://manifold.markets/ScroogeMcDuck/will-semaglutide-improve-lifespan-w
+  notes: 'Manifold: senolytic used clinically to slow aging by end-2033 46% (n=153); RCT shows any treatment raises lifespan by 2030 36% (n=48); a therapy substantially slows/reverses aging before 2040 60% (n=27); anti-aging treatment approved and available by 2040 38% (n=43); semaglutide shown to improve lifespan in overweight people before 2033 83% (n=28).'
+- id: cultured-meat
+  name: Cultured Meat
+  definition: Meat grown from animal cells sells in shops in a major market at price parity with the same conventional cut.
+  type: node
+  branch: biology
+  band_guess: 2030s
+  requires:
+    - genetics
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Cultured_meat
+  notes: Gap filled from Beyond Earth's food technologies. First approvals (Singapore 2020, US 2023) are history-like milestones; price parity is the open test.
+- id: gene-drive-release
+  name: Gene Drives
+  definition: A gene-drive organism (e.g. malaria mosquitoes) is deliberately released into the wild under regulatory approval.
+  type: node
+  branch: environment
+  band_guess: 2030s
+  requires:
+    - genetics
+    - ecology
+  missing_history:
+    - CRISPR gene editing
+    - malaria vaccine (RTS
+    - S 2021 / R21 2023)
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://news-medical.net/news/20261102/African-nations-seek-decision-making-power-over-gene-drive-malaria-tools.aspx
+    - source: other
+      ref: https://www.imperial.ac.uk/news/249474/mosquito-modification-programme-aiming-eliminate-malaria/
+  notes: No gene drive released anywhere as of Nov 2026. Target Malaria aims for field trials by 2030 but its Burkina Faso activities were suspended Aug 2025. Malaria vaccines (RTS,S, R21) are already demonstrated - propose for history, not future.
+- id: medical-nanobots
+  name: Medical Microbots
+  definition: Untethered micro-robots (smaller than 1 mm) are steered through a living patient's blood vessels to deliver therapy in a registered clinical trial.
+  type: node
+  branch: medicine
+  band_guess: 2030s
+  requires:
+    - nanotechnology
+    - robotics
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.10 '2019' (blood-cell-sized devices fighting disease within 20 years)
+      date_claimed: 2019
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.5-6 (nanobots in the bloodstream, 2020s-2030s)
+      date_claimed: 2030
+    - source: kurzweil
+      ref: The Singularity Is Nearer (2024), ch.6 (nanobots for healing and augmentation in the 2030s)
+      date_claimed: 2030
+    - source: other
+      ref: https://singularityhub.com/2026/11/16/tiny-magnetic-robots-help-dissolve-blood-clots-six-times-faster-than-with-drugs-alone/
+  notes: 'Synonyms: nanobots, nanorobots, microrobots. The test is set at the micro-scale because true nanobots are far off. ETH Zurich showed magnetic microrobots in pigs (Science 2025) and faster clot-busting in a large-animal model (2026); no first-in-human trial yet. Kurzweil''s 2019 date was wrong.'
+- id: nuclear-thermal-rocket
+  name: Nuclear Rockets
+  definition: A spacecraft is propelled in space by a nuclear thermal rocket engine (fission-heated propellant).
+  type: node
+  branch: space
+  band_guess: 2030s
+  requires:
+    - nuclear-fission
+    - rocketry
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/JoshuaWilkes/will-a-nuclear-thermal-engine-be-su
+    - source: manifold
+      ref: https://manifold.markets/JoshuaWilkes/will-a-nuclear-thermal-engine-be-su-bfefbc85f9bc
+  forecast:
+    url: https://manifold.markets/JoshuaWilkes/will-a-nuclear-thermal-engine-be-su-bfefbc85f9bc
+    retrieved: '2026-11-23'
+    median: 2035
+  notes: 'Same-creator ladder: before 2030 28% (n=32), before 2035 51% (n=32), so the median is about 2035. Tested in space before 2027 2% (n=28). NERVA was ground-tested in the 1960s, but none has flown. DARPA DRACO was cancelled in 2025 (not verified here).'
+- id: quantum-repeater-network
+  name: Quantum Internet
+  definition: Entanglement is distributed between quantum memories more than 100 km apart through a chain of quantum repeaters, beating direct-transmission rates.
+  type: node
+  branch: communication
+  band_guess: 2030s
+  requires:
+    - lasers
+    - telecommunications
+  missing_history:
+    - quantum key distribution
+    - quantum entanglement experiments
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://physicsworld.com/a/quantum-entanglement-expands-to-city-sized-networks/
+    - source: other
+      ref: https://postquantum.com/industry-news/cisco-entanglement-nyc-metro-fiber/
+    - source: other
+      ref: https://arxiv.org/abs/2602.08472
+  notes: 'Synonym: quantum internet. 2026: USTC trapped-ion memory entanglement over 10 km as ''repeater building block''; Cisco/Qunnect entanglement swapping across 17.6 km of NYC fibre (3 nodes). No true repeater chain yet. Micius satellite QKD (2017) is history.'
+- id: regenerative-medicine
+  name: Regenerative Medicine
+  definition: A regulator approves a therapy that makes patients regrow a lost body structure, such as a tooth, hair follicles or insulin-producing islets.
+  type: node
+  branch: medicine
+  band_guess: 2030s
+  requires:
+    - biology
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Regenerative_medicine
+  notes: Field node added when narrow regrowth candidates were regrouped. The tooth-regrowth antibody trial is the likeliest first route.
+- id: space-based-solar-power
+  name: Space Solar Power
+  definition: A satellite collects sunlight and beams usable power (at least kilowatts) to a ground receiver that feeds a load or grid.
+  type: node
+  branch: energy
+  band_guess: 2030s
+  requires:
+    - satellites
+    - lasers
+  missing_history:
+    - photovoltaics
+    - photovoltaic solar cell
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/OlegEterevsky/when-will-power-transmission-from-o
+    - source: manifold
+      ref: https://manifold.markets/IsaacKing/will-there-be-a-functional-spacebas
+    - source: manifold
+      ref: https://manifold.markets/Tomoffer/will-earth-have-spacebased-solar-po
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Renewables/Solar: ''Space solar power'')'
+    - source: other
+      ref: https://techcrunch.com/2025/04/02/space-solar-startup-aetherflux-raises-50m-to-launch-first-space-demo-in-2026
+    - source: other
+      ref: https://newatlas.com/energy/laser-beamed-space-solar-power-aetherflux-2026-test
+  forecast:
+    url: https://manifold.markets/OlegEterevsky/when-will-power-transmission-from-o
+    retrieved: '2026-11-23'
+    low: 2027
+    median: 2034
+  notes: |-
+    [forecast markets] Orbit-to-surface power demonstration: 15% before 2027, 36% before 2028, 48% before 2030, 50% before 2034, 59% before 2040 (n=22). The flat curve suggests the market's bar is unclear (Caltech MAPLE detected microwatts on the ground in 2023). Functional SBSP plant before 2045 49% (n=24); SBSP at scale by 2060 34% (n=40). A kW threshold would separate 'demo' from 'plant'.
+    [IEA and near-term, as space-solar-power-beaming] Alternative definition: A satellite converts sunlight in orbit and beams at least 1 kW of usable power to a receiver on the ground.
+    [IEA and near-term, as space-solar-power-beaming] IEA TRL 2025: 4. Caltech MAPLE (2023) beamed detectable microwave power from orbit (milliwatt scale) - so set a power threshold; 1 kW is my proposal. Aetherflux kilowatt-class LEO laser demo planned 2026 on a Transporter rideshare; launch/results not confirmed by Nov 2026. A grid-scale (GW) station would be a separate far-future node.
+- id: supersonic-airliner-return
+  name: Supersonic Travel
+  definition: A supersonic airliner carries fare-paying passengers on a scheduled commercial route, for the first time since Concorde (2003).
+  type: node
+  branch: transport
+  band_guess: 2030s
+  requires:
+    - jet-engine
+  missing_history:
+    - Concorde
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/strutheo/will-boom-aero-have-their-first-com
+    - source: manifold
+      ref: https://manifold.markets/BoltonBailey/will-a-supersonic-plane-fly-commerc
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/969/date-of-next-commercial-supersonic-flight
+    - source: other
+      ref: https://www.aviacionline.com/worlds-fastest-airliner-hits-the-brakes-again-first-flight-postponed-to-2027
+  notes: 'Manifold: Boom''s first commercial flight by end-2030 10% (n=34); any supersonic passenger flight by 2030 24% (n=29). Metaculus Q969 snippet: ''>Dec 2030'' (unverified). Boom''s Overture first flight slipped to 2027–28 and EIS to about 2030; the Rolls-Royce link is reported ended. Concorde is history, so the node is a ''return'', and maybe ''quiet/overland supersonic'' would be cleaner.'
+- id: woolly-mammoth-de-extinction
+  name: De-Extinction
+  definition: An elephant calf engineered to carry woolly mammoth traits (cold-adapted hair, fat, small ears) is born alive.
+  type: node
+  branch: biology
+  band_guess: 2030s
+  requires:
+    - genetics
+  missing_history:
+    - mammal cloning (Dolly
+    - 1996)
+    - CRISPR gene editing
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://www.bloomberg.com/news/articles/2025-03-04/startup-trying-to-un-extinct-prehistoric-mammoth-creates-woolly-mouse
+      date_claimed: 2028
+    - source: other
+      ref: https://www.dexerto.com/entertainment/scientists-are-using-ai-to-bring-back-the-woolly-mammoth-but-itll-take-longer-than-planned-3412814/
+  notes: Colossal targeted a calf by late 2028; in Aug 2026 (TIME interview) CEO said 'early 2030s', needing >150 edits rather than 65. Woolly mice (2025) and 'dire wolf' pups (2025) are precursors; the dire-wolf claim is contested as true de-extinction.
+- id: zettascale-supercomputer
+  name: Zettascale Computing
+  definition: A supercomputer sustains 10^21 floating-point operations per second on a standard benchmark (FP64 HPL, or state the precision).
+  type: node
+  branch: computing
+  band_guess: 2030s
+  requires:
+    - computers
+    - transistor
+  aspiration: 1
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/IsaacKing/will-any-supercomputer-reach-1-zett
+  notes: 'Manifold: any supercomputer reaches 1 zettaFLOP before 2035 75% (n=24). The market probably accepts low-precision AI FLOPs, which already put AI clusters near zettascale; FP64 zettascale is much later. Low aspiration.'
+- id: artificial-womb
+  name: Artificial Wombs
+  definition: A human baby is carried for at least the last third of pregnancy in an artificial womb and is born healthy.
+  type: node
+  branch: medicine
+  band_guess: 2040s
+  requires:
+    - genetics
+    - sanitation
+    - plastics
+  missing_history:
+    - neonatal incubator
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Surrogacy'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Artificial_womb
+    - source: other
+      ref: https://www.scientificamerican.com/article/artificial-womb-trials-in-humans-could-start-soon/
+    - source: other
+      ref: https://www.bakerinstitute.org/research/building-framework-artificial-womb-technology-clinical-trials
+    - source: manifold
+      ref: https://manifold.markets/AllisonDuettmann/will-the-first-human-child-have-be
+    - source: manifold
+      ref: https://manifold.markets/BoltonBailey/mammal-born-from-artificial-womb-by
+    - source: manifold
+      ref: https://manifold.markets/fullerov/can-we-give-a-birth-to-human-from-a
+    - source: metaculus
+      ref: https://metaculus.com/questions/2769/when-will-the-first-successful-entirely-artificial-extracorporeal-human-pregnancy-conclude
+  notes: |-
+    [game trees] The 2017 CHOP 'biobag' kept lambs for four weeks; the FDA discussed first human trials for extremely premature babies in 2023. A first human trial is a near-term milestone.
+    [IEA and near-term] Alternative definition: An extremely premature human infant is supported in an extra-uterine fluid-filled 'artificial womb' system and survives to discharge, in a regulated trial.
+    [IEA and near-term] CHOP EXTEND and Vitara Biomedical have lamb/pig data; FDA advisory committee discussed first-in-human design (2023). No human trial confirmed by Nov 2026.
+    [forecast markets, as artificial-womb-birth] Alternative definition: A human baby is born healthy after developing for a substantial part of gestation (≥ the second trimester) in an artificial womb outside the body.
+    [forecast markets, as artificial-womb-birth] Manifold 'artificial womb delivers a live human baby by…' (n=61): by 2028 8%, 2031 31%, 2034 73%, 2040 69%. The answers aren't consistent, so there's no forecast block, and the bar is probably partial ectogenesis (extremely premature infants on an EXTEND-type bag). 'Mammal born from an artificial womb by 2030' 46% (n=121); human by 2030 16% (n=33). Metaculus Q2769 (entire pregnancy) snippet: 2043 (2034–2061, unverified). Partial-ectogenesis human trials could arrive in the late 2020s, so it could be split into two nodes.
+- id: asteroid-mining
+  name: Asteroid Mining
+  definition: Material mined from an asteroid is sold or used commercially, in space or on Earth.
+  type: node
+  branch: space
+  band_guess: 2040s
+  requires:
+    - spaceflight
+  missing_history:
+    - asteroid sample return (Hayabusa 2010
+    - OSIRIS-REx 2023)
+    - reusable rockets
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Orbital Automation'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Asteroid_mining
+    - source: other
+      ref: https://www.astroforge.com/updates-collection/odint-mission-debrief
+    - source: other
+      ref: https://www.space.com/space-exploration/private-spaceflight/hope-is-all-but-lost-for-private-asteroid-probe-in-deep-space-the-chance-of-talking-with-odin-is-minimal
+    - source: paperclips
+      ref: Universal Paperclips (2017), projects 'Harvester Drones' and 'Wire Drones'; https://www.decisionproblem.com/paperclips/projects.js
+    - source: manifold
+      ref: https://manifold.markets/IsaacKing/will-an-asteroid-be-mined-for-miner
+    - source: manifold
+      ref: https://manifold.markets/JoshuaWilkes/by-2040-will-an-organisation-be-min
+    - source: manifold
+      ref: https://manifold.markets/strutheo/will-over-1kg-of-asteroid-material
+    - source: manifold
+      ref: https://manifold.markets/strutheo/will-1-ton-of-asteroid-material-hav-73c446c23a26
+    - source: manifold
+      ref: https://manifold.markets/Jan53274/what-will-be-true-about-asteroid-mi
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/1662/will-any-asteroid-or-comet-have-been-mined-in-space-for-commercial-purposes-before-2030/
+    - source: metaculus
+      ref: https://metaculus.com/questions/3728/when-will-space-mining-reach-profitability
+  notes: |-
+    [game trees] Sample returns (Hayabusa2, OSIRIS-REx) and AstroForge's missions are milestones. Likely duplicates a forecast-market candidate.
+    [IEA and near-term] Alternative definition: A commercial mission returns at least 1 kg of material mined from an asteroid to Earth or a space depot for sale or use.
+    [IEA and near-term] AstroForge Odin flyby probe lost (Mar 2025). Vestri, to land on asteroid 2022 OB5, rides with Intuitive Machines IM-3, late 2026 or early 2027 - a candidate late-2020s milestone ('first private asteroid landing').
+    [Kurzweil and Paperclips] Alternative definition: Material mined from an asteroid is sold, either returned to Earth or delivered for use in space, in a commercial transaction.
+    [Kurzweil and Paperclips] Planetary Resources and Deep Space Industries both folded around 2018-19. AstroForge is the active player.
+    [forecast markets] Alternative definition: At least 1 tonne of material is extracted from an asteroid and either used in space or returned to Earth.
+    [forecast markets] Manifold: an asteroid mined for minerals before 2040 55% (n=198); an organisation mining asteroids by 2035 46%, by 2040 48% (same creator); 1 kg mined and returned by 2030 15% (n=16); 1 tonne by 2075 75% (n=15); by 2060 ≥1,000 kg mined 87%, ≥100 kg of asteroid water extracted 91% (n=17). Metaculus Q3728 (profitability) snippet: median 2070 (unverified). Sample returns (Hayabusa, OSIRIS-REx) don't count as mining.
+- id: decentralised-robot-swarm
+  name: Swarm Robotics
+  definition: At least 10,000 physical robots with no central controller jointly complete a real-world task such as building a structure.
+  type: node
+  branch: manufacturing
+  band_guess: 2040s
+  requires:
+    - robotics
+    - telecommunications
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: paperclips
+      ref: 'Universal Paperclips (2017), projects ''Drone flocking: collision avoidance'', ''Drone flocking: alignment'', ''Drone Flocking: Adversarial Cohesion'', ''Swarm Computing''; https://www.decisionproblem.com/paperclips/projects.js'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Kilobot
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Swarm_robotics
+  notes: The game's flocking projects follow Reynolds' boids rules (separation, alignment, cohesion). Harvard's Kilobots self-assembled 1,024 robots into shapes (Science 2014). Drone light shows with 10k+ units are centrally scripted and don't count. Merges the game's 'Swarm Computing'.
+- id: energy-abundance
+  name: Energy Abundance
+  definition: Low-carbon sources (renewables, nuclear and others) generate at least 90% of the world's electricity over a calendar year.
+  type: node
+  branch: energy
+  band_guess: 2040s
+  requires:
+    - electricity
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Low-carbon_power
+  notes: Field node added when narrow energy candidates were regrouped; the threshold is a starting point for research. Low-carbon sources gave roughly 40% of world electricity in the mid-2020s.
+- id: gigatonne-carbon-removal
+  name: Carbon Drawdown
+  definition: Engineered carbon removal (DAC, BECCS, enhanced weathering) permanently stores 1 billion tonnes of CO2 in a single year worldwide.
+  type: node
+  branch: environment
+  band_guess: 2040s
+  requires:
+    - chemistry
+    - industrialization
+  missing_history:
+    - direct air capture
+    - carbon capture and storage
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'Global Warming'; https://www.decisionproblem.com/paperclips/projects.js
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Direct_air_capture
+  notes: The game's 'robust solution to climate change' is too vague, so this is the measurable proxy. IPCC/IEA net-zero pathways give dated targets that another gatherer (iea) may have; merge if so.
+- id: hiv-vaccine
+  name: HIV Vaccine
+  definition: A preventive HIV vaccine shows at least 50% efficacy against infection in a Phase 2b or 3 trial.
+  type: node
+  branch: medicine
+  band_guess: 2040s
+  requires:
+    - vaccination
+    - genetics
+  missing_history:
+    - mRNA vaccines
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://www.scripps.edu/news-and-events/press-room/2026/20260706-schief-nature.html
+    - source: other
+      ref: https://pubmed.ncbi.nlm.nih.gov/40373114/
+    - source: manifold
+      ref: https://manifold.markets/GabeGarboden/will-a-vaccine-for-hiv-be-approved-d031575100da
+    - source: manifold
+      ref: https://manifold.markets/BlueDragon/will-a-vaccine-for-hiv-be-a-availab
+    - source: manifold
+      ref: https://manifold.markets/RyanGuill/will-hivaids-be-considered-a-curabl
+  notes: |-
+    [IEA and near-term] Germline-targeting strategy: 2025 human Phase 1 primed VRC01-class precursors in 94% of participants; July 2026 Nature paper induced broadly neutralising antibodies in >half of macaques. Several past efficacy trials failed (HVTN 702, Mosaico). Long-acting lenacapavir PrEP (approved 2025) is prevention, not a vaccine - candidate for history.
+    [forecast markets] Alternative definition: A preventive HIV vaccine shows at least 50% efficacy in a Phase 3 trial and is approved by a stringent regulator.
+    [forecast markets] Doubtful numbers. Manifold: FDA approves an HIV vaccine by 2030 54% (n=52) vs 'available in US/EU by 2030' 37% (n=48); no HIV vaccine is in Phase 3 that I know of, so the first may be mispriced or resolving on twice-yearly lenacapavir PrEP (an injection, not a vaccine). HIV 'curable' by end-2030 50% (n=41). Check the market descriptions before using.
+- id: human-germline-enhancement
+  name: Germline Editing
+  definition: A child is born after embryo gene editing to prevent a serious inherited disease, in an approved clinical programme with independent follow-up.
+  type: node
+  branch: medicine
+  band_guess: 2040s
+  requires:
+    - genetics
+  aspiration: 1
+  evidence: 2
+  sources:
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Retroviral Engineering' and 'Homo Superior'
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Transgenics'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Human_germline_engineering
+  notes: The 2018 He Jiankui births were unapproved and condemned; the definition requires an approved programme. Ethically fraught; probably leave out of an aspirational launch.
+- id: hydrogen-airliner
+  name: Zero-Carbon Flight
+  definition: A hydrogen-fuelled (combustion or fuel-cell) aircraft with at least 100 seats enters commercial passenger service.
+  type: node
+  branch: transport
+  band_guess: 2040s
+  requires:
+    - jet-engine
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/mjmandl/will-the-majority-of-new-passenger
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Transport/Aviation: ''Hydrogen-powered aircraft: short-/medium-haul (100+ seats)'')'
+  notes: |-
+    [forecast markets] Manifold: majority of new passenger aircraft sold in 2050 are hydrogen-fuelled 20% (n=31), which is an adoption market, not a first-demonstration one. Airbus ZEROe was delayed from 2035 in 2025 (not verified here). Thin forecast evidence.
+    [IEA and near-term, as hydrogen-narrowbody-airliner] Alternative definition: A hydrogen-fuelled airliner with 100+ seats flies paying passengers on short- or medium-haul routes.
+    [IEA and near-term, as hydrogen-narrowbody-airliner] IEA TRL 2025: 4. Direct H2 combustion in a jet turbine TRL 6. Airbus ZEROe was pushed beyond its original 2035 entry target (not re-verified here). Covers 'long-haul hydrogen aviation' from the brief - long-haul is further still.
+- id: lunar-base
+  name: Moon Base
+  definition: A lunar surface outpost is continuously occupied by crew for at least one year.
+  type: node
+  branch: space
+  band_guess: 2040s
+  requires:
+    - spaceflight
+  missing_history:
+    - crewed Moon landing (Apollo 11
+    - 1969)
+    - space station
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://www.malaymail.com/news/life/2026/03/27/project-921-china-challenges-us-space-supremacy-with-plans-for-lunar-base-and-mars-mission/213987
+    - source: manifold
+      ref: https://manifold.markets/PlasmaBallin/will-there-be-a-moon-base-by-2040
+    - source: manifold
+      ref: https://manifold.markets/PlasmaBallin/will-there-be-a-permanently-inhabit
+    - source: manifold
+      ref: https://manifold.markets/StanPinsent/will-there-be-a-moon-base-by-2030
+    - source: manifold
+      ref: https://manifold.markets/Tiger/will-nasa-start-building-a-moon-bas
+  notes: |-
+    [IEA and near-term] Parent node for the south-pole landing and lunar-fission-reactor milestones. Thin sourcing from this pass; ILRS (China/Russia) targets a basic station in the 2030s.
+    [forecast markets] Alternative definition: A crewed outpost on the Moon is continuously or repeatedly inhabited, with crews living there for at least 30 days at a time.
+    [forecast markets] Manifold: moon base by 2030 10% (n=46); moon base by 2040 67% (n=42); permanently inhabited base by 2040 38% (n=33); NASA starts building one before 2036 68% (n=15); profitable moon base by 2050 26% (n=44). The 'base' definitions differ, and permanent habitation is the stricter one. China/Russia ILRS targets the 2030s.
+- id: macroscale-superlubricity
+  name: Superlubricity
+  definition: A bearing or sliding contact at engineering scale runs in normal air for a year with a friction coefficient below 0.001.
+  type: node
+  branch: materials
+  band_guess: 2040s
+  requires:
+    - nanotechnology
+  aspiration: 1
+  evidence: 2
+  sources:
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Frictionless Surfaces' and 'Organic Superlubricant'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Superlubricity
+  notes: Low public excitement; a weak launch pick.
+- id: supercharged-crops
+  name: Supercharged Crops
+  definition: A staple crop with re-engineered photosynthesis is grown commercially and yields at least 20% more than its conventional variety.
+  type: node
+  branch: biology
+  band_guess: 2040s
+  requires:
+    - genetics
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Realizing_Increased_Photosynthetic_Efficiency
+  notes: Gap filled from Beyond Earth's Photosystems. Field trials (RIPE, 2019 onwards) showed 20-40% gains in tobacco and soybean.
+- id: superintelligence
+  name: Superintelligence
+  definition: An AI system outperforms the best human experts at nearly every economically and scientifically important cognitive task, as shown by independent evaluations.
+  type: node
+  branch: ai
+  band_guess: 2040s
+  requires:
+    - artificial-general-intelligence
+    - ai-scientific-discovery
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Superintelligence
+  notes: Gap filled from Alpha Centauri's Digital Sentience and Self-Aware Machines. Metaculus asks how long after weak AGI superintelligence arrives; find it during research.
+- id: synthetic-cell
+  name: Synthetic Life
+  definition: A living cell assembled entirely from non-living chemical components grows and divides on its own.
+  type: node
+  branch: biology
+  band_guess: 2040s
+  requires:
+    - genetics
+    - chemistry
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Genetic Design'' and ''Artificial Evolution'''
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Biomachinery'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Mycoplasma_laboratorium
+  notes: JCVI's synthetic genome in a natural cell (2010) and JCVI-syn3.0 (2016) are milestones but don't meet this bottom-up test. Build-a-Cell and other consortia are working on it.
+- id: technological-singularity
+  name: The Singularity
+  definition: Machine intelligence created in one year totals a billion times the computing capacity of all human brains (Kurzweil's 2045 criterion).
+  type: node
+  branch: ai
+  band_guess: 2040s
+  requires:
+    - superintelligence
+  missing_history:
+    - machine learning
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.3, p.136 ('I set the date for the Singularity ... as 2045')
+      date_claimed: 2045
+    - source: kurzweil
+      ref: The Singularity Is Nearer (2024), ch.1 (intelligence expanded millions-fold by 2045)
+      date_claimed: 2045
+  notes: Iconic but hard to test; the compute-based definition is the only checkable version in Kurzweil's text. Could be a forecast on AGI instead of a node. It must remain distinct from the existing AGI node.
+- id: brain-to-brain-interface
+  name: Synthetic Telepathy
+  definition: Two people exchange arbitrary sentences directly between implanted or wearable neural interfaces, with no speech, typing or other movement, faster than they could by typing.
+  type: node
+  branch: communication
+  band_guess: 2050-2075
+  requires:
+    - nanobot-neural-interface
+  missing_history:
+    - brain-computer interfaces
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Collaborative Thought'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Brain-to-brain_communication
+    - source: manifold
+      ref: https://manifold.markets/GabeGarboden/will-neuralink-successfully-enable-f8cdfa1a5c87
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/23937/human-communication-through-telepathy
+  notes: |-
+    [game trees] Should require brain-computer-interface. BrainNet (2019) passed one bit at a time between three people.
+    [forecast markets, as bci-speech-telepathy] Alternative definition: Two people with implanted BCIs exchange words or concepts directly, without speaking, typing or a screen, at conversational speed.
+    [forecast markets, as bci-speech-telepathy] Manifold: 'Neuralink enables telepathy by 2030' 69% (n=65), but Neuralink calls its cursor-control product 'Telepathy', so that market may resolve on a much weaker bar. The Metaculus question has stricter wording. I set the band to 2030s despite the market.
+- id: cognitive-enhancement
+  name: Cognitive Enhancement
+  definition: A drug, gene therapy or implant is shown in a large randomised trial to give healthy adults a lasting gain in general cognitive ability of at least 10 IQ points or equivalent.
+  type: node
+  branch: medicine
+  band_guess: 2050-2075
+  requires:
+    - bci-speech-restoration
+    - in-vivo-gene-editing
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Human_enhancement
+  notes: Gap filled from Alpha Centauri's Neural Grafting and Beyond Earth's Augmentation. Ethically contested; no current drug comes close.
+- id: coherent-extrapolated-volition
+  name: Friendly AI
+  definition: An AI system is deployed whose objective is formally derived from the extrapolated, reconciled preferences of a large human population, by a published procedure.
+  type: node
+  branch: ai
+  band_guess: 2050-2075
+  requires:
+    - artificial-general-intelligence
+    - philosophy
+  missing_history:
+    - machine learning
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'Coherent Extrapolated Volition' ('Human values, machine intelligence, a new era of trust'); https://www.decisionproblem.com/paperclips/projects.js
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Coherent_extrapolated_volition
+  notes: 'DOUBTFUL: hard to test. Concept from Yudkowsky (2004, MIRI). Recommend keeping only as an essay-style far-future page, or dropping. Constitutional AI / collective-constitution work could be cited as precursors.'
+- id: full-immersion-neural-vr
+  name: Full-Immersion VR
+  definition: A person experiences a virtual environment through direct neural stimulation of sight, hearing and touch, and cannot tell it from reality in blinded trials.
+  type: node
+  branch: computing
+  band_guess: 2050-2075
+  requires:
+    - nanobot-neural-interface
+  missing_history:
+    - brain-computer interfaces
+    - virtual reality
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.6 (nanobot-based full-immersion VR from within the nervous system, 2030s)
+      date_claimed: 2030
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.11 '2029' (direct neural pathways)
+      date_claimed: 2029
+    - source: other
+      ref: https://www.lesswrong.com/posts/NcGBmDEe5qXB7dFBF/assessing-kurzweil-predictions-about-2019-the-results
+  notes: Kurzweil's VR predictions were his worst-scoring category in the LessWrong 2019 assessment. Could be a milestone of nanobot-neural-interface.
+- id: fusion-propulsion
+  name: Fusion Rockets
+  definition: A spacecraft is propelled in space by thrust from nuclear fusion reactions.
+  type: node
+  branch: space
+  band_guess: 2050-2075
+  requires:
+    - fusion-power
+    - nuclear-thermal-rocket
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/RemNi/will-we-get-fusion-drives-before-20
+  notes: 'Manifold: fusion drives before 2040 24% (n=15), which looks high. It depends on fusion-power (on site); a milestone of fusion-power is another option.'
+- id: hyperloop
+  name: Hyperloop
+  definition: Passengers ride a pod through a low-pressure tube at over 500 km/h on a commercial route.
+  type: node
+  branch: transport
+  band_guess: 2050-2075
+  requires:
+    - railroad
+    - civil-engineering
+  missing_history:
+    - maglev train (Shanghai 2004)
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Transport/Rail: ''Hyperloop'')'
+  notes: 'IEA TRL 2025: 4. Hyperloop One shut down 2023; only short test tracks exist. Low-evidence, high-scepticism; include only if the curator wants a cautionary node.'
+- id: interstellar-probe-launch
+  name: Light Sails
+  definition: A spacecraft is launched with a planned trajectory and speed to reach another star system (e.g. Alpha Centauri) within 100 years.
+  type: node
+  branch: space
+  band_guess: 2050-2075
+  requires:
+    - space-based-solar-power
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/NcyRocks/will-an-interstellar-mission-to-alp
+    - source: manifold
+      ref: https://manifold.markets/AutopoieticErgodicity/will-an-interstellar-mission-to-alp-c0c13fe90e08
+    - source: paperclips
+      ref: Universal Paperclips (2017), projects 'Space Exploration' and 'Elliptic Hull Polytopes' ('reduce damage to probes from ambient hazards'); https://www.decisionproblem.com/paperclips/projects.js
+    - source: other
+      ref: https://www.scientificamerican.com/article/the-quiet-demise-of-breakthrough-starshot-a-billionaires-interstellar/
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Breakthrough_Starshot
+  notes: |-
+    [forecast markets] Manifold: Alpha Centauri mission launched by 2100 69% (n=16); before 2040 6% (n=17). Breakthrough Starshot (laser sail) is the reference concept. The '<100 years' clause excludes Voyager-type probes.
+    [Kurzweil and Paperclips, as laser-sail-interstellar-probe] Alternative definition: A gram-scale probe is launched by ground-based laser to at least 10% of light speed, bound for another star system.
+    [Kurzweil and Paperclips, as laser-sail-interstellar-probe] Breakthrough Starshot (2016) has largely gone dormant: less than $10M spent of the $100M pledge, though ex-members dispute 'failed'. The Paperclips link is loose (the game's probes are self-replicating, not laser-pushed); better framed as a step toward von-neumann-probe.
+- id: longevity-escape-velocity
+  name: Longevity Escape Velocity
+  definition: In some national population, period remaining life expectancy at age 60 rises by more than one year per calendar year, sustained over five years.
+  type: node
+  branch: medicine
+  band_guess: 2050-2075
+  requires:
+    - approved-aging-therapy
+    - in-vivo-gene-editing
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Nearer (2024), ch.6 (LEV in the 2030s; around 2030 for the most diligent)
+      date_claimed: 2030
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.10-11 (life expectancy over 100 by 2019, 120 by 2029)
+      date_claimed: 2029
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Longevity_escape_velocity
+    - source: other
+      ref: https://www.lesswrong.com/posts/QXHKLbHzC5nPvJnXd/the-singularity-is-nearer-by-ray-kurzweil-review
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/6592/when-will-a-country-reach-escape-velocity
+    - source: manifold
+      ref: https://manifold.markets/AutopoieticErgodicity/life-extension-velocity-lev-where-f
+    - source: manifold
+      ref: https://manifold.markets/BB/will-we-find-a-way-to-live-forever
+    - source: manifold
+      ref: https://manifold.markets/MinhTruong/will-there-be-a-solution-to-aging-b
+    - source: kurzweil
+      ref: The Singularity Is Nearer (2024), chapter on health and longevity (chapter number not checked)
+  notes: |-
+    [Kurzweil and Paperclips] My demographic operationalisation; Kurzweil's own wording is individual-level. In 2024 interviews he said 2029. His ASM life-expectancy figures for 2019 were wrong. Coined by de Grey.
+    [forecast markets] Alternative definition: Some country's period life expectancy at birth rises by at least one year per calendar year, sustained for five years, driven by anti-aging medicine.
+    [forecast markets] Metaculus Q6592 snippets: May 2054 / 2060-05 in different snapshots (unverified). Manifold: LEV by 2036 34% (n=13); biological immortality by 2046 29% (n=96); aging cured by 2100 60% (n=45). Kurzweil's LEV date (~2029–early 2030s) is from memory, so check it in the book. There's a strong definition mismatch between the population-level and individual versions.
+- id: mammal-brain-emulation
+  name: Brain Emulation
+  definition: A whole brain of a mammal is scanned and emulated in a computer, and the emulation reproduces the animal's learned behaviour.
+  type: node
+  branch: biology
+  band_guess: 2050-2075
+  requires:
+    - zettascale-supercomputer
+    - genetics
+  missing_history:
+    - connectomics
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Neural Uploading'''
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Threshold of Transcendence'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Mind_uploading
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.4, pp.167-200
+    - source: other
+      ref: https://www.mindstudio.ai/blog/what-is-brain-emulation-fruit-fly-eon-systems
+  notes: |-
+    [game trees] Defined on a mammal because a human test is unverifiable. Milestones: the C. elegans connectome (1986), the fruit-fly whole-brain connectome (2024), the MICrONS mouse cubic millimetre (2025). A human emulation could be a later node.
+    [Kurzweil and Paperclips, as mouse-whole-brain-emulation] Alternative definition: A simulation built from a complete mouse connectome reproduces a trained mouse's learned behaviour in a simulated body.
+    [Kurzweil and Paperclips, as mouse-whole-brain-emulation] Eon Systems states a mouse emulation as its next goal (no date). This depends on whole-mouse-connectome first.
+- id: molecular-assembler
+  name: Molecular Assemblers
+  definition: A programmable machine builds a macroscopic object, or a copy of its own key parts, by placing individual atoms or molecules with atomic precision.
+  type: node
+  branch: manufacturing
+  band_guess: 2050-2075
+  requires:
+    - medical-nanobots
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Industrial Nanorobotics' and 'Matter Editation'
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Nanorobotics'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Molecular_assembler
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.5 'GNR' (molecular nanotechnology assembly, expected in the 2020s)
+      date_claimed: 2025
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.7 '...And Bodies', pp.139-142
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'Nanoscale Wire Production' ('technique for converting matter into wire'); https://www.decisionproblem.com/paperclips/projects.js
+  notes: |-
+    [game trees] Drexler's concept; contested (the Smalley-Drexler debate). Kurzweil's nanotech predictions probably attach here.
+    [Kurzweil and Paperclips, as atomically-precise-manufacturing] Alternative definition: A programmable machine builds a macroscopic object (≥1 mm) by placing atoms or molecules with atomic precision.
+    [Kurzweil and Paperclips, as atomically-precise-manufacturing] Synonyms: molecular nanotechnology, APM, Drexlerian nanofactory. The SIN date is stated loosely ('2020s'), and 2025 is a placeholder; Kurzweil missed it. The Drexler-Smalley debate makes feasibility itself contested.
+- id: nanobot-neural-interface
+  name: Neural Lace
+  definition: A minimally invasive interface (e.g. nanobots delivered via capillaries) gives a person two-way, high-bandwidth access to cloud computation directly from the brain.
+  type: node
+  branch: computing
+  band_guess: 2050-2075
+  requires:
+    - bci-speech-restoration
+    - medical-nanobots
+  missing_history:
+    - brain-computer interfaces
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Nearer (2024), ch.1 ('a key capability in the 2030s will be to connect the upper ranges of our neocortices to the cloud')
+      date_claimed: 2030
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.11 '2029' (computers communicate through direct neural pathways)
+      date_claimed: 2029
+  notes: '''High-bandwidth'' needs a number. Invasive BCIs (Neuralink, Synchron, speech BCIs) are precursors, so the ''minimally invasive'' clause is what makes this far-future.'
+- id: optical-computer
+  name: Optical Computing
+  definition: A general-purpose computer whose logic runs mainly on light rather than electrons outperforms the best electronic chips on a standard benchmark.
+  type: node
+  branch: computing
+  band_guess: 2050-2075
+  requires:
+    - zettascale-supercomputer
+    - lasers
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Optical Computers'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Optical_computing
+  notes: Photonic matrix-multiply accelerators exist but aren't general-purpose. The definition needs work.
+- id: permanent-mars-settlement
+  name: Mars Colony
+  definition: Humans live continuously on Mars for at least five years, with crews rotating or settled, and the settlement producing its own air, water and propellant.
+  type: node
+  branch: space
+  band_guess: 2050-2075
+  requires:
+    - mars-landing
+    - lunar-base
+  missing_history:
+    - reusable rockets
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/VerySeriousPoster/will-humans-establish-a-permanent-c
+    - source: manifold
+      ref: https://manifold.markets/Daniel_MC/will-we-have-agi-before-a-mars-colo
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/1432/sustainable-off-earth-human-colony-by-2100
+  notes: 'Manifold: permanent Mars colony by 2040 28% (n=32); AGI before a Mars colony 80% (n=39). It follows mars-landing (on site). Metaculus Q1432 numbers weren''t seen.'
+- id: room-temperature-superconductor
+  name: Superconductors
+  definition: A material is independently replicated to superconduct at 0 °C or above and at ambient pressure.
+  type: node
+  branch: materials
+  band_guess: 2050-2075
+  requires:
+    - electricity
+    - chemistry
+  missing_history:
+    - superconductivity (Onnes
+    - 1911)
+    - high-temperature cuprate superconductors (1986)
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Superconductor'
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Hyperconductors'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Room-temperature_superconductor
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Nuclear/Fusion: ''High temperature superconducting magnets''; Energy networks: ''Superconducting high-voltage'')'
+    - source: manifold
+      ref: https://manifold.markets/AaronLehmann/will-a-roomtemperature-atmospheric
+    - source: manifold
+      ref: https://manifold.markets/BoltonBailey/will-have-a-superconductor-at-roomt
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/18169/when-will-room-temperature-and-pressure-superconductivity-be-achieved
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/18224/room-temperature-superconductor-in-mri
+  notes: |-
+    [game trees] Retracted claims (Dias 2020/2023, LK-99 2023) are cautionary milestones. Hydrides superconduct near room temperature only at megabar pressures. Likely duplicates a forecast-market candidate.
+    [IEA and near-term] Alternative definition: An independently replicated material shows zero resistance and the Meissner effect at or above 0°C at ambient pressure.
+    [IEA and near-term] IEA lists only applications of existing (cryogenic) HTS: HTS fusion magnets TRL 5, superconducting HV cables TRL 7. No credible room-temperature ambient-pressure result: LK-99 (2023) refuted; Dias hydride claims retracted. Hydrides superconduct near room temperature only at megabar pressures. Band is a pure guess - the evidence score is honest.
+    [forecast markets] Alternative definition: A replicated material superconducts at or above 273 K at ambient pressure.
+    [forecast markets] Manifold: before 2030 13% (n=894); by end-2030 6% (n=98). Metaculus Q18169 snippets showed medians around 2049–2052 at different times (unverified). The LK-99 episode (2023) is a cautionary note for the page.
+- id: seasteads
+  name: Seasteads
+  definition: A permanent floating settlement with at least 1,000 residents lives at sea, away from any port, for a full year.
+  type: node
+  branch: environment
+  band_guess: 2050-2075
+  requires:
+    - shipbuilding
+    - civil-engineering
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Seasteading
+  notes: Civ VI's future era has Seasteads. Ocean Builders and the cancelled Oceanix Busan are milestones.
+- id: solar-geoengineering
+  name: Solar Geoengineering
+  definition: A sustained programme of stratospheric aerosol injection or another sunlight-reflection method measurably lowers global mean temperature.
+  type: node
+  branch: environment
+  band_guess: 2050-2075
+  requires:
+    - flight
+    - ecology
+  aspiration: 1
+  evidence: 2
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Climate Control'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Stratospheric_aerosol_injection
+    - source: manifold
+      ref: https://manifold.markets/AaronLehmann/will-a-largescale-solar-geoengineer
+    - source: manifold
+      ref: https://manifold.markets/pyrylium/will-solar-geoengineering-technique
+  notes: |-
+    [game trees] Controversial; may not suit an aspirational tree. Pinatubo (1991) is the natural analogue.
+    [forecast markets, as geoengineering-deployment] Alternative definition: A government or company deploys stratospheric aerosols at a scale that measurably lowers global mean temperature (≥0.1 °C).
+    [forecast markets, as geoengineering-deployment] Manifold: a large-scale solar geoengineering project by 2035 43% (n=14); significant-scale deployment by 2030 32% (n=25). Both markets define scale more loosely than the definition here. Controversial; low aspiration for a general audience.
+- id: solar-majority-energy
+  name: Solar Age
+  definition: Solar energy supplies more than half of global primary energy consumption in a calendar year.
+  type: node
+  branch: energy
+  band_guess: 2050-2075
+  requires:
+    - energy-abundance
+  missing_history:
+    - solar photovoltaics
+    - lithium-ion batteries
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: kurzweil
+      ref: National Academy of Engineering panel, 2008 (solar meets all energy needs within 20 years), cited in https://en.wikipedia.org/wiki/Ray_Kurzweil#Predictions
+      date_claimed: 2028
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'Power Grid' ('Solar Farms for generating electrical power'); https://www.decisionproblem.com/paperclips/projects.js
+  notes: A deployment threshold, not a first demonstration, so it may fit a milestone better. Kurzweil said 'all' energy; I use >50% to be testable. IEA scenarios (other gatherer) give dated paths.
+- id: space-habitat
+  name: Spin Gravity
+  definition: A rotating habitat in space gives at least 0.3 g of artificial gravity to a crew living in it for a month.
+  type: node
+  branch: space
+  band_guess: 2050-2075
+  requires:
+    - commercial-space-station
+    - fully-reusable-rocket
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Habitation'''
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Orbital Spaceflight'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/O%27Neill_cylinder
+  notes: Gemini 11 (1966) made a tiny amount of artificial gravity by tethering. Vast has proposed a spinning station.
+- id: biological-immortality
+  name: Ending Ageing
+  definition: A therapy or set of therapies halts or reverses biological aging, so that a treated person's mortality risk stops rising with age.
+  type: node
+  branch: medicine
+  band_guess: 2075-2100
+  requires:
+    - longevity-escape-velocity
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/MinhTruong/will-there-be-a-solution-to-aging-b
+    - source: manifold
+      ref: https://manifold.markets/BB/will-we-find-a-way-to-live-forever
+  notes: 'Manifold: aging cured by 2100 60% (n=45); immortality by 2046 29% (n=96). Overlaps with longevity-escape-velocity; merge or keep LEV as the milestone.'
+- id: cryonic-revival
+  name: Cryonic Revival
+  definition: A human legally dead and cryopreserved with current-era techniques is revived with memories and identity intact.
+  type: node
+  branch: medicine
+  band_guess: 2075-2100
+  requires:
+    - molecular-assembler
+    - refrigeration
+  missing_history:
+    - vitrification
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/ManifoldChampion/will-a-human-preserved-through-cryo
+    - source: manifold
+      ref: https://manifold.markets/ManifoldChampion/will-a-human-preserved-through-cryo-e557ff5f10f8
+    - source: manifold
+      ref: https://manifold.markets/ManifoldChampion/will-a-human-preserved-through-cryo-35ee1dfd9adb
+    - source: manifold
+      ref: https://manifold.markets/IsaacKing/does-cryonics-work
+  notes: |-
+    Same-creator ladder: by 2050 15% (n=106), by 2075 35% (n=47), by 2100 49% (n=83), so the median is about 2100. 'Is reanimation possible with current preservation technology?' 38% (n=96). Long-dated Manifold markets are biased by mana time-value; treat them as weak.
+    Forecast with no median in range (https://manifold.markets/ManifoldChampion/will-a-human-preserved-through-cryo-35ee1dfd9adb, 2026-11-23): 25th percentile 2062, 75th ?.
+- id: mind-uploading
+  name: Mind Uploading
+  definition: A scan of a specific human brain is run as a simulation that reproduces that person's memories and behaviour well enough to pass tests set by people who knew them.
+  type: node
+  branch: biology
+  band_guess: 2075-2100
+  requires:
+    - mammal-brain-emulation
+    - nanobot-neural-interface
+  missing_history:
+    - connectomics
+    - electron microscopy
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.4, pp.199-200 (uploading needs ~10^19 cps and 10^18 bits; technology available by around 2040)
+      date_claimed: 2040
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.6 'Building New Brains', pp.119-129
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Mind_uploading
+    - source: other
+      ref: https://arxiv.org/pdf/2510.15745
+    - source: manifold
+      ref: https://manifold.markets/NathanHelmBurger/realtime-whole-human-brain-emulation
+    - source: manifold
+      ref: https://manifold.markets/AlanTuring/will-a-human-brain-mind-be-successf-sRSISCzn2q
+    - source: manifold
+      ref: https://manifold.markets/logaems/human-whole-brain-emulation-before
+    - source: manifold
+      ref: https://manifold.markets/Bayesian/human-mind-upload-when
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/2813/date-of-first-human-whole-brain-emulation
+  notes: |-
+    [Kurzweil and Paperclips, as whole-brain-emulation] Synonyms: mind uploading, WBE. The State of Brain Emulation Report 2025 (arXiv 2510.15745) is a good page source. Kurzweil expects gradual replacement more than a single scan. Hub for the fly and mouse milestones.
+    [forecast markets, as human-whole-brain-emulation] Alternative definition: A computer simulation built from a scan of a specific human brain runs in real time and reproduces that person's memories and behaviour well enough to pass expert evaluation.
+    [forecast markets, as human-whole-brain-emulation] Manifold: real-time whole human brain emulation (not necessarily of a specific person) before end-2038 50% (n=76); mind uploaded before 2075 74% (n=15); human WBE before 2100 80% (n=19); 'mind upload before 2030' 6% (n=18). The 2038 market has a looser bar than this definition. Pick the band according to the definition (2040s–2050s).
+- id: picotechnology
+  name: Picotechnology
+  definition: Engineers deliberately build a functional device whose working features are controlled at the picometre (sub-atomic) scale.
+  type: node
+  branch: materials
+  band_guess: 2075-2100
+  requires:
+    - molecular-assembler
+    - particle-physics
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: kurzweil
+      ref: 'The Age of Spiritual Machines (1999), ch.12 ''2099'' (2072 entry: picoengineering becomes practical); timeline at https://csq.com/2015/01/closing-bell-ray-kurzweil-the-futurist-now/'
+      date_claimed: 2072
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Picotechnology
+  notes: 'DOUBTFUL definition: ''picometre-scale'' is ambiguous, since bond lengths are already ~100 pm and STM manipulation exists. The 2072 date comes from a secondary timeline. Kurzweil derives it as nanotech (around 2032) plus about 40 years. Femtotechnology (Wikipedia page exists) is the beyond-2100 sequel.'
+- id: self-replicating-factory
+  name: Self-Replication
+  definition: A robotic factory builds a working copy of itself, including its own robots, from raw or simple bulk materials, with little human help.
+  type: node
+  branch: manufacturing
+  band_guess: 2075-2100
+  requires:
+    - mass-produced-humanoid-robots
+    - decentralised-robot-swarm
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Swarm Robotics'' and ''Orbital Automation'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Self-replicating_machine
+    - source: paperclips
+      ref: Universal Paperclips (2017), projects 'Clip Factories' ('production facilities made from clips') and 'Self-correcting Supply Chain'; https://www.decisionproblem.com/paperclips/projects.js
+  notes: |-
+    [game trees] Precursor to von Neumann probes (Paperclips). RepRap (2008) replicated some of its own parts. 'Little human help' needs a threshold such as 95% of mass.
+    [Kurzweil and Paperclips] Alternative definition: An automated factory builds a working copy of itself, including most of its own machinery by mass, from raw or lightly processed materials.
+    [Kurzweil and Paperclips] Real-world reference: NASA/ASEE 1980 study 'Advanced Automation for Space Missions' (self-replicating lunar factory); RepRap 3D printers print some of their own parts. The '≥90% by mass' style threshold needs curator choice. Earth-based or lunar.
+- id: utility-fog
+  name: Utility Fog
+  definition: A cloud of at least 10^9 cooperating micro-robots reshapes itself on command into a solid object that can bear a load.
+  type: node
+  branch: materials
+  band_guess: 2075-2100
+  requires:
+    - molecular-assembler
+    - decentralised-robot-swarm
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.7 '...And Bodies', pp.142-148
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.5 (foglets)
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Utility_fog
+  notes: Concept by J. Storrs Hall (1993). Related to programmable matter (claytronics). The unit count is my threshold.
+- id: ancestor-simulation
+  name: Ancestor Simulations
+  definition: A computer simulation runs a whole society of at least a million agents, each meeting an agreed test for human-level minds, for a simulated lifetime.
+  type: node
+  branch: computing
+  band_guess: beyond-2100
+  requires:
+    - computronium
+    - mind-uploading
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'The Universe Within' ('escape into a simulated universe'); https://www.decisionproblem.com/paperclips/projects.js
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Simulation_hypothesis
+  notes: 'DOUBTFUL: the test hinges on contested criteria for minds, and the game''s link is a prestige-reset flavour text. Bostrom (2003) ''Are You Living in a Computer Simulation?'' is the real-world concept.'
+- id: computronium
+  name: Computronium
+  definition: Bulk matter (≥1 tonne) is converted into a substrate that computes at within a factor of 1,000 of physical limits (e.g. Bremermann/Landauer bounds).
+  type: node
+  branch: computing
+  band_guess: beyond-2100
+  requires:
+    - molecular-assembler
+    - optical-computer
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.3 (ultimate limits of computation, e.g. Seth Lloyd's 'ultimate laptop') and ch.6 ('The Universe Wakes Up')
+    - source: paperclips
+      ref: Universal Paperclips (2017), 'Available Matter' and the final 'Disassemble ...' projects (probes, swarm, factories, processors, memory); https://www.decisionproblem.com/paperclips/projects.js
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Computronium
+  notes: Merges 'matter conversion' from Paperclips with Kurzweil's saturation of matter by intelligence. The threshold is mine and should be checked against Lloyd (2000, Nature, 'Ultimate physical limits to computation').
+- id: crewed-interstellar-mission
+  name: Generation Ships
+  definition: A crewed (or generation) spacecraft departs on a trajectory to another star system.
+  type: node
+  branch: space
+  band_guess: beyond-2100
+  requires:
+    - fusion-propulsion
+    - space-habitat
+    - biological-immortality
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/Sailfish/will-there-be-a-manned-interstellar
+    - source: manifold
+      ref: https://manifold.markets/IhorKendiukhov/will-a-manned-interstellar-mission
+  notes: 'Manifold: crewed interstellar mission before 2250 76% (n=23); before 2060 20% (n=25), which looks absurd. Thin.'
+- id: dyson-swarm
+  name: Dyson Swarm
+  definition: Solar collectors in orbit around the Sun capture at least 1% of its output.
+  type: node
+  branch: energy
+  band_guess: beyond-2100
+  requires:
+    - space-based-solar-power
+    - self-replicating-factory
+    - asteroid-mining
+  missing_history:
+    - photovoltaics
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Planetary Economics' and late energy technologies
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Dyson_sphere
+    - source: manifold
+      ref: https://manifold.markets/RemNi/will-there-be-a-dyson-sphere-around-51d476bf5275
+    - source: manifold
+      ref: https://manifold.markets/RemNi/will-there-be-a-dyson-sphere-around-d3e1ad8967f8
+  notes: |-
+    [game trees] Probably duplicates the Paperclips entries. Should require space-based solar power and the self-replicating factory.
+    [forecast markets] Alternative definition: Orbiting collectors around the Sun capture at least 1% of its total power output.
+    [forecast markets] RemNi ladder: before 2040 7%, 2050 9%, 2060 11%, 2070 11%, 2080 14%, 2090 20%, 2100 19%, 2110 23% (n≈40–80 each). That points beyond 2100 but is likely inflated by AI-takeoff bettors. The definition threshold (1%) is my choice.
+- id: invisibility-cloak
+  name: Invisibility
+  definition: A passive cloak hides a person-sized object from view across the full visible spectrum and from all viewing angles.
+  type: node
+  branch: materials
+  band_guess: beyond-2100
+  requires:
+    - nanotechnology
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Metamaterials'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Metamaterial_cloaking
+  notes: Physics limits broadband cloaking; may be impossible as defined. Weak pick.
+- id: space-elevator
+  name: Space Elevator
+  definition: A tether anchored to Earth's surface and reaching beyond geostationary orbit carries a climber with a payload to orbit.
+  type: node
+  branch: space
+  band_guess: beyond-2100
+  requires:
+    - nanotechnology
+    - spaceflight
+    - civil-engineering
+  missing_history:
+    - carbon nanotubes
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Super Tensile Solids' and the Space Elevator project
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Space_elevator
+    - source: manifold
+      ref: https://manifold.markets/SimoneRomeo/in-what-decade-will-we-have-space-e
+    - source: manifold
+      ref: https://manifold.markets/RemNi/will-earth-have-a-space-elevator-be-a1d0a1f956a2
+    - source: manifold
+      ref: https://manifold.markets/Tomoffer/will-we-have-a-terrestrial-space-el-920d2bf3bb3c
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/917/space-elevator-by-2100
+    - source: other
+      ref: Arthur C. Clarke, The Fountains of Paradise (1979)
+  notes: |-
+    [game trees] Needs a cable material far stronger than anything made at length; a lunar elevator or a tether demonstration in orbit could be milestones.
+    [forecast markets] Alternative definition: A tether anchored on Earth's surface and extending beyond geostationary orbit lifts payloads by climber into orbit.
+    [forecast markets] Decade market (n=28): 2030s 11%, 2040s 14%, 2050s 15%, later/never 59%. The RemNi ladder is much more optimistic: before 2040 4%, 2055 17%, 2065 33%, 2070 39%, 2075 54%. Tomoffer: by 2085 16%, by 2150 29%. Metaculus Q917 (built before 2100) snippet: 9% (unverified). The markets disagree sharply. I'd go with beyond-2100 because the material doesn't exist; a lunar space elevator ('construction begun by 2100' 33%, n=23) is a possible nearer milestone.
+    [forecast markets] Forecast with no median in range (https://manifold.markets/SimoneRomeo/in-what-decade-will-we-have-space-e, 2026-11-23): 25th percentile 2049, 75th ?.
+- id: star-colony
+  name: Star Colony
+  definition: Humans establish a permanent, self-sustaining settlement on a world in another star system.
+  type: node
+  branch: space
+  band_guess: beyond-2100
+  requires:
+    - crewed-interstellar-mission
+    - terraforming-mars
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Interstellar_travel
+  notes: The tree's capstone, in the role Alpha Centauri gives Transcendence. Terraforming stands in for the planetary engineering a colony would need.
+- id: terraforming-mars
+  name: Terraforming
+  definition: Human intervention raises Mars's surface pressure or temperature enough that liquid water is stable on part of the surface.
+  type: node
+  branch: space
+  band_guess: beyond-2100
+  requires:
+    - permanent-mars-settlement
+    - solar-geoengineering
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Terraforming'' and ''Planetary Engineering'''
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Ecological Engineering'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Terraforming_of_Mars
+    - source: manifold
+      ref: https://manifold.markets/TheAllMemeingEye/will-any-astronomical-body-in-the-s
+    - source: manifold
+      ref: https://manifold.markets/CraigTalbert/venus-will-be-successfully-terrafor
+  notes: |-
+    [game trees] Should require mars-landing (an existing future node) as well.
+    [forecast markets, as terraforming] Alternative definition: Deliberate engineering makes another planet's (e.g. Mars's) surface able to support unprotected human breathing or open-air liquid water at scale.
+    [forecast markets, as terraforming] Manifold: any body terraformed before the first permanent settlement 15% (n=11); there's no dated market. Very thin; included for band coverage.
+- id: von-neumann-probe
+  name: Von Neumann Probes
+  definition: A spacecraft reaches another body, builds at least one working copy of itself from local materials, and the copy launches onward.
+  type: node
+  branch: space
+  band_guess: beyond-2100
+  requires:
+    - self-replicating-factory
+    - interstellar-probe-launch
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: paperclips
+      ref: Universal Paperclips (2017), phase 3 'Von Neumann Probe Design' panel (Self-Replication, Hazard Remediation, Exploration stats) and project 'Space Exploration'; https://www.decisionproblem.com/paperclips/index2.html
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.6 (intelligence expanding outward and saturating the universe)
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Self-replicating_spacecraft
+  notes: Concept from von Neumann's self-reproducing automata and Freitas' 1980 JBIS self-reproducing interstellar probe. Interplanetary self-replication would count, so it doesn't need to be interstellar. Depends on self-replicating-factory.
+- id: advanced-microreactor-power
+  name: Microreactors
+  definition: A Gen-IV microreactor (under 20 MWe, non-light-water coolant) generates electricity delivered to a customer or grid.
+  type: milestone
+  of: commercial-smr
+  branch: energy
+  band_guess: late-2020s
+  requires:
+    - nuclear-fission
+  missing_history:
+    - nuclear power plant
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Nuclear/Fission: ''Heat-pipe cooled SMRs'')'
+    - source: other
+      ref: https://www.energy.gov/articles/department-energy-celebrates-fourth-criticality-ahead-july-4th-goal
+  notes: 'IEA TRL 2025: heat-pipe SMR 5. DOE Reactor Pilot Program: four test reactors reached criticality before 4 July 2026 (Antares Mark-0 Jun 4, Valar Ward 250 Jun 18, Deployable Energy Unity Jun 30, Aalo-X Jul 4) - mostly zero/low-power criticality, not power generation. Oklo Aurora not yet critical. Electricity to a customer is the next step.'
+- id: ai-authored-research-paper
+  name: AI Researchers
+  definition: A research paper whose hypothesis, experiments, analysis and writing were all done by an AI system is accepted through normal peer review at a top venue (main track of NeurIPS/ICML/ICLR, or Nature/Science).
+  type: milestone
+  of: ai-scientific-discovery
+  branch: ai
+  band_guess: late-2020s
+  requires:
+    - computers
+    - scientific-method
+  missing_history:
+    - large language models
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/_deleted_/will-we-have-an-ai-generated-resear-80b9af6cfd09
+    - source: manifold
+      ref: https://manifold.markets/_deleted_/will-we-have-an-ai-generated-resear-67eaed57c085
+    - source: manifold
+      ref: https://manifold.markets/AmmonLam/will-a-paper-fully-created-by-ai-be
+  notes: 'Manifold: accepted to >1 top ML conference by 2027 63% (n=34), by 2028 72% (n=29), by 2030 82% (n=42); fully AI-created paper accepted in Nature by 2030 55% (n=28). ''AI makes an unambiguously novel scientific discovery in 2026'' 79% (n=25). Definitions of ''fully AI'' vary between markets; the markets'' creator account is deleted.'
+- id: ai-discovered-drug-approval
+  name: AI Drug Discovery
+  definition: A drug whose biological target and molecule were both identified by AI systems receives marketing approval from the FDA, EMA or NMPA.
+  type: milestone
+  of: ai-scientific-discovery
+  branch: ai
+  band_guess: late-2020s
+  requires:
+    - computers
+    - chemistry
+    - biology
+  missing_history:
+    - machine learning
+    - protein structure prediction (AlphaFold)
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://www.news-medical.net/news/20260910/Generative-AI-driven-drug-Rentosertib-enters-Phase-III-trial-for-idiopathic-pulmonary-fibrosis.aspx
+    - source: other
+      ref: https://pubmed.ncbi.nlm.nih.gov/40461817/
+    - source: kurzweil
+      ref: The Singularity Is Nearer (2024), ch.6 'The Next Thirty Years in Health and Well-Being' (AI-driven drug discovery and simulated biology)
+    - source: other
+      ref: https://www.biospace.com/press-releases/insilico-initiates-phase-iii-clinical-trial-for-rentosertib-its-ai-empowered-tnik-inhibitor-for-idiopathic-pulmonary-fibrosis
+  notes: |-
+    [IEA and near-term] Insilico's rentosertib (TNIK inhibitor, IPF): Phase 2a in Nature Medicine 2025; Phase 3 started July 2026 (NCT07687459). Approval realistically 2029-2031, so borderline late-2020s/2030s. Definition needs care: many approved drugs already used computational design; insist on AI-found target AND AI-generated molecule.
+    [Kurzweil and Paperclips] Alternative definition: A regulator approves a drug whose target and molecule were both identified mainly by AI systems.
+    [Kurzweil and Paperclips] Insilico's rentosertib (TNIK inhibitor, IPF) entered phase 3 in China July 2026 (320 patients, 52 weeks); the company itself estimates 3-4 years to approval, so 2029-2030. 'Mainly by AI' needs a crisp rule; the curator may prefer 'AI-discovered target and molecule, per the sponsor's published account'.
+- id: ai-millennium-prize-proof
+  name: Machine Mathematics
+  definition: An AI system produces a proof of one of the Clay Millennium Prize Problems that the mathematical community accepts (published in a refereed journal or recognised by the Clay Institute).
+  type: milestone
+  of: ai-scientific-discovery
+  branch: ai
+  band_guess: late-2020s
+  requires:
+    - computers
+    - mathematics
+  missing_history:
+    - machine learning
+    - large language models
+    - formal proof assistants
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/strutheo/when-will-the-navierstokes-problem
+    - source: manifold
+      ref: https://manifold.markets/Grothenfla/will-some-millennium-prize-problem
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/4923/next-millenium-prize-problem-solved-by-ai
+    - source: other
+      ref: https://www.npr.org/2026/09/22/nx-s1-5968588/openai-navier-stokes-problem-mathematicians-learn-little
+      date_claimed: 2026
+  forecast:
+    url: https://manifold.markets/strutheo/when-will-the-navierstokes-problem
+    retrieved: '2026-11-23'
+    low: 2027
+    median: 2028
+    high: 2028
+  notes: 'OpenAI announced on 2026-09-08 a claimed AI-generated proof of finite-time blowup for Navier-Stokes with a partial Lean formalization; not yet accepted, and there is a credit dispute with Buckmaster/Alpöge (NPR). Manifold Navier-Stokes date market: 9.7% before 2027, 87.6% before 2029 (n=44). ''Some Millennium Problem solved by AI before 2032'' 98% (n=34). The question is when the claim counts as verified. Could be a milestone of artificial-general-intelligence instead of a node.'
+- id: commercial-asteroid-landing
+  name: Commercial Asteroid Landing
+  definition: A privately built spacecraft touches down on an asteroid and returns in-situ measurements of its metal content.
+  type: milestone
+  of: asteroid-mining
+  branch: space
+  band_guess: late-2020s
+  requires:
+    - spaceflight
+    - rocketry
+  missing_history:
+    - ion propulsion
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'Harvester Drones' ('gather raw matter and prepare it for processing'); https://www.decisionproblem.com/paperclips/projects.js
+    - source: other
+      ref: https://astroforge.com/our-missions
+    - source: other
+      ref: https://www.space.com/space-exploration/private-spaceflight/hope-is-all-but-lost-for-private-asteroid-probe-in-deep-space-the-chance-of-talking-with-odin-is-minimal
+  notes: AstroForge's Odin was lost after launch (2025). Vestri, which should land on 2022 OB5, rides with Intuitive Machines IM-3 in late 2026 or early 2027, then cruises for some time, so landing is more like 2028+. Government landings (Hayabusa, OSIRIS-REx) are history.
+- id: cortical-visual-prosthesis
+  name: Artificial Sight
+  definition: A person blind from eye or optic-nerve loss perceives shapes or letters through an implant stimulating the visual cortex with ≥1,000 electrodes.
+  type: milestone
+  of: bci-speech-restoration
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - electronics
+    - biology
+    - optics
+  missing_history:
+    - brain-computer interfaces
+    - retinal implants
+    - brain-computer interface
+    - retinal implant (Argus II
+    - 2013)
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.11 '2029' (neural implants for vision and hearing widely used)
+      date_claimed: 2029
+    - source: other
+      ref: https://www.mobihealthnews.com/news/elon-musk-provides-update-blindsight-implant-trials
+    - source: other
+      ref: https://newatlas.com/medical-tech/vision-restoring-retinal-implant-approval-europe/
+    - source: other
+      ref: https://drug-dev.com/neuralinks-blindsight-vision-implant-faces-questions-over-clinical-readiness-and-human-trials/
+    - source: manifold
+      ref: https://manifold.markets/GabeGarboden/will-neuralink-successfully-enable-c5092c5cd2a1
+    - source: manifold
+      ref: https://manifold.markets/SimoneRomeo/when-will-neuralink-implant-the-fir
+  notes: |-
+    [Kurzweil and Paperclips] The retinal route is already done: Science Corp's PRIMA got an EU CE mark (July 2026) for form vision in geographic atrophy, so a retinal node would be history. The cortical route (Neuralink Blindsight, FDA breakthrough designation Sept 2024) has no first human implant as of Nov 2026; the target has slipped 2025 to 2026. The electrode threshold is my proposal; the curator should set it.
+    [IEA and near-term, as bci-vision-restoration] Alternative definition: A blind person reads large letters or navigates using a brain implant that stimulates the visual cortex, in a peer-reviewed trial.
+    [IEA and near-term, as bci-vision-restoration] Neuralink Blindsight: FDA breakthrough designation Sep 2024; first implant promised 2025 then 2026; as of Nov 2026 no human implant and no registry entry. Earlier cortical prostheses (Second Sight Orion, Gennaris) produced phosphenes, so the bar should be functional vision, not just light perception.
+    [forecast markets] Alternative definition: A blind person implanted with a high-channel-count cortical visual prosthesis can read large print or recognise faces using it.
+    [forecast markets] Manifold: Neuralink enables a blind person to see by 2030 67% (n=185); first Blindsight implant in 2026-27 41%, later or never 53% (n=20). As of 2026-11-02 there is no human Blindsight implant. Earlier low-resolution cortical implants (Dobelle 2000s, Second Sight Orion 2018) exist, so the definition must set a resolution or function bar.
+- id: crewed-lunar-south-pole-landing
+  name: Crewed Lunar South Pole Landing
+  definition: Astronauts land near the Moon's south pole and walk on the surface.
+  type: milestone
+  of: lunar-base
+  branch: space
+  band_guess: late-2020s
+  requires:
+    - spaceflight
+    - rocketry
+  missing_history:
+    - crewed Moon landing (Apollo 11
+    - 1969)
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://www.theregister.com/2026/03/02/nasa_artemis_reshuffle/
+    - source: other
+      ref: https://www.space.com/space-exploration/artemis/artemis-3-has-been-pushed-to-late-2027-can-nasa-still-land-astronauts-on-the-moon-in-2028/amp/
+    - source: other
+      ref: https://www.smithsonianmag.com/smart-news/china-announces-a-plan-to-put-astronauts-on-the-moon-by-2030-revealing-details-of-four-upcoming-missions-180989810/
+      date_claimed: 2030
+    - source: manifold
+      ref: https://manifold.markets/RemNi/will-a-human-venture-onto-the-lunar-163b9107ef15
+    - source: manifold
+      ref: https://manifold.markets/Bayesian/who-lands-the-next-person-on-the-mo
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/7721/when-will-nasa-next-land-astronauts-on-the-moon
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/5832/china-to-land-the-next-person-on-the-moon
+    - source: other
+      ref: https://spaceflightnow.com/2026/02/27/nasa-announces-major-overhaul-of-artemis-moon-program/
+      date_claimed: 2028
+  notes: |-
+    [IEA and near-term] Crewed Moon landing itself is history (1969), so this is a milestone toward a lunar base. Feb 2026: NASA turned Artemis III into an Earth-orbit lander rendezvous test (2027); first landing moved to Artemis IV, targeted 2028. China: Long March 10 low-altitude test Feb 2026, orbital Mengzhou test early 2027, crewed landing 'before 2030' (not necessarily south pole). Whoever lands first, include both.
+    [forecast markets, as crewed-lunar-return] Alternative definition: Astronauts land on the Moon for the first time since Apollo 17 (1972).
+    [forecast markets, as crewed-lunar-return] Manifold: human on the Moon again before 2035 91% (n=45); next lander nation US 51%, China 44% (n=206); 'Artemis 3 a crewed landing' 1%, because NASA moved the landing to Artemis IV (2028) and made Artemis III a 2027 LEO docking test (Feb 2026). Artemis II flew around the Moon in April 2026. This is more a mission than a technology; it may fit better as a milestone than its own page.
+- id: drug-induced-tooth-regrowth
+  name: Tooth Regrowth
+  definition: A clinical trial shows that a drug (e.g. anti-USAG-1 antibody) makes a new adult tooth grow in a human.
+  type: milestone
+  of: regenerative-medicine
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - biology
+  missing_history:
+    - monoclonal antibodies
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/Geo/will-human-tooth-regrowth-clinical
+    - source: manifold
+      ref: https://manifold.markets/IsaacLiu/adult-tooth-regrowth-commercially-a
+  notes: 'Manifold: tooth-regrowth clinical trials succeed (by ~2030) 62% (n=28); adult tooth regrowth commercially available in 2035 68% (n=10, thin). The Japanese Toregem/Kyoto trial started in 2024; its readout status wasn''t checked.'
+- id: embodied-fly-brain-emulation
+  name: Whole Fly Brain Emulation
+  definition: A peer-reviewed simulation built from a complete adult Drosophila connectome drives a simulated body through several natural behaviours.
+  type: milestone
+  of: mammal-brain-emulation
+  branch: biology
+  band_guess: late-2020s
+  requires:
+    - computers
+    - biology
+  missing_history:
+    - connectomics
+    - electron microscopy
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.4, pp.160-200 (brain reverse-engineering, then uploading)
+    - source: other
+      ref: https://www.theregister.com/2026/03/16/digital_fruit_fly_brain_model/
+    - source: other
+      ref: https://arxiv.org/pdf/2510.15745
+  notes: Eon Systems claimed an embodied whole-brain fly emulation in Oct 2025 (FlyWire connectome with about 125k neurons, NeuroMechFly v2, Brian2). It is not peer-reviewed, and critics say it is not a true upload. A peer-reviewed version could land soon. It may already count, depending on the curator's bar.
+- id: epigenetic-reprogramming-efficacy
+  name: Rejuvenation by Reprogramming in Humans
+  definition: A controlled human trial reports a statistically significant restoration of function from partial epigenetic reprogramming (e.g. OSK gene therapy).
+  type: milestone
+  of: longevity-escape-velocity
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - genetics
+    - biology
+  missing_history:
+    - induced pluripotent stem cells
+    - gene therapy (AAV)
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.5, pp.212-219 (reversing aging through genetic technology)
+    - source: other
+      ref: https://www.biospace.com/press-releases/life-biosciences-announces-first-patient-dosed-in-phase-1-trial-of-er-100-for-optic-neuropathies
+  notes: Life Biosciences dosed the first patient with ER-100 (OSK, doxycycline-switched; glaucoma and NAION) in June 2026, after FDA IND clearance on 28 Jan 2026. First-in-human dosing has therefore happened, so the open milestone is an efficacy readout. Phase 1 is mainly a safety study, so efficacy data may only arrive around 2028-2030.
+- id: general-household-robot
+  name: Household Robots
+  definition: A commercially available robot that can reliably do most everyday household chores (laundry, dishes, tidying) in an unfamiliar home without teleoperation.
+  type: milestone
+  of: mass-produced-humanoid-robots
+  branch: manufacturing
+  band_guess: late-2020s
+  requires:
+    - robotics
+    - electronics
+    - computers
+  missing_history:
+    - machine learning
+    - humanoid robots in paid warehouse work (Agility Digit at GXO
+    - 2024)
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/MatthewBarnett/will-a-reliable-and-general-househo
+    - source: manifold
+      ref: https://manifold.markets/ms/will-robots-be-able-to-load-a-dishw
+    - source: manifold
+      ref: https://manifold.markets/_deleted_/by-2030-humanoid-robots-can-fold-la
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/39129/by-2030-will-general-purpose-robot-learning-new-tasks-be-20k/
+    - source: other
+      ref: https://www.robotics247.com/article/humanoid-orders-vs-actual-deployments-how-much-commercial-progress-is-really-happening/agility_robotics
+    - source: other
+      ref: https://www.therobotreport.com/figure-ai-ships-figure-02-humanoid-robots-paying-customer/
+  notes: |-
+    [forecast markets] Manifold: reliable general household robot before 2030 79% (n=711, the largest market in this set); robots can load a dishwasher by Sept 2028 76% (n=65); humanoid folds laundry at retail-worker speed by 2030 70% (n=76). Metaculus Q39129 asks whether a general-purpose robot that learns tasks costs under $20k by 2030 (snippet ~74%, unverified). Branch could be 'other' or a robotics sub-branch.
+    [IEA and near-term, as household-humanoid-robot] Alternative definition: A general-purpose humanoid robot is sold to consumers and autonomously does household chores (laundry, dishes, tidying) in customers' homes.
+    [IEA and near-term, as household-humanoid-robot] 'Humanoids working paid shifts' is ALREADY demonstrated: Agility Digit has moved 100k+ totes at GXO under a paid contract, 7 units at Toyota Canada (Apr 2026); Figure completed an 11-month BMW pilot. Propose that for history. The open frontier is the home: 1X NEO and Figure have announced home robots, but I did not verify any autonomous consumer deliveries - teleoperation-assisted use should not count.
+- id: kurzweil-agi-2029
+  name: Kurzweil's 2029 AGI Forecast
+  definition: An AI system matches an intelligent human across essentially all cognitive tasks, including passing a rigorous Turing test, by end of 2029.
+  type: forecast
+  of: artificial-general-intelligence
+  branch: ai
+  band_guess: late-2020s
+  requires:
+    - computers
+  missing_history:
+    - machine learning
+    - large language models
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.11 '2029'
+      date_claimed: 2029
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.4, p.200 (Turing test by 2029)
+      date_claimed: 2029
+    - source: kurzweil
+      ref: The Singularity Is Nearer (2024), ch.2 'Reinventing Intelligence' (reaffirms 2029; notes Metaculus consensus moved to agree)
+      date_claimed: 2029
+  notes: Kurzweil's most consistent date, unchanged since 1999. Attach to existing AGI node as a forecast, not a new node.
+- id: kurzweil-kapor-turing-test
+  name: Kurzweil–Kapor Turing Test Passed
+  definition: 'An AI passes the Long Bets #1 Turing test (three judges, two-hour interviews, per the Kurzweil–Kapor rules).'
+  type: milestone
+  of: artificial-general-intelligence
+  branch: ai
+  band_guess: late-2020s
+  requires:
+    - computers
+  missing_history:
+    - large language models
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: 'Long Bets #1 (Kurzweil vs Kapor, 2002)'
+      date_claimed: 2029
+    - source: manifold
+      ref: https://manifold.markets/MatthewBarnett/will-ray-kurzweil-win-his-2029-turi
+    - source: manifold
+      ref: https://manifold.markets/MetaculusBot/before-2030-will-an-ai-complete-the
+  notes: 'Manifold: Kurzweil wins 2029 bet 55% (n=63); mirror of Metaculus ''AI completes the Long Bets Turing test before 2030'' 45% (n=61). Whether it resolves depends on someone actually running the formal test.'
+- id: large-dac-plant
+  name: Quarter-Megatonne Air Capture Plant
+  definition: A single direct-air-capture plant removes and permanently stores at least 250,000 tonnes of CO2 within one year.
+  type: milestone
+  of: gigatonne-carbon-removal
+  branch: environment
+  band_guess: late-2020s
+  requires:
+    - chemistry
+    - industrialization
+  missing_history:
+    - direct air capture
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'Global Warming' ('a robust solution to man-made climate change'); https://www.decisionproblem.com/paperclips/projects.js
+    - source: other
+      ref: https://www.1pointfive.com/projects/stratos
+    - source: other
+      ref: https://www.qcintel.com/carbon/article/stratos-dac-project-to-start-operations-in-2027-oxy-70556.html
+  notes: Occidental/1PointFive Stratos (design capacity 500 kt/yr, Texas) slipped from Q2 2026 to 2027. The largest plant now operating is about 36 kt/yr. The 'permanently stores' clause matters, because Stratos also supplies CO2 for enhanced oil recovery.
+- id: lifespan-extension-drug
+  name: Longevity Drug for Dogs
+  definition: A regulator approves a drug specifically labelled to extend the lifespan of an animal species.
+  type: milestone
+  of: approved-aging-therapy
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - biology
+    - chemistry
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://loyal.com/posts/loy-002-tas-announcement
+    - source: other
+      ref: https://www.dvm360.com/view/lifespan-extension-drug-in-development-for-senior-dogs-reaches-a-new-milestone
+  notes: 'Loyal LOY-002 (senior dogs): FDA CVM accepted effectiveness (Feb 2025) and safety (Jan 2026) sections; manufacturing section pending, reportedly 2027. Conditional approval would be the first lifespan-labelled drug in any species. A human equivalent would be a separate, far later node.'
+- id: multi-cancer-blood-test
+  name: Cancer Blood Tests
+  definition: A regulator approves a single blood test that screens healthy people for many (20+) cancer types at once.
+  type: milestone
+  of: personalized-cancer-vaccine
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - genetics
+    - chemistry
+  missing_history:
+    - DNA sequencing
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://grail.com/press-releases/fda-advisory-committee-votes-in-favor-of-approval-of-grails-galleri-multi-cancer-early-detection-test/
+    - source: other
+      ref: https://builtin.com/articles/grail-fda-committee-vote-20260924
+  notes: 'GRAIL Galleri (50+ cancers): final PMA module submitted 29 Jan 2026; FDA advisory panel voted in favour 23 Sep 2026; decision ''in coming months''. Already sold as a lab-developed test, so define by regulatory approval. Could resolve before launch - check.'
+- id: multiplex-crispr-therapy
+  name: Multiplex CRISPR Gene Therapy
+  definition: The FDA approves a therapy that edits more than one gene in the patient's cells using CRISPR.
+  type: milestone
+  of: in-vivo-gene-editing
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - genetics
+  missing_history:
+    - CRISPR
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/cash/will-a-gene-therapy-that-edits-mult
+    - source: manifold
+      ref: https://manifold.markets/SimoneRomeo/which-applications-of-crispr-techno
+  notes: 'Manifold: before 2030 79% (n=29). CRISPR application approvals by 2030 (n=16): cancer 65%, viral infections 53%, anti-aging 33%, enhancement 34%, which looks overconfident for a thin market. Casgevy (2023) edits one target, so it doesn''t count.'
+- id: new-hair-loss-drug-approval
+  name: First New-Mechanism Baldness Drug
+  definition: FDA approves a male-pattern hair loss drug with a new mechanism, the first since finasteride (1997).
+  type: milestone
+  of: regenerative-medicine
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - chemistry
+    - biology
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'Male Pattern Baldness'; https://www.decisionproblem.com/paperclips/projects.js
+    - source: other
+      ref: https://www.ajmc.com/view/clascoterone-5-delivers-strong-phase-3-results-for-androgenetic-alopecia
+    - source: other
+      ref: https://www.healio.com/news/dermatology/20260422/male-pattern-hair-loss-drug-regrows-hair-up-to-1-year-without-plateau
+  notes: 'Cosmo''s topical clascoterone 5% (topical androgen-receptor blocker): two phase 3 trials (SCALP 1/2, 1,465 men) positive Dec 2025; 12-month data Apr 2026. NDA planned (2026 or early 2027, reports conflict). A fun, relatable late-2020s item; the in-game version is a joke (+trust).'
+- id: orbital-propellant-transfer
+  name: Orbital Refuelling
+  definition: Two spacecraft in orbit transfer at least 10 tonnes of cryogenic propellant from one to the other.
+  type: milestone
+  of: mars-landing
+  branch: space
+  band_guess: late-2020s
+  requires:
+    - rocketry
+    - spaceflight
+  missing_history:
+    - reusable orbital-class rocket booster (Falcon 9
+    - 2015)
+    - space docking
+    - reusable rockets
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Starship_Propellant_Transfer_Demonstration
+    - source: other
+      ref: https://techcrunch.com/2024/11/01/spacex-wants-to-test-refueling-starships-in-space-early-next-year
+    - source: manifold
+      ref: https://manifold.markets/OlegEterevsky/when-will-starship-first-attempt-pr
+    - source: manifold
+      ref: https://manifold.markets/DaftPunkRock/acx-2026-will-spacex-successfully-r
+  forecast:
+    url: https://manifold.markets/OlegEterevsky/when-will-starship-first-attempt-pr
+    retrieved: '2026-11-23'
+    low: 2027
+    median: 2027
+    high: 2028
+  notes: |-
+    [IEA and near-term] SpaceX ship-to-ship demo slipped from Mar 2025 to Mar 2026 to unscheduled (Wikipedia, Sep 2026). One poorly sourced Oct 2026 newsletter claimed a transfer on Flight 12 - uncorroborated, verify before publishing. Critical for Artemis lunar landers. Storable-propellant refuelling (Progress to ISS) is history; cryogenic is the frontier.
+    [forecast markets] Alternative definition: Cryogenic propellant is transferred between two separate spacecraft in orbit (e.g. Starship tanker to ship).
+    [forecast markets] The market asks about the first *attempt*: 28% before Apr 2027, 49% before Jul 2027, 66% before 2028 (n=63). 'Successful refuel in 2026' 2% (n=64). One unverified newsletter claimed a Flight 12 transfer in Oct 2026, but Wikipedia lists NET Q1 2027 and the market agrees. Cryogenic transfer has a short history; the Flight 3 intertank test (2024) doesn't count.
+- id: perovskite-tandem-solar
+  name: Tandem Solar
+  definition: Perovskite-silicon tandem modules are manufactured at over 1 GW per year and certified to standard (IEC 61215) durability tests.
+  type: milestone
+  of: energy-abundance
+  branch: energy
+  band_guess: late-2020s
+  requires:
+    - chemistry
+    - electricity
+    - glass
+  missing_history:
+    - photovoltaic solar cell
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Renewables/Solar: ''Perovskite thin film'')'
+    - source: other
+      ref: https://www.pv-tech.org/oxford-pv-ships-first-commercial-perovskite-tandem-modules/
+    - source: other
+      ref: https://pv-magazine-usa.com/2026/11/12/heliene-announces-commercial-production-of-perovskite-tandem-modules-using-caelux-glass/
+  notes: 'IEA TRL 2025: perovskite thin film 6 (no separate tandem row; multi-junction PV generally TRL 9). BORDERLINE: first commercial sales already happened (Oxford PV to a US utility project, 2024; Heliene/Caelux 4-terminal production started Nov 2026, shipping 2027; Tandem PV 40 MW line). Hence the GW-scale definition. Durability is the real open question.'
+- id: photonic-utility-scale-quantum
+  name: Utility-Scale Photonic Quantum Computer
+  definition: A photonic quantum computer runs error-corrected logical qubits at a dedicated facility (e.g. PsiQuantum Brisbane or Chicago).
+  type: milestone
+  of: quantum-computing
+  branch: computing
+  band_guess: late-2020s
+  requires:
+    - lasers
+    - optics
+    - transistor
+  missing_history:
+    - quantum computing
+    - silicon photonics
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: paperclips
+      ref: Universal Paperclips (2017), projects 'Quantum Computing' and 'Photonic Chip' ('converts electromagnetic waves into quantum operations'); https://www.decisionproblem.com/paperclips/projects.js
+    - source: other
+      ref: https://www.semafor.com/article/04/13/2026/psiquantum-co-founder-pete-shadbolt-says-us-quantum-opportunity-lies-in-supply-chain
+      date_claimed: 2027
+  notes: PsiQuantum targets Brisbane by end 2027 and Chicago 2028; one Australian report says both are slipping toward 2030. No operational processor shown publicly as of Apr 2026. Only weakly tied to the game's 'Photonic Chip'. Milestone of the existing FTQC node.
+- id: rigorous-turing-test
+  name: Rigorous Turing Test Passed
+  definition: A machine passes the Kurzweil-Kapor Long Bet Turing test protocol (three judges, two-hour interviews against human foils) before end of 2029.
+  type: milestone
+  of: artificial-general-intelligence
+  branch: ai
+  band_guess: late-2020s
+  requires:
+    - computers
+  missing_history:
+    - large language models
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: kurzweil
+      ref: https://longbets.org/1/
+      date_claimed: 2029
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.10 '2019' (unrigorous passes reported) and ch.11 '2029' (machines routinely pass)
+      date_claimed: 2029
+    - source: other
+      ref: https://arxiv.org/abs/2503.23674
+  notes: 'Jones & Bergen (Mar 2025): persona-prompted GPT-4.5 judged human 73% of the time in 5-minute three-party tests. Shows momentum, but the Long Bet protocol is far stricter (2-hour interviews), so the milestone is still open. $20,000 bet, Kapor vs Kurzweil.'
+- id: space-resources-first-use
+  name: Space Resources
+  definition: Something manufactured from material mined or extracted off Earth (lunar regolith, asteroid, Mars atmosphere) is put to practical use, e.g. oxygen breathed or propellant burned.
+  type: milestone
+  of: asteroid-mining
+  branch: space
+  band_guess: late-2020s
+  requires:
+    - mining
+    - spaceflight
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/OlegEterevsky/when-will-we-first-produce-somethin
+  notes: |-
+    Market: 6% before 2027, 25% before 2029, 34% before 2030, 45% before 2033 (n=44); the median is after 2032. MOXIE made oxygen on Mars in 2021–23 but it was not used. Often called ISRU.
+    Forecast with no median in range (https://manifold.markets/OlegEterevsky/when-will-we-first-produce-somethin, 2026-11-23): 25th percentile 2028, 75th ?.
+- id: stem-cell-islet-cure
+  name: Diabetes Cure
+  definition: A regulator approves a stem-cell-derived islet therapy that makes type 1 diabetics insulin-independent.
+  type: milestone
+  of: regenerative-medicine
+  branch: medicine
+  band_guess: late-2020s
+  requires:
+    - biology
+  missing_history:
+    - induced pluripotent stem cells
+    - embryonic stem cells
+  aspiration: 3
+  evidence: 3
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/Supermaxman/will-type-1-diabetes-be-cured-by-th
+    - source: other
+      ref: https://medcitynews.com/2025/06/vertex-pharmaceuticals-type-1-diabetes-cell-therapy-zimislecel-insulin-vrtx/
+      date_claimed: 2026
+    - source: other
+      ref: https://www.managedhealthcareexecutive.com/view/phase-3-trial-of-vertex-s-islet-cell-therapy-for-type-1-diabetes-in-under-way
+  notes: |-
+    [forecast markets] Manifold: 'Type 1 diabetes cured by end of 2040' 51% (n=23); its definition of 'cure' is broader. In Phase 1/2, 10 of 12 Vertex zimislecel patients were insulin-free; Vertex planned global filings in 2026 (not confirmed). It needs chronic immunosuppression, which is a caveat on calling it a cure.
+    [IEA and near-term, as stem-cell-islet-therapy] Alternative definition: A regulator approves stem-cell-derived insulin-producing islet cells that free type 1 diabetes patients from insulin injections.
+    [IEA and near-term, as stem-cell-islet-therapy] Vertex zimislecel: 10 of 12 Phase 1/2 patients insulin-free (NEJM 2025). Planned 2026 filing, but in Jan 2026 Vertex paused completion of dosing pending a manufacturing analysis. Could slip into 2030s. Overlaps with lab-grown-organs (on site) - keep distinct: cells, not organs.
+- id: superhuman-ai-mathematician
+  name: Superhuman AI Mathematician
+  definition: AI systems outperform the best human mathematicians across all major areas of mathematical research, as judged by leading mathematicians.
+  type: milestone
+  of: artificial-general-intelligence
+  branch: ai
+  band_guess: late-2020s
+  requires:
+    - mathematics
+    - computers
+  missing_history:
+    - large language models
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/DanielLittQCSn/ai-outperforms-humans-in-all-mathem
+    - source: manifold
+      ref: https://manifold.markets/vluzko/in-2029-will-any-ai-be-able-to-take
+  notes: 'Manifold: ''AI outperforms humans in all mathematical research areas by 2028'' 79% (n=222; created by mathematician Daniel Litt, who resolves it). ''In 2029 AI can formalize an arbitrary proof from the literature'' 78% (n=107). The judging is subjective.'
+- id: thousand-dollar-brain-compute
+  name: Human-Brain Compute for $1,000
+  definition: Hardware costing $1,000 (1999 dollars) sustains 10^16 calculations per second, Kurzweil's estimate for one human brain.
+  type: milestone
+  of: computers
+  branch: computing
+  band_guess: late-2020s
+  requires:
+    - computers
+    - transistor
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), pp.101-105 ('by around the year 2020')
+      date_claimed: 2020
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.3, p.126
+      date_claimed: 2020
+    - source: kurzweil
+      ref: https://www.thekurzweillibrary.com/images/How-My-Predictions-Are-Faring.pdf
+  notes: 'DOUBTFUL as future: arguably already met by consumer GPUs at low-precision ops (depends on counting FP8/INT8 ops and on inflation adjustment). Curator may treat as a dated history milestone instead. ASM''s 2019 chapter said $4,000 would do it.'
+- id: ai-nobel-prize
+  name: AI Nobel Prize
+  definition: A Nobel Prize is awarded for a discovery made primarily by an AI system, with the AI (or its operators specifically for the AI's work) named in the citation.
+  type: milestone
+  of: ai-scientific-discovery
+  branch: ai
+  band_guess: 2030s
+  requires:
+    - computers
+    - scientific-method
+  missing_history:
+    - machine learning
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/CimoreneBlume/will-an-ai-get-a-nobel-prize-before-8S65Ipcc6l
+    - source: manifold
+      ref: https://manifold.markets/itsTomekK/will-an-ai-get-a-nobel-prize-before
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/10411/ai-wins-nobel-prize
+  notes: 'Manifold: AI gets a Nobel before 2040 24% (n=21), before 2050 30% (n=113). Metaculus Q10411 snippet: Jun 2039 (unverified). The 2024 chemistry Nobel (AlphaFold, Hassabis/Jumper) went to humans for building an AI tool; decide whether that counts. Markets mostly mean the AI itself as laureate, which needs a rule change.'
+- id: airborne-wind-energy
+  name: Kite Power
+  definition: Tethered kites or drones generate at least 1 MW for the grid in continuous commercial operation.
+  type: milestone
+  of: energy-abundance
+  branch: energy
+  band_guess: 2030s
+  requires:
+    - flight
+    - electricity
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Renewables/Wind: ''Airborne wind energy system'')'
+  notes: 'IEA TRL 2025: 6. Makani (Alphabet) shut down 2020. Not researched further; low evidence. Kite-assisted ship propulsion is TRL 7.'
+- id: ammonia-gas-turbine
+  name: Ammonia Power
+  definition: A utility gas turbine generates grid power running on 100% ammonia fuel.
+  type: milestone
+  of: energy-abundance
+  branch: energy
+  band_guess: 2030s
+  requires:
+    - combustion
+    - fertilizer
+  missing_history:
+    - Haber-Bosch ammonia synthesis
+    - gas turbine power plant
+    - ammonia-fuelled ocean ship (Exmar ANTWERPEN
+    - 2026)
+  aspiration: 1
+  evidence: 1
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Hydrogen/Power generation: ''Co-firing of ammonia in gas turbines'', ''Cracking of ammonia into hydrogen for gas turbines'')'
+    - source: other
+      ref: https://www.lr.org/en/knowledge/horizons/november-2026/worlds-first-ammonia-dual-fuel-gas-carrier-enters-service/
+  notes: 'IEA TRL 2025: ammonia co-firing in gas turbines 5; cracking for turbines 5; co-firing in coal plants 8. EXCLUDED as already done: ammonia-fuelled ship - Exmar''s ANTWERPEN (WinGD X52DF-A engine, IEA TRL 6) delivered June 2026, maiden commercial voyage China-India July 2026; propose for history.'
+- id: autonomous-humanoid-mars
+  name: Humanoid Robot on Mars
+  definition: A humanoid robot walks on the surface of Mars.
+  type: milestone
+  of: mars-landing
+  branch: space
+  band_guess: 2030s
+  requires:
+    - robotics
+    - spaceflight
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/jim/will-a-humanoid-robot-set-foot-on-m
+    - source: manifold
+      ref: https://manifold.markets/Daniel_MC/will-an-optimus-robot-walk-on-mars
+  notes: 'Manifold: a humanoid sets foot on Mars before a human 75% (n=59); Optimus walks on Mars before a human 71% (n=51). These are ''which first'' markets, not dates. For uncrewed Starship to Mars: lands before 2030 12% (n=53); reaches Mars by 2040 47% (n=28); ''when will Starship land on Mars'' later than 2032 58%, never 18% (n=17).'
+- id: autonomous-science-lab
+  name: Self-Driving Labs
+  definition: A self-driving lab, with an AI choosing hypotheses and experiments without human direction, makes a discovery published as the main result of a Nature or Science paper.
+  type: milestone
+  of: ai-scientific-discovery
+  branch: ai
+  band_guess: 2030s
+  requires:
+    - computers
+    - robotics
+    - scientific-method
+  missing_history:
+    - machine learning
+    - large language models
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://pubs.rsc.org/en/content/articlehtml/2026/mh/d5mh01984b
+    - source: other
+      ref: https://alumcommunity.mit.edu/news/1414588
+  notes: 'Definition is soft: autonomous labs (A-Lab, MIT CRESt 2025 fuel-cell catalyst, Argonne Polybot) already run closed loops in narrow domains. Needs a sharper test before use; consider ''AI-originated hypothesis'' criterion.'
+- id: bionic-limb-with-touch
+  name: Bionic Limbs
+  definition: An amputee uses a prosthetic hand controlled by thought and giving touch and position feedback, at home every day, performing standard dexterity tests within the normal range.
+  type: milestone
+  of: bci-speech-restoration
+  branch: medicine
+  band_guess: 2030s
+  requires:
+    - robotics
+    - electronics
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), ''Bionics'' and ''Augmentation'''
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Neuroprosthetics
+  notes: Osseointegrated, sensory-feedback arms have been used at home (Ortiz-Catalan et al., 2020). The 'normal range' clause makes it future.
+- id: brain-computer-interface-consumer
+  name: Brain Interfaces
+  definition: A regulator permits an implanted brain-computer interface to be sold to healthy people with no medical indication.
+  type: milestone
+  of: nanobot-neural-interface
+  branch: communication
+  band_guess: 2030s
+  requires:
+    - electronics
+    - telecommunications
+  missing_history:
+    - brain-computer interfaces
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/TonyJackson/will-neuralink-be-available-for-peo
+    - source: manifold
+      ref: https://manifold.markets/SimoneRomeo/will-braincomputer-interfaces-be-wi
+    - source: manifold
+      ref: https://manifold.markets/VerySeriousPoster/will-a-fully-functional-braincomput
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/4966/when-will-the-us-fda-grant-neuralink-permission-to-sell-and-implant-a-brain-machine-interface-device-into-general-consumers
+    - source: metaculus
+      ref: https://www.metaculus.com/questions/24781/neuralink-bci-mass-adoption-timeline
+  notes: 'Manifold: Neuralink available to people without a disability in the US by 2035 63% (n=65); BCIs widespread by 2035 63% (n=27); fully functional BCI commercially available by 2030 40% (n=39). Metaculus Q4966 snippet: Oct 2034 (unverified); Q24781 (smartphone-level adoption) snippet: Apr 2066 from 5 forecasters (unverified). Between the 2030s and 2040s bands.'
+- id: c-elegans-upload
+  name: Uploaded Worm Mind
+  definition: A simulation of the complete C. elegans nervous system, built from measured parameters, reproduces the living worm's behaviours well enough that experts accept it as an emulation.
+  type: milestone
+  of: mammal-brain-emulation
+  branch: biology
+  band_guess: 2030s
+  requires:
+    - computers
+    - biology
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/Harlan/will-the-mind-of-a-c-elegans-roundw
+  notes: 'Manifold: C. elegans mind uploaded before 2033 76% (n=37). OpenWorm has been working on this since 2011; the acceptance criteria are fuzzy.'
+- id: electric-regional-airliner
+  name: Electric Aviation
+  definition: A certified battery-electric airliner with at least 19 seats enters commercial passenger service.
+  type: milestone
+  of: hydrogen-airliner
+  branch: transport
+  band_guess: 2030s
+  requires:
+    - flight
+    - electricity
+  missing_history:
+    - lithium-ion battery
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Transport/Aviation: ''Battery-electric aircraft: regional (20+ seats)'')'
+    - source: other
+      ref: https://heartaerospace.com/newsroom/heart-aerospace-completes-first-flight-of-world-s-largest-electric-aircraft
+  notes: 'IEA TRL 2025: 3 for regional 20+ seats; 8 for taxi & commuter (so small electric planes are near-history). Heart Aerospace X1 demonstrator first flew 12 Aug 2026 (27 min, >1 MW); pre-production ES-30 (30 seats, hybrid range extender) flight tests from 2028. Note ES-30 is hybrid for full range - decide whether that counts.'
+- id: electrofuels-at-scale
+  name: Synthetic Fuels
+  definition: A plant makes over a million tonnes a year of liquid hydrocarbon fuel from captured carbon dioxide and clean hydrogen.
+  type: milestone
+  of: hydrogen-green-steel
+  branch: energy
+  band_guess: 2030s
+  requires:
+    - chemistry
+    - combustion
+  aspiration: 1
+  evidence: 2
+  sources:
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Synthetic Fossil Fuels'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Electrofuel
+  notes: Probably overlaps with the IEA candidates.
+- id: electrolytic-iron
+  name: Electrolytic Iron
+  definition: An industrial plant makes iron or steel directly from ore by electrolysis (e.g. molten oxide electrolysis) at over 10,000 tonnes per year.
+  type: milestone
+  of: hydrogen-green-steel
+  branch: manufacturing
+  band_guess: 2030s
+  requires:
+    - steel
+    - electricity
+    - chemistry
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Industry/Iron and steel: ''High temperature molten oxide electrolysis (> 1500°c)'', ''Low temperature electrolysis (<110°c)'')'
+    - source: other
+      ref: https://www.globenewswire.com/news-release/2025/03/12/3041404/0/en/Boston-Metal-Commissions-Industrial-Scale-Cell-in-Crucial-Green-Steel-Milestone.html
+    - source: other
+      ref: https://www.canarymedia.com/articles/green-steel/boston-metal-decarbonization-technology
+  notes: 'IEA TRL 2025: both high- and low-temperature iron electrolysis 5. Boston Metal commissioned a multi-anode industrial cell (Mar 2025, ~1 t per run); steel demo plant ''by 2028'', still seeking a site; near-term revenue from niobium in Brazil. Electra pursues low-temperature route (not checked). The 10 kt threshold is my proposal.'
+- id: fault-tolerant-rsa-break
+  name: Quantum Factoring of RSA-2048
+  definition: A quantum computer factors the RSA-2048 challenge number.
+  type: milestone
+  of: quantum-computing
+  branch: computing
+  band_guess: 2030s
+  requires:
+    - computers
+    - physics
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/AlanTuring/in-what-year-will-a-quantum-compute
+    - source: manifold
+      ref: https://manifold.markets/Dig/will-quantum-computing-break-rsa-en
+  forecast:
+    url: https://manifold.markets/AlanTuring/in-what-year-will-a-quantum-compute
+    retrieved: '2026-11-23'
+    low: 2033
+    median: 2039
+    high: 2048
+  notes: 'Buckets: 2025–34 31%, 2035–39 26%, 2040–44 12%, 2045–49 10%, 2050–54 9%, 2055–2100 13% (n=23). Same creator''s binaries: by 2030 10%, 2035 39%, 2040 54%, 2050 67%. A milestone of the existing node.'
+- id: hair-follicle-regeneration
+  name: Hair Regrowth
+  definition: A therapy grows new hair follicles (not just reviving miniaturised ones) on a bald human scalp, shown in a controlled trial.
+  type: milestone
+  of: regenerative-medicine
+  branch: medicine
+  band_guess: 2030s
+  requires:
+    - biology
+    - genetics
+  missing_history:
+    - induced pluripotent stem cells
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'Male Pattern Baldness'; https://www.decisionproblem.com/paperclips/projects.js
+  notes: No real-world source opened for follicle neogenesis (lab-grown follicle organoids exist in mice). Low evidence. Its main role is to parent the clascoterone milestone; it could be dropped in favour of making that milestone a node.
+- id: human-connectome
+  name: Human Connectome
+  definition: The full synapse-level wiring diagram of an entire adult human brain is imaged and reconstructed.
+  type: milestone
+  of: mammal-brain-emulation
+  branch: biology
+  band_guess: 2030s
+  requires:
+    - biology
+    - computers
+    - optics
+  missing_history:
+    - electron microscopy
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/NathanHelmBurger/full-digitization-not-necessarily-e
+  notes: 'Manifold: full digitization (not necessarily emulation) of a human brain by 2035 39% (n=82). The fly connectome was completed in 2024 and a mouse cubic millimetre in 2025, so these are history milestones. A prerequisite for human-whole-brain-emulation.'
+- id: humanoid-robot-football
+  name: Robots Beat the World Cup Champions
+  definition: A team of autonomous humanoid robots wins a soccer match under FIFA rules against the reigning human World Cup champions.
+  type: milestone
+  of: mass-produced-humanoid-robots
+  branch: ai
+  band_guess: 2030s
+  requires:
+    - robotics
+  missing_history:
+    - machine learning
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/THEWINNER/will-humanoid-robots-win-against-th
+    - source: other
+      ref: 'RoboCup Federation stated goal (founded 1997): beat the World Cup champions by 2050'
+      date_claimed: 2050
+  notes: 'Manifold: by end of 2038 60% (n=46), which looks very optimistic; nobody may arrange such a match. RoboCup''s own target is 2050, so the band could be 2040s. A great aspirational page.'
+- id: hydrogen-regional-aircraft
+  name: Hydrogen Aircraft
+  definition: A certified hydrogen-powered aircraft carries paying passengers on a scheduled flight.
+  type: milestone
+  of: hydrogen-airliner
+  branch: transport
+  band_guess: 2030s
+  requires:
+    - flight
+    - electricity
+  missing_history:
+    - hydrogen fuel cell
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Transport/Aviation: ''Hydrogen-powered aircraft: regional (20+ seats)'')'
+    - source: other
+      ref: https://backend.ainonline.com/aviation-news/futureflight/2026-03-20/faa-finalizes-special-conditions-zeroavias-electric-engine
+    - source: other
+      ref: https://www.flightglobal.com/aerospace/zeroavia-eyes-certification-goals-in-2027-as-it-gains-eu-innovation-fund-boost/165220.article
+  notes: 'IEA TRL 2025: 5 (regional 20+ seats); fuel-cell propulsion TRL 6; aircraft H2 tank TRL 5. ZeroAvia ZA600 (up to 20 seats): FAA special conditions effective Mar 2026; after halving staff, fuel-cell certification aimed at 2027 and full powertrain ~2029. Test flights already flown (Dornier 228, 2023).'
+- id: in-silico-drug-approval
+  name: Simulated Trials
+  definition: A regulator approves a new drug without prior human clinical trials, based on computer-simulated or organ-on-chip evidence.
+  type: milestone
+  of: ai-scientific-discovery
+  branch: medicine
+  band_guess: 2030s
+  requires:
+    - computers
+    - biology
+  missing_history:
+    - machine learning
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/SimoneRomeo/will-a-drug-that-didnt-go-through-h
+    - source: manifold
+      ref: https://manifold.markets/elf/by-2040-will-we-use-simulated-human
+    - source: kurzweil
+      ref: The Singularity Is Nearer (2024), ch.6 (digital simulations replacing much of clinical trials)
+  notes: |-
+    [forecast markets] Manifold: a drug approved without human trials by 2034 28% (n=24); simulated humans used in trials to speed approvals by 2040 33% (n=20). The 'Animal Rule' and some anthrax/smallpox approvals already skip efficacy trials, which muddies the definition. Treat it as speculative.
+    [Kurzweil and Paperclips, as in-silico-clinical-trial] Alternative definition: A regulator approves a new drug or device on evidence in which a computational simulation replaced a required human trial arm.
+    [Kurzweil and Paperclips, as in-silico-clinical-trial] In-silico control arms and virtual patients already support some device submissions; a full replacement of a pivotal arm for a new drug would be the clean first. The definition needs a tight rule to avoid 'already happened' disputes.
+- id: lab-grown-blood
+  name: Lab-Grown Blood
+  definition: A regulator approves stem-cell-grown red blood cells as a transfusion product for patients.
+  type: milestone
+  of: regenerative-medicine
+  branch: medicine
+  band_guess: 2030s
+  requires:
+    - biology
+  missing_history:
+    - blood transfusion
+    - induced pluripotent stem cells
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://bioresource.nihr.ac.uk/news/final-batch-of-red-blood-cells-produced-in-restore
+    - source: other
+      ref: https://www.cam.ac.uk/research/news/first-ever-clinical-trial-underway-of-laboratory-grown-red-blood-cells-being-transfused-into-another
+  notes: First transfusion of lab-grown red cells into a person already happened (RESTORE, UK, 2022), so definition must be approval/routine clinical use. RESTORE final batch given Feb 2026; results expected late 2026 or early 2027.
+- id: lunar-fission-reactor
+  name: Nuclear Reactor on the Moon
+  definition: A fission reactor on the lunar surface delivers electrical power (target class 100 kWe) to a lunar outpost.
+  type: milestone
+  of: lunar-base
+  branch: energy
+  band_guess: 2030s
+  requires:
+    - nuclear-fission
+    - spaceflight
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://aviationweek.com/space/space-exploration/debrief-nasa-plans-put-100-kw-nuclear-reactor-moon-2030
+      date_claimed: 2030
+    - source: other
+      ref: https://www.ans.org/news/2026-01-14/article-7674/nasa-doe-solidify-collaboration-on-a-lunar-surface-reactor/
+    - source: manifold
+      ref: https://manifold.markets/BenM/will-the-us-have-a-lunar-nuclear-re
+    - source: manifold
+      ref: https://manifold.markets/Predictor/nasa-has-a-nuclear-reactor-on-the-m
+    - source: manifold
+      ref: https://manifold.markets/BlueDragon/-what-country-will-be-the-first-to
+  notes: |-
+    [IEA and near-term] Aug 2025 NASA directive: 100 kWe reactor launched and landed by 2030 (up from 40 kW); executive order says 'ready for launch by 2030'. No final design; widely called rushed. China/Russia have a ~2033-35 lunar reactor plan (not verified here).
+    [forecast markets] Alternative definition: A fission reactor operates on the lunar surface and supplies electrical power.
+    [forecast markets] Manifold: US lunar reactor by end-2035 35% (n=15); NASA reactor on the Moon by 2030 12% (n=13). NASA Fission Surface Power was re-targeted to ~2030 in 2025 (not verified here).
+- id: megatonne-direct-air-capture
+  name: Direct Air Capture
+  definition: A single direct-air-capture facility removes and permanently stores at least 1 million tonnes of CO2 in one year.
+  type: milestone
+  of: gigatonne-carbon-removal
+  branch: environment
+  band_guess: 2030s
+  requires:
+    - chemistry
+    - engineering
+  missing_history:
+    - carbon capture and storage (Sleipner
+    - 1996)
+    - direct air capture (Climeworks Orca
+    - 2021)
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (CCUS/CO2 capture: ''Solid DAC'', ''Liquid DAC'', ''Electrochemical DAC'')'
+    - source: other
+      ref: https://www.1pointfive.com/projects/stratos
+    - source: other
+      ref: https://www.ogj.com/energy-transition/news/55361290/oxys-1pointfive-expects-stratos-dac-plant-online-in-second-quarter-2026
+  notes: 'IEA TRL 2025: solid DAC 7, liquid DAC 6, electrochemical DAC 6. Largest plant: 1PointFive Stratos (Texas, liquid DAC), designed for up to 0.5 Mt/yr, Phase 1 slated online Q2 2026 - I could not confirm it reached operation. A 1 Mt/yr plant implies a successor (e.g. South Texas DAC hub). Milestone option: ''first 100,000 t/yr DAC plant operating''.'
+- id: molten-salt-reactor-power
+  name: Molten Salt Reactors
+  definition: A molten-salt-fuelled reactor generates electricity to the grid.
+  type: milestone
+  of: commercial-smr
+  branch: energy
+  band_guess: 2030s
+  requires:
+    - nuclear-fission
+    - chemistry
+  missing_history:
+    - molten salt reactor experiment (Oak Ridge MSRE
+    - 1965)
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Nuclear/Fission: ''Molten salt SMR'', ''Thorium fuel cycle'')'
+  notes: 'IEA TRL 2025: molten salt SMR 4; thorium fuel cycle 5. China''s 2 MWt thorium TMSR-LF1 (Wuwei) operated from 2023 and reportedly achieved thorium-to-U-233 conversion (not re-verified this pass). Could merge into a ''thorium-power'' node. Kairos Hermes is salt-cooled, solid-fuelled - different.'
+- id: natural-hydrogen-production
+  name: Geologic Hydrogen
+  definition: A field of naturally occurring geologic hydrogen produces over 1,000 tonnes of hydrogen per year for sale.
+  type: milestone
+  of: energy-abundance
+  branch: energy
+  band_guess: 2030s
+  requires:
+    - mining
+    - chemistry
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Hydrogen/Production: ''Natural hydrogen extraction'', ''Mineralogical reactions'')'
+  notes: 'IEA TRL 2025: natural hydrogen extraction 5; stimulated (mineralogical) 3. Borderline: Bourakebougou, Mali has produced small amounts of natural H2 for village power since 2012 - hence a volume threshold. Did not research 2026 drilling news (Koloma, Gold Hydrogen, HyTerra).'
+- id: nonbiological-compute-exceeds-humanity
+  name: Machine Compute Exceeds Humanity
+  definition: Total installed computing capacity exceeds that of all living human brains combined (about 10^26 cps at 10^16 cps per brain).
+  type: milestone
+  of: computers
+  branch: computing
+  band_guess: 2030s
+  requires:
+    - computers
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.3, p.135 ('by the early 2030s')
+      date_claimed: 2030
+  notes: date_claimed 2030 stands for 'early 2030s'. Checkable from global accelerator-shipment estimates (e.g. Epoch AI), but those are estimates, not measurements.
+- id: ocean-thermal-energy
+  name: Ocean Thermal Power
+  definition: An ocean thermal energy conversion plant delivers at least 10 MW to a grid commercially.
+  type: milestone
+  of: energy-abundance
+  branch: energy
+  band_guess: 2030s
+  requires:
+    - steam-power
+    - shipbuilding
+  missing_history:
+    - ocean thermal energy conversion demo (Claude
+    - Cuba 1930)
+  aspiration: 1
+  evidence: 1
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Renewables/Ocean: ''Ocean thermal'', ''Wave energy converters'', ''Tidal stream'')'
+  notes: 'IEA TRL 2025: ocean thermal 6; wave 6; tidal stream 6 (tidal range 9). Largest OTEC plants so far are ~100 kW-1 MW pilots (Hawaii, Okinawa - from memory). Low excitement; include only for breadth.'
+- id: orbital-data-center
+  name: Orbital Data Centres
+  definition: A commercial service runs AI compute in orbit from a facility drawing at least 1 MW of solar power.
+  type: milestone
+  of: zettascale-supercomputer
+  branch: computing
+  band_guess: 2030s
+  requires:
+    - satellites
+    - computers
+    - spaceflight
+  missing_history:
+    - reusable rockets
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://www.opb.org/article/2026/10/01/google-launches-project-suncatcher-a-step-towards-ai-data-centers-in-space/
+    - source: other
+      ref: https://www.fierce-network.com/cloud/space-data-centers-starcloud-spacex-and-project-suncatcher-explained
+    - source: manifold
+      ref: https://manifold.markets/SiliconProphet/when-will-the-first-real-data-cente
+    - source: manifold
+      ref: https://manifold.markets/ZviMowshowitz/will-space-be-the-cheapest-place-to
+    - source: manifold
+      ref: https://manifold.markets/EvanDaniel/will-there-be-1gw-of-orbital-data-c
+  forecast:
+    url: https://manifold.markets/SiliconProphet/when-will-the-first-real-data-cente
+    retrieved: '2026-11-23'
+    low: 2029
+    median: 2030
+    high: 2032
+  notes: |-
+    [IEA and near-term] Starcloud-1 flew an Nvidia H100 (Nov 2025); Starcloud-2 and Google Suncatcher TPU prototypes launched ~Oct 2026 (launch date conflicts across sources). Google estimates parity needs ~$200/kg launch. The 1 MW threshold is my choice - curator should set it.
+    [forecast markets] Alternative definition: A computing facility drawing at least 1 MW operates in Earth orbit, serving real workloads such as AI training or inference.
+    [forecast markets] Market buckets: by end-2027 4%, 2028 13%, 2029 18%, 2030 19%, 2031–32 26%, 2033–35 16%, later/never 5% (n=13, thin). 'Space is the cheapest place to put AI by Feb 2029' 10% (n=109). It's on the border with late-2020s and is very hype-driven.
+- id: partial-epigenetic-reprogramming
+  name: Cell Rejuvenation
+  definition: A therapy that partially reprograms cells' epigenetic age (e.g. OSK factors) shows restored function in a human tissue in a controlled trial.
+  type: milestone
+  of: approved-aging-therapy
+  branch: medicine
+  band_guess: 2030s
+  requires:
+    - genetics
+    - biology
+  missing_history:
+    - induced pluripotent stem cells
+    - gene therapy
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/SergeyDavidoff/will-there-be-an-fdaapproved-age-re
+    - source: other
+      ref: https://www.biospace.com/press-releases/life-biosciences-announces-first-patient-dosed-in-phase-1-trial-of-er-100-for-optic-neuropathies
+  notes: 'Life Biosciences dosed the first patient in its Phase 1 ER-100 trial (OSK, optic neuropathies) on 2026-06-09, the first human partial-reprogramming trial. Manifold: FDA-approved partial-reprogramming age-reversal treatment by 2030 31% (n=19), which looks high. Efficacy data could arrive in the late 2020s, but approval is in the 2030s.'
+- id: reversible-computing-chip
+  name: Reversible Computing
+  definition: A commercially sold processor using reversible/adiabatic logic recovers most of its switching energy and beats a same-node conventional chip on energy per operation.
+  type: milestone
+  of: zettascale-supercomputer
+  branch: computing
+  band_guess: 2030s
+  requires:
+    - transistor
+    - electronics
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.3 (reversible computing and limits of computation energy)
+    - source: other
+      ref: https://spectrum.ieee.org/reversible-computing
+    - source: other
+      ref: https://www.sciencenews.org/article/computer-chip-reuses-energy
+  notes: Vaire Computing's 22 nm 'Ice River' test chip used about 30% less energy than conventional (tested Aug 2025, not independently verified). It is a proof of concept, not a product. If the curator wants a late-2020s item, use 'first reversible chip with net energy savings, independently verified'.
+- id: superhot-geothermal
+  name: Superhot Geothermal
+  definition: A geothermal power plant generates electricity from a well tapping rock or fluid above 374°C (supercritical water).
+  type: milestone
+  of: energy-abundance
+  branch: energy
+  band_guess: 2030s
+  requires:
+    - civil-engineering
+    - steam-power
+    - mining
+  missing_history:
+    - geothermal power plant (Larderello
+    - 1904)
+    - enhanced geothermal power at utility scale (Fervo Cape Station
+    - Sep 2026)
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: iea
+      ref: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Renewables/Geothermal: ''Superhot / supercritical geothermal systems'', ''Millimeter wave drilling'', ''Enhanced geothermal systems'', ''Closed-loop geothermal systems'')'
+    - source: other
+      ref: https://energy.mit.edu/news/mitei-spinout-quaise-energy-successfully-demonstrates-their-geothermal-energy-drilling-technology-in-the-field/
+    - source: other
+      ref: https://www.energyglobal.com/other-renewables/05102026/fervo-energy-declares-commercial-operation-at-cape-station-ahead-of-schedule/
+  notes: 'IEA TRL 2025: superhot 8 (surprisingly high - IEA likely counts IDDP-2 Iceland drilling; flag); millimetre-wave drilling 5; EGS 7; closed-loop 6. EXCLUDED as already done: enhanced geothermal at commercial scale - Fervo Cape Station first power 24 Sep 2026, commercial operation ~30 Sep 2026, ~100 MW Phase I; propose for history. Quaise drilled ~100-118 m with mm-wave in Texas (2025); MW-scale rig tests planned 2026.'
+- id: thousand-dollar-thousand-brains
+  name: A Thousand Brains for $1,000
+  definition: Hardware costing $1,000 (1999 dollars) sustains 10^19 calculations per second, about 1,000 human brains on Kurzweil's estimate.
+  type: milestone
+  of: computers
+  branch: computing
+  band_guess: 2030s
+  requires:
+    - computers
+    - transistor
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.11 '2029'
+      date_claimed: 2029
+  notes: Deliberately hardware-only and checkable. The definition of a 'calculation' needs fixing (e.g. dense FP16 ops/s).
+- id: thousand-logical-qubits
+  name: 1,000-Logical-Qubit Quantum Computer
+  definition: A quantum computer with at least 1,000 error-corrected logical qubits is publicly demonstrated.
+  type: milestone
+  of: quantum-computing
+  branch: computing
+  band_guess: 2030s
+  requires:
+    - computers
+    - physics
+  aspiration: 1
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/Jaden/in-which-year-will-a-quantum-comput
+  forecast:
+    url: https://manifold.markets/Jaden/in-which-year-will-a-quantum-comput
+    retrieved: '2026-11-23'
+    low: 2030
+    median: 2032
+  notes: 'Buckets: ≤2028 15%, 2029–30 16%, 2031–32 22%, 2033–35 16%, not by end-2035 32% (n=12, thin).'
+- id: uncrewed-starship-mars-landing
+  name: First Starship Landing on Mars
+  definition: A Starship (or other >10 t-payload lander) lands intact on Mars.
+  type: milestone
+  of: mars-landing
+  branch: space
+  band_guess: 2030s
+  requires:
+    - rocketry
+    - spaceflight
+  missing_history:
+    - reusable rockets
+  aspiration: 3
+  evidence: 2
+  sources:
+    - source: manifold
+      ref: https://manifold.markets/cosmicmiskatonic/when-will-starship-land-on-mars
+    - source: manifold
+      ref: https://manifold.markets/GabeGarboden/will-spacex-successfully-land-stars
+    - source: manifold
+      ref: https://manifold.markets/Gigacasting/will-starship-reach-mars-by-2040
+  notes: 'Buckets: 2026–2028 ~2.5%, 2029 6%, 2030 2%, 2031 10%, 2032 2%, later than 2032 58%, never 18% (n=17). Roughly 22% by end-2032, so the median is after 2032. Starship to Mars in the 2026 window 1% (n=64).'
+- id: whole-mouse-connectome
+  name: Complete Mouse Connectome
+  definition: A synapse-resolution wiring diagram of an entire mouse brain (about 70 million neurons) is published.
+  type: milestone
+  of: mammal-brain-emulation
+  branch: biology
+  band_guess: 2030s
+  requires:
+    - biology
+    - computers
+  missing_history:
+    - electron microscopy
+    - connectomics
+  aspiration: 2
+  evidence: 3
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.4 (brain scanning resolution growing exponentially)
+    - source: other
+      ref: https://www.nih.gov/news-events/news-releases/scientists-map-unprecedented-detail-connections-visual-perception-mouse-brain
+    - source: other
+      ref: https://braininitiative.nih.gov/news-events/blog/brain-director-how-cubic-millimeter-brain-can-change-neuroscience
+  notes: MICrONS published a cubic millimetre of mouse visual cortex (Apr 2025). NIH BRAIN CONNECTS aims at a whole mouse brain with no fixed date; Wellcome suggested a 10-15 year horizon. NIH funding cuts in 2025 are a risk.
+- id: zero-carbon-cement
+  name: Green Cement
+  definition: A commercial cement plant producing over 100,000 tonnes per year makes cement with near-zero process CO2 emissions, by electrification, non-carbonate feedstock or full carbon capture.
+  type: milestone
+  of: hydrogen-green-steel
+  branch: materials
+  band_guess: 2030s
+  requires:
+    - construction
+    - chemistry
+  missing_history:
+    - Portland cement
+  aspiration: 1
+  evidence: 2
+  sources:
+    - source: iea
+      ref: https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide (Industry/Cement and concrete)
+  notes: 'IEA TRL 2025: electrolyser-based decarbonation 5; OPC from non-carbonate calcium 5; direct electrification 6; electrification with thermal storage 8; full-rate chemical absorption capture 7; oxy-fuel 7. Heidelberg Brevik CCS (Norway, ~0.4 Mt/yr CO2, ~50% of plant emissions) started 2025 per my memory - not re-verified; partial capture is TRL 9. Low general-audience excitement.'
+- id: nitrogen-fixing-cereals
+  name: Self-Fertilising Cereals
+  definition: A wheat, maize or rice crop that fixes its own nitrogen is grown commercially, replacing most synthetic fertiliser for that crop.
+  type: milestone
+  of: supercharged-crops
+  branch: biology
+  band_guess: 2040s
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Nitrogen_fixation
+  notes: Microbial products (e.g. Pivot Bio) supply part of maize's nitrogen today.
+- id: humanlike-android
+  name: Androids
+  definition: A humanoid robot passes in-person as human to a lay audience in a controlled test (appearance, movement and conversation).
+  type: milestone
+  of: mass-produced-humanoid-robots
+  branch: ai
+  band_guess: 2050-2075
+  requires:
+    - robotics
+    - plastics
+  missing_history:
+    - machine learning
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: metaculus
+      ref: https://metaculus.com/questions/15465/robots-indistinguishable-from-humans
+  notes: 'Metaculus Q15465 snippets: 2050-02 (2037–2073) and ''Aug 2056'' in different snapshots (unverified). No Manifold counterpart with real volume.'
+- id: nanoassembled-food
+  name: Nanoassembled Food
+  definition: Food assembled molecule by molecule from simple feedstocks by nanomachines is sold commercially.
+  type: milestone
+  of: molecular-assembler
+  branch: manufacturing
+  band_guess: 2050-2075
+  requires:
+    - nanotechnology
+    - agriculture
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.12 '2099' (2049 entry); summarised at https://csq.com/2015/01/closing-bell-ray-kurzweil-the-futurist-now/
+      date_claimed: 2049
+  notes: The 2049 date is verified only through a secondary timeline (CSQ 2015), not the book text; check the book. Distinct from precision fermentation or cultured meat, which use biology rather than nanomachines.
+- id: respirocytes
+  name: Respirocytes
+  definition: Artificial mechanical red blood cells carrying oxygen at far above haemoglobin capacity function in a living mammal.
+  type: milestone
+  of: medical-nanobots
+  branch: medicine
+  band_guess: 2050-2075
+  requires:
+    - nanotechnology
+    - biology
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: kurzweil
+      ref: 'The Singularity Is Near (2005), ch.5 (nanomedicine: respirocytes)'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Respirocyte
+  notes: Concept from Robert Freitas (1998). No experimental progress; depends on atomically-precise-manufacturing. Aspirational far-future page (hold your breath for hours).
+- id: ultra-strong-cable
+  name: Nanotube Cables
+  definition: A carbon nanotube or graphene cable at least one kilometre long is made with a tensile strength above 50 GPa.
+  type: milestone
+  of: space-elevator
+  branch: materials
+  band_guess: 2050-2075
+  requires:
+    - nanotechnology
+    - composites
+  aspiration: 2
+  evidence: 2
+  sources:
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Super Tensile Solids'
+    - source: alpha-centauri
+      ref: Sid Meier's Alpha Centauri (1999), 'Silksteel Alloys'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Carbon_nanotube
+  notes: Prerequisite for a space elevator. Short nanotube fibres already exceed 50 GPa in the lab; the length is the hard part. Threshold needs checking during research.
+- id: kurzweil-upload-forecast
+  name: Kurzweil's 2040 Upload Forecast
+  definition: Technology able to scan and emulate a specific human brain exists by 2040.
+  type: forecast
+  of: mind-uploading
+  branch: biology
+  band_guess: 2075-2100
+  requires:
+    - computers
+  aspiration: 2
+  evidence: 1
+  sources:
+    - source: kurzweil
+      ref: The Singularity Is Near (2005), ch.4, pp.199-200
+      date_claimed: 2040
+  notes: Redundant with the date_claimed on whole-brain-emulation; keep only if forecasts are shown as separate entries. The band is my guess for the node, not Kurzweil's.
+- id: interstellar-probe
+  name: Interstellar Probe Arrives
+  definition: A spacecraft launched on purpose to another star returns data from within one light-year of it.
+  type: milestone
+  of: interstellar-probe-launch
+  branch: space
+  band_guess: beyond-2100
+  requires:
+    - spaceflight
+    - lasers
+    - interstellar-probe-launch
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: beyond-earth
+      ref: 'Civilization: Beyond Earth (2014), the colony-ship premise'
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Breakthrough_Starshot
+  notes: Voyager 1 entering interstellar space (2012) is a milestone. Likely duplicates the Paperclips 'von Neumann probes' entry.
+- id: interstellar-probe-replication
+  name: Replication at Another Star
+  definition: A self-replicating probe builds a copy of itself in another star system.
+  type: milestone
+  of: von-neumann-probe
+  branch: space
+  band_guess: beyond-2100
+  requires:
+    - spaceflight
+    - robotics
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: paperclips
+      ref: Universal Paperclips (2017), '% of universe explored' counter and probe Self-Replication stat; https://www.decisionproblem.com/paperclips/index2.html
+    - source: kurzweil
+      ref: The Age of Spiritual Machines (1999), ch.12, pp.253-260 (rest of the universe)
+  notes: Galaxy-scale spread (the game's endgame) would be a later milestone; it is not testable on human timescales.
+- id: matrioshka-brain
+  name: Matrioshka Brain
+  definition: Nested shells of computronium around a star capture most of its output to power computation.
+  type: milestone
+  of: computronium
+  branch: computing
+  band_guess: beyond-2100
+  requires:
+    - spaceflight
+    - nanotechnology
+  aspiration: 3
+  evidence: 1
+  sources:
+    - source: other
+      ref: https://en.wikipedia.org/wiki/Matrioshka_brain
+    - source: paperclips
+      ref: Universal Paperclips (2017), project 'Swarm Computing' ('harness the drone flock to increase computational capacity'); https://www.decisionproblem.com/paperclips/projects.js
+  notes: Not named in either source. Robert Bradbury's concept, a Dyson-swarm computer. Include only if the curator wants a stellar-scale endpoint; may overlap a Dyson-sphere candidate from other gatherers.

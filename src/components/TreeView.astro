@@ -73,7 +73,7 @@ const initial = (name: string) => name.replace(/^The /, "")[0];
     </g>
   </svg>
   <div class="bands-header" aria-hidden="true">
-    {d.bands.map((b) => <span data-lo={b.lo} data-hi={b.hi}>{b.name}</span>)}
+    {d.bands.map((b) => <span data-lo={b.lo} data-hi={b.hi}>{b.name}{b.dates && <span class="dates"> · {b.dates}</span>}</span>)}
     {d.today !== null && <span class="today-label" data-at={d.today}>Today</span>}
   </div>
   <div class="zoom">
@@ -114,11 +114,13 @@ const initial = (name: string) => name.replace(/^The /, "")[0];
   .tree .node.on.self rect { stroke: var(--accent); stroke-width: 2.5; }
 
   .bands-header { position: absolute; inset: 0; pointer-events: none; }
-  .bands-header span {
+  .bands-header > span {
     position: absolute; padding: 3px 9px; border-radius: 999px; white-space: nowrap;
     background: color-mix(in srgb, var(--surface) 88%, transparent); border: 1px solid var(--line);
     font: 600 12px var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted);
   }
+  .bands-header .dates { text-transform: none; letter-spacing: 0; }
+  .bands-header .short .dates { display: none; }
   .bands-header .today-label { color: var(--surface); background: var(--accent); border-color: var(--accent); }
   .zoom { position: absolute; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 6px; }
   .zoom button {

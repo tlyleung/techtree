@@ -106,3 +106,10 @@ export const primaryMedian = (t: Tech) => t.forecasts.find((f) => f.primary)?.me
 export function bandFor(median: number, eras: Era[]): Era | undefined {
   return eras.find((e) => e.future && (e.from === null || median >= e.from) && (e.to === null || median < e.to));
 }
+
+/** A future band's dates: "2030s", "2050–2075" or "after 2100". */
+export function bandDates(e: { from: number | null; to: number | null }): string {
+  if (e.to === null) return `after ${e.from}`;
+  if (e.from !== null && e.from % 10 === 0 && e.to - e.from === 10) return `${e.from}s`;
+  return `${e.from}–${e.to}`;
+}

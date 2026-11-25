@@ -4,7 +4,8 @@ import ELK from "elkjs/lib/elk.bundled.js";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { check, type Link, type TechNode } from "./columns.ts";
 import { toNodes } from "./nodes.ts";
-import type { Era, Tech } from "./schema.ts";
+import { bandDates, type Era, type Tech } from "./schema.ts";
+export { bandDates };
 
 export type Direction = "RIGHT" | "DOWN";
 export interface Box { id: string; x: number; y: number; w: number; h: number }
@@ -58,7 +59,7 @@ async function draw(nodes: TechNode[], links: Link[], columns: Map<string, numbe
   const along = (b: Box) => (dir === "RIGHT" ? [b.x, b.x + b.w] : [b.y, b.y + b.h]);
   const raw = eras.map((e) => {
     const bs = nodes.filter((n) => n.era === e.id).map((n) => along(byId.get(n.id)!));
-    return { id: e.id, name: e.name, future: e.future, lo: Math.min(...bs.map((b) => b[0])), hi: Math.max(...bs.map((b) => b[1])) };
+    return { id: e.id, name: e.name, dates: e.future ? bandDates(e) : undefined, future: e.future, lo: Math.min(...bs.map((b) => b[0])), hi: Math.max(...bs.map((b) => b[1])) };
   }).filter((b) => Number.isFinite(b.lo));
   const pad = 24;
   const bands = raw.map((b, i) => ({

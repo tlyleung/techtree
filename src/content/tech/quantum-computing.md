@@ -1,5 +1,5 @@
 ---
-name: Fault-Tolerant Quantum Computer
+name: Quantum Computing
 kind: future
 definition: "A quantum computer runs an error-corrected circuit of at least 100 logical qubits and at least one million logical operations, including non-Clifford (T) gates, with real-time decoding, no post-selection and a logical error rate of at most two in a million per operation, and produces a result on a useful problem, such as a chemistry or materials simulation, that a peer-reviewed paper shows is beyond the best classical methods."
 requires: [computers, lasers]

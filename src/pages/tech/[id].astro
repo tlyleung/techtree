@@ -5,7 +5,7 @@
 import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import TechCard from "../../components/TechCard.astro";
-import { dateLabel, getTree } from "../../lib/tree";
+import { bandDates, dateLabel, getTree } from "../../lib/tree";
 import { editUrl, url } from "../../site";
 
 export async function getStaticPaths() {
@@ -44,7 +44,7 @@ const description = future
     <header class:list={["hero", future ? "future" : `era-${era.id}`]}>
       <span class="icon large" aria-hidden="true">{initial}</span>
       <div>
-        <p class="eyebrow">{future ? `Future · ${era.name}` : `${era.name} era`}</p>
+        <p class="eyebrow">{era.name} era{future && <span class="dates"> · {bandDates(era)}</span>}</p>
         <h1>{d.name}</h1>
         <p class="meta">
           {future ? <>Forecast <strong>{dateLabel(d)}</strong> · <a href={url("methodology/")}>TRL</a> <strong>{d.trl!.level}</strong> of 9</> : dateLabel(d)}
@@ -143,6 +143,7 @@ const description = future
   .hero { display: flex; align-items: center; gap: 18px; }
   .hero.future .icon { outline: 2px dashed hsl(var(--hue) 38% var(--icon-l)); outline-offset: 3px; }
   .hero h1 { font-size: 40px; margin: 0; }
+  .eyebrow .dates { text-transform: none; }
   .eyebrow { margin: 0; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
   .meta { margin: 4px 0 0; color: var(--muted); }
   .meta strong { color: var(--ink); }

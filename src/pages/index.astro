@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import TechCard from "../components/TechCard.astro";
 import TreeView from "../components/TreeView.astro";
-import { getTree } from "../lib/tree";
+import { bandDates, getTree } from "../lib/tree";
 
 const tree = await getTree();
 const range = (from: number | null, to: number | null) => {
@@ -26,13 +26,13 @@ const range = (from: number | null, to: number | null) => {
 
   <section class="list-section" aria-labelledby="list-heading">
     <h1 id="list-heading">All {tree.techs.length} technologies</h1>
-    <p class="intro">Real history laid out in eras, from the first farms to social media. Each technology opens its own page with what it needs and what it leads to.</p>
+    <p class="intro">Real history laid out in eras, from the first farms to social media, then continued into forecast eras. Each technology opens its own page with what it needs and what it leads to.</p>
     {tree.eras.map((era) => {
       const techs = tree.techs.filter((t) => tree.node.get(t.id)!.era === era.id);
       if (!techs.length) return null;
       return (
         <section class="era">
-          <h2>{era.name} <span class="range">{era.future ? "forecast" : range(era.from, era.to)}</span></h2>
+          <h2>{era.name} <span class="range">{era.future ? `forecast ${bandDates(era)}` : range(era.from, era.to)}</span></h2>
           <ul class="card-grid">
             {techs.map((t) => <li><TechCard tech={t} /></li>)}
           </ul>

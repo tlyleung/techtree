@@ -1,5 +1,5 @@
 ---
-name: Lab-Grown Transplant Organs
+name: Lab-Grown Organs
 kind: future
 definition: "A solid organ (kidney, liver, heart, lung or pancreas) built in the lab from human cells, on a scaffold or from stem cells, as a whole organ or an organ-structured graft with its own blood supply, is implanted in patients in place of their failed organ and meets its primary endpoint in a pivotal trial (or gains regulatory approval), with recipients relying on it for at least a year. Cell infusions, such as islet or liver-cell transplants, don't count."
 requires: [genetics]
