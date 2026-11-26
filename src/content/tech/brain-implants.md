@@ -2,7 +2,7 @@
 name: Brain Implants
 kind: future
 definition: "A regulator (such as the US FDA, China's NMPA or an EU notified body) grants marketing approval to an implanted brain-computer interface that lets people with paralysis communicate in real time, by decoding attempted speech or by typing text."
-requires: [computers, biology]
+requires: [robot-surgeons]
 icon: {prompt: "A tiny chip of fine gold threads resting on the surface of a glowing brain, words of light rising from it"}
 trl:
   level: 6

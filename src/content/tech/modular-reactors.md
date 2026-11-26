@@ -2,7 +2,7 @@
 name: Modular Reactors
 kind: future
 definition: "A land-based, light-water small modular reactor (300 MWe or less) of a standardised design intended for series production enters commercial operation, supplying electricity to a grid. Floating plants and gas-cooled or other non-light-water designs don't count."
-requires: [nuclear-fission, electricity]
+requires: [advanced-reactors]
 icon: {prompt: "A compact white reactor building beside the sea, a single module being lowered into place by a crane"}
 trl:
   level: 6

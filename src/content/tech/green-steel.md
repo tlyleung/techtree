@@ -2,7 +2,7 @@
 name: Green Steel
 kind: future
 definition: "A steel plant makes at least 1 million tonnes of steel within a 12-month period from iron ore reduced with hydrogen made by water electrolysis, with no coal, coke or natural gas used as the reducing agent."
-requires: [steel, chemistry, electricity]
+requires: [solar-farms]
 icon: {prompt: "A glowing ladle of molten steel pouring beneath a tall white direct-reduction tower, with wind turbines and a hydrogen electrolyser hall in the snowy background"}
 trl:
   level: 6

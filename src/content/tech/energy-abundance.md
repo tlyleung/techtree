@@ -2,7 +2,7 @@
 name: Energy Abundance
 kind: future
 definition: "Low-carbon sources (renewables, nuclear and others) generate at least 90% of the world's electricity over a calendar year, as reported by the IEA or Ember."
-requires: [electricity]
+requires: [fusion-power]
 icon: {prompt: "A night-side view of Earth with glowing city lights fed by threads of light from wind turbines, solar fields and reactor domes"}
 trl:
   level: 5

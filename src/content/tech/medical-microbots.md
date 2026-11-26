@@ -2,7 +2,7 @@
 name: Medical Microbots
 kind: future
 definition: "Untethered micro-robots smaller than 1 mm are steered through a living patient's blood vessels to deliver therapy in a registered clinical trial."
-requires: [nanotechnology, robotics]
+requires: [robot-surgeons]
 icon: {prompt: "A swarm of tiny silver spheres gliding through a red-lit blood vessel toward a dark clot, guided by faint magnetic field lines"}
 trl:
   level: 4

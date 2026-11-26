@@ -2,7 +2,7 @@
 name: Molecular Assemblers
 kind: future
 definition: "A synthetic (non-biological) programmable machine builds an object at least 1 mm across, or a working copy of its own key parts, by placing individual atoms or molecules with atomic precision under positional control, not by self-assembly or natural cellular machinery."
-requires: [medical-microbots]
+requires: [swarm-robotics]
 icon: {prompt: "A tiny robotic arm of glowing blue atoms placing a single bright atom onto a growing diamond lattice, seen as if under a vast microscope"}
 trl:
   level: 3

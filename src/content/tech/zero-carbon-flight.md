@@ -2,7 +2,7 @@
 name: Zero-Carbon Flight
 kind: future
 definition: "A hydrogen-fuelled aircraft (combustion or fuel cell) with at least 100 passenger seats enters scheduled commercial passenger service."
-requires: [jet-engine]
+requires: [solid-state-batteries]
 icon: {prompt: "A sleek airliner with bulging hydrogen tanks climbing into a clear dawn sky, trailing only a thin white line of water vapour"}
 trl:
   level: 4

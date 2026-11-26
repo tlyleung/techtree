@@ -2,7 +2,7 @@
 name: Superintelligence
 kind: future
 definition: "A single AI system outperforms the best human experts at nearly every economically and scientifically important cognitive task, as shown by independent evaluations: for example, its work is preferred over that of leading professionals in blind expert grading across the large majority of occupations tested, and it matches or beats top researchers at producing new, verified scientific results."
-requires: [artificial-general-intelligence, ai-scientists]
+requires: [artificial-general-intelligence]
 icon: {prompt: "A vast luminous lattice of thought towering over a small human silhouette at a chessboard, both lit by the same soft light"}
 trl:
   level: 4

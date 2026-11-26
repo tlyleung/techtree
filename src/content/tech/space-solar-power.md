@@ -2,7 +2,7 @@
 name: Space Solar Power
 kind: future
 definition: "A satellite collects sunlight in orbit and beams it down, by microwave or laser, to a ground receiver that delivers at least 1 kW of usable electrical power to a load or grid."
-requires: [satellites, lasers]
+requires: [fully-reusable-rockets]
 icon: {prompt: "A wide golden solar array floating above Earth, sending a soft beam of light down to a receiving dish on a desert plain at dusk"}
 trl:
   level: 4

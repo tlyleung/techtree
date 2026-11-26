@@ -2,7 +2,7 @@
 name: Fully Reusable Rockets
 kind: future
 definition: "An orbital rocket reaches orbit with an upper stage that has already been to orbit and been recovered intact, launched on a booster that has also flown before and been recovered intact. Partly reused systems such as the Space Shuttle, which discarded its external tank on every flight, don't count."
-requires: [spaceflight]
+requires: [reusable-boosters]
 icon: {prompt: "A scorched, stainless-steel rocket upper stage held between two giant tower arms at dusk, ready to fly again"}
 trl:
   level: 6

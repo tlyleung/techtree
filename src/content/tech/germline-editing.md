@@ -2,7 +2,7 @@
 name: Germline Editing
 kind: future
 definition: "A child is born after gene editing of an embryo to prevent a serious inherited disease, within a clinical programme approved by a national regulator, with independent follow-up of the child's health published."
-requires: [genetics]
+requires: [de-extinction]
 icon: {prompt: "A single early-stage human embryo seen through a microscope, a fine glowing needle tracing a corrected strand of DNA beside it"}
 trl:
   level: 4

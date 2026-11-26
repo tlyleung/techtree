@@ -2,7 +2,7 @@
 name: Solar Geoengineering
 kind: future
 definition: "A deliberate programme of stratospheric aerosol injection or another sunlight-reflection method runs for at least a year and lowers global mean surface temperature by at least 0.1 °C, as shown by peer-reviewed attribution studies."
-requires: [flight, ecology]
+requires: [carbon-drawdown]
 icon: {prompt: "A high-altitude aircraft trailing a faint white veil across the deep blue upper stratosphere, the curved Earth glowing below"}
 trl:
   level: 3

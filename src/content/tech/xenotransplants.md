@@ -2,7 +2,7 @@
 name: Xenotransplants
 kind: future
 definition: "A gene-edited pig kidney or heart wins regulatory approval for transplantation (such as FDA approval of a biologics licence application), or a pivotal trial of one, such as eGenesis's RESTORE or United Therapeutics' EXPAND, meets its primary endpoint."
-requires: [genetics]
+requires: [gene-editing-cures]
 icon: {prompt: "A small pink pig standing beside a glowing kidney held in cupped human hands, soft clinical light"}
 trl:
   level: 6

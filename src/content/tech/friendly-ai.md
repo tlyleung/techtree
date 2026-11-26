@@ -2,7 +2,7 @@
 name: Friendly AI
 kind: future
 definition: "A general-purpose AI system is deployed whose objective is derived, by a published and reproducible procedure, from the extrapolated and reconciled preferences of a large human population (what they would want on reflection, not only what they say now)."
-requires: [artificial-general-intelligence, philosophy]
+requires: [artificial-general-intelligence]
 icon: {prompt: "A gentle robotic hand and a human hand together holding a small glowing sapling"}
 trl:
   level: 2

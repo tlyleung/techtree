@@ -2,7 +2,7 @@
 name: Longevity Escape Velocity
 kind: future
 definition: "In some national population, period remaining life expectancy at age 60 rises by more than one year per calendar year, sustained over five years."
-requires: [anti-ageing-drugs, gene-editing-cures]
+requires: [lab-grown-organs]
 icon: {prompt: "An hourglass whose sand flows upward into the top bulb, glowing gold against a dawn sky"}
 trl:
   level: 4

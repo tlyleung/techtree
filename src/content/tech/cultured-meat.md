@@ -2,7 +2,7 @@
 name: Cultured Meat
 kind: future
 definition: "Meat grown from animal cells sells in shops in a major market (such as the US, EU, UK, China or Japan) at or below the price of the same conventional cut or product, for at least six months. Hybrid products count only if cultivated animal cells make up most of their weight."
-requires: [genetics]
+requires: [stem-cells]
 icon: {prompt: "A marbled steak resting in a shallow glass dish beside a softly glowing steel bioreactor, with a supermarket price tag"}
 trl:
   level: 5

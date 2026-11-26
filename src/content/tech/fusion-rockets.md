@@ -2,7 +2,7 @@
 name: Fusion Rockets
 kind: future
 definition: "A spacecraft in space is propelled by an onboard fusion engine whose fusion reactions release more energy than is supplied to drive them (gain above 1), and the engine produces sustained, measured thrust from those reactions."
-requires: [fusion-power, nuclear-rockets]
+requires: [energy-abundance]
 icon: {prompt: "A slender spacecraft in deep space trailing a long violet-white plasma exhaust from a ring-shaped magnetic nozzle, Mars small in the distance"}
 trl:
   level: 2

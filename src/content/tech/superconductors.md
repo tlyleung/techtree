@@ -2,7 +2,7 @@
 name: Superconductors
 kind: future
 definition: "A material is shown by at least two independent groups to superconduct, with zero resistance and the Meissner effect, at 0 °C (273 K) or above and at ambient pressure."
-requires: [electricity, chemistry]
+requires: [ai-scientists]
 icon: {prompt: "A small dark ceramic disc floating above a magnet in warm daylight, with no frost or cold vapour around it"}
 trl:
   level: 2

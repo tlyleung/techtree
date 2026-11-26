@@ -2,7 +2,7 @@
 name: Solid-State Batteries
 kind: future
 definition: "A production car powered by an all-solid-state lithium battery (no liquid or gel electrolyte; semi-solid and quasi-solid cells don't count) goes on sale to the public."
-requires: [chemistry, electricity]
+requires: [lithium-batteries]
 icon: {prompt: "A thin, glassy battery cell glowing amber from within, sliding into the floor of a sleek electric car on an assembly line"}
 trl:
   level: 6

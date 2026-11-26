@@ -2,7 +2,7 @@
 name: Zettascale Computing
 kind: future
 definition: "A single supercomputer sustains at least 10^21 double-precision (FP64) floating-point operations per second on the HPL benchmark, as recorded on the TOP500 list. Peak or low-precision AI figures, and aggregates of separate machines, don't count."
-requires: [computers, transistor]
+requires: [artificial-general-intelligence]
 icon: {prompt: "Endless aisles of glowing blue server racks receding into darkness under a vast cathedral-like roof, cooling mist drifting between them"}
 trl:
   level: 3

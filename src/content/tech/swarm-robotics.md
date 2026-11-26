@@ -2,7 +2,7 @@
 name: Swarm Robotics
 kind: future
 definition: "At least 10,000 physical robots, each deciding its own actions from onboard sensing and local communication with no central controller, jointly complete a real-world physical task outside the lab, such as building a structure, searching an area or moving material. Pre-planned choreography, such as drone light shows, doesn't count."
-requires: [robotics, telecommunications]
+requires: [medical-microbots]
 icon: {prompt: "Thousands of small identical robots flowing like a flock of starlings over a construction site, together lifting a half-built stone arch"}
 trl:
   level: 4

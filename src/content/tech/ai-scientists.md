@@ -2,7 +2,7 @@
 name: AI Scientists
 kind: future
 definition: "An AI system chooses the hypothesis and designs the experiments behind a discovery in the natural sciences, with humans only running instruments or carrying out its protocols, and the discovery is the headline result of a paper in Nature, Science or Cell that credits the AI with both the hypothesis and the experimental design, and is independently replicated. Mathematical proofs are tracked separately, as the machine mathematics milestone below."
-requires: [computers]
+requires: [machine-learning]
 icon: {prompt: "A robotic arm pipetting glowing samples beneath a holographic web of hypotheses, in a quiet empty laboratory at night"}
 trl:
   level: 5

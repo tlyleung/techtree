@@ -2,7 +2,7 @@
 name: Light Sails
 kind: future
 definition: "A spacecraft is launched on a trajectory and at a speed that will bring it within one light-year of another star system within 100 years of launch (for Alpha Centauri, an average of at least about 3.4% of the speed of light), and is confirmed by tracking to be on that course."
-requires: [lasers, spaceflight]
+requires: [energy-abundance]
 icon: {prompt: "A tiny glinting wafer probe on a vast, impossibly thin silver sail, pushed by a column of laser light from Earth toward a bright double star"}
 trl:
   level: 2

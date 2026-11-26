@@ -2,7 +2,7 @@
 name: Humanoid Robots
 kind: future
 definition: "Makers worldwide have built a cumulative total of one million humanoid robots (a human-like body with a head and two arms, on legs or a wheeled base, able to move about and handle objects), counted as independent industry trackers such as Counterpoint Research count them, whatever their use; toys and static display figures don't count."
-requires: [robotics, mass-production]
+requires: [walking-robots, machine-learning]
 icon: {prompt: "A long factory line of identical sleek humanoid robots standing in rows under bright lights, one at the front turning its head toward the viewer"}
 trl:
   level: 6

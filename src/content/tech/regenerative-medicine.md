@@ -2,7 +2,7 @@
 name: Regenerative Medicine
 kind: future
 definition: "A regulator approves a therapy that makes a patient's own body regrow a missing complex structure in place, such as an adult tooth or new hair follicles on bald skin. Transplanted cells or tissues (such as stem-cell-derived islets, skin, cartilage or corneal grafts) don't count."
-requires: [biology]
+requires: [stem-cells]
 icon: {prompt: "A small new tooth emerging from pink gum, surrounded by a soft golden glow of dividing cells"}
 trl:
   level: 5

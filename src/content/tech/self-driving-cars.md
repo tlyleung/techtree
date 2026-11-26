@@ -2,7 +2,7 @@
 name: Self-Driving Cars
 kind: future
 definition: "A member of the public can buy (or lease) a production car that is permitted to drive itself on public roads with nobody in the driver's seat and no remote or in-car supervisor required, throughout at least one whole metropolitan area. Remote assistance that answers occasional queries from the car, as robotaxi fleets use, is allowed; continuous remote monitoring or chase cars are not."
-requires: [lasers, robotics]
+requires: [machine-learning, satellite-navigation]
 icon: {prompt: "A family car gliding through a city street at dusk with an empty driver's seat, its owners relaxing in the back, headlights reflecting on wet asphalt"}
 trl:
   level: 6

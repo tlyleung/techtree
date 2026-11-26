@@ -2,7 +2,7 @@
 name: Artificial General Intelligence
 kind: future
 definition: "A single unified AI system is publicly shown to pass a two-hour adversarial Turing test using text, images and audio, score at least 90% on the MMLU exam benchmark and 90% top-1 on APPS interview-level coding problems, and, controlling a robot, assemble a 1:8 scale model car from its human-readable instructions."
-requires: [the-internet]
+requires: [ai-scientists]
 icon: {prompt: "A robot hand assembling a small model car beside a glowing chat window on a workbench"}
 trl:
   level: 3

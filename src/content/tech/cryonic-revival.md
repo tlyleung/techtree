@@ -2,7 +2,7 @@
 name: Cryonic Revival
 kind: future
 definition: "A person who was legally dead and cryopreserved with techniques in use before any revival method existed is revived, lives for at least a year, and is judged by independent experts, and by people who knew them, to have kept their memories and identity."
-requires: [molecular-assemblers, refrigeration]
+requires: [ending-ageing]
 icon: {prompt: "A frosted steel cryonic capsule opening in a dim lab as warm golden light and fine mist spill out over a waking figure"}
 trl:
   level: 2

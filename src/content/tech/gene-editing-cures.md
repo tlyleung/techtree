@@ -2,7 +2,7 @@
 name: Gene Editing Cures
 kind: future
 definition: "A regulator (FDA, EMA, MHRA or equivalent) approves a gene-editing therapy that edits DNA inside the patient's body, such as a CRISPR or base editor delivered by lipid nanoparticles to the liver. Therapies that edit cells outside the body and reinfuse them, like Casgevy, don't count."
-requires: [genetics]
+requires: [gene-editing]
 icon: {prompt: "A tiny golden lipid bubble carrying a glowing pair of molecular scissors toward a liver cell, where a strand of DNA is being neatly cut and repaired"}
 trl:
   level: 6

@@ -2,7 +2,7 @@
 name: Hyperloop
 kind: future
 definition: "Paying passengers ride pods through a low-pressure tube on a commercial route at least 10 km long, reaching over 500 km/h in regular service."
-requires: [railroad, civil-engineering]
+requires: [superconductors]
 icon: {prompt: "A white capsule-shaped pod gliding inside a long transparent steel-ringed tube across a desert at dusk, motion streaks behind it"}
 trl:
   level: 4

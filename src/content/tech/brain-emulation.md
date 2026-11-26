@@ -2,7 +2,7 @@
 name: Brain Emulation
 kind: future
 definition: "The whole brain of an individual mammal that has learned a task is scanned and emulated in a computer, and in a peer-reviewed study the emulation, driving a real or simulated body, shows that animal's learned behaviour, which untrained animals lack."
-requires: [zettascale-computing, genetics]
+requires: [zettascale-computing]
 icon: {prompt: "A translucent mouse brain made of glowing blue wiring floating above a circuit board, a small mouse silhouette mirrored in light beside it"}
 trl:
   level: 3

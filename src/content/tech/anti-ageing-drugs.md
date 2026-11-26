@@ -2,7 +2,7 @@
 name: Anti-Ageing Drugs
 kind: future
 definition: "A regulator approves a drug for people whose labelled indication is slowing biological ageing (or preventing several age-related diseases at once), or a randomised controlled trial shows that a drug extends human lifespan."
-requires: [biology, chemistry]
+requires: [genome-sequencing]
 icon: {prompt: "A single glowing capsule resting on an open hand whose wrinkles are softening into smooth young skin"}
 trl:
   level: 5

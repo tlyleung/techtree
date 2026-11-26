@@ -2,7 +2,7 @@
 name: Self-Replication
 kind: future
 definition: "An automated factory builds a working copy of itself, including at least 90% of its machinery by mass (robots, motors and control electronics included), from raw or simply processed bulk materials with only minor human help, and the copy goes on to make another."
-requires: [humanoid-robots, swarm-robotics]
+requires: [molecular-assemblers]
 icon: {prompt: "A compact robotic factory on a grey plain assembling a twin of itself beside it, sparks flying, with a third copy taking shape in the distance"}
 trl:
   level: 3

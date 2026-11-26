@@ -2,7 +2,7 @@
 name: Supercharged Crops
 kind: future
 definition: "A staple food-crop variety with re-engineered photosynthesis yields at least 20% more than its conventional parent in independent multi-site, multi-season trials and is submitted for regulatory approval."
-requires: [genetics]
+requires: [de-extinction]
 icon: {prompt: "A field of rice where one bright, tall, heavy-headed strip glows green-gold beside ordinary paler plants under strong sunlight"}
 trl:
   level: 4

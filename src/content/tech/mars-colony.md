@@ -2,7 +2,7 @@
 name: Mars Colony
 kind: future
 definition: "Humans live on Mars continuously for at least five years, with crews rotating or settled, and the settlement makes its own breathing oxygen, water and rocket propellant from local resources."
-requires: [mars-landing, moon-base]
+requires: [mars-landing]
 icon: {prompt: "A cluster of domed habitats and greenhouses glowing at dusk on a red Martian plain, with a tall rocket standing nearby"}
 trl:
   level: 3

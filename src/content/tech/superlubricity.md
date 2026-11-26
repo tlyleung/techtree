@@ -2,7 +2,7 @@
 name: Superlubricity
 kind: future
 definition: "A bearing or sliding contact at engineering scale (contact area of at least one square millimetre, carrying a realistic load) runs in ordinary humid air for at least a year of operation with a friction coefficient below 0.001 and no significant wear, as reported in a peer-reviewed study or by an independent test."
-requires: [nanotechnology]
+requires: [quantum-computing]
 icon: {prompt: "Two stacked sheets of hexagonal graphene lattice gliding apart over each other with almost no resistance, rendered as glowing honeycomb layers"}
 trl:
   level: 4

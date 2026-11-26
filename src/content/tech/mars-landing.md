@@ -2,7 +2,7 @@
 name: Mars Landing
 kind: future
 definition: "A spacecraft carrying at least one human lands on the surface of Mars, and at least one crew member is alive and in contact with Earth 30 days after touchdown."
-requires: [spaceflight]
+requires: [moon-base]
 icon: {prompt: "Astronaut in a white suit standing beside a tall landed rocket on red Martian dust under a butterscotch sky"}
 trl:
   level: 3

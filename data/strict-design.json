@@ -1,0 +1,422 @@
+{
+ "widths": {
+  "atomic": 2,
+  "information": 3,
+  "late-2020s": 2,
+  "2030s": 3,
+  "2040s": 2,
+  "2050-2075": 3,
+  "2075-2100": 1,
+  "beyond-2100": 2
+ },
+ "history": {
+  "nuclear-power": [
+   "Nuclear Power",
+   "atomic",
+   1954,
+   [
+    "nuclear-fission"
+   ]
+  ],
+  "advanced-reactors": [
+   "Advanced Reactors",
+   "information",
+   1996,
+   [
+    "nuclear-power"
+   ]
+  ],
+  "fusion-reactors": [
+   "Fusion Reactors",
+   "information",
+   1991,
+   [
+    "nuclear-fusion"
+   ]
+  ],
+  "fusion-ignition": [
+   "Fusion Ignition",
+   "information",
+   2022,
+   [
+    "fusion-reactors"
+   ]
+  ],
+  "solar-farms": [
+   "Solar Farms",
+   "information",
+   1982,
+   [
+    "solar-cells"
+   ]
+  ],
+  "walking-robots": [
+   "Walking Robots",
+   "information",
+   2000,
+   [
+    "robotics"
+   ]
+  ],
+  "satellite-navigation": [
+   "Satellite Navigation",
+   "information",
+   1993,
+   [
+    "spaceflight"
+   ]
+  ],
+  "quantum-processors": [
+   "Quantum Processors",
+   "information",
+   2019,
+   [
+    "nanotechnology"
+   ]
+  ],
+  "supersonic-flight": [
+   "Supersonic Flight",
+   "atomic",
+   1947,
+   [
+    "jet-engine"
+   ]
+  ],
+  "supersonic-airliners": [
+   "Supersonic Airliners",
+   "information",
+   1976,
+   [
+    "supersonic-flight"
+   ]
+  ],
+  "space-shuttle": [
+   "Reusable Spacecraft",
+   "information",
+   1981,
+   [
+    "spaceflight"
+   ]
+  ],
+  "reusable-boosters": [
+   "Reusable Boosters",
+   "information",
+   2015,
+   [
+    "space-shuttle"
+   ]
+  ],
+  "lithium-batteries": [
+   "Lithium Batteries",
+   "information",
+   1991,
+   [
+    "telecommunications"
+   ]
+  ]
+ },
+ "stones": {
+  "fusion-net-gain": [
+   "Fusion Net Gain",
+   "late-2020s",
+   2028,
+   [
+    "fusion-ignition"
+   ]
+  ],
+  "logical-qubits": [
+   "Logical Qubits",
+   "late-2020s",
+   2029,
+   [
+    "quantum-processors"
+   ]
+  ],
+  "ai-designed-drugs": [
+   "AI-Designed Drugs",
+   "late-2020s",
+   2028,
+   [
+    "machine-learning",
+    "genome-sequencing"
+   ]
+  ],
+  "stem-cell-therapies": [
+   "Stem Cell Therapies",
+   "late-2020s",
+   2028,
+   [
+    "stem-cells"
+   ]
+  ],
+  "quiet-supersonic-flight": [
+   "Quiet Supersonic Flight",
+   "late-2020s",
+   2028,
+   [
+    "supersonic-airliners"
+   ]
+  ],
+  "fusion-pilot-plant": [
+   "Fusion Pilot Plant",
+   "2030s",
+   2036,
+   [
+    "fusion-net-gain"
+   ]
+  ],
+  "crewed-moon-return": [
+   "Crewed Moon Return",
+   "2030s",
+   2030,
+   [
+    "fully-reusable-rockets"
+   ]
+  ],
+  "electric-airliners": [
+   "Electric Airliners",
+   "2030s",
+   2034,
+   [
+    "solid-state-batteries"
+   ]
+  ],
+  "universal-flu-vaccine": [
+   "Universal Flu Vaccine",
+   "2030s",
+   2033,
+   [
+    "cancer-vaccines"
+   ]
+  ],
+  "self-improving-ai": [
+   "Self-Improving AI",
+   "2040s",
+   2042,
+   [
+    "superintelligence"
+   ]
+  ],
+  "memory-prostheses": [
+   "Memory Prostheses",
+   "2040s",
+   2045,
+   [
+    "brain-implants"
+   ]
+  ],
+  "photonic-chips": [
+   "Photonic Chips",
+   "2040s",
+   2044,
+   [
+    "zettascale-computing"
+   ]
+  ],
+  "space-habitats": [
+   "Space Habitats",
+   "2075-2100",
+   2085,
+   [
+    "spin-gravity"
+   ]
+  ],
+  "mars-city": [
+   "Mars City",
+   "2075-2100",
+   2090,
+   [
+    "mars-colony"
+   ]
+  ]
+ },
+ "requires": {
+  "modular-reactors": [
+   "advanced-reactors"
+  ],
+  "green-steel": [
+   "solar-farms"
+  ],
+  "humanoid-robots": [
+   "walking-robots",
+   "machine-learning"
+  ],
+  "self-driving-cars": [
+   "machine-learning",
+   "satellite-navigation"
+  ],
+  "artificial-general-intelligence": [
+   "ai-scientists"
+  ],
+  "superintelligence": [
+   "artificial-general-intelligence"
+  ],
+  "nuclear-rockets": [
+   "modular-reactors"
+  ],
+  "space-solar-power": [
+   "fully-reusable-rockets"
+  ],
+  "xenotransplants": [
+   "gene-editing-cures"
+  ],
+  "robot-surgeons": [
+   "humanoid-robots"
+  ],
+  "medical-microbots": [
+   "robot-surgeons"
+  ],
+  "brain-implants": [
+   "robot-surgeons"
+  ],
+  "de-extinction": [
+   "xenotransplants"
+  ],
+  "quantum-computing": [
+   "logical-qubits"
+  ],
+  "quantum-internet": [
+   "logical-qubits"
+  ],
+  "regenerative-medicine": [
+   "stem-cell-therapies"
+  ],
+  "cultured-meat": [
+   "stem-cell-therapies"
+  ],
+  "supersonic-travel": [
+   "quiet-supersonic-flight"
+  ],
+  "zettascale-computing": [
+   "artificial-general-intelligence"
+  ],
+  "anti-ageing-drugs": [
+   "ai-designed-drugs"
+  ],
+  "supercharged-crops": [
+   "de-extinction"
+  ],
+  "superlubricity": [
+   "quantum-computing"
+  ],
+  "fusion-power": [
+   "fusion-pilot-plant"
+  ],
+  "hiv-vaccine": [
+   "universal-flu-vaccine"
+  ],
+  "moon-base": [
+   "crewed-moon-return"
+  ],
+  "artificial-wombs": [
+   "regenerative-medicine"
+  ],
+  "asteroid-mining": [
+   "space-solar-power"
+  ],
+  "germline-editing": [
+   "de-extinction"
+  ],
+  "lab-grown-organs": [
+   "artificial-wombs"
+  ],
+  "swarm-robotics": [
+   "medical-microbots"
+  ],
+  "mars-landing": [
+   "moon-base"
+  ],
+  "carbon-drawdown": [
+   "fusion-pilot-plant"
+  ],
+  "zero-carbon-flight": [
+   "electric-airliners"
+  ],
+  "spin-gravity": [
+   "mars-landing"
+  ],
+  "energy-abundance": [
+   "fusion-power"
+  ],
+  "solar-geoengineering": [
+   "carbon-drawdown"
+  ],
+  "superconductors": [
+   "self-improving-ai"
+  ],
+  "brain-emulation": [
+   "memory-prostheses",
+   "photonic-chips"
+  ],
+  "the-singularity": [
+   "self-improving-ai"
+  ],
+  "friendly-ai": [
+   "self-improving-ai"
+  ],
+  "neural-lace": [
+   "synthetic-telepathy"
+  ],
+  "cognitive-enhancement": [
+   "memory-prostheses",
+   "germline-editing"
+  ],
+  "hyperloop": [
+   "superconductors"
+  ],
+  "molecular-assemblers": [
+   "swarm-robotics"
+  ],
+  "optical-computing": [
+   "photonic-chips"
+  ],
+  "fusion-rockets": [
+   "energy-abundance"
+  ],
+  "longevity-escape-velocity": [
+   "lab-grown-organs"
+  ],
+  "light-sails": [
+   "energy-abundance"
+  ],
+  "self-replication": [
+   "molecular-assemblers"
+  ],
+  "utility-fog": [
+   "molecular-assemblers"
+  ],
+  "cryonic-revival": [
+   "ending-ageing"
+  ],
+  "invisibility": [
+   "utility-fog"
+  ],
+  "computronium": [
+   "picotechnology"
+  ],
+  "ancestor-simulations": [
+   "mind-uploading",
+   "computronium"
+  ],
+  "space-elevator": [
+   "self-replication"
+  ],
+  "dyson-swarm": [
+   "self-replication",
+   "space-habitats"
+  ],
+  "generation-ships": [
+   "fusion-rockets",
+   "space-habitats"
+  ],
+  "terraforming": [
+   "mars-city"
+  ],
+  "mars-colony": [
+   "mars-landing"
+  ],
+  "synthetic-telepathy": [
+   "memory-prostheses"
+  ]
+ }
+}

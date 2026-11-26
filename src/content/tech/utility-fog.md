@@ -2,7 +2,7 @@
 name: Utility Fog
 kind: future
 definition: "A collective of at least a billion cooperating robots, each smaller than a millimetre, reshapes itself on command into a solid object that bears a load at least equal to its own weight, then reshapes into a different object."
-requires: [molecular-assemblers, swarm-robotics]
+requires: [molecular-assemblers]
 icon: {prompt: "A shimmering silver mist of tiny robots condensing into a solid chair in the middle of a sunlit room"}
 trl:
   level: 2

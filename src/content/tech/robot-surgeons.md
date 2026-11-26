@@ -2,7 +2,7 @@
 name: Robot Surgeons
 kind: future
 definition: "A robot performs every operative step of a complete soft-tissue operation (for example, removing a gallbladder) on a living human patient, with no human control of the instruments; surgeons may only supervise and stop it. The case is reported in a peer-reviewed journal or a regulator's record. Robots that automate one step under a surgeon's control, such as bone milling, waterjet tissue removal or suturing, don't count."
-requires: [robotics]
+requires: [humanoid-robots]
 icon: {prompt: "Slender robotic arms working alone over an operating table under a cool surgical lamp, a surgeon watching from behind glass"}
 trl:
   level: 4

@@ -2,7 +2,7 @@
 name: Moon Base
 kind: future
 definition: "A crewed outpost on the lunar surface is continuously occupied for at least one year, with crews rotating but at least one person living on the surface at all times."
-requires: [spaceflight]
+requires: [fully-reusable-rockets]
 icon: {prompt: "A cluster of low regolith-covered domes near a crater rim at the lunar south pole, lit by long low sunlight, with Earth hanging over the horizon"}
 trl:
   level: 3

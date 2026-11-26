@@ -2,7 +2,7 @@
 name: Asteroid Mining
 kind: future
 definition: "A commercial mission extracts at least 1 kg of material from an asteroid and delivers it, to Earth or to a customer in space, where it is sold or put to use. Scientific sample returns don't count."
-requires: [spaceflight]
+requires: [space-solar-power]
 icon: {prompt: "A small spacecraft anchored to a dark, cratered metallic asteroid, a robotic arm drilling and a plume of glittering dust drifting against the stars"}
 trl:
   level: 3

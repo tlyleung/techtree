@@ -2,7 +2,7 @@
 name: Artificial Wombs
 kind: future
 definition: "A human baby is carried for at least the last third of pregnancy (from 27 weeks' gestation or earlier to at least 37 weeks) in an artificial womb, a fluid-filled system that supports the fetus through its umbilical cord, and is born healthy, as reported in a peer-reviewed paper or a regulator's record."
-requires: [genetics, sanitation, plastics]
+requires: [regenerative-medicine]
 icon: {prompt: "A curled human fetus floating peacefully in a clear, amber-lit fluid-filled bag, connected by soft tubes to a quiet bedside machine"}
 trl:
   level: 4

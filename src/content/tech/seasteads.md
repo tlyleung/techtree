@@ -2,7 +2,7 @@
 name: Seasteads
 kind: future
 definition: "A permanent floating settlement of fixed or moored platforms (not self-propelled ships), with at least 1,000 residents, stays in the open sea, outside any harbour or breakwater, for a full year, with its residents living aboard throughout."
-requires: [shipbuilding, civil-engineering]
+requires: [energy-abundance]
 icon: {prompt: "A cluster of white hexagonal floating platforms with gardens and low homes, linked by walkways, riding a calm open ocean at dawn"}
 trl:
   level: 4

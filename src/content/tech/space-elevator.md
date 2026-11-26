@@ -2,7 +2,7 @@
 name: Space Elevator
 kind: future
 definition: "A tether anchored to Earth's surface and reaching beyond geostationary orbit (about 35,800 km up) carries a climber with a payload from the ground to orbit."
-requires: [nanotechnology, spaceflight, civil-engineering]
+requires: [self-replication]
 icon: {prompt: "A hair-thin ribbon rising from an ocean platform at the equator straight up through the clouds, a small climber glinting halfway, the curve of the Earth below"}
 trl:
   level: 2

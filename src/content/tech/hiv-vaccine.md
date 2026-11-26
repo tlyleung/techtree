@@ -2,7 +2,7 @@
 name: HIV Vaccine
 kind: future
 definition: "A preventive HIV vaccine shows at least 50% efficacy against HIV infection on its primary endpoint in a randomised, placebo-controlled phase 2b or phase 3 trial."
-requires: [vaccination, genetics]
+requires: [mrna-vaccines]
 icon: {prompt: "A small vaccine vial glowing softly beside a stylised spiky virus particle held fast in a net of Y-shaped antibodies"}
 trl:
   level: 5

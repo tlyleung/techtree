@@ -2,7 +2,7 @@
 name: Carbon Drawdown
 kind: future
 definition: "Engineered carbon removal (direct air capture, bioenergy with carbon capture, enhanced weathering and similar methods) permanently stores at least 1 billion tonnes of CO2 in a single year worldwide, as reported by an independent assessment such as the State of Carbon Dioxide Removal."
-requires: [chemistry, industrialization]
+requires: [modular-reactors]
 icon: {prompt: "A long wall of fans on a volcanic plain drawing in air, with pale ribbons of CO2 sinking into dark basalt rock below"}
 trl:
   level: 5

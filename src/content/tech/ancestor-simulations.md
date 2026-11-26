@@ -2,7 +2,7 @@
 name: Ancestor Simulations
 kind: future
 definition: "A computer simulation runs a shared world populated by at least a million simulated people, each meeting a pre-registered, publicly agreed test for a human-level mind (such as a validated whole-brain emulation), for at least one simulated human lifetime of 70 years."
-requires: [mind-uploading]
+requires: [mind-uploading, computronium]
 icon: {prompt: "A glowing glass sphere on a dark pedestal containing a tiny living city with rivers, fields and lit windows, threads of light running from it into the darkness"}
 trl:
   level: 2

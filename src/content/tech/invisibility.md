@@ -2,7 +2,7 @@
 name: Invisibility
 kind: future
 definition: "A wearable or portable cloak, passive or active, hides a person-sized object from human observers in daylight across the visible spectrum and from all horizontal viewing angles, so that in an independent, pre-registered test observers a few metres away cannot tell when the object is present better than chance."
-requires: [nanotechnology]
+requires: [utility-fog]
 icon: {prompt: "A shimmering human-shaped outline in a sunlit forest, the trees behind seen clearly through it with faint rainbow distortion at its edges"}
 trl:
   level: 3

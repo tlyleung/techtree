@@ -2,7 +2,7 @@
 name: Cancer Vaccines
 kind: future
 definition: "The FDA, EMA or another stringent regulator (such as the UK's MHRA or Japan's PMDA) approves an individualized neoantigen cancer vaccine, made for each patient from the sequence of their own tumour, on the evidence of a randomized trial."
-requires: [vaccination, genetics]
+requires: [mrna-vaccines, genome-sequencing]
 icon: {prompt: "A single glowing vial labelled with a strand of DNA, beside a sequenced tumour sample, as tiny immune cells swarm toward a dark cancer cell"}
 trl:
   level: 6

@@ -2,7 +2,7 @@
 name: Computronium
 kind: future
 definition: "At least one tonne of engineered matter, most of it doing computation rather than support, operates as a working computer whose measured system-level energy cost is within a factor of 1,000 of the Landauer limit (kT ln 2 per irreversible bit operation at its operating temperature)."
-requires: [molecular-assemblers, optical-computing]
+requires: [picotechnology]
 icon: {prompt: "A dense block of dark crystal lattice glowing from within with countless tiny points of light, faint heat shimmer rising from its surface"}
 trl:
   level: 2

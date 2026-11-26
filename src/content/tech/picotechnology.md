@@ -2,7 +2,7 @@
 name: Picotechnology
 kind: future
 definition: "Engineers build a working device from parts whose structure they have designed below the scale of a single atom, such as engineered nuclei, exotic atoms or bound electron structures not found in ordinary matter, rather than relying on natural atomic or nuclear properties as atomic and nuclear clocks do. Excited or Rydberg electronic states, nuclear isomers, and exotic atoms already made (positronium, muonium, muonic atoms, antihydrogen) do not count."
-requires: [molecular-assemblers, particle-physics]
+requires: [molecular-assemblers]
 icon: {prompt: "A single glowing atom held in a ring of laser beams, its electron cloud sculpted into an intricate geometric shape against deep black"}
 trl:
   level: 1

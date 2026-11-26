@@ -2,7 +2,7 @@
 name: De-Extinction
 kind: future
 definition: "An elephant calf engineered to carry woolly mammoth traits (such as cold-adapted hair, extra fat and small ears) is born alive and survives at least one month, with the edits and traits described in a public paper or independently confirmed."
-requires: [genetics]
+requires: [xenotransplants]
 icon: {prompt: "A shaggy, russet-haired elephant calf standing in snowy tundra grass beside its grey Asian elephant surrogate mother"}
 trl:
   level: 3

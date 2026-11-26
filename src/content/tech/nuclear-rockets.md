@@ -2,7 +2,7 @@
 name: Nuclear Rockets
 kind: future
 definition: "A spacecraft in space is propelled by a nuclear thermal rocket engine, in which a fission reactor heats a propellant such as hydrogen and expels it through a nozzle, with the engine fired at power in orbit or beyond. Nuclear electric propulsion (a reactor powering electric thrusters) and radioisotope power sources don't count."
-requires: [nuclear-fission, rocketry]
+requires: [modular-reactors]
 icon: {prompt: "A slender spacecraft with a glowing reactor core at its tail, pushing a bright blue-white plume of hot hydrogen across a starry sky above the curve of Earth"}
 trl:
   level: 5

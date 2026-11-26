@@ -2,7 +2,7 @@
 name: Spin Gravity
 kind: future
 definition: "A rotating habitat in space gives at least 0.3 g of artificial gravity on its living floor to a crew who live in it for at least 30 days."
-requires: [fully-reusable-rockets]
+requires: [mars-landing]
 icon: {prompt: "A great wheel-shaped space station turning slowly against the stars, sunlight glinting on its spokes, Earth's blue limb below"}
 trl:
   level: 3
